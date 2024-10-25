@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bank</key>
+	<dict>
+		<key>农业</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>邮政</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>民生</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>上海银行</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>兴业银行</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 6</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 7</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 8</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 9</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 10</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 11</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 12</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 13</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 14</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 15</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 16</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 17</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+		<key>农业 - 18</key>
+		<dict>
+			<key>logo</key>
+			<string>ABC</string>
+			<key>water</key>
+			<string>nongye</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

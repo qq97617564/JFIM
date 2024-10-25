@@ -1,0 +1,92 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (3.8.5):
+    - CocoaLumberjack/Core (= 3.8.5)
+  - CocoaLumberjack/Core (3.8.5)
+  - DZNEmptyDataSet (1.8.1)
+  - GoogleWebRTC (1.1.32000)
+  - JCore (4.6.2)
+  - JPush (5.2.4):
+    - JCore (>= 2.0.0)
+  - JSONModel (1.8.0)
+  - M80AttributedLabel (1.9.9)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.7.8)
+  - SDWebImage (5.19.0):
+    - SDWebImage/Core (= 5.19.0)
+  - SDWebImage/Core (5.19.0)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYModel (1.0.4)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - AFNetworking
+  - CocoaLumberjack
+  - DZNEmptyDataSet
+  - GoogleWebRTC
+  - JPush
+  - JSONModel
+  - M80AttributedLabel
+  - MBProgressHUD
+  - MJRefresh
+  - SDWebImage
+  - YYModel
+  - YYWebImage
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - CocoaLumberjack
+    - DZNEmptyDataSet
+    - GoogleWebRTC
+    - JCore
+    - JPush
+    - JSONModel
+    - M80AttributedLabel
+    - MBProgressHUD
+    - MJRefresh
+    - SDWebImage
+    - YYCache
+    - YYImage
+    - YYModel
+    - YYWebImage
+
+SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  GoogleWebRTC: 4d261187b30512efdb711d21fa961a6adf138717
+  JCore: 024c73b04e110b496e93d8c127ea9cd1ed934e4c
+  JPush: c3c6e328b39a7dd78cf6b1a7d072af1a9a1974bd
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  M80AttributedLabel: 77fedfe63804c989a6de0fa4d400ea8cad3ab441
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 4e6e7ba77a6d5fab012426777e32b0a77127c50a
+  SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+
+PODFILE CHECKSUM: 1b4c79aa5ffaa73853b21ca88181df9841db1b22
+
+COCOAPODS: 1.15.2

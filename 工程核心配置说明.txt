@@ -1,0 +1,17 @@
+1、执行 “打开定制文件.bat”，依次打开修改包名、修改APP logo、修改服务器配置等文件
+
+2、进入 ServerConfig.h，修改服务器地址、资源服务器地址、密钥、二维码下载链接
+
+kBaseURLString：API服务器地址
+kHTMLBaseURLString：同kBaseURLString
+kResourceURLString：资源服务器地址
+kSecturyKey： 密钥
+QR_SERVER：https://a.app.qq.com/o/simple.jsp?pkgname={包名} //替换自己的包名
+
+3、进入AppDelegate.m 修改极光推送、三方登录分享的配置
+
+方法：- (void)configJPush:(NSDictionary *)launchOptions
+在此替换自己的极光appKey
+
+方法：- (void)configPlatforms
+在此替换成自己的QQ、微信的相关appId、appSecertKey、UniversalLink

@@ -1,0 +1,146 @@
+//
+//  PrefixHeader.pch
+//  tio-chat-ios
+//
+//  Created by 刘宇 on 2019/12/31.
+//  Copyright © 2019 刘宇. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIColor+TDTheme.h"
+
+#define CBColorRGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define CBColorRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define CBRandomColorA CBColorRGBA(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define CBRandomColor CBColorRGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+#define CBWeakObject(c) __weak __typeof__(c) WeakObject = c;
+#define CBStrongObjectElseReturn(c) __strong __typeof__(c) c = WeakObject; if(!c) return;
+#define CBWeakSelf __weak __typeof__(self) WeakSelf = self;
+#define CBStrongSelf __strong __typeof__(self) self = WeakSelf;
+#define CBStrongSelfElseReturn __strong __typeof__(self) self = WeakSelf; if(!self) return;
+
+
+#define Height_StatusBar (IsIphoneX() ? 44.0f : 20.0f)
+#define Height_NavBar (IsIphoneX() ? 88.0f : 64.0f)
+#define Height_TabBar (IsIphoneX() ? 83.0f : 49.0f)
+#define safeBottomHeight (IsIphoneX() ? 34 : 0)
+
+#define CB_SCREEN_RECT             ([UIScreen mainScreen].bounds)
+#define CB_SCREEN_WIDTH            ([UIScreen mainScreen].bounds.size.width)
+#define CB_SCREEN_HEIGHT           ([UIScreen mainScreen].bounds.size.height)
+
+#define CBFlexibleWidth(c) (c/375.0*UIScreen.mainScreen.bounds.size.width)
+#define CBFlexibleHeight(c) (c/667.0*UIScreen.mainScreen.bounds.size.height)
+#define CBHorizontalFlexibleWidth(c) (c/667.0*UIScreen.mainScreen.bounds.size.width)
+#define newLen(c) (c*2)
+
+#define IsLowerIphone6 (ScreenHeight() < 667.0 ? YES : NO)
+
+//#define TLog(format,...)  NSLog((@"%s[%d]" format), __FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+#define T_Dispatch_Async(block)\
+if ([NSThread isMainThread]) {\
+dispatch_async(dispatch_get_global_queue(0, 0), ^{\
+    block();\
+});\
+} else {\
+    block();\
+}
+
+#define T_Dispatch_Async_Main(block)\
+if ([NSThread isMainThread]) {\
+block();\
+} else {\
+dispatch_sync(dispatch_get_main_queue(), block);\
+}
+
+#import <CocoaLumberjack/CocoaLumberjack.h>
+// DDLog部分
+
+#define TLogObjc(flg, frmt, ...) LOG_MAYBE(LogAsync, ddLogLevel, flg, LogContext, frmt, ##__VA_ARGS__)
+#define TLogError(frmt, ...)     LogObjc(LOG_FLAG_ERROR,   (@"%@: " frmt), THIS_FILE, ##__VA_ARGS__)
+#define TLogWarn(frmt, ...)      LogObjc(LOG_FLAG_WARN,    (@"%@: " frmt), THIS_FILE, ##__VA_ARGS__)
+#define TLogInfo(frmt, ...)      LogObjc(LOG_FLAG_INFO,    (@"%@: " frmt), THIS_FILE, ##__VA_ARGS__)
+#define TLogVerbose(frmt, ...)   LogObjc(LOG_FLAG_VERBOSE, (@"%@: " frmt), THIS_FILE, ##__VA_ARGS__)
+#define TLogTrace()              LogObjc(LOG_FLAG_VERBOSE, @"%@: %@", THIS_FILE, THIS_METHOD)
+
+#define START_TIME(var) CFAbsoluteTime var =CFAbsoluteTimeGetCurrent();
+#define END_TIME(var,str) NSLog(@"%@ in %f ms", str, (CFAbsoluteTimeGetCurrent() - var) *1000.0);
+
+#ifdef DEBUG
+static const int ddLogLevel = DDLogLevelVerbose;
+#define DLog(format, ...) DDLogError((@"[文件名:%s]" "[函数名:%s]" "[行号:%d]" format), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+#else
+
+static const int ddLogLevel = DDLogLevelError;
+#define DLog(...);
+#endif
+
+static inline BOOL IsIphoneX()
+{
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = nil;
+        if (@available(iOS 13.0, *)) {
+            for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes) {
+                window = windowScene.windows.firstObject;
+                break;
+            }
+        } else {
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            window = UIApplication.sharedApplication.keyWindow;
+            #pragma clang diagnostic push
+        }
+        
+        return window.safeAreaInsets.bottom > 0.0;
+    }
+    return NO;
+}
+
+static inline float FlexWidth(float value)
+{
+    UIDeviceOrientation orientation = (UIDeviceOrientation)[UIApplication sharedApplication].statusBarOrientation;
+    BOOL flag = orientation == UIDeviceOrientationPortrait ||orientation ==
+    UIDeviceOrientationPortraitUpsideDown;
+    
+    return flag ? CBFlexibleWidth(value) : CBHorizontalFlexibleWidth(value);
+}
+
+static inline float FlexHeight(float value)
+{
+    return CBFlexibleHeight(value);
+}
+
+static inline float ScreenWidth()
+{
+    UIDeviceOrientation orientation = (UIDeviceOrientation)[UIApplication sharedApplication].statusBarOrientation;
+    BOOL flag = orientation == UIDeviceOrientationPortrait ||orientation ==
+    UIDeviceOrientationPortraitUpsideDown;
+    
+    return flag ? CB_SCREEN_WIDTH : CB_SCREEN_HEIGHT;
+}
+
+static inline float ScreenHeight()
+{
+    UIDeviceOrientation orientation = (UIDeviceOrientation)[UIApplication sharedApplication].statusBarOrientation;
+    BOOL flag = orientation == UIDeviceOrientationPortrait ||orientation ==
+    UIDeviceOrientationPortraitUpsideDown;
+    
+    return flag ? CB_SCREEN_HEIGHT : CB_SCREEN_WIDTH;
+}
+
+static inline void TLogRetainCount(NSString * des ,id obj) {
+    if (nil != obj) {
+        /// 实际的RetainCount 比 CFGetRetainCount 小 1
+        NSLog(@"%@  RetainCount = %zd", des,CFGetRetainCount((__bridge CFTypeRef)obj) - 1);
+    } else {
+        NSLog(@"%@  RetainCount = 0, obj == nil",des);
+    }
+}
+
+
+#endif /* PrefixHeader_pch */
