@@ -369,13 +369,11 @@
         textfiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     textfiled.textColor = [UIColor colorWithHex:0x333333];
-    textfiled.font = [UIFont systemFontOfSize:16];
+    textfiled.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
     
-    textfiled.layer.cornerRadius = 22;
-    textfiled.layer.shadowColor = [UIColor colorWithRed:235/255.0 green:243/255.0 blue:255/255.0 alpha:1.0].CGColor;
-    textfiled.layer.shadowOffset = CGSizeMake(0,3);
-    textfiled.layer.shadowRadius = 6;
-    textfiled.layer.shadowOpacity = 1;
+    textfiled.layer.cornerRadius = 6;
+    textfiled.layer.borderWidth = 1;
+    textfiled.layer.borderColor = [UIColor colorWithHex:0xE6EBF1].CGColor;
     
     return textfiled;
 }

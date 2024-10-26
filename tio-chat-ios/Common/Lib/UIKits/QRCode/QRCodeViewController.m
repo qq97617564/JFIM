@@ -87,7 +87,7 @@
     
     UILabel *label = [UILabel.alloc init];
     label.textColor = [UIColor colorWithHex:0x9C9C9C];
-    label.text = self.isP2P?@"使用谭聊APP扫一扫，加我为好友":@"扫码加入群聊";
+    label.text = self.isP2P?@"使用季风APP扫一扫，加我为好友":@"扫码加入群聊";
     label.font = [UIFont systemFontOfSize:14];
     [label sizeToFit];
     label.centerX = cardView.middleX;

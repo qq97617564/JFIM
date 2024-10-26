@@ -39,7 +39,7 @@ static NSString *key = @"action";
 {
     TBottomMessageHUD *object = [TBottomMessageHUD buttonWithType:UIButtonTypeCustom];
     object.bounds = CGRectMake(0, 0, 124, 38);
-    UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:object.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x3B8AFF]]];
+    UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:object.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x0087FC]]];
     UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:object.bounds andColors:@[[UIColor colorWithHex:0xA3C6F9],[UIColor colorWithHex:0x84B5FF]]];
     [object setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:25 size:object.viewSize] forState:UIControlStateNormal];
     [object setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:25 size:object.viewSize] forState:UIControlStateHighlighted];

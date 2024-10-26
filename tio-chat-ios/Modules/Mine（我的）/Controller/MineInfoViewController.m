@@ -1,12 +1,12 @@
 //
-//  TMineInfoViewController.m
+//  MineInfoViewController.m
 //  tio-chat-ios
 //
-//  Created by 刘宇 on 2020/2/24.
-//  Copyright © 2020 刘宇. All rights reserved.
+//  Created by 王刚锋 on 2024/10/26.
+//  Copyright © 2024 刘宇. All rights reserved.
 //
 
-#import "TMineInfoViewController.h"
+#import "MineInfoViewController.h"
 #import "TInfoCell.h"
 #import "TMineUpdatePasswordViewController.h"
 #import "UIImage+T_gzip.h"
@@ -17,7 +17,7 @@
 
 #import "ImportSDK.h"
 
-@interface TMineInfoViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TIOLoginDelegate, TEdittingViewControllerDelegate>
+@interface MineInfoViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TIOLoginDelegate, TEdittingViewControllerDelegate>
 @property (nonatomic, strong) NSArray<NSArray *> *cells;
 @property (nonatomic, strong) TIOLoginUser *user;
 
@@ -27,12 +27,12 @@
 @property (weak,    nonatomic) TInfoCell *sexCell;
 @property (weak,    nonatomic) TInfoCell *signCell;
 @property (weak,    nonatomic) TInfoCell *addressCell;
-@property (weak,    nonatomic) TInfoCell *emailCell;
-@property (weak,    nonatomic) TInfoCell *phoneCell;
+//@property (weak,    nonatomic) TInfoCell *emailCell;
+//@property (weak,    nonatomic) TInfoCell *phoneCell;
 
 @end
 
-@implementation TMineInfoViewController
+@implementation MineInfoViewController
 
 - (void)dealloc
 {
@@ -43,7 +43,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"个人信息页";
+        self.title = @"个人资料";
     }
     return self;
 }
@@ -69,9 +69,9 @@
 
 - (void)setupUI
 {
-    TInfoCell *avatarCell = [self cellWithTitle:@"头像" subTitle:nil hasIndiractor:YES];
+    TInfoCell *avatarCell = [self cellWithTitle:@"头像" subTitle:nil hasIndiractor:YES isSwitch:false];
     [avatarCell setAvatar:self.user.avatar];
-    TInfoCell *nickCell = [self cellWithTitle:@"昵称" subTitle:self.user.nick hasIndiractor:YES];
+    TInfoCell *nickCell = [self cellWithTitle:@"昵称" subTitle:self.user.nick hasIndiractor:YES isSwitch:false];
     
     NSString *sex = @"男";
     if (self.user.sex == TIOUserSexWomen) {
@@ -82,21 +82,21 @@
         sex = @"男";
     }
     
-    TInfoCell *sexCell = [self cellWithTitle:@"性别" subTitle:sex hasIndiractor:YES];
-    TInfoCell *signCell = [self cellWithTitle:@"个性签名" subTitle:self.user.sign hasIndiractor:YES];
-    TInfoCell *addressCell = [self cellWithTitle:@"地区" subTitle:[NSString stringWithFormat:@"%@ %@",self.user.province,self.user.city] hasIndiractor:YES];
-    TInfoCell *emailCell = [self cellWithTitle:@"邮箱" subTitle:self.user.email hasIndiractor:NO];
-    TInfoCell *phoneCell = [self cellWithTitle:@"手机号" subTitle:self.user.phone?:@"还没有绑定手机" hasIndiractor:YES];
+    TInfoCell *sexCell = [self cellWithTitle:@"性别" subTitle:sex hasIndiractor:YES isSwitch:false];
+    TInfoCell *signCell = [self cellWithTitle:@"个性签名" subTitle:self.user.sign hasIndiractor:YES isSwitch:false];
+    TInfoCell *addressCell = [self cellWithTitle:@"地区" subTitle:[NSString stringWithFormat:@"%@ %@",self.user.province,self.user.city] hasIndiractor:false isSwitch:true];
+//    TInfoCell *emailCell = [self cellWithTitle:@"邮箱" subTitle:self.user.email hasIndiractor:NO];
+//    TInfoCell *phoneCell = [self cellWithTitle:@"手机号" subTitle:self.user.phone?:@"还没有绑定手机" hasIndiractor:YES];
     
     self.avatarCell = avatarCell;
     self.nickCell = nickCell;
     self.sexCell = sexCell;
     self.signCell = signCell;
     self.addressCell = addressCell;
-    self.emailCell = emailCell;
-    self.phoneCell = phoneCell;
+//    self.emailCell = emailCell;
+//    self.phoneCell = phoneCell;
     
-    self.cells = @[@[avatarCell],@[nickCell,sexCell,signCell],@[addressCell,emailCell,phoneCell]];
+    self.cells = @[@[avatarCell,nickCell,sexCell],@[signCell,addressCell]];
     
     
     UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStyleGrouped];
@@ -126,12 +126,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return indexPath.section == 0 ? 80 : 60;
+    return (indexPath.section == 0 && indexPath.row  == 0) ? 80 : 60;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 20;
+    return 12;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -177,7 +177,7 @@
         }]];
         [self presentViewController:alert animated:YES completion:nil];
     }
-    else if ([indexPath isEqual:[NSIndexPath indexPathForRow:0 inSection:1]])
+    else if ([indexPath isEqual:[NSIndexPath indexPathForRow:1 inSection:0]])
     {
         // 昵称
         TEdittingViewController *vc = [TEdittingViewController.alloc initWithTitle:@"修改昵称" text:self.user.nick inputType:TEdittingInputTypeField];
@@ -185,7 +185,7 @@
         vc.maxNumber = 16;
         [self.navigationController pushViewController:vc animated:YES];
     }
-    else if ([indexPath isEqual:[NSIndexPath indexPathForRow:1 inSection:1]])
+    else if ([indexPath isEqual:[NSIndexPath indexPathForRow:2 inSection:0]])
     {
         // 性别
         TAlertController *alert = [TAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:TAlertControllerStyleActionSheet];
@@ -213,7 +213,7 @@
         }]];
         [self presentViewController:alert animated:YES completion:nil];
     }
-    else if ([indexPath isEqual:[NSIndexPath indexPathForRow:2 inSection:1]])
+    else if ([indexPath isEqual:[NSIndexPath indexPathForRow:0 inSection:1]])
     {
         // 个性签名
         TEdittingViewController *vc = [TEdittingViewController.alloc initWithTitle:@"修改个性签名" text:self.user.sign inputType:TEdittingInputTypeView];
@@ -221,8 +221,9 @@
         vc.maxNumber = 60; // 最多输入60个字
         [self.navigationController pushViewController:vc animated:YES];
     }
-    else if ([indexPath isEqual:[NSIndexPath indexPathForRow:0 inSection:2]])
+    else if ([indexPath isEqual:[NSIndexPath indexPathForRow:1 inSection:1]])
     {
+        
         // 地区
     }
     else if ([indexPath isEqual:[NSIndexPath indexPathForRow:1 inSection:2]])
@@ -243,13 +244,30 @@
 #pragma mark -  工厂
 
 - (TInfoCell *)cellWithTitle:(NSString *)title subTitle:(NSString *)subTitle hasIndiractor:(BOOL)hasIndiractor
-{
+                    isSwitch:(BOOL) isSwitch{
     TInfoCell *cell = [TInfoCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     cell.textLabel.text = title;
     cell.detailTextLabel.text = subTitle;
     cell.hasIndiractor = hasIndiractor;
-    
+    cell.isSwitch = isSwitch;
+    cell.switchBtn.on = self.user.areaviewflag == 1;
+    if ([title isEqualToString: @"地区"]) {
+        [cell.switchBtn addTarget:self action:@selector(changewithSwitch:) forControlEvents:UIControlEventTouchUpInside];
+    }
     return cell;
+}
+-(void)changewithSwitch:(UISwitch *)sw{
+    [MBProgressHUD showLoading:@"" toView:self.view];
+    [TIOChat.shareSDK.loginManager updateShowAreaHandler:^(NSInteger status, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (error)
+        {
+            [MBProgressHUD showError:error.localizedDescription toView:self.view];
+        }else{
+            self.user.areaviewflag = status;
+            self.addressCell.switchBtn.on = self.user.areaviewflag == 1;
+        }
+    }];
 }
 
 #pragma mark - actions
@@ -311,8 +329,8 @@
     self.sexCell.detailTextLabel.text = sex;
     self.signCell.detailTextLabel.text = user.sign?:@"还没写过个性签名";
     self.addressCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",self.user.province,self.user.city];
-    self.emailCell.detailTextLabel.text = user.email;
-    self.phoneCell.detailTextLabel.text = user.phone;
+//    self.emailCell.detailTextLabel.text = user.email;
+//    self.phoneCell.detailTextLabel.text = user.phone;
     
 }
 

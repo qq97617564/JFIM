@@ -29,7 +29,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"返回";
+        self.leftBarButtonText = @"";
     }
     return self;
 }
@@ -54,16 +54,16 @@
     [self.view addSubview:bg1];
     
     UIImageView *logo = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 50, 50)];
-    logo.image = [UIImage imageNamed:@"logo"];
+    logo.image = [UIImage imageNamed:@"Group 1321315510"];
     logo.centerX = self.view.middleX;
-    logo.top = Height_StatusBar + 45;
+    logo.top = Height_StatusBar + 74;
     [self.view addSubview:logo];
     
     [self.view addSubview:({
         UILabel *label = [UILabel.alloc init];
-        label.text = @"谭聊";
-        label.textColor = [UIColor colorWithHex:0x666666];
-        label.font = [UIFont systemFontOfSize:22 weight:UIFontWeightBold];
+        label.text = @"季风";
+        label.textColor = [UIColor colorWithHex:0x0087FC];
+        label.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
         [label sizeToFit];
         label.centerX = self.view.middleX;
         label.top = logo.bottom+17;
@@ -73,25 +73,27 @@
     
     UILabel *label = [UILabel.alloc init];
     label.text = @"忘记密码";
+    label.textColor = [UIColor colorWithHex:0x9199A4];
+    label.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
     [label sizeToFit];
     label.top = bg1.bottom + 54;
-    label.left = 59;
+    label.left = 37;
     [self.view addSubview:label];
     
     UITextField *accountTF = ({
-        UITextField *textfiled = [self textFiled:@"请输入手机号" left:40 right:0];
-        textfiled.top = label.bottom + 20;
+        UITextField *textfiled = [self textFiled:@"请输入手机号" left:15 right:0];
+        textfiled.top = label.bottom + 6.5;
         textfiled.delegate = self;
         [textfiled addTarget:self action:@selector(textfieldEditing:) forControlEvents:UIControlEventEditingChanged];
-        textfiled.leftView = ({
-            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
-            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_phone"]];
-            [left sizeToFit];
-            left.centerY = view.middleY;
-            left.right = view.width - 2;
-            [view addSubview:left];
-            view;
-        });
+//        textfiled.leftView = ({
+//            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
+//            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_phone"]];
+//            [left sizeToFit];
+//            left.centerY = view.middleY;
+//            left.right = view.width - 2;
+//            [view addSubview:left];
+//            view;
+//        });
         
         textfiled;
     });
@@ -100,11 +102,11 @@
     
     [self.view addSubview:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(38, Height_StatusBar+333, self.view.width-38*2, 50);
-        UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:button.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x3B8AFF]]];
-        UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:button.bounds andColors:@[[UIColor colorWithHex:0xA3C6F9],[UIColor colorWithHex:0x84B5FF]]];
-        [button setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:25 size:button.viewSize] forState:UIControlStateNormal];
-        [button setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:25 size:button.viewSize] forState:UIControlStateHighlighted];
+        button.frame = CGRectMake(38, Height_StatusBar+325, self.view.width-38*2, 48);
+        UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:button.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x0087FC]]];
+        UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:button.bounds andColors:@[[UIColor colorWithHex:0x0087FC],[UIColor colorWithHex:0x0087FC]]];
+        [button setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:6 size:button.viewSize] forState:UIControlStateNormal];
+        [button setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:6 size:button.viewSize] forState:UIControlStateHighlighted];
         [button setTitle:@"下一步" forState:UIControlStateNormal];
         [button.titleLabel setFont:[UIFont systemFontOfSize:18]];
         [button addTarget:self action:@selector(doneButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -144,13 +146,15 @@
         textfiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     textfiled.textColor = [UIColor colorWithHex:0x333333];
-    textfiled.font = [UIFont systemFontOfSize:16];
+    textfiled.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
     
-    textfiled.layer.cornerRadius = 22;
-    textfiled.layer.shadowColor = [UIColor colorWithRed:235/255.0 green:243/255.0 blue:255/255.0 alpha:1.0].CGColor;
-    textfiled.layer.shadowOffset = CGSizeMake(0,3);
-    textfiled.layer.shadowRadius = 6;
-    textfiled.layer.shadowOpacity = 1;
+    textfiled.layer.cornerRadius = 6;
+    textfiled.layer.borderWidth = 1;
+    textfiled.layer.borderColor = [UIColor colorWithHex:0xE6EBF1].CGColor;
+//    textfiled.layer.shadowColor = [UIColor colorWithRed:235/255.0 green:243/255.0 blue:255/255.0 alpha:1.0].CGColor;
+//    textfiled.layer.shadowOffset = CGSizeMake(0,3);
+//    textfiled.layer.shadowRadius = 6;
+//    textfiled.layer.shadowOpacity = 1;
     
     return textfiled;
 }

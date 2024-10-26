@@ -74,7 +74,7 @@
         UIButton *agreeButton = [UIButton buttonWithType:UIButtonTypeCustom];
         agreeButton.viewSize = CGSizeMake(140, 50);
         agreeButton.center = bottomView.middlePoint;
-        UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:agreeButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x3B8AFF]]];
+        UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:agreeButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x0087FC]]];
         UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:agreeButton.bounds andColors:@[[UIColor colorWithHex:0xA3C6F9],[UIColor colorWithHex:0x84B5FF]]];
         [agreeButton setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:25 size:agreeButton.viewSize] forState:UIControlStateNormal];
         [agreeButton setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:25 size:agreeButton.viewSize] forState:UIControlStateHighlighted];
@@ -100,7 +100,7 @@
         agreeButton.viewSize = CGSizeMake(140, 50);
         agreeButton.left = ignoreButton.right + (bottomView.width-280)/3.f;
         agreeButton.centerY = bottomView.middleY;
-        UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:agreeButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x3B8AFF]]];
+        UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:agreeButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x0087FC]]];
         UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:agreeButton.bounds andColors:@[[UIColor colorWithHex:0xA3C6F9],[UIColor colorWithHex:0x84B5FF]]];
         [agreeButton setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:25 size:agreeButton.viewSize] forState:UIControlStateNormal];
         [agreeButton setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:25 size:agreeButton.viewSize] forState:UIControlStateHighlighted];

@@ -236,7 +236,7 @@
     chatButton.bottom = self.friendContentView.height - 86;
     chatButton.centerX = self.friendContentView.middleX;
     chatButton.acceptEventInterval = 0.5;
-    [chatButton setBackgroundColor:[UIColor colorWithHex:0x3B8AFF]];
+    [chatButton setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
     chatButton.layer.cornerRadius = FlexWidth(50)*0.5;
     chatButton.layer.masksToBounds = YES;
     [chatButton setTitle:@"聊天" forState:UIControlStateNormal];
@@ -271,7 +271,7 @@
     chatButton.bottom = self.ownContentView.height - 86;
     chatButton.centerX = self.ownContentView.middleX;
     chatButton.acceptEventInterval = 0.5;
-    [chatButton setBackgroundColor:[UIColor colorWithHex:0x3B8AFF]];
+    [chatButton setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
     chatButton.layer.cornerRadius = FlexWidth(50)*0.5;
     chatButton.layer.masksToBounds = YES;
     [chatButton setTitle:@"聊天" forState:UIControlStateNormal];

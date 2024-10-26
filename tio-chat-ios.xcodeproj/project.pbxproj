@@ -127,7 +127,6 @@
 		17523F732402D8AD00AB9606 /* UIImage+T_gzip.m in Sources */ = {isa = PBXBuildFile; fileRef = 17523F722402D8AD00AB9606 /* UIImage+T_gzip.m */; };
 		17523F7A2402F48800AB9606 /* TIOEmotionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 17523F792402F48800AB9606 /* TIOEmotionParser.m */; };
 		17523F7D2402FBB100AB9606 /* TIOEmotionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 17523F7C2402FBB100AB9606 /* TIOEmotionResult.m */; };
-		17523F802403A56600AB9606 /* TMineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17523F7F2403A56600AB9606 /* TMineInfoViewController.m */; };
 		17523F832403A63600AB9606 /* TInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17523F822403A63600AB9606 /* TInfoCell.m */; };
 		17523F862403C69F00AB9606 /* TMineSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17523F852403C69F00AB9606 /* TMineSettingViewController.m */; };
 		17523F892403C91200AB9606 /* TSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17523F882403C91200AB9606 /* TSettingCell.m */; };
@@ -556,6 +555,9 @@
 		17F65EF625F1E1DC00990EE8 /* NWPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F65EF525F1E1DC00990EE8 /* NWPay.m */; };
 		17FAE87A2477CD48004A606E /* ARDSDPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FAE8782477CD48004A606E /* ARDSDPUtils.m */; };
 		17FF5611247CF59C00CDECBE /* TIOVideoChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF5610247CF59C00CDECBE /* TIOVideoChatManager.m */; };
+		804995AD2CCC0D840096F7C0 /* MineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804995AC2CCC0D840096F7C0 /* MineInfoViewController.m */; };
+		804995B32CCC91290096F7C0 /* GFUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 804995B12CCC91290096F7C0 /* GFUserInfoVC.m */; };
+		804995B42CCC91290096F7C0 /* GFUserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804995B22CCC91290096F7C0 /* GFUserInfoVC.xib */; };
 		805964AE2CC2994C00470AEE /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 805964AC2CC296B600470AEE /* libiconv.2.tbd */; };
 		805964AF2CC2995500470AEE /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 805964AD2CC296BD00470AEE /* libiconv.tbd */; };
 		80C689322CC7C481001EA80B /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C689302CC7C481001EA80B /* MineVC.m */; };
@@ -811,8 +813,6 @@
 		17523F792402F48800AB9606 /* TIOEmotionParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIOEmotionParser.m; sourceTree = "<group>"; };
 		17523F7B2402FBB100AB9606 /* TIOEmotionResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIOEmotionResult.h; sourceTree = "<group>"; };
 		17523F7C2402FBB100AB9606 /* TIOEmotionResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIOEmotionResult.m; sourceTree = "<group>"; };
-		17523F7E2403A56600AB9606 /* TMineInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMineInfoViewController.h; sourceTree = "<group>"; };
-		17523F7F2403A56600AB9606 /* TMineInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMineInfoViewController.m; sourceTree = "<group>"; };
 		17523F812403A63600AB9606 /* TInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TInfoCell.h; sourceTree = "<group>"; };
 		17523F822403A63600AB9606 /* TInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TInfoCell.m; sourceTree = "<group>"; };
 		17523F842403C69F00AB9606 /* TMineSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMineSettingViewController.h; sourceTree = "<group>"; };
@@ -1687,6 +1687,11 @@
 		17FF560F247CF59C00CDECBE /* TIOVideoChatManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIOVideoChatManager.h; sourceTree = "<group>"; };
 		17FF5610247CF59C00CDECBE /* TIOVideoChatManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIOVideoChatManager.m; sourceTree = "<group>"; };
 		6127C8EC21B2F08D4B564DE3 /* Pods-tio-chat-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tio-chat-ios.debug.xcconfig"; path = "Target Support Files/Pods-tio-chat-ios/Pods-tio-chat-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		804995AB2CCC0D840096F7C0 /* MineInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineInfoViewController.h; sourceTree = "<group>"; };
+		804995AC2CCC0D840096F7C0 /* MineInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineInfoViewController.m; sourceTree = "<group>"; };
+		804995B02CCC91290096F7C0 /* GFUserInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFUserInfoVC.h; sourceTree = "<group>"; };
+		804995B12CCC91290096F7C0 /* GFUserInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFUserInfoVC.m; sourceTree = "<group>"; };
+		804995B22CCC91290096F7C0 /* GFUserInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFUserInfoVC.xib; sourceTree = "<group>"; };
 		805964AC2CC296B600470AEE /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
 		805964AD2CC296BD00470AEE /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		80C6892F2CC7C481001EA80B /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
@@ -2237,8 +2242,6 @@
 				80C6892C2CC7C453001EA80B /* Controller */,
 				17B9661E23BD9A7D00901BC0 /* TMineViewController.h */,
 				17B9661F23BD9A7D00901BC0 /* TMineViewController.m */,
-				17523F7E2403A56600AB9606 /* TMineInfoViewController.h */,
-				17523F7F2403A56600AB9606 /* TMineInfoViewController.m */,
 				17523F812403A63600AB9606 /* TInfoCell.h */,
 				17523F822403A63600AB9606 /* TInfoCell.m */,
 				17523F842403C69F00AB9606 /* TMineSettingViewController.h */,
@@ -2266,6 +2269,8 @@
 		17637B1423BAE62A00935342 /* Friends（好友） */ = {
 			isa = PBXGroup;
 			children = (
+				804995AF2CCC90C00096F7C0 /* Controller */,
+				804995AE2CCC90B40096F7C0 /* Model */,
 				176B2F0C23CD6EA000540CE8 /* Target */,
 				176B2EEB23C7188100540CE8 /* View */,
 				17B9661823BD9A4F00901BC0 /* TFriendListViewController.h */,
@@ -3967,6 +3972,23 @@
 			path = Pay;
 			sourceTree = "<group>";
 		};
+		804995AE2CCC90B40096F7C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		804995AF2CCC90C00096F7C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				804995B02CCC91290096F7C0 /* GFUserInfoVC.h */,
+				804995B12CCC91290096F7C0 /* GFUserInfoVC.m */,
+				804995B22CCC91290096F7C0 /* GFUserInfoVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		80C6892C2CC7C453001EA80B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -3976,6 +3998,8 @@
 				80C6AC292CC7DE7C00EF3EDB /* InvitationCodeVC.h */,
 				80C6AC2A2CC7DE7C00EF3EDB /* InvitationCodeVC.m */,
 				80C6AC2B2CC7DE7C00EF3EDB /* InvitationCodeVC.xib */,
+				804995AB2CCC0D840096F7C0 /* MineInfoViewController.h */,
+				804995AC2CCC0D840096F7C0 /* MineInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4050,8 +4074,9 @@
 		1787691C23A8B7F900DBCAED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GF;
 				LastUpgradeCheck = 1230;
-				ORGANIZATIONNAME = "刘宇";
+				ORGANIZATIONNAME = wgf;
 				TargetAttributes = {
 					1787692323A8B7F900DBCAED = {
 						CreatedOnToolsVersion = 11.3;
@@ -4095,6 +4120,7 @@
 				17D4ECE224D958BB007153ED /* voice.gif in Resources */,
 				17D25F6A24DD4B6000F1028F /* Voice_input_03.gif in Resources */,
 				1787693723A8B7FA00DBCAED /* LaunchScreen.storyboard in Resources */,
+				804995B42CCC91290096F7C0 /* GFUserInfoVC.xib in Resources */,
 				1733CE8125EE1D0D00EDD4FD /* payment_close@2x.png in Resources */,
 				179F316B2577378800E3D6EA /* IQKeyboardManager.bundle in Resources */,
 				1787693423A8B7FA00DBCAED /* Assets.xcassets in Resources */,
@@ -4223,6 +4249,7 @@
 				17009E8A2472806F00BC4669 /* TCallViewController.m in Sources */,
 				17CF4A59258073140006C216 /* LYGroupNode.m in Sources */,
 				17ED09C22456D8FA008C9C5D /* TIOSession.m in Sources */,
+				804995AD2CCC0D840096F7C0 /* MineInfoViewController.m in Sources */,
 				1795510B256FC7030061B953 /* WalletRedPackageDetailsVC.m in Sources */,
 				179F316C2577378800E3D6EA /* IQKeyboardManager.m in Sources */,
 				176B2F0023C85DAB00540CE8 /* SCIndexView.m in Sources */,
@@ -4371,7 +4398,6 @@
 				17ED099D2456D8FA008C9C5D /* TIONetworkNotificationCenter.m in Sources */,
 				17ED09A12456D8FA008C9C5D /* UIImage+tio.m in Sources */,
 				1733CE7F25EE1D0D00EDD4FD /* ViewFrame.m in Sources */,
-				17523F802403A56600AB9606 /* TMineInfoViewController.m in Sources */,
 				1795510E256FC7030061B953 /* WalletWaterListPage.m in Sources */,
 				170B0BD9240CDA16006F2F4D /* TInviteUserCell.m in Sources */,
 				17583FE2259DC0BC00B9F05B /* ThirdShare.m in Sources */,
@@ -4419,6 +4445,7 @@
 				170347CE25E65770007A4065 /* IMKitSuperLinkContentConfig.m in Sources */,
 				171BCCE423B5DD940064BE7B /* IMKitLeftBarView.m in Sources */,
 				176B2F0123C85DAB00540CE8 /* UITableView+SCIndexView.m in Sources */,
+				804995B32CCC91290096F7C0 /* GFUserInfoVC.m in Sources */,
 				1772B07C23FD3F0200C370A4 /* TModifyRemarkViewController.m in Sources */,
 				17955109256FC7030061B953 /* WalletRechargeViewController.m in Sources */,
 				17A9993A25A484F800B1E206 /* TNoTalkingListViewController.m in Sources */,

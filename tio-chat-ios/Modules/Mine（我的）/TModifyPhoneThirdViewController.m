@@ -52,11 +52,11 @@
     [self.view addSubview:lable2];
     
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginButton.frame = CGRectMake(38, lable2.bottom+40, self.view.width-38*2, 50);
-    UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x3B8AFF]]];
-    UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0xA3C6F9],[UIColor colorWithHex:0x84B5FF]]];
-    [loginButton setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:25 size:loginButton.viewSize] forState:UIControlStateNormal];
-    [loginButton setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:25 size:loginButton.viewSize] forState:UIControlStateHighlighted];
+    loginButton.frame = CGRectMake(38, lable2.bottom+40, self.view.width-38*2, 48);
+    UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x0087FC]]];
+    UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x0087FC],[UIColor colorWithHex:0x0087FC]]];
+    [loginButton setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:6 size:loginButton.viewSize] forState:UIControlStateNormal];
+    [loginButton setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:6 size:loginButton.viewSize] forState:UIControlStateHighlighted];
     [loginButton setTitle:@"返回登录" forState:UIControlStateNormal];
     [loginButton.titleLabel setFont:[UIFont systemFontOfSize:18]];
     [loginButton addTarget:self action:@selector(confirm:) forControlEvents:UIControlEventTouchUpInside];

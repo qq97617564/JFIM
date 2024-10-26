@@ -8,7 +8,7 @@
 
 #import "MineVC.h"
 #import "FrameAccessor.h"
-#import "TMineInfoViewController.h"
+#import "MineInfoViewController.h"
 #import "TMineSettingViewController.h"
 #import "TAccountViewController.h"
 #import "UIImageView+Web.h"
@@ -29,6 +29,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *accountL;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *infoTap;
 @property (weak, nonatomic) IBOutlet UIView *listView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *flag;
+
 
 //@property (nonatomic, strong) UIImageView *avatariew;
 //@property (nonatomic, strong) UILabel *nickLabel;
@@ -104,13 +107,16 @@
     self.nameL.text = [TIOChat.shareSDK.loginManager userInfo].nick;
     
     self.accountL.text = [NSString stringWithFormat:@"用户名：%@",[TIOChat.shareSDK.loginManager userInfo].loginname];
+    if ([TIOChat.shareSDK.loginManager userInfo].xx == 3 || [TIOChat.shareSDK.loginManager userInfo].officialflag == 1){
+        self.flag.hidden = false;
+    }
 }
 
 #pragma mark - actions
 
 - (void)editInfor
 {
-    [self.navigationController pushViewController:[TMineInfoViewController.alloc init] animated:YES];
+    [self.navigationController pushViewController:[MineInfoViewController.alloc init] animated:YES];
 }
 
 - (void)toWallet

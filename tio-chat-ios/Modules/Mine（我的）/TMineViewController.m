@@ -8,7 +8,7 @@
 
 #import "TMineViewController.h"
 #import "FrameAccessor.h"
-#import "TMineInfoViewController.h"
+#import "MineInfoViewController.h"
 #import "TMineSettingViewController.h"
 #import "TAccountViewController.h"
 #import "UIImageView+Web.h"
@@ -139,7 +139,7 @@
 
 - (void)editInfor
 {
-    [self.navigationController pushViewController:[TMineInfoViewController.alloc init] animated:YES];
+    [self.navigationController pushViewController:[MineInfoViewController.alloc init] animated:YES];
 }
 
 - (void)toWallet

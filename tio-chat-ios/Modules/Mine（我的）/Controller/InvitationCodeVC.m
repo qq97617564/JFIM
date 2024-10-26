@@ -8,7 +8,7 @@
 
 #import "InvitationCodeVC.h"
 #import "FrameAccessor.h"
-#import "TMineInfoViewController.h"
+#import "MineInfoViewController.h"
 #import "TMineSettingViewController.h"
 #import "TAccountViewController.h"
 #import "UIImageView+Web.h"

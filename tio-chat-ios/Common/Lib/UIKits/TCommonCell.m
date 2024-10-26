@@ -20,11 +20,11 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        self.textLabel.textColor = [UIColor colorWithHex:0x111111];
-        self.textLabel.font = [UIFont systemFontOfSize:16];
-        
+
+        self.textLabel.textColor = [UIColor colorWithHex:0x333333];
+        self.textLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
         self.detailTextLabel.textColor = [UIColor colorWithHex:0x9C9C9C];
-        self.detailTextLabel.font = [UIFont systemFontOfSize:14];
+        self.detailTextLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
         
         UIImageView *indiractor = [UIImageView.alloc initWithFrame:CGRectZero];
         indiractor.image = [UIImage imageNamed:@"inner"];

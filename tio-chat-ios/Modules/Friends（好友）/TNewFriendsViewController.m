@@ -9,7 +9,7 @@
 #import "TNewFriendsViewController.h"
 #import "TNewFriendCell.h"
 #import "TInputAlertController.h"
-#import "TUserHomePageViewController.h"
+#import "GFUserInfoVC.h"
 /// common
 #import "MBProgressHUD+NJ.h"
 /// sdk
@@ -108,9 +108,9 @@
     TIOApplyUser *user = self.dataArray[indexPath.row];
     
     if (user.status == 1) {
-        [self.navigationController pushViewController:[TUserHomePageViewController.alloc initWithUser:user type:TUserInfoVCTypeFriend] animated:YES];
+        [self.navigationController pushViewController:[GFUserInfoVC.alloc initWithUser:user type:TUserInfoVCTypeFriend] animated:YES];
     } else {
-        [self.navigationController pushViewController:[TUserHomePageViewController.alloc initWithUser:user type:TUserInfoVCTypeVerfiy] animated:YES];
+        [self.navigationController pushViewController:[GFUserInfoVC.alloc initWithUser:user type:TUserInfoVCTypeVerfiy] animated:YES];
     }
 }
 

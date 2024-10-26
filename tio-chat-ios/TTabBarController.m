@@ -142,7 +142,7 @@
         Class className = NSClassFromString(@"TFriendListViewController");
         UIViewController *viewController = [[className alloc] init];
         UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:viewController];
-        navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"好友" image:[[UIImage imageNamed:@"Friend"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
+        navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"通讯录" image:[[UIImage imageNamed:@"Friend"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
         selectedImage:[[UIImage imageNamed:@"FriendSelected"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
         navigationController;
     })];
@@ -151,7 +151,7 @@
         Class className = NSClassFromString(@"TTeamListViewController");
         UIViewController *viewController = [[className alloc] init];
         UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:viewController];
-        navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"群聊" image:[[UIImage imageNamed:@"Group"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
+        navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"发现" image:[[UIImage imageNamed:@"Group"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
         selectedImage:[[UIImage imageNamed:@"GroupSelected"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
         navigationController;
     })];

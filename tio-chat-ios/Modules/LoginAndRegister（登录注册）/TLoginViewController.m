@@ -73,14 +73,14 @@
     [self.view addSubview:bg1];
     
     UIImageView *logo = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 50, 50)];
-    logo.image = [UIImage imageNamed:@"logo"];
+    logo.image = [UIImage imageNamed:@"Group 1321315510"];
     logo.centerX = self.view.middleX;
     logo.top = Height_StatusBar + 45;
     [self.view addSubview:logo];
     
     [self.view addSubview:({
         UILabel *label = [UILabel.alloc init];
-        label.text = @"谭聊";
+        label.text = @"季风";
         label.textColor = [UIColor colorWithHex:0x666666];
         label.font = [UIFont systemFontOfSize:22 weight:UIFontWeightBold];
         [label sizeToFit];
@@ -135,28 +135,28 @@
         UITextField *textfiled = [self textFiled:@"请输入登录密码" left:40 right:56];
         textfiled.top = accountTF.bottom + 16;
         textfiled.delegate = self;
-        textfiled.secureTextEntry = YES;
-        textfiled.leftView = ({
-            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
-            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_pwd"]];
-            [left sizeToFit];
-            left.centerY = view.middleY;
-            left.right = view.width - 2;
-            [view addSubview:left];
-            view;
-        });
-        [textfiled.rightView addSubview:({
-            UIButton *eyeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            eyeButton.frame = textfiled.rightView.bounds;
-            [eyeButton setImage:[UIImage imageNamed:@"showPassword"] forState:UIControlStateNormal];
-            [eyeButton setImage:[UIImage imageNamed:@"hidePassword"] forState:UIControlStateSelected];
-            [eyeButton addTarget:self action:@selector(eyeDidClicked:) forControlEvents:UIControlEventTouchUpInside];
-            eyeButton.selected = YES;
-            
-            eyeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-            
-            eyeButton;
-        })];
+//        textfiled.secureTextEntry = YES;
+//        textfiled.leftView = ({
+//            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
+//            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_pwd"]];
+//            [left sizeToFit];
+//            left.centerY = view.middleY;
+//            left.right = view.width - 2;
+//            [view addSubview:left];
+//            view;
+//        });
+//        [textfiled.rightView addSubview:({
+//            UIButton *eyeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//            eyeButton.frame = textfiled.rightView.bounds;
+//            [eyeButton setImage:[UIImage imageNamed:@"showPassword"] forState:UIControlStateNormal];
+//            [eyeButton setImage:[UIImage imageNamed:@"hidePassword"] forState:UIControlStateSelected];
+//            [eyeButton addTarget:self action:@selector(eyeDidClicked:) forControlEvents:UIControlEventTouchUpInside];
+//            eyeButton.selected = YES;
+//            
+//            eyeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//            
+//            eyeButton;
+//        })];
         
         textfiled;
     });
@@ -165,11 +165,11 @@
 
     
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginButton.frame = CGRectMake(38, passwordTF.bottom+50, self.view.width-38*2, 50);
-    UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x3B8AFF]]];
-    UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0xA3C6F9],[UIColor colorWithHex:0x84B5FF]]];
-    [loginButton setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:25 size:loginButton.viewSize] forState:UIControlStateNormal];
-    [loginButton setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:25 size:loginButton.viewSize] forState:UIControlStateHighlighted];
+    loginButton.frame = CGRectMake(38, passwordTF.bottom+50, self.view.width-38*2, 48);
+    UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x0087FC]]];
+    UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x0087FC],[UIColor colorWithHex:0x0087FC]]];
+    [loginButton setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:6 size:loginButton.viewSize] forState:UIControlStateNormal];
+    [loginButton setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:6 size:loginButton.viewSize] forState:UIControlStateHighlighted];
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     [loginButton.titleLabel setFont:[UIFont systemFontOfSize:18]];
     [loginButton addTarget:self action:@selector(loginClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -254,7 +254,7 @@
 
 - (UITextField *)textFiled:(NSString *)placeholder left:(CGFloat)left right:(CGFloat)right
 {
-    UITextField *textfiled = [UITextField.alloc initWithFrame:CGRectMake(LoginFieldLeftPadding, 0, LoginFieldWidth, LoginFieldHeight)];
+    UITextField *textfiled = [UITextField.alloc initWithFrame:CGRectMake(38, 0, self.view.width-38*2, 44)];
     textfiled.backgroundColor = UIColor.whiteColor;
     textfiled.placeholder = placeholder;
     if (left > 0) {
@@ -262,20 +262,18 @@
         textfiled.leftViewMode = UITextFieldViewModeAlways;
     }
     if (right > 0) {
-        textfiled.rightView = [UIView.alloc initWithFrame:CGRectMake(0, 0, left, textfiled.height)];
+        textfiled.rightView = [UIView.alloc initWithFrame:CGRectMake(0, 0, right, textfiled.height)];
         textfiled.rightViewMode = UITextFieldViewModeAlways;
     } else {
         textfiled.rightViewMode = UITextFieldViewModeWhileEditing;
         textfiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     textfiled.textColor = [UIColor colorWithHex:0x333333];
-    textfiled.font = [UIFont systemFontOfSize:16];
+    textfiled.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
     
-    textfiled.layer.cornerRadius = 22;
-    textfiled.layer.shadowColor = [UIColor colorWithRed:235/255.0 green:243/255.0 blue:255/255.0 alpha:1.0].CGColor;
-    textfiled.layer.shadowOffset = CGSizeMake(0,3);
-    textfiled.layer.shadowRadius = 6;
-    textfiled.layer.shadowOpacity = 1;
+    textfiled.layer.cornerRadius = 6;
+    textfiled.layer.borderWidth = 1;
+    textfiled.layer.borderColor = [UIColor colorWithHex:0xE6EBF1].CGColor;
     
     return textfiled;
 }

@@ -9,7 +9,7 @@
 #import "TFriendListViewController.h"
 #import "TFriendCell.h"
 #import "TNewFriendsViewController.h"
-#import "TUserHomePageViewController.h"
+#import "GFUserInfoVC.h"
 #import "TShareFriendCardListViewController.h"
 
 #import "TAddPopupView.h"
@@ -387,7 +387,7 @@
         
         BOOL isSelf = [user.userId isEqualToString:[TIOChat.shareSDK.loginManager userInfo].userId];
         
-        TUserHomePageViewController *vc = [TUserHomePageViewController.alloc initWithUser:user type:isSelf?TUserInfoVCTypeSelf:TUserInfoVCTypeFriend];
+        GFUserInfoVC *vc = [GFUserInfoVC.alloc initWithUser:user type:isSelf?TUserInfoVCTypeSelf:TUserInfoVCTypeFriend];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

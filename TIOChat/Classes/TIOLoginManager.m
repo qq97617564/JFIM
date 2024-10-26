@@ -427,6 +427,19 @@
         handler(0, error);
     }];
 }
+-(void)updateShowAreaHandler:(nonnull void (^)(NSInteger, NSError * _Nullable))handler{
+    [TIOHTTPSManager tio_POST:@"/user/updateShowArea" parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSInteger re = [responseObject[@"data"] integerValue];
+        // 更新用户信息
+        [self updateUserInfo:^(TIOLoginUser * _Nullable user, NSError * _Nullable error) {
+            
+        }];
+        handler(re, nil);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        handler(0, error);
+    }];
+}
 
 - (void)fetchSMSWithType:(NSInteger)type mobile:(NSString *)mobile token:(NSString *)token handler:(TIOLoginHandler)handler
 {

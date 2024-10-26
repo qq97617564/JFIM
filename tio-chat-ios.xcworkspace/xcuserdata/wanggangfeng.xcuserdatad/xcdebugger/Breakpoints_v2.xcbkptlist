@@ -7,132 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9E8FDF72-56E5-4828-AE26-5927DB508ADE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOLoginManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
-            landmarkName = "-checkMobile:type:handler:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9E8FDF72-56E5-4828-AE26-5927DB508ADE - 55e5bcb0677cd862"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[TIOLoginManager checkMobile:type:handler:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/ios/TIOChat/Classes/TIOLoginManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "424"
-                  endingLineNumber = "424"
-                  offsetFromSymbolStart = "144">
-               </Location>
-               <Location
-                  uuid = "9E8FDF72-56E5-4828-AE26-5927DB508ADE - 55e5bcb0677cd862"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[TIOLoginManager checkMobile:type:handler:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/ios/TIOChat/Classes/TIOLoginManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "424"
-                  endingLineNumber = "424"
-                  offsetFromSymbolStart = "66">
-               </Location>
-               <Location
-                  uuid = "9E8FDF72-56E5-4828-AE26-5927DB508ADE - b766cebb9c3393f6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[TIOLoginManager checkMobile:type:handler:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/TIOChat/Classes/TIOLoginManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "424"
-                  endingLineNumber = "424"
-                  offsetFromSymbolStart = "80">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E40BA664-33CA-4BB0-8213-9A7E7759F935"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOLoginManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "440"
-            endingLineNumber = "440"
-            landmarkName = "-fetchSMSWithType:mobile:token:handler:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E40BA664-33CA-4BB0-8213-9A7E7759F935 - f376c70b05c7689b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__57-[TIOLoginManager fetchSMSWithType:mobile:token:handler:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/ios/TIOChat/Classes/TIOLoginManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "440"
-                  endingLineNumber = "440"
-                  offsetFromSymbolStart = "66">
-               </Location>
-               <Location
-                  uuid = "E40BA664-33CA-4BB0-8213-9A7E7759F935 - f376c70b05c768ba"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__57-[TIOLoginManager fetchSMSWithType:mobile:token:handler:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/ios/TIOChat/Classes/TIOLoginManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "441"
-                  endingLineNumber = "441"
-                  offsetFromSymbolStart = "66">
-               </Location>
-               <Location
-                  uuid = "E40BA664-33CA-4BB0-8213-9A7E7759F935 - 11f5b500fe88240e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__57-[TIOLoginManager fetchSMSWithType:mobile:token:handler:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/TIOChat/Classes/TIOLoginManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "441"
-                  endingLineNumber = "441"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "73B1EA17-B687-4C91-ACB8-77DFE43B25E3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -226,69 +100,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C9011B0-0CE4-490C-A0B0-F2213C460262"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tio-chat-ios/Modules/LoginAndRegister&#xff08;&#x767b;&#x5f55;&#x6ce8;&#x518c;&#xff09;/LoginVC.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
-            landmarkName = "-onLogin:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6C9011B0-0CE4-490C-A0B0-F2213C460262 - fb941064ab228876"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[LoginVC onLogin:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/ios/tio-chat-ios/Modules/LoginAndRegister%EF%BC%88%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%EF%BC%89/LoginVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "398"
-                  endingLineNumber = "398"
-                  offsetFromSymbolStart = "125">
-               </Location>
-               <Location
-                  uuid = "6C9011B0-0CE4-490C-A0B0-F2213C460262 - fb941064ab228817"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[LoginVC onLogin:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/ios/tio-chat-ios/Modules/LoginAndRegister%EF%BC%88%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%EF%BC%89/LoginVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "397"
-                  endingLineNumber = "397"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "6C9011B0-0CE4-490C-A0B0-F2213C460262 - 31219adc1f503456"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[LoginVC onLogin:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/LoginAndRegister%EF%BC%88%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%EF%BC%89/LoginVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "397"
-                  endingLineNumber = "397"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "24D76C0D-85C8-4CE0-BE71-F38536D671F5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -299,6 +110,22 @@
             startingLineNumber = "186"
             endingLineNumber = "186"
             landmarkName = "-onKick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8CC21C4B-39A6-4288-A08D-E5B03C65B427"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/Controller/GFUserInfoVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "711"
+            endingLineNumber = "711"
+            landmarkName = "-viewWithFrame:title:subTitle:hasIndiractor:selector:subLabel:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

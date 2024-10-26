@@ -13,6 +13,7 @@
 @interface TInfoCell ()
 @property (nonatomic, weak) UIImageView *indiractor;
 @property (nonatomic, strong) UIImageView *avatarView;
+
 @end
 
 @implementation TInfoCell
@@ -30,6 +31,8 @@
         
         self.avatarView = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 60, 60)];
         self.avatarView.hidden = YES;
+        self.avatarView.layer.cornerRadius = 6;
+        self.avatarView.layer.masksToBounds = true;
         [self.contentView addSubview:self.avatarView];
         
         UIImageView *indiractor = [UIImageView.alloc initWithFrame:CGRectZero];
@@ -40,7 +43,17 @@
     
     return self;
 }
-
+-(UISwitch *)switchBtn{
+    if (!_switchBtn) {
+        _switchBtn = [[UISwitch alloc]initWithFrame:CGRectMake(0, 0, 48, 30)];
+        _switchBtn.onTintColor = [UIColor colorWithHexString:@"#0087FC"];
+        _switchBtn.thumbTintColor = [UIColor colorWithHexString:@"#FFFFFF"];
+        _switchBtn.tintColor = [UIColor colorWithHexString:@"#E8EBF0"];
+        _switchBtn.hidden = true;
+        [self.contentView addSubview:_switchBtn];
+    }
+    return _switchBtn;
+}
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -73,6 +86,20 @@
         
         self.avatarView.right = self.contentView.width - 16;
         self.avatarView.centerY = self.contentView.middleY;
+    }
+    if (self.isSwitch) {
+        self.switchBtn.hidden = NO;
+
+        self.switchBtn.right = self.contentView.width - 16;
+        self.switchBtn.centerY = self.contentView.middleY;
+        
+        self.detailTextLabel.right = self.switchBtn.left-5;
+        self.detailTextLabel.centerY = self.contentView.middleY;
+        
+        self.avatarView.right = self.switchBtn.left - 6;
+        self.avatarView.centerY = self.contentView.middleY;
+    } else {
+        self.switchBtn.hidden = true;
     }
 }
 

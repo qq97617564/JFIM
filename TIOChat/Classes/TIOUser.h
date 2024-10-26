@@ -38,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 最新的登录时间
 @property (copy, nonatomic) NSString *updatetime;
 
+/// 是否显示地区：1：是；2：否
+@property (assign, nonatomic) NSInteger areaviewflag;
+//官方
+@property (assign, nonatomic) NSInteger xx;
+@property (assign, nonatomic) NSInteger officialflag;
 /// 等级
 @property (assign, nonatomic) NSInteger level;
 

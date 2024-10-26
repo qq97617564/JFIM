@@ -53,7 +53,7 @@
         [self addSubview:line];
         
         UILabel *remarkLabel = [UILabel.alloc initWithFrame:CGRectZero];
-        remarkLabel.text = @"谭聊红包";
+        remarkLabel.text = @"季风红包";
         remarkLabel.font = [UIFont systemFontOfSize:10];
         remarkLabel.textColor = [UIColor colorWithHex:0xFED4A3];
         [remarkLabel sizeToFit];

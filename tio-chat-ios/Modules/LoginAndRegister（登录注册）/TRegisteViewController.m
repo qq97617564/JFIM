@@ -166,25 +166,25 @@
         textfiled.top = Height_StatusBar + 299;
         textfiled.delegate = self;
         textfiled.secureTextEntry = YES;
-        textfiled.leftView = ({
-            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
-            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_pwd"]];
-            [left sizeToFit];
-            left.centerY = view.middleY;
-            left.right = view.width - 2;
-            [view addSubview:left];
-            view;
-        });
-        [textfiled.rightView addSubview:({
-            UIButton *eyeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            eyeButton.frame = textfiled.rightView.bounds;
-            [eyeButton setImage:[UIImage imageNamed:@"showPassword"] forState:UIControlStateNormal];
-            [eyeButton setImage:[UIImage imageNamed:@"hidePassword"] forState:UIControlStateSelected];
-            [eyeButton addTarget:self action:@selector(eyeDidClicked:) forControlEvents:UIControlEventTouchUpInside];
-            eyeButton.selected = YES;
-            
-            eyeButton;
-        })];
+//        textfiled.leftView = ({
+//            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
+//            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_pwd"]];
+//            [left sizeToFit];
+//            left.centerY = view.middleY;
+//            left.right = view.width - 2;
+//            [view addSubview:left];
+//            view;
+//        });
+//        [textfiled.rightView addSubview:({
+//            UIButton *eyeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//            eyeButton.frame = textfiled.rightView.bounds;
+//            [eyeButton setImage:[UIImage imageNamed:@"showPassword"] forState:UIControlStateNormal];
+//            [eyeButton setImage:[UIImage imageNamed:@"hidePassword"] forState:UIControlStateSelected];
+//            [eyeButton addTarget:self action:@selector(eyeDidClicked:) forControlEvents:UIControlEventTouchUpInside];
+//            eyeButton.selected = YES;
+//            
+//            eyeButton;
+//        })];
         
         textfiled;
     });
@@ -210,7 +210,7 @@
     [self.view addSubview:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(38, Height_StatusBar+427, self.view.width-38*2, 50);
-        UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:button.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x3B8AFF]]];
+        UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:button.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x0087FC]]];
         UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:button.bounds andColors:@[[UIColor colorWithHex:0xA3C6F9],[UIColor colorWithHex:0x84B5FF]]];
         [button setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:25 size:button.viewSize] forState:UIControlStateNormal];
         [button setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:25 size:button.viewSize] forState:UIControlStateHighlighted];
@@ -448,13 +448,11 @@
         textfiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     textfiled.textColor = [UIColor colorWithHex:0x333333];
-    textfiled.font = [UIFont systemFontOfSize:16];
+    textfiled.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
     
-    textfiled.layer.cornerRadius = 22;
-    textfiled.layer.shadowColor = [UIColor colorWithRed:235/255.0 green:243/255.0 blue:255/255.0 alpha:1.0].CGColor;
-    textfiled.layer.shadowOffset = CGSizeMake(0,3);
-    textfiled.layer.shadowRadius = 6;
-    textfiled.layer.shadowOpacity = 1;
+    textfiled.layer.cornerRadius = 6;
+    textfiled.layer.borderWidth = 1;
+    textfiled.layer.borderColor = [UIColor colorWithHex:0xE6EBF1].CGColor;
     
     return textfiled;
 }

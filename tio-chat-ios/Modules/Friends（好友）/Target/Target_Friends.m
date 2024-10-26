@@ -7,14 +7,14 @@
 //
 
 #import "Target_Friends.h"
-#import "TUserHomePageViewController.h"
+#import "GFUserInfoVC.h"
 #import "TP2PSessionSettingViewController.h"
 
 @implementation Target_Friends
 
 - (UIViewController *)Action_UserHomePageViewController:(NSDictionary *)params
 {
-    TUserHomePageViewController *viewController = [TUserHomePageViewController.alloc initWithUser:params[@"user"] type:[params[@"type"] integerValue]];
+    GFUserInfoVC *viewController = [GFUserInfoVC.alloc initWithUser:params[@"user"] type:[params[@"type"] integerValue]];
     
     if (params[@"chatBlock"]) {
         viewController.chatClicked = params[@"chatBlock"];

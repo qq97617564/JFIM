@@ -7,7 +7,7 @@
 //
 
 #import "TP2PSessionSettingViewController.h"
-#import "TUserHomePageViewController.h"
+#import "GFUserInfoVC.h"
 
 #import "TSettingCell.h"
 #import "TCommonCell.h"
@@ -34,7 +34,8 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"聊天信息";
+        self.leftBarButtonText = @"";
+        self.title = @"聊天信息";
     }
     return self;
 }
@@ -101,11 +102,11 @@
     self.cells = @[@[self.avatarCell]
                    ,@[self.msgNotificell, self.msgTopCell, self.clearCell],@[self.tipoffCell]];
     
-    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStylePlain];
+    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStyleGrouped];
     tableView.backgroundColor = [UIColor colorWithHex:0xF8F8F8];
     tableView.delegate = self;
     tableView.dataSource = self;
-    tableView.separatorInset = UIEdgeInsetsMake(0, 17, 0, 0);
+    tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     tableView.separatorColor = [UIColor colorWithHex:0xF5F5F5];
     tableView.tableFooterView = [UIView.alloc initWithFrame:CGRectZero];
     [self.view addSubview:tableView];
@@ -129,7 +130,7 @@
             UILabel *label = [UILabel.alloc init];
             label.text = users.remarkname.length?users.remarkname:users.nick;
             label.textColor = [UIColor colorWithHex:0x333333];
-            label.font = [UIFont systemFontOfSize:16];
+            label.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
             [label sizeToFit];
             label.left = 87;
             label.centerY = self.avatarCell.contentView.middleY;
@@ -157,6 +158,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
+    
     return self.cells[indexPath.section][indexPath.row];
 }
 
@@ -194,6 +197,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 0.01;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [UIView new];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -249,7 +255,7 @@
         {
             // 预处理Block
             void (^jumpToUserInfoVCBlock)(TIOUser *userInfo, NSInteger type) = ^(TIOUser *userInfo, NSInteger type) {
-                TUserHomePageViewController *vc = [TUserHomePageViewController.alloc initWithUser:userInfo type:type];
+                GFUserInfoVC *vc = [GFUserInfoVC.alloc initWithUser:userInfo type:type];
                 [self.navigationController pushViewController:vc animated:YES];
             };
             

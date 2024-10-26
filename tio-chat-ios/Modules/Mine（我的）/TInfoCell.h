@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TInfoCell : UITableViewCell
 
 @property (nonatomic, assign) BOOL hasIndiractor;
-
+@property (nonatomic, assign) BOOL isSwitch;
+@property (nonatomic, strong) UISwitch *switchBtn;
 - (void)setAvatar:(NSString *)avatar;
 
 @end

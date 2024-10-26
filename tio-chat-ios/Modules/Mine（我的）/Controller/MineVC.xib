@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineVC">
             <connections>
                 <outlet property="accountL" destination="HnK-xm-kvF" id="zNy-RF-SwV"/>
+                <outlet property="flag" destination="6mR-et-IeW" id="cxs-GC-Hej"/>
                 <outlet property="headV" destination="Pwj-0W-Jbx" id="fIn-4J-wPw"/>
                 <outlet property="infoTap" destination="oHn-67-Btu" id="IML-Bp-jPB"/>
                 <outlet property="infoView" destination="jp1-Jf-eSo" id="5dy-R7-bGn"/>
@@ -74,7 +75,7 @@
                                 <outletCollection property="gestureRecognizers" destination="4RJ-6J-a50" appends="YES" id="ded-Sy-N6z"/>
                             </connections>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 1321315481" translatesAutoresizingMaskIntoConstraints="NO" id="6mR-et-IeW">
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 1321315481" translatesAutoresizingMaskIntoConstraints="NO" id="6mR-et-IeW">
                             <rect key="frame" x="103.66666666666667" y="22.666666666666657" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="20" id="2n5-nD-MYs"/>

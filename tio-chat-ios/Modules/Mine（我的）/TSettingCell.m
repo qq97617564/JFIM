@@ -22,18 +22,19 @@
     
     if (self) {
         self.switchControll = [UISwitch.alloc initWithFrame:CGRectMake(0, 0, 1, 1)];
-        self.switchControll.onTintColor = [UIColor colorWithHex:0xC8DEFF];
-        self.switchControll.thumbTintColor = [UIColor colorWithHex:0x4C94FF];
+        self.switchControll.onTintColor = [UIColor colorWithHex:0x0087FC];
+        self.switchControll.tintColor = [UIColor colorWithHex:0xE8EBF0];
+        self.switchControll.thumbTintColor = [UIColor whiteColor];
         [self.switchControll addTarget:self action:@selector(valueChanged:) forControlEvents:(UIControlEventValueChanged)];
         [self.contentView addSubview:self.switchControll];
         
         UILabel *detailLabel = [UILabel.alloc init];
-        detailLabel.font = [UIFont systemFontOfSize:14];
+        detailLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
         detailLabel.textColor = [UIColor colorWithHex:0x9C9C9C];
         [self.contentView addSubview:detailLabel];
         self.detailLabel = detailLabel;
         
-        self.textLabel.font = [UIFont systemFontOfSize:16];
+        self.textLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
         self.textLabel.textColor = [UIColor colorWithHex:0x333333];
     }
     
