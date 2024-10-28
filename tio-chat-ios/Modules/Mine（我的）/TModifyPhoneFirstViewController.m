@@ -30,7 +30,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"修改手机号";
+        self.title = @"修改手机号";
     }
     return self;
 }
@@ -44,8 +44,20 @@
 
 - (void)setupUI
 {
-    [self commonUI];
-    
+//    [self commonUI];
+    UILabel *titleL = [[UILabel alloc] init];
+    titleL.frame = CGRectMake(16,Height_NavBar+35,196,22.5);
+    titleL.numberOfLines = 0;
+    titleL.text = @"验证原手机：";
+    titleL.textColor = [UIColor colorWithHex:0x9199A4];
+    titleL.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
+    [self.view addSubview:titleL];
+
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(15, Height_NavBar+65, ScreenWidth()-30, 260)];
+    backView.backgroundColor = UIColor.whiteColor;
+    backView.layer.cornerRadius = 6;
+    backView.layer.masksToBounds = true;
+    [self.view addSubview:backView];
     NSString *phone = TIOChat.shareSDK.loginManager.userInfo.phone;
     if (phone.length == 11) {
         phone = [phone stringByReplacingCharactersInRange:NSMakeRange(4, 4) withString:@"****"];
@@ -54,38 +66,39 @@
     UILabel *label = [UILabel.alloc init];
     label.numberOfLines = 2;
     label.attributedText = ({
-        NSMutableAttributedString *aString = [NSMutableAttributedString.alloc initWithString:@"更换手机号需要输入当前手机号验证码\n当前手机号为：" attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:0x999999], NSFontAttributeName : [UIFont systemFontOfSize:14]}];
-        [aString appendAttributedString:[NSAttributedString.alloc initWithString:phone attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName : [UIFont systemFontOfSize:14]}]];
+        NSMutableAttributedString *aString = [NSMutableAttributedString.alloc initWithString:@"更换手机号需要输入当前手机号验证码\n当前手机号为：" attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:0x999999], NSFontAttributeName : [UIFont systemFontOfSize:14 weight:UIFontWeightBold]}];
+        [aString appendAttributedString:[NSAttributedString.alloc initWithString:phone attributes:@{NSForegroundColorAttributeName:[UIColor colorWithHex:0x0087FC], NSFontAttributeName : [UIFont systemFontOfSize:14 weight:UIFontWeightBold]}]];
         
         aString;
     });
     [label sizeToFit];
-    label.left = 38;
-    label.top = Height_NavBar + 153;
-    [self.view addSubview:label];
+    label.left = 17;
+    label.top = 16;
+    [backView addSubview:label];
     
     UITextField *codeTF = ({
-        UITextField *textfiled = [self textFiled:@"请输入验证码" left:40 right:104];
-        textfiled.top = Height_NavBar + 213;
+        UITextField *textfiled = [self textFiled:@"请输入验证码" left:15 right:104];
+        textfiled.top = 82;
         textfiled.delegate = self;
+        
         textfiled.keyboardType = UIKeyboardTypeNumberPad;
-        textfiled.leftView = ({
-            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
-            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_code"]];
-            [left sizeToFit];
-            left.centerY = view.middleY;
-            left.right = view.width - 2;
-            [view addSubview:left];
-            view;
-        });
+//        textfiled.leftView = ({
+//            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
+//            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_code"]];
+//            [left sizeToFit];
+//            left.centerY = view.middleY;
+//            left.right = view.width - 2;
+//            [view addSubview:left];
+//            view;
+//        });
         [textfiled.rightView addSubview:({
             // 获取验证码按钮
             UIButton *smsButton = [UIButton buttonWithType:UIButtonTypeCustom];
             smsButton.frame = textfiled.rightView.bounds;
             [smsButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-            [smsButton setTitleColor:[UIColor colorWithHex:0x4C94FF] forState:UIControlStateNormal];
+            [smsButton setTitleColor:[UIColor colorWithHex:0x0087FC] forState:UIControlStateNormal];
             [smsButton setTitleColor:[UIColor colorWithHex:0xBBBBBB] forState:UIControlStateDisabled];
-            smsButton.titleLabel.font = [UIFont systemFontOfSize:14.f];
+            smsButton.titleLabel.font = [UIFont systemFontOfSize:14.f weight:UIFontWeightBold];
             [smsButton addTarget:self action:@selector(SMSButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
             self.smsButton = smsButton;
             
@@ -99,54 +112,54 @@
     
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
     loginButton.frame = CGRectMake(38, codeTF.bottom+50, self.view.width-38*2, 48);
-    UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x0087FC]]];
+    UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x0087FC],[UIColor colorWithHex:0x0087FC]]];
     UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x0087FC],[UIColor colorWithHex:0x0087FC]]];
     [loginButton setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:6 size:loginButton.viewSize] forState:UIControlStateNormal];
     [loginButton setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:6 size:loginButton.viewSize] forState:UIControlStateHighlighted];
     
     [loginButton setTitle:@"提交" forState:UIControlStateNormal];
-    [loginButton.titleLabel setFont:[UIFont systemFontOfSize:18]];
+    [loginButton.titleLabel setFont:[UIFont systemFontOfSize:18 weight:UIFontWeightBold]];
     [loginButton addTarget:self action:@selector(confirm:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginButton];
 }
 
-- (void)commonUI
-{
-    NSArray *icons = @[@"w_progress_1",@"w_progress_2",@"w_progress_2"];
-    NSArray *strings = @[@"验证原手机",@"绑定新手机",@"修改成功"];
-    
-    NSInteger index = 0;
-    CGFloat padding = (self.view.width - icons.count*22) / (icons.count+1);
-    
-    for (int i = 0; i < icons.count; i++) {
-        UIImageView *imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:icons[i]]];
-        imageView.frame = CGRectMake(padding + (padding+22)*i, Height_NavBar+32, 22, 22);
-        [self.view addSubview:imageView];
-        
-        UILabel *label = [UILabel.alloc init];
-        label.text = strings[i];
-        label.textColor = i == index ? [UIColor colorWithHex:0x333333] : [UIColor colorWithHex:0x888888];
-        label.font = [UIFont systemFontOfSize:14];
-        [label sizeToFit];
-        label.centerX = imageView.centerX;
-        label.top  = imageView.bottom + 10;
-        [self.view addSubview:label];
-        
-        if (i < icons.count - 1) {
-            UILabel *line = [UILabel.alloc init];
-            line.width = padding - 8;
-            line.height = 1;
-            line.left = imageView.right + 4;
-            line.centerY = imageView.centerY;
-            line.backgroundColor = [UIColor colorWithHex:0xF1F1F1];
-            [self.view addSubview:line];
-        }
-    }
-}
+//- (void)commonUI
+//{
+//    NSArray *icons = @[@"w_progress_1",@"w_progress_2",@"w_progress_2"];
+//    NSArray *strings = @[@"验证原手机",@"绑定新手机",@"修改成功"];
+//    
+//    NSInteger index = 0;
+//    CGFloat padding = (self.view.width - icons.count*22) / (icons.count+1);
+//    
+//    for (int i = 0; i < icons.count; i++) {
+//        UIImageView *imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:icons[i]]];
+//        imageView.frame = CGRectMake(padding + (padding+22)*i, Height_NavBar+32, 22, 22);
+//        [self.view addSubview:imageView];
+//        
+//        UILabel *label = [UILabel.alloc init];
+//        label.text = strings[i];
+//        label.textColor = i == index ? [UIColor colorWithHex:0x333333] : [UIColor colorWithHex:0x888888];
+//        label.font = [UIFont systemFontOfSize:14];
+//        [label sizeToFit];
+//        label.centerX = imageView.centerX;
+//        label.top  = imageView.bottom + 10;
+//        [self.view addSubview:label];
+//        
+//        if (i < icons.count - 1) {
+//            UILabel *line = [UILabel.alloc init];
+//            line.width = padding - 8;
+//            line.height = 1;
+//            line.left = imageView.right + 4;
+//            line.centerY = imageView.centerY;
+//            line.backgroundColor = [UIColor colorWithHex:0xF1F1F1];
+//            [self.view addSubview:line];
+//        }
+//    }
+//}
 
 - (UITextField *)textFiled:(NSString *)placeholder left:(CGFloat)left right:(CGFloat)right
 {
-    UITextField *textfiled = [UITextField.alloc initWithFrame:CGRectMake(38, 0, self.view.width-38*2, 44)];
+    UITextField *textfiled = [UITextField.alloc initWithFrame:CGRectMake(38, 0, self.view.width-38*2, 48)];
     textfiled.backgroundColor = UIColor.whiteColor;
     textfiled.placeholder = placeholder;
     if (left > 0) {

@@ -38,7 +38,7 @@
     self = [super init];
     if (self) {
         self.teamUser = teamUser;
-        self.leftBarButtonText = @"群成员";
+        self.title = @"群成员";
         self.selectedCache = [NSMutableDictionary dictionary];
     }
     return self;
@@ -174,7 +174,7 @@
 //        UIButton *startBatchButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //        [startBatchButton setTitle:@"批量管理" forState:UIControlStateNormal];
 //        [startBatchButton setTitle:@"取消" forState:UIControlStateSelected];
-//        [startBatchButton setTitleColor:[UIColor colorWithHex:0x4C94E8] forState:UIControlStateNormal];
+//        [startBatchButton setTitleColor:[UIColor colorWithHex:0x0087FC] forState:UIControlStateNormal];
 //        startBatchButton.titleLabel.font = [UIFont systemFontOfSize:16];
 //        [startBatchButton sizeToFit];
 //        startBatchButton.height = 60;
@@ -208,7 +208,7 @@
 {
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+        [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
         [button setTitle:@"确定" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -232,7 +232,7 @@
     }
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+        [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
         [button setTitle:title forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:14];

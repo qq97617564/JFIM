@@ -30,7 +30,7 @@
     self = [super init];
     
     if (self) {
-        self.leftBarButtonText = @"安全设置";
+        self.title = @"安全设置";
     }
     
     return self;

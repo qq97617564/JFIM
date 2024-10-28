@@ -32,7 +32,9 @@ void *IMKitKVOContext;
     self.automaticallyAdjustsScrollViewInsets = NO;
     #pragma clang diagnostic push
 }
-
+-(void)setTitle:(NSString *)title{
+    self.navigationBar.titleL.text = title;
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -150,22 +152,23 @@ void *IMKitKVOContext;
     [self.navigationBar removeObserver:self forKeyPath:@"frame"];
 }
 
-- (UINavigationBar *)navigationBar
+- (TIOKitNavigationBar *)navigationBar
 {
     if (!_navigationBar) {
-        _navigationBar = [[TIOKitNavigationBar alloc] initWithFrame:CGRectZero];
-        _navigationBar.topItem.title = self.title;
-        _navigationBar.tintColor = UIColor.whiteColor;
-        _navigationBar.barTintColor = UIColor.whiteColor;
-        _navigationBar.backgroundColor = UIColor.whiteColor;
-        _navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:  [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0], NSFontAttributeName: [UIFont systemFontOfSize:18]};
-        _navigationBar.translucent = NO; // 关闭默认透明度效果
-        [_navigationBar setShadowImage:[UIImage new]];
-        _navigationBar.layer.shadowColor = IMKit_ColorRGBA(0, 0, 0, 0.03).CGColor;
-        _navigationBar.layer.shadowOffset = CGSizeMake(0, 1);
-        _navigationBar.layer.shadowOpacity = 1;
-        _navigationBar.layer.shadowRadius = 2;
-        [_navigationBar addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:IMKitKVOContext];
+        TIOKitNavigationBar *navBar = [[TIOKitNavigationBar alloc] initWithFrame:CGRectZero];
+        navBar.titleL.text = self.title;
+        navBar.tintColor = UIColor.whiteColor;
+        navBar.barTintColor = UIColor.whiteColor;
+        navBar.backgroundColor = UIColor.whiteColor;
+        navBar.titleTextAttributes = @{NSForegroundColorAttributeName:  [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0], NSFontAttributeName: [UIFont systemFontOfSize:18]};
+        navBar.translucent = NO; // 关闭默认透明度效果
+        [navBar setShadowImage:[UIImage new]];
+        navBar.layer.shadowColor = IMKit_ColorRGBA(0, 0, 0, 0.03).CGColor;
+        navBar.layer.shadowOffset = CGSizeMake(0, 1);
+        navBar.layer.shadowOpacity = 1;
+        navBar.layer.shadowRadius = 2;
+        [navBar addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:IMKitKVOContext];
+        _navigationBar = navBar;
     }
     return _navigationBar;
 }

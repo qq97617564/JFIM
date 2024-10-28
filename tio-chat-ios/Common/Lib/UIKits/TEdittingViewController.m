@@ -35,11 +35,11 @@
     if (self) {
         self.text = text;
         self.inputType = inputType;
-        self.leftBarButtonText = title;
+        self.title = title;
         if (inputType == TEdittingInputTypeField) {
-            self.inpuHeight = 60;
+            self.inpuHeight = 48;
         } else {
-            self.inpuHeight = 200;
+            self.inpuHeight = 120;
         }
     }
     
@@ -66,7 +66,7 @@
     self.inputField = [UITextField.alloc initWithFrame:CGRectMake(0, Height_NavBar+20, self.view.width, self.inpuHeight)];
     self.inputField.text = self.text;
     self.inputField.backgroundColor = UIColor.whiteColor;
-    self.inputField.font = [UIFont systemFontOfSize:16];
+    self.inputField.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
     self.inputField.textColor = UIColor.blackColor;
     self.inputField.leftView = [UIView.alloc initWithFrame:CGRectMake(0, 0, 16, self.inpuHeight)];
     self.inputField.leftViewMode = UITextFieldViewModeAlways;
@@ -91,12 +91,12 @@
 {
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+        [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
         [button setTitle:@"提交" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:14];
-        button.viewSize = CGSizeMake(60, 28);
-        button.layer.cornerRadius = 14;
+        button.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightBold];
+        button.viewSize = CGSizeMake(55, 31);
+        button.layer.cornerRadius = 6;
         button.layer.masksToBounds = YES;
         
         [button addTarget:self action:@selector(didClickDone:) forControlEvents:UIControlEventTouchUpInside];
@@ -110,7 +110,7 @@
     /// 当前的输入框
     UIView *inputView = self.inputField?:self.inputView;
     
-    self.textCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.width - 16 - 60, inputView.bottom + 16, 60, 20)];
+    self.textCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.width - 16 - 60, inputView.bottom - 26, 60, 20)];
     self.textCountLabel.font = [UIFont systemFontOfSize:14.f];
     self.textCountLabel.textColor = [UIColor colorWithHex:0x909090];
     self.textCountLabel.textAlignment = NSTextAlignmentRight;

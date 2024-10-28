@@ -131,6 +131,9 @@
         Class className = NSClassFromString(@"TSessionListViewController");
         UIViewController *viewController = [[className alloc] init];
         UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:viewController];
+
+
+
         navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"聊天" image:[[UIImage imageNamed:@"Chats"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
         selectedImage:[[UIImage imageNamed:@"ChatsSelected"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]];
         
@@ -139,7 +142,7 @@
     })];
     // 好友
     [viewControllers addObject:({
-        Class className = NSClassFromString(@"TFriendListViewController");
+        Class className = NSClassFromString(@"GFAddressListVC");
         UIViewController *viewController = [[className alloc] init];
         UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:viewController];
         navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"通讯录" image:[[UIImage imageNamed:@"Friend"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]
@@ -148,7 +151,7 @@
     })];
     // 群聊
     [viewControllers addObject:({
-        Class className = NSClassFromString(@"TTeamListViewController");
+        Class className = NSClassFromString(@"GFFindVC");
         UIViewController *viewController = [[className alloc] init];
         UINavigationController *navigationController = [UINavigationController.alloc initWithRootViewController:viewController];
         navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"发现" image:[[UIImage imageNamed:@"Group"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal]

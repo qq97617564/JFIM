@@ -45,7 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy,    nonatomic) NSString *toUId;
 /// 好友备注
 @property (copy,    nonatomic) NSString *remarkname;
-
 /// 群聊人数
 @property (copy,    nonatomic) NSString *joinnum;
 ///1=官方， 2=正常

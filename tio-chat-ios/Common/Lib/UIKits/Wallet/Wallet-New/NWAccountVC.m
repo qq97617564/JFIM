@@ -65,7 +65,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"账户信息";
+        self.title = @"账户信息";
     }
     return self;
 }

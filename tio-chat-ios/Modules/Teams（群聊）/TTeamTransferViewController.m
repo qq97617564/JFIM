@@ -32,7 +32,7 @@
     self = [super init];
     
     if (self) {
-        self.leftBarButtonText = @"选择新群主";
+        self.title = @"选择新群主";
     }
     
     return self;

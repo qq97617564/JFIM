@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic, readonly) UILabel *titleLabel;
 @property (weak, nonatomic, readonly) UILabel *subTitleLabel;
-
+@property(nonatomic,strong)UILabel *titleL;
 @end
 
 NS_ASSUME_NONNULL_END

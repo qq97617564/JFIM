@@ -32,7 +32,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"我的银行卡";
+        self.title = @"我的银行卡";
     }
     return self;
 }

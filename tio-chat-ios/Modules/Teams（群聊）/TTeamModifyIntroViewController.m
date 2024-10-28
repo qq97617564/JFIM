@@ -25,7 +25,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = title;
+        self.title = title;
         self.team = team;
         self.type = type;
     }

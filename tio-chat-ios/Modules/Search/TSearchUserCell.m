@@ -39,8 +39,8 @@
         [self.contentView addSubview:sexImageView];
         
         UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        addButton.viewSize = CGSizeMake(64, 30);
-        addButton.titleLabel.font = [UIFont systemFontOfSize:12 weight:UIFontWeightMedium];
+        addButton.viewSize = CGSizeMake(55, 31);
+        addButton.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
         addButton.layer.cornerRadius = 4;
         addButton.layer.masksToBounds = YES;
         addButton.layer.borderColor = UIColor.TDTheme_TabBarSelectedColor.CGColor;
@@ -54,7 +54,16 @@
     
     return self;
 }
-
+-(UIImageView *)flag{
+    if (!_flag) {
+        UIImageView *flag = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+        flag.image = [UIImage imageNamed:@"Group 1321315481"];
+        [self.contentView addSubview:flag];
+        flag.hidden = true;
+        _flag = flag;
+    }
+    return _flag;
+}
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -71,7 +80,7 @@
     }
     self.nickLabel.centerY = self.contentView.middleY;
     self.nickLabel.left = 72;
-    
+    self.flag.left = self.nickLabel.right + 5;
     self.addButton.centerY = self.contentView.middleY;
     self.addButton.right = self.contentView.width - 16;
 }
@@ -90,9 +99,9 @@
     /// 处理关键字富文本
     TAttributedString *node = [TAttributedString.alloc init];
     node.text = key;
-    node.attributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16], NSForegroundColorAttributeName:[UIColor colorWithHex:0x4C94E8]};
+    node.attributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:18], NSForegroundColorAttributeName:[UIColor colorWithHex:0x0087FC]};
     
-    NSMutableAttributedString *nickAttributedString = [NSMutableAttributedString.alloc initWithString:nick attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16], NSForegroundColorAttributeName:[UIColor blackColor]}];
+    NSMutableAttributedString *nickAttributedString = [NSMutableAttributedString.alloc initWithString:nick attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:18], NSForegroundColorAttributeName:[UIColor blackColor]}];
     self.nickLabel.attributedText = [nickAttributedString replaceAttributesWithStrings:@[node]];
 }
 

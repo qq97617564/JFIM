@@ -31,7 +31,7 @@
     self = [super init];
     
     if (self) {
-        self.leftBarButtonText = title;
+        self.title = title;
         self.type = type;
     }
     
@@ -57,7 +57,7 @@
 {
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+        [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
         [button setTitle:@"确定" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -79,7 +79,7 @@
     }
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+        [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
         [button setTitle:title forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:14];

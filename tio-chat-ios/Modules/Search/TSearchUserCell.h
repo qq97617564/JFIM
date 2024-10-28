@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param nick 昵称
 /// @param relation 好友关系  0:不是好友 1:好友
 - (void)refreshAvatar:(NSString *)avatar sex:(NSInteger)sex nick:(NSString *)nick relation:(NSInteger)relation key:(NSString *)key;
-
+@property (nonatomic, strong) UIImageView *flag;
 @end
 
 NS_ASSUME_NONNULL_END

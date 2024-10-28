@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TIOKitNavigationBar.h"
 NS_ASSUME_NONNULL_BEGIN
 
 /// 会话页基类
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  导航条
  */
-@property (strong, nonatomic) UINavigationBar *navigationBar;
+@property (strong, nonatomic) TIOKitNavigationBar *navigationBar;
 @property (copy, nonatomic) NSString *leftBarButtonText;
 
 /**

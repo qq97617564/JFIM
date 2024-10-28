@@ -21,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = title;
+        self.title = title;
         self.member = member;
     }
     return self;
@@ -39,13 +39,13 @@
     
     [self setupNav];
     
-    UITextField *inputView = [UITextField.alloc initWithFrame:CGRectMake(0, Height_NavBar + 20, self.view.width, 60)];
+    UITextField *inputView = [UITextField.alloc initWithFrame:CGRectMake(0, Height_NavBar + 16, self.view.width, 48)];
     inputView.backgroundColor = UIColor.whiteColor;
     inputView.leftView = [UIView.alloc initWithFrame:CGRectMake(0, 0, 16, inputView.height)];
     inputView.leftViewMode = UITextFieldViewModeAlways;
     inputView.rightViewMode = UITextFieldViewModeWhileEditing;
     inputView.clearButtonMode = UITextFieldViewModeWhileEditing;
-    inputView.font = [UIFont systemFontOfSize:16];
+    inputView.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
     inputView.textColor = UIColor.blackColor;
     inputView.text = self.member.groupNick;
     [self.view addSubview:inputView];
@@ -56,12 +56,12 @@
 {
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+        [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
         [button setTitle:@"提交" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:14];
-        button.viewSize = CGSizeMake(60, 28);
-        button.layer.cornerRadius = 14;
+        button.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightBold];
+        button.viewSize = CGSizeMake(55, 31);
+        button.layer.cornerRadius = 6;
         button.layer.masksToBounds = YES;
         
         [button addTarget:self action:@selector(didClickDone:) forControlEvents:UIControlEventTouchUpInside];
@@ -75,7 +75,17 @@
     if (!self.inputView.text.length) {
         return;
     }
-    
+    if (self.type == 1){
+        [TIOChat.shareSDK.teamManager updateTeamName:self.inputView.text inTeam:self.member.groupId completion:^(NSError * _Nullable error) {
+            if (!error) {
+                [MBProgressHUD showSuccess:@"修改成功" toView:self.view];
+                if ([self.delegate respondsToSelector:@selector(shouldUpdateText:)]) {
+                    [self.delegate shouldUpdateText:self.inputView.text];
+                }
+            }
+        }];
+        return;
+    }
     
     [TIOChat.shareSDK.teamManager updateUserNick:self.inputView.text inTeam:self.member.groupId completion:^(NSError * _Nullable error) {
         if (error)

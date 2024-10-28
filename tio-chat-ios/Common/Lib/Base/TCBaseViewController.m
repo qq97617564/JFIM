@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.view.backgroundColor = [UIColor colorWithHex:0xF8F9FB];
     self.navigationBar.layer.shadowOffset = CGSizeMake(0, 0);
     self.navigationBar.layer.shadowOpacity = 0;
     self.navigationBar.layer.shadowRadius = 0;

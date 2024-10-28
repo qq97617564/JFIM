@@ -435,7 +435,6 @@
 		17B2E4BE255930920009862D /* UIView+Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B2E4BD255930920009862D /* UIView+Popup.m */; };
 		17B2E4EA255A93130009862D /* IMKitMessageRedContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B2E4E9255A93130009862D /* IMKitMessageRedContentView.m */; };
 		17B2E4EE255A9FB00009862D /* IMKitRedContentConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B2E4ED255A9FB00009862D /* IMKitRedContentConfig.m */; };
-		17B9261F2578D42600DABB24 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B9261E2578D42600DABB24 /* QRCodeViewController.m */; };
 		17B9661123BD8F0B00901BC0 /* UIFont+TDFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B9661023BD8F0A00901BC0 /* UIFont+TDFont.m */; };
 		17B9661423BD985D00901BC0 /* TTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B9661323BD985D00901BC0 /* TTabBarController.m */; };
 		17B9661A23BD9A4F00901BC0 /* TFriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B9661923BD9A4F00901BC0 /* TFriendListViewController.m */; };
@@ -555,11 +554,37 @@
 		17F65EF625F1E1DC00990EE8 /* NWPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F65EF525F1E1DC00990EE8 /* NWPay.m */; };
 		17FAE87A2477CD48004A606E /* ARDSDPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FAE8782477CD48004A606E /* ARDSDPUtils.m */; };
 		17FF5611247CF59C00CDECBE /* TIOVideoChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF5610247CF59C00CDECBE /* TIOVideoChatManager.m */; };
+		801B268C2CCD48F50010D74A /* GFQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 801B268A2CCD48F50010D74A /* GFQRCodeVC.m */; };
+		801B268D2CCD48F50010D74A /* GFQRCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801B268B2CCD48F50010D74A /* GFQRCodeVC.xib */; };
+		802EC28E2CCF941C00D53E6B /* GFWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC28C2CCF941C00D53E6B /* GFWalletViewController.m */; };
+		802EC28F2CCF941C00D53E6B /* GFWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802EC28D2CCF941C00D53E6B /* GFWalletViewController.xib */; };
+		802EC2922CCFADD900D53E6B /* GFWalletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC2912CCFADD900D53E6B /* GFWalletManager.m */; };
+		802EC2952CCFBD1000D53E6B /* GFStateShowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC2942CCFBD1000D53E6B /* GFStateShowVC.m */; };
+		802EC2982CCFC1C700D53E6B /* GFWalletOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC2972CCFC1C700D53E6B /* GFWalletOrderListVC.m */; };
+		802EC29C2CCFC1F300D53E6B /* GFWalletOrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC29A2CCFC1F300D53E6B /* GFWalletOrderListCell.m */; };
+		802EC29D2CCFC1F300D53E6B /* GFWalletOrderListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802EC29B2CCFC1F300D53E6B /* GFWalletOrderListCell.xib */; };
+		802EC2A02CCFD88D00D53E6B /* GFBindingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC29F2CCFD88D00D53E6B /* GFBindingVC.m */; };
+		802EC2A42CCFDC5A00D53E6B /* GFBindingWXVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC2A22CCFDC5A00D53E6B /* GFBindingWXVC.m */; };
+		802EC2A52CCFDC5A00D53E6B /* GFBindingWXVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802EC2A32CCFDC5A00D53E6B /* GFBindingWXVC.xib */; };
+		802EC2A92CCFDC7400D53E6B /* GFBindingZFBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC2A72CCFDC7400D53E6B /* GFBindingZFBVC.m */; };
+		802EC2AA2CCFDC7400D53E6B /* GFBindingZFBVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802EC2A82CCFDC7400D53E6B /* GFBindingZFBVC.xib */; };
+		802EC2AE2CCFDC8600D53E6B /* GFBindingBankVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC2AC2CCFDC8600D53E6B /* GFBindingBankVC.m */; };
+		802EC2AF2CCFDC8600D53E6B /* GFBindingBankVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802EC2AD2CCFDC8600D53E6B /* GFBindingBankVC.xib */; };
 		804995AD2CCC0D840096F7C0 /* MineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804995AC2CCC0D840096F7C0 /* MineInfoViewController.m */; };
 		804995B32CCC91290096F7C0 /* GFUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 804995B12CCC91290096F7C0 /* GFUserInfoVC.m */; };
 		804995B42CCC91290096F7C0 /* GFUserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804995B22CCC91290096F7C0 /* GFUserInfoVC.xib */; };
 		805964AE2CC2994C00470AEE /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 805964AC2CC296B600470AEE /* libiconv.2.tbd */; };
 		805964AF2CC2995500470AEE /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 805964AD2CC296BD00470AEE /* libiconv.tbd */; };
+		809C84F92CCE03D000BD3AAD /* GFAddressListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 809C84F82CCE03D000BD3AAD /* GFAddressListVC.m */; };
+		809C84FD2CCE047C00BD3AAD /* GFAddressListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 809C84FB2CCE047C00BD3AAD /* GFAddressListCell.m */; };
+		809C84FE2CCE047C00BD3AAD /* GFAddressListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 809C84FC2CCE047C00BD3AAD /* GFAddressListCell.xib */; };
+		809C85042CCE215400BD3AAD /* GFFindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 809C85032CCE215400BD3AAD /* GFFindVC.m */; };
+		809C85082CCE28E200BD3AAD /* GFLogOffVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 809C85062CCE28E200BD3AAD /* GFLogOffVC.m */; };
+		809C85092CCE28E200BD3AAD /* GFLogOffVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 809C85072CCE28E200BD3AAD /* GFLogOffVC.xib */; };
+		809C850D2CCE806700BD3AAD /* GFAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 809C850B2CCE806700BD3AAD /* GFAboutVC.m */; };
+		809C850E2CCE806700BD3AAD /* GFAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 809C850C2CCE806700BD3AAD /* GFAboutVC.xib */; };
+		809C85122CCE851E00BD3AAD /* GFNewVersionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 809C85102CCE851E00BD3AAD /* GFNewVersionVC.m */; };
+		809C85132CCE851E00BD3AAD /* GFNewVersionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 809C85112CCE851E00BD3AAD /* GFNewVersionVC.xib */; };
 		80C689322CC7C481001EA80B /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C689302CC7C481001EA80B /* MineVC.m */; };
 		80C689332CC7C481001EA80B /* MineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C689312CC7C481001EA80B /* MineVC.xib */; };
 		80C6AC2C2CC7DE7C00EF3EDB /* InvitationCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C6AC2A2CC7DE7C00EF3EDB /* InvitationCodeVC.m */; };
@@ -1446,8 +1471,6 @@
 		17B2E4EC255A9FB00009862D /* IMKitRedContentConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMKitRedContentConfig.h; sourceTree = "<group>"; };
 		17B2E4ED255A9FB00009862D /* IMKitRedContentConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMKitRedContentConfig.m; sourceTree = "<group>"; };
 		17B9261A2578955E00DABB24 /* tio-chat-ios.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "tio-chat-ios.entitlements"; sourceTree = "<group>"; };
-		17B9261D2578D42600DABB24 /* QRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
-		17B9261E2578D42600DABB24 /* QRCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		17B9660F23BD8F0A00901BC0 /* UIFont+TDFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+TDFont.h"; sourceTree = "<group>"; };
 		17B9661023BD8F0A00901BC0 /* UIFont+TDFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+TDFont.m"; sourceTree = "<group>"; };
 		17B9661223BD908300901BC0 /* DefineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineHeader.h; sourceTree = "<group>"; };
@@ -1687,6 +1710,32 @@
 		17FF560F247CF59C00CDECBE /* TIOVideoChatManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIOVideoChatManager.h; sourceTree = "<group>"; };
 		17FF5610247CF59C00CDECBE /* TIOVideoChatManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TIOVideoChatManager.m; sourceTree = "<group>"; };
 		6127C8EC21B2F08D4B564DE3 /* Pods-tio-chat-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tio-chat-ios.debug.xcconfig"; path = "Target Support Files/Pods-tio-chat-ios/Pods-tio-chat-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		801B26892CCD48F50010D74A /* GFQRCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFQRCodeVC.h; sourceTree = "<group>"; };
+		801B268A2CCD48F50010D74A /* GFQRCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFQRCodeVC.m; sourceTree = "<group>"; };
+		801B268B2CCD48F50010D74A /* GFQRCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFQRCodeVC.xib; sourceTree = "<group>"; };
+		802EC28B2CCF941C00D53E6B /* GFWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFWalletViewController.h; sourceTree = "<group>"; };
+		802EC28C2CCF941C00D53E6B /* GFWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFWalletViewController.m; sourceTree = "<group>"; };
+		802EC28D2CCF941C00D53E6B /* GFWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFWalletViewController.xib; sourceTree = "<group>"; };
+		802EC2902CCFADD900D53E6B /* GFWalletManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFWalletManager.h; sourceTree = "<group>"; };
+		802EC2912CCFADD900D53E6B /* GFWalletManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFWalletManager.m; sourceTree = "<group>"; };
+		802EC2932CCFBD1000D53E6B /* GFStateShowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFStateShowVC.h; sourceTree = "<group>"; };
+		802EC2942CCFBD1000D53E6B /* GFStateShowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFStateShowVC.m; sourceTree = "<group>"; };
+		802EC2962CCFC1C700D53E6B /* GFWalletOrderListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFWalletOrderListVC.h; sourceTree = "<group>"; };
+		802EC2972CCFC1C700D53E6B /* GFWalletOrderListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFWalletOrderListVC.m; sourceTree = "<group>"; };
+		802EC2992CCFC1F300D53E6B /* GFWalletOrderListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFWalletOrderListCell.h; sourceTree = "<group>"; };
+		802EC29A2CCFC1F300D53E6B /* GFWalletOrderListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFWalletOrderListCell.m; sourceTree = "<group>"; };
+		802EC29B2CCFC1F300D53E6B /* GFWalletOrderListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFWalletOrderListCell.xib; sourceTree = "<group>"; };
+		802EC29E2CCFD88D00D53E6B /* GFBindingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBindingVC.h; sourceTree = "<group>"; };
+		802EC29F2CCFD88D00D53E6B /* GFBindingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBindingVC.m; sourceTree = "<group>"; };
+		802EC2A12CCFDC5A00D53E6B /* GFBindingWXVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBindingWXVC.h; sourceTree = "<group>"; };
+		802EC2A22CCFDC5A00D53E6B /* GFBindingWXVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBindingWXVC.m; sourceTree = "<group>"; };
+		802EC2A32CCFDC5A00D53E6B /* GFBindingWXVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFBindingWXVC.xib; sourceTree = "<group>"; };
+		802EC2A62CCFDC7400D53E6B /* GFBindingZFBVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBindingZFBVC.h; sourceTree = "<group>"; };
+		802EC2A72CCFDC7400D53E6B /* GFBindingZFBVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBindingZFBVC.m; sourceTree = "<group>"; };
+		802EC2A82CCFDC7400D53E6B /* GFBindingZFBVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFBindingZFBVC.xib; sourceTree = "<group>"; };
+		802EC2AB2CCFDC8600D53E6B /* GFBindingBankVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBindingBankVC.h; sourceTree = "<group>"; };
+		802EC2AC2CCFDC8600D53E6B /* GFBindingBankVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBindingBankVC.m; sourceTree = "<group>"; };
+		802EC2AD2CCFDC8600D53E6B /* GFBindingBankVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFBindingBankVC.xib; sourceTree = "<group>"; };
 		804995AB2CCC0D840096F7C0 /* MineInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineInfoViewController.h; sourceTree = "<group>"; };
 		804995AC2CCC0D840096F7C0 /* MineInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineInfoViewController.m; sourceTree = "<group>"; };
 		804995B02CCC91290096F7C0 /* GFUserInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFUserInfoVC.h; sourceTree = "<group>"; };
@@ -1694,6 +1743,22 @@
 		804995B22CCC91290096F7C0 /* GFUserInfoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFUserInfoVC.xib; sourceTree = "<group>"; };
 		805964AC2CC296B600470AEE /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
 		805964AD2CC296BD00470AEE /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		809C84F72CCE03D000BD3AAD /* GFAddressListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFAddressListVC.h; sourceTree = "<group>"; };
+		809C84F82CCE03D000BD3AAD /* GFAddressListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFAddressListVC.m; sourceTree = "<group>"; };
+		809C84FA2CCE047C00BD3AAD /* GFAddressListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFAddressListCell.h; sourceTree = "<group>"; };
+		809C84FB2CCE047C00BD3AAD /* GFAddressListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFAddressListCell.m; sourceTree = "<group>"; };
+		809C84FC2CCE047C00BD3AAD /* GFAddressListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFAddressListCell.xib; sourceTree = "<group>"; };
+		809C85022CCE215400BD3AAD /* GFFindVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFFindVC.h; sourceTree = "<group>"; };
+		809C85032CCE215400BD3AAD /* GFFindVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFFindVC.m; sourceTree = "<group>"; };
+		809C85052CCE28E200BD3AAD /* GFLogOffVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFLogOffVC.h; sourceTree = "<group>"; };
+		809C85062CCE28E200BD3AAD /* GFLogOffVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFLogOffVC.m; sourceTree = "<group>"; };
+		809C85072CCE28E200BD3AAD /* GFLogOffVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFLogOffVC.xib; sourceTree = "<group>"; };
+		809C850A2CCE806700BD3AAD /* GFAboutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFAboutVC.h; sourceTree = "<group>"; };
+		809C850B2CCE806700BD3AAD /* GFAboutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFAboutVC.m; sourceTree = "<group>"; };
+		809C850C2CCE806700BD3AAD /* GFAboutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFAboutVC.xib; sourceTree = "<group>"; };
+		809C850F2CCE851E00BD3AAD /* GFNewVersionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFNewVersionVC.h; sourceTree = "<group>"; };
+		809C85102CCE851E00BD3AAD /* GFNewVersionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFNewVersionVC.m; sourceTree = "<group>"; };
+		809C85112CCE851E00BD3AAD /* GFNewVersionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFNewVersionVC.xib; sourceTree = "<group>"; };
 		80C6892F2CC7C481001EA80B /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
 		80C689302CC7C481001EA80B /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
 		80C689312CC7C481001EA80B /* MineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineVC.xib; sourceTree = "<group>"; };
@@ -2303,6 +2368,7 @@
 		17637B1623BAE7C700935342 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				809C84FF2CCE20F000BD3AAD /* Find（发现） */,
 				1784F57D23F139E8008C20B4 /* Search */,
 				17637B1523BAE79200935342 /* Session（聊天页） */,
 				17637B1223BAE49600935342 /* SessionList */,
@@ -2504,6 +2570,9 @@
 				176B2EED23C7189900540CE8 /* TFriendCell.m */,
 				176B2F0523CC4DE100540CE8 /* TNewFriendCell.h */,
 				176B2F0623CC4DE100540CE8 /* TNewFriendCell.m */,
+				809C84FA2CCE047C00BD3AAD /* GFAddressListCell.h */,
+				809C84FB2CCE047C00BD3AAD /* GFAddressListCell.m */,
+				809C84FC2CCE047C00BD3AAD /* GFAddressListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3611,12 +3680,13 @@
 			isa = PBXGroup;
 			children = (
 				17D0173A2582029D00884414 /* PDCameraScan */,
-				17B9261D2578D42600DABB24 /* QRCodeViewController.h */,
-				17B9261E2578D42600DABB24 /* QRCodeViewController.m */,
 				17D017302581FD9300884414 /* QRScanViewController.h */,
 				17D017312581FD9300884414 /* QRScanViewController.m */,
 				17CF4A53257F84C10006C216 /* QRCodeImage.h */,
 				17CF4A54257F84C10006C216 /* QRCodeImage.m */,
+				801B26892CCD48F50010D74A /* GFQRCodeVC.h */,
+				801B268A2CCD48F50010D74A /* GFQRCodeVC.m */,
+				801B268B2CCD48F50010D74A /* GFQRCodeVC.xib */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -3985,6 +4055,33 @@
 				804995B02CCC91290096F7C0 /* GFUserInfoVC.h */,
 				804995B12CCC91290096F7C0 /* GFUserInfoVC.m */,
 				804995B22CCC91290096F7C0 /* GFUserInfoVC.xib */,
+				809C84F72CCE03D000BD3AAD /* GFAddressListVC.h */,
+				809C84F82CCE03D000BD3AAD /* GFAddressListVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		809C84FF2CCE20F000BD3AAD /* Find（发现） */ = {
+			isa = PBXGroup;
+			children = (
+				809C85012CCE211000BD3AAD /* Controller */,
+				809C85002CCE210E00BD3AAD /* View */,
+			);
+			path = "Find（发现）";
+			sourceTree = "<group>";
+		};
+		809C85002CCE210E00BD3AAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		809C85012CCE211000BD3AAD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				809C85022CCE215400BD3AAD /* GFFindVC.h */,
+				809C85032CCE215400BD3AAD /* GFFindVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4000,6 +4097,33 @@
 				80C6AC2B2CC7DE7C00EF3EDB /* InvitationCodeVC.xib */,
 				804995AB2CCC0D840096F7C0 /* MineInfoViewController.h */,
 				804995AC2CCC0D840096F7C0 /* MineInfoViewController.m */,
+				809C85052CCE28E200BD3AAD /* GFLogOffVC.h */,
+				809C85062CCE28E200BD3AAD /* GFLogOffVC.m */,
+				809C85072CCE28E200BD3AAD /* GFLogOffVC.xib */,
+				809C850A2CCE806700BD3AAD /* GFAboutVC.h */,
+				809C850B2CCE806700BD3AAD /* GFAboutVC.m */,
+				809C850C2CCE806700BD3AAD /* GFAboutVC.xib */,
+				809C850F2CCE851E00BD3AAD /* GFNewVersionVC.h */,
+				809C85102CCE851E00BD3AAD /* GFNewVersionVC.m */,
+				809C85112CCE851E00BD3AAD /* GFNewVersionVC.xib */,
+				802EC28B2CCF941C00D53E6B /* GFWalletViewController.h */,
+				802EC28C2CCF941C00D53E6B /* GFWalletViewController.m */,
+				802EC28D2CCF941C00D53E6B /* GFWalletViewController.xib */,
+				802EC2932CCFBD1000D53E6B /* GFStateShowVC.h */,
+				802EC2942CCFBD1000D53E6B /* GFStateShowVC.m */,
+				802EC2962CCFC1C700D53E6B /* GFWalletOrderListVC.h */,
+				802EC2972CCFC1C700D53E6B /* GFWalletOrderListVC.m */,
+				802EC29E2CCFD88D00D53E6B /* GFBindingVC.h */,
+				802EC29F2CCFD88D00D53E6B /* GFBindingVC.m */,
+				802EC2A12CCFDC5A00D53E6B /* GFBindingWXVC.h */,
+				802EC2A22CCFDC5A00D53E6B /* GFBindingWXVC.m */,
+				802EC2A32CCFDC5A00D53E6B /* GFBindingWXVC.xib */,
+				802EC2A62CCFDC7400D53E6B /* GFBindingZFBVC.h */,
+				802EC2A72CCFDC7400D53E6B /* GFBindingZFBVC.m */,
+				802EC2A82CCFDC7400D53E6B /* GFBindingZFBVC.xib */,
+				802EC2AB2CCFDC8600D53E6B /* GFBindingBankVC.h */,
+				802EC2AC2CCFDC8600D53E6B /* GFBindingBankVC.m */,
+				802EC2AD2CCFDC8600D53E6B /* GFBindingBankVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4007,6 +4131,9 @@
 		80C6892D2CC7C456001EA80B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				802EC2992CCFC1F300D53E6B /* GFWalletOrderListCell.h */,
+				802EC29A2CCFC1F300D53E6B /* GFWalletOrderListCell.m */,
+				802EC29B2CCFC1F300D53E6B /* GFWalletOrderListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4014,6 +4141,8 @@
 		80C6892E2CC7C458001EA80B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				802EC2902CCFADD900D53E6B /* GFWalletManager.h */,
+				802EC2912CCFADD900D53E6B /* GFWalletManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4107,6 +4236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1733CE8025EE1D0D00EDD4FD /* payment_close@3x.png in Resources */,
+				801B268D2CCD48F50010D74A /* GFQRCodeVC.xib in Resources */,
+				809C85092CCE28E200BD3AAD /* GFLogOffVC.xib in Resources */,
 				80FD2F9F2CC646CF00662C0C /* RegisterVC.xib in Resources */,
 				17D4ECE324D958BB007153ED /* ownvoice.gif in Resources */,
 				80C689332CC7C481001EA80B /* MineVC.xib in Resources */,
@@ -4114,10 +4245,15 @@
 				179273C8258B2F050000ECBC /* README.txt in Resources */,
 				171BCD5E23B5E2C60064BE7B /* Sticker.bundle in Resources */,
 				171BCD5F23B5E2C60064BE7B /* InnerStickersInfo.plist in Resources */,
+				809C84FE2CCE047C00BD3AAD /* GFAddressListCell.xib in Resources */,
 				179F31402577377400E3D6EA /* EHKValueAddServiceBundle.bundle in Resources */,
 				17ED09BC2456D8FA008C9C5D /* LICENSE in Resources */,
 				178EDB56253D2B6900B57402 /* HXPhotoPicker.bundle in Resources */,
+				802EC28F2CCF941C00D53E6B /* GFWalletViewController.xib in Resources */,
+				802EC2AF2CCFDC8600D53E6B /* GFBindingBankVC.xib in Resources */,
 				17D4ECE224D958BB007153ED /* voice.gif in Resources */,
+				802EC2AA2CCFDC7400D53E6B /* GFBindingZFBVC.xib in Resources */,
+				802EC29D2CCFC1F300D53E6B /* GFWalletOrderListCell.xib in Resources */,
 				17D25F6A24DD4B6000F1028F /* Voice_input_03.gif in Resources */,
 				1787693723A8B7FA00DBCAED /* LaunchScreen.storyboard in Resources */,
 				804995B42CCC91290096F7C0 /* GFUserInfoVC.xib in Resources */,
@@ -4128,13 +4264,16 @@
 				17ED09BE2456D8FA008C9C5D /* SAMKeychain.bundle in Resources */,
 				17F65EE925EF8B9000990EE8 /* NWBank.plist in Resources */,
 				171BCC7723B4C1060064BE7B /* IMKit.bundle in Resources */,
+				809C850E2CCE806700BD3AAD /* GFAboutVC.xib in Resources */,
 				176E15222492282F00408E5A /* RTC.bundle in Resources */,
 				80C6AC2D2CC7DE7C00EF3EDB /* InvitationCodeVC.xib in Resources */,
 				17ED09BD2456D8FA008C9C5D /* Readme.markdown in Resources */,
+				802EC2A52CCFDC5A00D53E6B /* GFBindingWXVC.xib in Resources */,
 				1787693223A8B7F900DBCAED /* Main.storyboard in Resources */,
 				17D25F6824DD3AA800F1028F /* Voice_input_02.gif in Resources */,
 				1789633D23BEE0F000AA467E /* MBProgressHUD.bundle in Resources */,
 				179F313A2577377400E3D6EA /* st_silent_liveness_resource.bundle in Resources */,
+				809C85132CCE851E00BD3AAD /* GFNewVersionVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4232,6 +4371,7 @@
 				17AB413E24A0A48F006356A1 /* IMInputAtObject.m in Sources */,
 				171BCD7D23B5E4430064BE7B /* IMKitEmotionContainer.m in Sources */,
 				177A3709259B102900A1584B /* ThirdConfig.m in Sources */,
+				809C84F92CCE03D000BD3AAD /* GFAddressListVC.m in Sources */,
 				17583FDE259C896800B9F05B /* APPResponse.m in Sources */,
 				171BCCB623B5DB8E0064BE7B /* IMKitConfig.m in Sources */,
 				17799D7E23E825FE00479542 /* JXCategoryTitleImageView.m in Sources */,
@@ -4250,6 +4390,8 @@
 				17CF4A59258073140006C216 /* LYGroupNode.m in Sources */,
 				17ED09C22456D8FA008C9C5D /* TIOSession.m in Sources */,
 				804995AD2CCC0D840096F7C0 /* MineInfoViewController.m in Sources */,
+				809C85122CCE851E00BD3AAD /* GFNewVersionVC.m in Sources */,
+				809C850D2CCE806700BD3AAD /* GFAboutVC.m in Sources */,
 				1795510B256FC7030061B953 /* WalletRedPackageDetailsVC.m in Sources */,
 				179F316C2577378800E3D6EA /* IQKeyboardManager.m in Sources */,
 				176B2F0023C85DAB00540CE8 /* SCIndexView.m in Sources */,
@@ -4287,6 +4429,7 @@
 				17F65EDA25EF3FCD00990EE8 /* NWSmsAuthorizationVC.m in Sources */,
 				17B9661D23BD9A5A00901BC0 /* TTeamListViewController.m in Sources */,
 				178EDB42253D2B6900B57402 /* HXPhotoConfiguration.m in Sources */,
+				802EC2A42CCFDC5A00D53E6B /* GFBindingWXVC.m in Sources */,
 				1789634323BFA81400AA467E /* TFindPwdViewController.m in Sources */,
 				1787692923A8B7F900DBCAED /* AppDelegate.m in Sources */,
 				80C689322CC7C481001EA80B /* MineVC.m in Sources */,
@@ -4331,11 +4474,13 @@
 				170B0BDD240CDBF7006F2F4D /* TTeamInviteModel.m in Sources */,
 				1784F56C23ED6454008C20B4 /* NSString+T_Time.m in Sources */,
 				17799D9523E825FE00479542 /* JXCategoryBaseView.m in Sources */,
+				802EC28E2CCF941C00D53E6B /* GFWalletViewController.m in Sources */,
 				171BCC9723B5DB640064BE7B /* IMKitSessionConfigurator.m in Sources */,
 				171BCCC223B5DBD30064BE7B /* TIOChatKit.m in Sources */,
 				1726073724112DAB007746C5 /* IMKitSystemMessageCell.m in Sources */,
 				17CF4A55257F84C10006C216 /* QRCodeImage.m in Sources */,
 				171BCD5523B5E2C60064BE7B /* PPQueuingScrollView.m in Sources */,
+				802EC2982CCFC1C700D53E6B /* GFWalletOrderListVC.m in Sources */,
 				178F7B3624BD983D00B6F3C3 /* TRepostToSessionViewController.m in Sources */,
 				17955117256FC7030061B953 /* WalletSendSingleRedPackageVC.m in Sources */,
 				178EDB7F253D2B6900B57402 /* HXPhotoEditResizeControl.m in Sources */,
@@ -4353,8 +4498,10 @@
 				178EDB46253D2B6900B57402 /* HXPhotoPersentInteractiveTransition.m in Sources */,
 				17799D8823E825FE00479542 /* JXCategoryIndicatorBallView.m in Sources */,
 				17300AE125F60EBD0005D73B /* NWBindNewCardVC.m in Sources */,
+				809C85042CCE215400BD3AAD /* GFFindVC.m in Sources */,
 				179550FE256FC7030061B953 /* WalletManager.m in Sources */,
 				1784F58A23F16106008C20B4 /* NSString+T_Attribute.m in Sources */,
+				809C84FD2CCE047C00BD3AAD /* GFAddressListCell.m in Sources */,
 				1795510A256FC7030061B953 /* WalletWithdrawViewController.m in Sources */,
 				178F7B3924BD9F8800B6F3C3 /* TCardToSessionCell.m in Sources */,
 				17ED09B62456D8FA008C9C5D /* TIOMessageReceipt.m in Sources */,
@@ -4391,6 +4538,7 @@
 				178EDB7D253D2B6900B57402 /* HXMECancelBlock.m in Sources */,
 				17799D8C23E825FE00479542 /* JXCategoryIndicatorCellModel.m in Sources */,
 				17D45C092591DF8D00F8F23F /* ESConfig.m in Sources */,
+				801B268C2CCD48F50010D74A /* GFQRCodeVC.m in Sources */,
 				1758E27724864A3A00373C78 /* TIOTokenStorage.m in Sources */,
 				1726073A24112EB2007746C5 /* IMKitSystemMessageModel.m in Sources */,
 				17D3F74D23D46730006BE4AD /* TAlertTrasitioning.m in Sources */,
@@ -4407,6 +4555,7 @@
 				178EDB6C253D2B6900B57402 /* HXPreviewImageView.m in Sources */,
 				1784F57223F10D74008C20B4 /* TSearchFriendListViewController.m in Sources */,
 				1784F56023EAC16E008C20B4 /* APPHTTPManager.m in Sources */,
+				802EC2952CCFBD1000D53E6B /* GFStateShowVC.m in Sources */,
 				17A63B622436CA8300923D3C /* TCardAlert.m in Sources */,
 				178EDB6B253D2B6900B57402 /* HXPhotoBottomSelectView.m in Sources */,
 				17ED09C02456D8FA008C9C5D /* SAMKeychain.m in Sources */,
@@ -4423,6 +4572,7 @@
 				179552052570CB080061B953 /* WalletWaterDetailVC.m in Sources */,
 				17B9662323BD9B4E00901BC0 /* TSessionListViewController.m in Sources */,
 				17583FB9259B14A400B9F05B /* TTLogin.m in Sources */,
+				802EC2AE2CCFDC8600D53E6B /* GFBindingBankVC.m in Sources */,
 				17799D8123E825FE00479542 /* JXCategoryDotCell.m in Sources */,
 				1733CE9F25EE2CDF00EDD4FD /* NWAccountVC.m in Sources */,
 				178EDB81253D2B6900B57402 /* HXPhotoEditStickerTrashView.m in Sources */,
@@ -4529,6 +4679,7 @@
 				17ED09BF2456D8FA008C9C5D /* SAMKeychainQuery.m in Sources */,
 				176B2F1F23CEC0C400540CE8 /* TAddPopupView.m in Sources */,
 				178EDB4E253D2B6900B57402 /* UIView+HXExtension.m in Sources */,
+				802EC2A02CCFD88D00D53E6B /* GFBindingVC.m in Sources */,
 				1772B07023FBE6F200C370A4 /* TSearchUserCell.m in Sources */,
 				171BCCEE23B5DDB00064BE7B /* IMKitMessageTextContentView.m in Sources */,
 				171BCCBE23B5DB8E0064BE7B /* IMKitTipContentConfig.m in Sources */,
@@ -4551,6 +4702,7 @@
 				178EDB4D253D2B6900B57402 /* UIFont+HXExtension.m in Sources */,
 				170958462446A42000716D52 /* CatchCrash.m in Sources */,
 				1733CE7C25EE1D0D00EDD4FD /* LYPaymentAlertTheme.m in Sources */,
+				802EC2A92CCFDC7400D53E6B /* GFBindingZFBVC.m in Sources */,
 				171BCD5C23B5E2C60064BE7B /* PPSlideLineButton.m in Sources */,
 				178EDB68253D2B6900B57402 /* HXCameraBottomView.m in Sources */,
 				17ED099F2456D8FA008C9C5D /* TIOConversationManager.m in Sources */,
@@ -4598,6 +4750,7 @@
 				178EDB87253D2B6900B57402 /* HXPhotoEditStickerItem.m in Sources */,
 				178EDB84253D2B6900B57402 /* HXPhotoEditClippingToolBar.m in Sources */,
 				178B76D324B721E400E07192 /* UITextField+CursorOverride.m in Sources */,
+				802EC2922CCFADD900D53E6B /* GFWalletManager.m in Sources */,
 				17B9661423BD985D00901BC0 /* TTabBarController.m in Sources */,
 				1730EF202424CC3D00B7AFBC /* TTeamDeleteModel.m in Sources */,
 				1741066525FB65F70061139B /* NWWithdrawVC.m in Sources */,
@@ -4613,6 +4766,7 @@
 				177A3707259B102900A1584B /* ThirdResponse.m in Sources */,
 				17ED09992456D8FA008C9C5D /* TIOConfig.m in Sources */,
 				176B2EF123C722E000540CE8 /* UIImageView+Web.m in Sources */,
+				809C85082CCE28E200BD3AAD /* GFLogOffVC.m in Sources */,
 				176B2EEE23C7189900540CE8 /* TFriendCell.m in Sources */,
 				179F31682577378800E3D6EA /* IQBarButtonItem.m in Sources */,
 				17D4ECA824D3E28E007153ED /* TIOAudioManager.m in Sources */,
@@ -4677,6 +4831,7 @@
 				17E452382416395B008E62AB /* IMKitMessageUndefineContentView.m in Sources */,
 				1772B03423F2861300C370A4 /* TSearchTeamCell.m in Sources */,
 				17523F6C240285EF00AB9606 /* ViewFrameAccessor.m in Sources */,
+				802EC29C2CCFC1F300D53E6B /* GFWalletOrderListCell.m in Sources */,
 				1787692C23A8B7F900DBCAED /* SceneDelegate.m in Sources */,
 				176B2F1323CD6EDD00540CE8 /* Target_Teams.m in Sources */,
 				17EDE6142519DB35003AD4DA /* WKWebViewController.m in Sources */,
@@ -4697,7 +4852,6 @@
 				178EDB44253D2B6900B57402 /* HXPhotoInteractiveTransition.m in Sources */,
 				178EDB82253D2B6900B57402 /* HXPhotoEditImageView.m in Sources */,
 				17955115256FC7030061B953 /* WalletRedPackageRecordVC.m in Sources */,
-				17B9261F2578D42600DABB24 /* QRCodeViewController.m in Sources */,
 				1788D8CD254190D700AD96EB /* TDeviceInfo.m in Sources */,
 				17B04B9325F22AC000ED3CDF /* NWRechargeVC.m in Sources */,
 				171BCD7923B5E4430064BE7B /* IMKitKeyInfo.m in Sources */,

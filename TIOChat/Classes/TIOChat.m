@@ -413,6 +413,15 @@ NSString * APPContentTypeForPathExtension(NSString *extension) {
 
 #pragma mark - get
 
+
+- (GFWalletManager *) gfHttpManager{
+    if (!_gfHttpManager) {
+        _gfHttpManager = [GFWalletManager.alloc init];
+    }
+    return _gfHttpManager;
+}
+
+
 - (TIOFriendManager *)friendManager
 {
     if (!_friendManager) {

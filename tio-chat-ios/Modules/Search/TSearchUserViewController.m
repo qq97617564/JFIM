@@ -23,6 +23,7 @@
 @interface TSearchUserViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSArray<TIOUser *> *resultDatas;
 @property (weak, nonatomic) UITableView *tableView;
+@property (weak, nonatomic) UIView *searchView;
 @property (copy, nonatomic) NSString *searchKey;
 @end
 
@@ -31,13 +32,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"添加好友";
     [self setupUI];
-    [self addNaivigationBar];
+    [self addSearchView];
 }
-
-- (void)addNaivigationBar
-{
-    UITextField *searchField = [UITextField.alloc initWithFrame:CGRectMake(16, Height_StatusBar + 4, self.view.width - 16 - 60, 36)];
+-(void)addSearchView{
+    UIView *searchV = [[UIView alloc]initWithFrame:CGRectMake(0, Height_StatusBar+44, self.view.width, 44)];
+    searchV.backgroundColor = UIColor.clearColor;
+    self.searchView = searchV;
+    [self.view addSubview:searchV];
+    UITextField *searchField = [UITextField.alloc initWithFrame:CGRectMake(16, 5, self.view.width - 32, 34)];
     searchField.placeholder = @"搜索用户昵称";
     searchField.leftViewMode = UITextFieldViewModeAlways;
     searchField.leftView = ({
@@ -55,27 +59,26 @@
     searchField.rightViewMode = UITextFieldViewModeWhileEditing;
     searchField.clearButtonMode = UITextFieldViewModeWhileEditing;
     searchField.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-    searchField.layer.cornerRadius = searchField.height * 0.5;
+    searchField.layer.cornerRadius = 4;
     searchField.layer.masksToBounds = YES;
     searchField.textColor = [UIColor blackColor];
     searchField.font = [UIFont systemFontOfSize:16];
     searchField.returnKeyType = UIReturnKeySearch;
     [searchField addTarget:self action:@selector(toSearch:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    [self.navigationBar addSubview:searchField];
+    [self.searchView addSubview:searchField];
     [searchField becomeFirstResponder];
     
-    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cancelButton.frame = CGRectMake(searchField.right, Height_StatusBar, 60, 44);
-    cancelButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
-    [cancelButton setTitleColor:[UIColor colorWithHex:0x909090] forState:UIControlStateNormal];
-    [cancelButton addTarget:self action:@selector(toCancel:) forControlEvents:UIControlEventTouchUpInside];
-    [self.navigationBar addSubview:cancelButton];
+//    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    cancelButton.frame = CGRectMake(searchField.right, Height_StatusBar, 60, 44);
+//    cancelButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+//    [cancelButton setTitleColor:[UIColor colorWithHex:0x909090] forState:UIControlStateNormal];
+//    [cancelButton addTarget:self action:@selector(toCancel:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.searchView addSubview:cancelButton];
 }
-
 - (void)setupUI
 {
-    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar - 20) style:UITableViewStylePlain];
+    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar+44, self.view.width, self.view.height - Height_NavBar - 20 - 44) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.rowHeight = 60;
@@ -165,7 +168,10 @@
         CBStrongSelfElseReturn
         [self addUser:user];
     };
-    
+    cell.flag.hidden = true;
+    if (user.officialflag == 1 || user.xx == 3) {
+        cell.flag.hidden = false;
+    }
     return cell;
 }
 

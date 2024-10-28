@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class TIOSingalManager;
 @class TIOAudioManager;
 @class TIOWalletManager;
+@class GFWalletManager;
 
 typedef NS_ENUM(NSUInteger, TIOSocketOfflineType) {
     TIOSocketOfflineByServer,   ///<  服务器掉线，默认为0
@@ -102,7 +103,8 @@ typedef NS_ENUM(NSUInteger, TIOSocketOfflineType) {
 /// 是否允许账号在Android、iOS、Web、H5等多端同时在线
 /// 默认YES，允许多端同时登录；为NO时，仅允账号在当前该iOS设备登录
 @property (assign, nonatomic) BOOL allowOnlineOnMultiTerminal;
-
+/// 好友管理
+@property (strong, nonatomic) GFWalletManager *gfHttpManager;
 /// 好友管理
 @property (strong, nonatomic) TIOFriendManager *friendManager;
 /// 聊天管理

@@ -33,7 +33,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"充值";
+        self.title = @"充值";
     }
     return self;
 }

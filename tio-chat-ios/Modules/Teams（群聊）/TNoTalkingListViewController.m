@@ -32,7 +32,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"禁言名单";
+        self.title = @"禁言名单";
     }
     return self;
 }
@@ -48,6 +48,7 @@
 {
     UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStylePlain];
     tableView.delegate = self;
+    tableView.backgroundColor = UIColor.clearColor;
     tableView.dataSource = self;
     tableView.rowHeight = 60;
     tableView.sectionHeaderHeight = 20;
@@ -58,11 +59,11 @@
     [tableView registerClass:TNoTalkingCell.class forCellReuseIdentifier:NSStringFromClass(TNoTalkingCell.class)];
     tableView.tableHeaderView = ({
         UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 60)];
-        view.backgroundColor = UIColor.whiteColor;
+        view.backgroundColor = UIColor.clearColor;
         
         UITextField *searchTF = [UITextField.alloc initWithFrame:CGRectMake(16, 10, view.width - 32, 36)];
         searchTF.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-        searchTF.layer.cornerRadius = 18;
+        searchTF.layer.cornerRadius = 4;
         searchTF.layer.masksToBounds = YES;
         searchTF.leftViewMode = UITextFieldViewModeAlways;
         searchTF.leftView = ({
@@ -147,7 +148,10 @@
     TNoTalkingCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(TNoTalkingCell.class)];
     
     TIOTeamMember *user = self.dataArray[indexPath.row];
-    [cell updateAvatar:user.avatar nick:user.srcnick remark:user.nick time:user.forbiddenduration forever:user.forbiddenflag==3];
+    BOOL flag = user.officialflag == 1;
+    
+
+    [cell updateAvatar:user.avatar nick:user.srcnick remark:user.nick flag:flag time:user.forbiddenduration forever:user.forbiddenflag==3];
     
     return cell;
 }

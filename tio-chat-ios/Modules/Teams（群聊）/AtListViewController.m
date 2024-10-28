@@ -34,7 +34,7 @@
     self = [super init];
     if (self) {
         self.teamUser = teamUser;
-        self.leftBarButtonText = @"选择提醒的人";
+        self.title = @"选择提醒的人";
     }
     return self;
 }

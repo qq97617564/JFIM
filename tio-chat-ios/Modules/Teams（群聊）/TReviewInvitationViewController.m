@@ -31,7 +31,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"群聊邀请";
+        self.title = @"群聊邀请";
     }
     return self;
 }

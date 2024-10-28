@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setNick:(NSString *)nick;
 /// 新的好友请求时    备注说明详细
 - (void)setDetail:(NSString * _Nullable )detail;
-
+@property(nonatomic, strong)UIImageView *flag;
 @end
 
 NS_ASSUME_NONNULL_END

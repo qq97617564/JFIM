@@ -22,9 +22,10 @@
     
     if (self) {
         self.switchControll = [UISwitch.alloc initWithFrame:CGRectMake(0, 0, 1, 1)];
-        self.switchControll.onTintColor = [UIColor colorWithHex:0x0087FC];
-        self.switchControll.tintColor = [UIColor colorWithHex:0xE8EBF0];
-        self.switchControll.thumbTintColor = [UIColor whiteColor];
+        self.switchControll.onTintColor = [UIColor colorWithHexString:@"#0087FC"];
+        self.switchControll.thumbTintColor = [UIColor colorWithHexString:@"#FFFFFF"];
+        self.switchControll.tintColor = [UIColor colorWithHexString:@"#E8EBF0"];
+
         [self.switchControll addTarget:self action:@selector(valueChanged:) forControlEvents:(UIControlEventValueChanged)];
         [self.contentView addSubview:self.switchControll];
         

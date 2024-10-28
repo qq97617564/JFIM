@@ -37,7 +37,7 @@
     self = [super init];
     
     if (self) {
-        self.leftBarButtonText = @"选择";
+        self.title = @"选择";
     }
     
     return self;
@@ -87,7 +87,7 @@
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.rowHeight = 75;
-    tableView.separatorInset = UIEdgeInsetsMake(0, 81, 0, 0);
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.separatorColor = [UIColor colorWithHex:0xE9E9E9];
     [tableView registerClass:[TCardToSessionCell class] forCellReuseIdentifier:NSStringFromClass(TCardToSessionCell.class)];
     tableView.contentInsetTop = 12;

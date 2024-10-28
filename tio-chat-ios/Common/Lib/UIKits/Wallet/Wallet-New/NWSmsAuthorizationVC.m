@@ -29,7 +29,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"忘记支付密码";
+        self.title = @"忘记支付密码";
     }
     return self;
 }

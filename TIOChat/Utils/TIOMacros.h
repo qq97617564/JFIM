@@ -11,7 +11,7 @@
 
 #define TIOLogEnable   [[[NSUserDefaults standardUserDefaults] valueForKey:@"TIO_LOG_ENABLE"] boolValue]
 
-#define TIOLog(format,...)  if(TIOLogEnable) {\
+#define TIOLog(format,...)  if(YES) {\
 NSLog((@"%s[%d]" format), __FUNCTION__, __LINE__, ##__VA_ARGS__);\
 } else {}
 

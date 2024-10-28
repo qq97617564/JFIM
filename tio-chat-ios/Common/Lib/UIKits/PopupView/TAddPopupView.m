@@ -27,8 +27,8 @@
         [self.contentView addSubview:self.icon];
         
         self.titleLabel = [UILabel.alloc init];
-        self.titleLabel.textColor = [UIColor colorWithRed:61/255.0 green:61/255.0 blue:62/255.0 alpha:1.0];
-        self.titleLabel.font = [UIFont systemFontOfSize:16];
+        self.titleLabel.textColor = [UIColor colorWithHex:0x0087FC];
+        self.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
         self.titleLabel.textAlignment = NSTextAlignmentLeft;
         [self.contentView addSubview:self.titleLabel];
     }

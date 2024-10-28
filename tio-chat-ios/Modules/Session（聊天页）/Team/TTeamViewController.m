@@ -66,7 +66,7 @@
     
     if (self) {
         _config = [TSessionConfig.alloc initWithSession:session];
-        self.title = session.name;
+//        self.title = session.name;
         self.photoPreview = [TSessionPhotoPreview.alloc initWithSession:session onVC:self];
         self.photoPicker = [TPhotoPicker.alloc initWithSession:session controller:self];
     }

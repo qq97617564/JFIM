@@ -7,7 +7,8 @@
 //
 
 #import "PDCameraScanViewController.h"
-#import "QRCodeViewController.h"
+
+#import "GFQRCodeVC.h"
 
 #import "ImportSDK.h"
 #import "UIButton+Enlarge.h"
@@ -59,7 +60,7 @@ AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImageP
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.titleLabel.font = [UIFont systemFontOfSize:18];
         [button setImage:[UIImage imageNamed:@"back2"] forState:UIControlStateNormal];
-        [button setTitle:@"扫一扫" forState:UIControlStateNormal];
+        [button setTitle:@"扫一扫二维码" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         [button verticalLayoutWithInsetsStyle:ButtonStyleLeft Spacing:-40];
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -141,16 +142,16 @@ AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImageP
  */
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
-    [self.session stopRunning];   //停止扫描
+//    [self.session stopRunning];   //停止扫描
     //我们捕获的对象可能不是AVMetadataMachineReadableCodeObject类，所以要先判断，不然会崩溃
     if (![[metadataObjects lastObject] isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
-        [self.session startRunning];
+//        [self.session startRunning];
         return;
     }
     // id 类型不能点语法,所以要先去取出数组中对象
     AVMetadataMachineReadableCodeObject *object = [metadataObjects lastObject];
     if ( object.stringValue == nil ){
-        [self.session startRunning];
+//        [self.session startRunning];
     }
     
     // wxp://f2f0Qz9qxst1qazKE_53XToPLIzMELvT8Ccd
@@ -291,8 +292,8 @@ AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImageP
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.maskScanView resume];
-    [self.session startRunning];
+//    [self.maskScanView resume];
+//    [self.session startRunning];
 }
 
 - (void)dealloc
@@ -307,17 +308,19 @@ AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImageP
     id preVC = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
     
     // 检测是不是从个人二维码页面进来的，如果是，返回个人二维码，如果不是，创建并进入个人二维码页
-    if ([preVC isKindOfClass:QRCodeViewController.class]) {
-        QRCodeViewController *vc = preVC;
+    if ([preVC isKindOfClass:GFQRCodeVC.class]) {
+        GFQRCodeVC *vc = preVC;
         if (vc.isP2P) {
             [self.navigationController popViewControllerAnimated:YES];
             return;
         }
     }
     
-    QRCodeViewController *vc = [QRCodeViewController.alloc init];
-    vc.leftBarButtonText = @"我的二维码";
+    GFQRCodeVC *vc = [GFQRCodeVC.alloc init];
+    vc.title = @"我的二维码";
     vc.isP2P = YES;
+    vc.account = TIOChat.shareSDK.loginManager.userInfo.loginname;
+    vc.xx = TIOChat.shareSDK.loginManager.userInfo.officialflag;
     vc.iconUrl = TIOChat.shareSDK.loginManager.userInfo.avatar;
     vc.name = TIOChat.shareSDK.loginManager.userInfo.nick;
     vc.qr_data = [QR_SERVER stringByAppendingFormat:@"&uid=%@",TIOChat.shareSDK.loginManager.userInfo.userId];

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) TTeamInviteModel *model;
 - (void)refreshData:(TTeamInviteModel *)model;
 @property (copy, nonatomic) void(^selectedCallback)(BOOL selected);
-
+@property (nonatomic, strong) UIImageView *flag;
 @end
 
 NS_ASSUME_NONNULL_END

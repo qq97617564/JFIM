@@ -16,7 +16,7 @@
 #import "WalletKit.h"
 #import "ImportSDK.h"
 #import <UIImageView+WebCache.h>
-#import "QRCodeViewController.h"
+#import "GFQRCodeVC.h"
 #import "ServerConfig.h"
 #import "TCommonCell.h"
 
@@ -118,7 +118,7 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.rowHeight = 60;
-    tableView.separatorInset = UIEdgeInsetsMake(0, 81, 0, 0);
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.separatorColor = [UIColor colorWithHex:0xE6E6E6];
     tableView.tableHeaderView = tableHeader;
     tableView.tableFooterView = [UIView.alloc initWithFrame:CGRectZero];
@@ -161,11 +161,13 @@
 
 - (void)toQRCodeVC:(id)sender
 {
-    QRCodeViewController *vc = [QRCodeViewController.alloc init];
-    vc.leftBarButtonText = @"我的二维码";
+    GFQRCodeVC *vc = [GFQRCodeVC.alloc init];
+    vc.title = @"我的二维码";
     vc.isP2P = YES;
     vc.iconUrl = TIOChat.shareSDK.loginManager.userInfo.avatar;
     vc.name = TIOChat.shareSDK.loginManager.userInfo.nick;
+    vc.account = TIOChat.shareSDK.loginManager.userInfo.loginname;
+    vc.xx = TIOChat.shareSDK.loginManager.userInfo.officialflag;
     vc.qr_data = [QR_SERVER stringByAppendingFormat:@"&uid=%@",TIOChat.shareSDK.loginManager.userInfo.userId];
     [self.navigationController pushViewController:vc animated:YES];
 }

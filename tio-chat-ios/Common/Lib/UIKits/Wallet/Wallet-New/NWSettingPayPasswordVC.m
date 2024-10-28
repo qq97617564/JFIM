@@ -31,7 +31,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = title;
+        self.title = title;
         _code = code;
     }
     return self;

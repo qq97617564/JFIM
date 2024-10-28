@@ -34,7 +34,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"";
+        self.title = @"";
         self.title = @"聊天信息";
     }
     return self;

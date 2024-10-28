@@ -24,10 +24,10 @@
     
     if (self) {
         self.textLabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
-        self.textLabel.font = [UIFont systemFontOfSize:16];
+        self.textLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
         
         self.detailTextLabel.textColor = [UIColor colorWithRed:156/255.0 green:156/255.0 blue:156/255.0 alpha:1.0];
-        self.detailTextLabel.font = [UIFont systemFontOfSize:16];
+        self.detailTextLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
         
         self.avatarView = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 60, 60)];
         self.avatarView.hidden = YES;

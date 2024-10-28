@@ -77,7 +77,7 @@
 
 + (UIColor *)TDTheme_TabBarSelectedColor
 {
-    return [UIColor colorWithHex:0x4C94FF];
+    return [UIColor colorWithHex:0x0087FC];
 }
 
 + (UIColor *)TDTheme_UnreadColor

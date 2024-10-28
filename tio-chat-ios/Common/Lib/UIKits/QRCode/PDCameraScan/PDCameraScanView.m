@@ -38,39 +38,36 @@
         _height =   300; // 宽高200的正方形
         _lineWidth = 2;   // 扫描框4个脚的宽度
         _lineColor =  [UIColor colorWithHex:0x4C94FF]; // 扫描框4个脚的颜色
-        _scanTime = 3;      //扫描线的时间间隔设置
+        _scanTime = 2;      //扫描线的时间间隔设置
         
         kScreen_Width = [UIScreen mainScreen].bounds.size.width;
         kScreen_Height = [UIScreen mainScreen].bounds.size.height;
         
         [self addSubview:self.lineView];
-        CADisplayLink *displayLick = [CADisplayLink displayLinkWithTarget:self selector:@selector(t_scanLineMove)];
-        [displayLick addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-        self.dsiplaylink = displayLick;
+//        CADisplayLink *displayLick = [CADisplayLink displayLinkWithTarget:self selector:@selector(t_scanLineMove)];
+//        [displayLick addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+//        self.dsiplaylink = displayLick;
 //        [self scanLineMove];
 //
 //        //定时，多少秒扫描线刷新一次
-//        timer =  [NSTimer scheduledTimerWithTimeInterval:_scanTime target:self selector:@selector(scanLineMove) userInfo:nil repeats:YES];
+        [self scanLineMove];
+        timer =  [NSTimer scheduledTimerWithTimeInterval:_scanTime target:self selector:@selector(scanLineMove) userInfo:nil repeats:YES];
     }
     return self;
 }
 
 - (void)scanLineMove{
-    UIView *line = [[UIView alloc]initWithFrame:CGRectMake((kScreen_Width-_height)/2, Height_NavBar + 38, _height, 150)];
-    CAGradientLayer *gl = [CAGradientLayer layer];
-    gl.frame = line.bounds;
-    gl.startPoint = CGPointMake(0.5, 0);
-    gl.endPoint = CGPointMake(0.5, 1);
-    gl.colors = @[(__bridge id)[UIColor colorWithRed:0/255.0 green:118/255.0 blue:255/255.0 alpha:0.00].CGColor,(__bridge id)[UIColor colorWithRed:107/255.0 green:175/255.0 blue:255/255.0 alpha:0.31].CGColor];
-    gl.locations = @[@(0),@(1.0f)];
-    [line.layer addSublayer:gl];
-    
-//    line.backgroundColor = [UIColor colorWithHex:0x4C94FF];
-    [self addSubview:line];
+    self.scanLineIsUp = !self.scanLineIsUp;
+    CGFloat top = Height_NavBar + 38 - 50;
+    if (!self.scanLineIsUp) {
+        top = Height_NavBar + 38+250;
+    }
+    CBWeakSelf
+   
     [UIView animateWithDuration:_scanTime animations:^{
-        line.frame = CGRectMake((self->kScreen_Width-self->_height)/2,  Height_NavBar + 38 + self->_height, self->_height, 0.5);
+        WeakSelf.lineView.frame = CGRectMake((kScreen_Width-WeakSelf.height)/2, top, WeakSelf.height, 100);
     } completion:^(BOOL finished) {
-        [line removeFromSuperview];
+
     }];
     
 }
@@ -95,7 +92,7 @@
 - (UIView *)lineView
 {
     if (!_lineView) {
-        _lineView = [UIView.alloc initWithFrame:CGRectMake((kScreen_Width-_height)/2, Height_NavBar + 38, _height, 100)];
+        _lineView = [UIView.alloc initWithFrame:CGRectMake((kScreen_Width-_height)/2, Height_NavBar + 38-50, _height, 100)];
         CAGradientLayer *gl = [CAGradientLayer layer];
         gl.frame = _lineView.bounds;
         gl.startPoint = CGPointMake(0.5, 0);
@@ -158,11 +155,11 @@
 
 - (void)dealloc{
     //清除计时器
-    [self.dsiplaylink invalidate];
-    self.dsiplaylink = nil;
+//    [self.dsiplaylink invalidate];
+//    self.dsiplaylink = nil;
     NSLog(@"-[%@ %s]", self.class, sel_getName(_cmd));
-//    [timer invalidate];
-//    timer = nil;
+    [timer invalidate];
+    timer = nil;
 }
 
 - (void)pause

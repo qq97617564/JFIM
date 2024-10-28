@@ -53,7 +53,7 @@
     self = [super init];
     
     if (self) {
-        self.leftBarButtonText = @"主页";
+        self.title = @"主页";
         self.autoUrl = YES;
     }
     return self;

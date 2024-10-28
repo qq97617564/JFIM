@@ -265,7 +265,8 @@ static TAlertLayout *__actionSheetLayout = nil;
         });
         CGFloat originY = self.title.length ? CGRectGetMaxY(self.titleLabel.frame) + 16 : __layout.contentInset.top;
         UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(__layout.contentInset.left, originY, contentSize.width-__layout.contentInset.left - __layout.contentInset.right, messageHeight)];
-        messageLabel.font = __theme.messageTextAttributes[NSFontAttributeName];
+//        messageLabel.font = __theme.messageTextAttributes[NSFontAttributeName];
+        messageLabel.font = [UIFont systemFontOfSize:20 weight:UIFontWeightBold];
         messageLabel.textColor = __theme.messageTextAttributes[NSForegroundColorAttributeName];
         messageLabel.numberOfLines = 0;
         messageLabel.text = self.message;
@@ -401,7 +402,8 @@ static TAlertLayout *__actionSheetLayout = nil;
 {
     
     CGFloat width = (self.preferredContentSize.width - (self.maxActionCountOfOneLine+1) * 24) / self.maxActionCountOfOneLine;
-    CGFloat height = __layout.actionHeight;
+//    CGFloat height = __layout.actionHeight;
+    CGFloat height = 44;
     
     NSInteger totalRow = [self totalActionsRow];
     

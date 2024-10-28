@@ -13,7 +13,7 @@
 
 @interface TTeamCell ()
 
-@property (nonatomic, weak) UIImageView *managerIcon;
+@property (nonatomic, weak) UILabel *managerIcon;
 
 @end
 
@@ -24,7 +24,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
-        self.backgroundColor = [UIColor colorWithHex:0xF8F8F8];
+        self.backgroundColor = [UIColor whiteColor];
         [self setupUI];
     }
     
@@ -52,9 +52,15 @@
     [self.contentView addSubview:nickLabel];
     _nickLabel = nickLabel;
     
-    UIImageView *managerIcon = ({
-        UIImageView *imageView = [UIImageView.alloc init];
-        imageView.image = [UIImage imageNamed:@"groupOwner"];
+    UILabel *managerIcon = ({
+        UILabel *imageView = [UILabel.alloc initWithFrame:CGRectMake(0, 0, 32, 16)];
+        imageView.textColor = [UIColor whiteColor];
+        imageView.font = [UIFont systemFontOfSize:10 weight:UIFontWeightMedium];
+        imageView.backgroundColor = [UIColor colorWithHex:0x0087FC];
+        imageView.layer.cornerRadius = 4;
+        imageView.textAlignment = NSTextAlignmentCenter;
+        imageView.layer.masksToBounds = true;
+//        imageView.image = [UIImage imageNamed:@"groupOwner"];
         
         imageView;
     });
@@ -86,6 +92,7 @@
     if (_role != TIOTeamUserRoleMember) {
         self.managerIcon.left = 72;
         self.managerIcon.top = self.nickLabel.bottom + 3;
+        self.managerIcon.height = 16;
         self.countLabel.left = self.managerIcon.right + 4;
         self.countLabel.bottom = self.managerIcon.bottom;
     } else {
@@ -99,10 +106,12 @@
     _role = role;
     
     if (role == TIOTeamUserRoleOwner) {
-        self.managerIcon.image = [UIImage imageNamed:@"groupOwner"];
+        self.managerIcon.backgroundColor = [UIColor colorWithHex:0x0087FC];
+        self.managerIcon.text = @" 群主 ";
         self.managerIcon.hidden = NO;
     } else if (role == TIOTeamUserRoleManager) {
-        self.managerIcon.image = [UIImage imageNamed:@"groupManager"];
+        self.managerIcon.backgroundColor = [UIColor colorWithHex:0x0087FC];
+        self.managerIcon.text = @" 管理员 ";
         self.managerIcon.hidden = NO;
     } else {
         self.managerIcon.hidden = YES;

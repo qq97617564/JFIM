@@ -24,7 +24,7 @@
 #import "TSettingCell.h"
 #import "CTMediator+ModuleActions.h"
 #import "UIButton+Enlarge.h"
-#import "QRCodeViewController.h"
+#import "GFQRCodeVC.h"
 #import "ServerConfig.h"
 
 @interface TTeamHomePageController () <UITableViewDelegate, UITableViewDataSource, TTeamModifyNickViewControllerDelegate, TTeamModifyIntroViewControllerDelegate, TIOTeamDelegate>
@@ -62,7 +62,7 @@
     
     if (self) {
         self.team = team;
-        self.leftBarButtonText = @"群聊信息";
+        self.title = @"群聊信息";
     }
     
     return self;
@@ -171,9 +171,9 @@
     tipoffCell.hasIndiractor = YES;
     self.tipoffCell = tipoffCell;
     
-    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStylePlain];
+    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStyleGrouped];
     tableView.backgroundColor = [UIColor colorWithHex:0xF8F8F8];
-    tableView.rowHeight = 60;
+    tableView.rowHeight = 55;
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.separatorInset = UIEdgeInsetsMake(0, 17, 0, 0);
@@ -297,12 +297,12 @@
     moreMembersBtn.viewSize = CGSizeMake(contentView.width - 32, 36);
     moreMembersBtn.centerX = contentView.middleX;
     moreMembersBtn.bottom = contentView.height - 12;
-    moreMembersBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+    moreMembersBtn.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
     [moreMembersBtn setTitleColor:[UIColor colorWithHex:0x909090] forState:UIControlStateNormal];
     [moreMembersBtn setTitle:[NSString stringWithFormat:@"查看全部成员(%zd)",self.team.memberNumber] forState:UIControlStateNormal];
     [moreMembersBtn setImage:[UIImage imageNamed:@"see_more_icon"] forState:UIControlStateNormal];
     [moreMembersBtn verticalLayoutWithInsetsStyle:ButtonStyleRight Spacing:0];
-    [moreMembersBtn setBackgroundColor:[UIColor colorWithHex:0xF8F8F8]];
+//    [moreMembersBtn setBackgroundColor:[UIColor colorWithHex:0xF8F8F8]];
     [moreMembersBtn addTarget:self action:@selector(toAllMembersVC) forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:moreMembersBtn];
     
@@ -445,7 +445,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 20;
+    return 10;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -468,20 +468,12 @@
     
     if (selectedCell == _tNameCell) {
         // 群名称
-        if (self.teamUser.role == TIOTeamUserRoleOwner || self.teamUser.role == TIOTeamUserRoleManager) {
-            TInputAlertController *alert = [TInputAlertController alertWithTitle:@"修改群名称：" placeholder:@"" inputHeight:40 inputStyle:TAlertInputStyleTextField];
-            [alert addAction:[TAlertAction actionWithTitle:@"取消" style:TAlertActionStyleCancel handler:^(TAlertAction * _Nonnull action) {
-                
-            }]];
-            [alert addAction:[TAlertAction actionWithTitle:@"确定" style:TAlertActionStyleDone handler:^(TAlertAction * _Nonnull action) {
-                [TIOChat.shareSDK.teamManager updateTeamName:alert.text inTeam:self.team.teamId completion:^(NSError * _Nullable error) {
-                    if (!error) {
-                        [MBProgressHUD showSuccess:@"修改成功" toView:self.view];
-                    }
-                }];
-            }]];
-            [self presentViewController:alert animated:YES completion:nil];
-        }
+
+        TTeamModifyNickViewController *vc = [TTeamModifyNickViewController.alloc initWithTitle:@"群聊名称" member:self.teamUser];
+        vc.delegate = self;
+        vc.type = 1;
+        [self.navigationController pushViewController:vc animated:YES];
+
     } else if (selectedCell == _introCell)
     {
         // 简介
@@ -539,6 +531,7 @@
     {
         // 群昵称
         TTeamModifyNickViewController *vc = [TTeamModifyNickViewController.alloc initWithTitle:@"我的群昵称" member:self.teamUser];
+        vc.type = 1;
         vc.delegate = self;
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -583,11 +576,13 @@
         }];
     } else if (selectedCell == _qrCell) {
         // 跳转二维码
-        QRCodeViewController *vc = [QRCodeViewController.alloc init];
-        vc.leftBarButtonText = @"群二维码";
+        GFQRCodeVC *vc = [GFQRCodeVC.alloc init];
+        vc.title = @"群二维码";
         vc.isP2P = NO;
         vc.iconUrl = self.team.avatar;
         vc.name = self.team.name;
+        vc.account = self.team.teamId;
+
         vc.qr_data = [QR_SERVER stringByAppendingFormat:@"&g=%@&applyuid=%@",self.team.teamId,TIOChat.shareSDK.loginManager.userInfo.userId];
         [self.navigationController pushViewController:vc animated:YES];
     } else if (selectedCell == _manageCell) {

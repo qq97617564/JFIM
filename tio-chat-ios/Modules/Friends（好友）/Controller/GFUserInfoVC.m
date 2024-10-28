@@ -316,7 +316,7 @@
     button.centerX = self.addContentView.middleX;
 //    button.bottom = self.addContentView.height - 50;
     button.acceptEventInterval = 0.5;
-    [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+    [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
     button.layer.cornerRadius = 6;
     button.layer.masksToBounds = YES;
     [button setTitle:@"添加好友" forState:UIControlStateNormal];
@@ -367,7 +367,7 @@
     button.centerX = self.verifyContentView.middleX;
 //    button.bottom = self.verifyContentView.height - 50;
     button.acceptEventInterval = 0.5;
-    [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+    [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
     button.layer.cornerRadius = 6;
     button.layer.masksToBounds = YES;
     [button setTitle:@"同意加为好友" forState:UIControlStateNormal];

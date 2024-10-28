@@ -87,7 +87,7 @@
     /// 处理关键字富文本
     TAttributedString *node = [TAttributedString.alloc init];
     node.text = key;
-    node.attributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16], NSForegroundColorAttributeName:[UIColor colorWithHex:0x4C94E8]};
+    node.attributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16], NSForegroundColorAttributeName:[UIColor colorWithHex:0x0087FC]};
     
     NSMutableAttributedString *nickAttributedString = [NSMutableAttributedString.alloc initWithString:nick attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16], NSForegroundColorAttributeName:[UIColor blackColor]}];
     self.nickLabel.attributedText = [nickAttributedString replaceAttributesWithStrings:@[node]];

@@ -60,7 +60,7 @@
     if (self) {
         self.user = user;
         self.type = type;
-        self.leftBarButtonText = @"个人信息";
+        self.title = @"个人信息";
     }
     return self;
 }
@@ -292,7 +292,7 @@
     button.centerX = self.addContentView.middleX;
     button.bottom = self.addContentView.height - 86;
     button.acceptEventInterval = 0.5;
-    [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+    [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
     button.layer.cornerRadius = FlexWidth(50)*0.5;
     button.layer.masksToBounds = YES;
     [button setTitle:@"添加好友" forState:UIControlStateNormal];
@@ -342,7 +342,7 @@
     button.centerX = self.verifyContentView.middleX;
     button.bottom = self.verifyContentView.height - 86;
     button.acceptEventInterval = 0.5;
-    [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+    [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
     button.layer.cornerRadius = FlexWidth(50)*0.5;
     button.layer.masksToBounds = YES;
     [button setTitle:@"同意加为好友" forState:UIControlStateNormal];

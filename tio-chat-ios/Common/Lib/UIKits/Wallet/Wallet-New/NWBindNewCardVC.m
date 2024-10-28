@@ -99,7 +99,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"添加银行卡";
+        self.title = @"添加银行卡";
     }
     return self;
 }

@@ -31,7 +31,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"群管理";
+        self.title = @"群管理";
     }
     return self;
 }
@@ -122,10 +122,10 @@
     tableView.backgroundColor = [UIColor colorWithHex:0xF9F9F9];
     tableView.delegate = self;
     tableView.dataSource = self;
-    tableView.separatorInset = UIEdgeInsetsMake(0, 81, 0, 0);
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.separatorColor = [UIColor colorWithHex:0xE6E6E6];
     tableView.rowHeight = 60;
-    tableView.sectionHeaderHeight = 15;
+//    tableView.sectionHeaderHeight = 15;
     [self.view addSubview:tableView];
 }
 
@@ -147,12 +147,17 @@
 {
     return 12;
 }
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return [UIView new];
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 0.01;
 }
-
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [UIView new];
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.cells[indexPath.section][indexPath.row];

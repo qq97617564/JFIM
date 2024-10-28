@@ -34,7 +34,7 @@
     saveButton.right = self.view.width - 16;
     saveButton.layer.cornerRadius = 14;
     saveButton.layer.masksToBounds = YES;
-    saveButton.backgroundColor = [UIColor colorWithHex:0x4C94E8];
+    saveButton.backgroundColor = [UIColor colorWithHex:0x0087FC];
     [saveButton setTitle:@"保存" forState:UIControlStateNormal];
     [saveButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     saveButton.titleLabel.font = [UIFont systemFontOfSize:14];

@@ -34,6 +34,8 @@
 @property (strong, nonatomic) UILabel *confirmDeleteLabel;
 @property (assign, nonatomic) NSInteger rowCount;
 
+@property(nonatomic, strong)UIView *searchView;
+
 @property (strong,  nonatomic) dispatch_queue_t queue;
 
 /// 数据源
@@ -87,13 +89,17 @@
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBtn.viewSize = CGSizeMake(44, 44);
     searchBtn.centerY = moreBtn.centerY;
-    searchBtn.left = 5;
-    [searchBtn setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
-    [searchBtn addTarget:self action:@selector(toSearchMoudle:) forControlEvents:UIControlEventTouchUpInside];
+    searchBtn.left = 15;
+    [searchBtn setTitle:@"聊天" forState:UIControlStateNormal];
+    [searchBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    searchBtn.titleLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
+    searchBtn.userInteractionEnabled = false;
+//    [searchBtn setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
+//    [searchBtn addTarget:self action:@selector(toSearchMoudle:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationBar addSubview:searchBtn];
     
-    self.title = @"聊天";
-    
+//    self.title = @"聊天";
+//    self.title = @"聊天";
 }
 
 - (void)addButtonItemClicked:(UIButton *)sender
@@ -139,13 +145,37 @@
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.rowHeight = 75;
-    tableView.separatorInset = UIEdgeInsetsMake(0, 81, 0, 0);
+    tableView.tableHeaderView = self.searchView;
+//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.separatorColor = [UIColor colorWithHex:0xE9E9E9];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
     [tableView registerClass:[TSessionListCell class] forCellReuseIdentifier:NSStringFromClass(TSessionListCell.class)];
     tableView.tableFooterView = [UIView.alloc initWithFrame:CGRectZero];
     [self.view addSubview:tableView];
     self.tableView = tableView;
+}
+-(UIView *)searchView{
+    if (!_searchView) {
+        UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+        v.backgroundColor = [UIColor clearColor];
+        UIView *bg = [[UIView alloc]initWithFrame:CGRectMake(16, 5, self.view.width-32, 34)];
+        bg.backgroundColor = [UIColor colorWithHex:0xE8EBF0];
+        bg.layer.cornerRadius = 4;
+        [v addSubview:bg];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake(10, 0, self.view.width-52, 34);
+        [btn setTitle:@" 搜索" forState:UIControlStateNormal];
+
+        btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        btn.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
+        [btn setTitleColor:[UIColor colorWithHex:0x939BB2] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"searchbar"] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(toSearchMoudle:) forControlEvents:UIControlEventTouchUpInside];
+        [bg addSubview:btn];
+        _searchView = v;
+    }
+    return _searchView;
 }
 
 - (void)requestData
@@ -181,6 +211,7 @@
         cell.isTop = session.isTop;
         
         
+        cell.flag.hidden = session.officialflag == 1;
         NSInteger unreadStatus = 0; // 自己的消息有么有被度，默认是0，表示对方发的消息
         
         if (session.session.sessionType == TIOSessionTypeP2P) {
@@ -670,7 +701,7 @@
 
 - (void)didUpdateLocalFromRemote:(BOOL)isUpdate
 {
-    self.title = @"聊天";
+    self.title = @"";
     if (isUpdate) {
         //在这写入要计算时间的代码
         [self requestData];
@@ -733,9 +764,9 @@
 - (void)onServerConnectChanged:(BOOL)connected
 {
     if (connected) {
-        self.title = @"聊天";
+        self.title = @"";
     } else {
-        self.title = @"聊天（未连接）";
+        self.title = @"（未连接）";
     }
 }
 

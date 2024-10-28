@@ -32,7 +32,7 @@
 - (void)setupUI
 {
     self.textLabel.textColor = [UIColor colorWithHex:0x333333];
-    self.textLabel.font = [UIFont systemFontOfSize:16.f];
+    self.textLabel.font = [UIFont systemFontOfSize:18.f weight:UIFontWeightMedium];
     self.textLabel.textAlignment = NSTextAlignmentLeft;
     
     self.detailTextLabel.font = [UIFont systemFontOfSize:12];
@@ -50,16 +50,29 @@
     [self addGestureRecognizer:ges];
 }
 
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
     self.selectButton.left = 5;
     self.selectButton.centerY = self.contentView.middleY;
-    
     self.imageView.frame = CGRectMake(self.selectButton.right+5, (self.contentView.height - 44) * 0.5, 44, 44);
+    self.textLabel.left = self.imageView.right + 16;
+    self.flag.centerY = self.contentView.middleY;
+    self.flag.left = self.textLabel.right + 5;
+
     
-    self.textLabel.frame = CGRectMake(self.imageView.right + 16, (self.contentView.height - 22) * 0.5, self.contentView.width - self.imageView.right - 16 - 30, 22);
+
+//    self.textLabel.frame = CGRectMake(self.imageView.right + 16, (self.contentView.height - 22) * 0.5, 70, 22);
+}
+-(UIImageView *)flag{
+    if (!_flag) {
+        UIImageView *flag = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+        flag.image = [UIImage imageNamed:@"Group 1321315481"];
+        [self.contentView addSubview:flag];
+        _flag = flag;
+    }
+    return _flag;
 }
 
 - (void)refreshData:(TTeamInviteModel *)model
@@ -67,6 +80,8 @@
     self.model = model;
     
     self.textLabel.text = model.user.remarkname.length? model.user.remarkname : model.user.nick;
+    [self.textLabel sizeToFit];
+    
     [self.imageView tio_imageUrl:model.user.avatar placeHolderImageName:@"avatar_placeholder" radius:4];
     
     if (model.status == TCellSelectedStatusDisabled)
@@ -77,6 +92,10 @@
     {
         self.selectButton.hidden = NO;
         self.selectButton.selected = model.status == TCellSelectedStatusSelected;
+    }
+    self.flag.hidden = true;
+    if (model.user.xx ==3 || model.user.officialflag == 1) {
+        self.flag.hidden = false;
     }
 }
 

@@ -22,7 +22,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"交易详情";
+        self.title = @"交易详情";
     }
     return self;
 }

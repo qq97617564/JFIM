@@ -49,8 +49,8 @@
     
     UILabel *nickLabel = ({
         UILabel *label = [UILabel.alloc init];
-        label.textColor = CBColorRGB(51, 51, 51);
-        label.font = [UIFont systemFontOfSize:16];
+        label.textColor = [UIColor blackColor];
+        label.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
         label.textAlignment = NSTextAlignmentLeft;
         
         label;
@@ -58,10 +58,16 @@
     [self.contentView addSubview:nickLabel];
     _nickLabel = nickLabel;
     
+    UIImageView *flag = [[UIImageView alloc]init];
+    flag.image = [UIImage imageNamed:@"Group 1321315481"];
+    [self.contentView addSubview:flag];
+    _flag = flag;
+    
+    
     UILabel *messageLabel = ({
         UILabel *label = [UILabel.alloc init];
         label.textColor = [UIColor colorWithHex:0x909090];
-        label.font = [UIFont systemFontOfSize:14.f];
+        label.font = [UIFont systemFontOfSize:13.f];
         label.textAlignment = NSTextAlignmentLeft;
         
         label;
@@ -72,7 +78,7 @@
     UILabel *timeLabel = ({
         UILabel *label = [UILabel.alloc init];
         label.textColor = [UIColor colorWithHex:0xB5B5B5];
-        label.font = [UIFont systemFontOfSize:12];
+        label.font = [UIFont systemFontOfSize:13];
         label.textAlignment = NSTextAlignmentRight;
         
         label;
@@ -84,10 +90,10 @@
         IMKitBadgeView *view = [IMKitBadgeView viewWithBadgeTip:@""];
         view.badgeLeftPadding = 9.f;
         view.badgeTopPadding = -0.5f;
-        view.badgeBackgroundColor = [UIColor colorWithHex:0xFB7B7A];
-        view.badgeTextFont = [UIFont systemFontOfSize:12];
+        view.badgeBackgroundColor = [UIColor colorWithHex:0xFE3724];
+        view.badgeTextFont = [UIFont systemFontOfSize:9 weight:UIFontWeightBold];
         view.whiteCircleWidth = 0;
-        view.badgeHeight = 16;
+        view.badgeHeight = 14;
 
         view;
     });

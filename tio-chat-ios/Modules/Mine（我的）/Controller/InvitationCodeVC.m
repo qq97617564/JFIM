@@ -16,7 +16,7 @@
 #import "WalletKit.h"
 #import "ImportSDK.h"
 #import <UIImageView+WebCache.h>
-#import "QRCodeViewController.h"
+#import "GFQRCodeVC.h"
 #import "ServerConfig.h"
 #import "TCommonCell.h"
 #import "MBProgressHUD+NJ.h"

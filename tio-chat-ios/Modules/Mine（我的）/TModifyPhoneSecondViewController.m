@@ -32,7 +32,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"修改手机号";
+        self.title = @"修改手机号";
     }
     return self;
 }
@@ -46,43 +46,71 @@
 
 - (void)setupUI
 {
-    [self commonUI];
+//    [self commonUI];
     
+    UILabel *titleL = [[UILabel alloc] init];
+    titleL.frame = CGRectMake(15,Height_NavBar+35,196,22.5);
+    titleL.numberOfLines = 0;
+    titleL.text = @"绑定新手机：";
+    titleL.textColor = [UIColor colorWithHex:0x9199A4];
+    titleL.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
+    [self.view addSubview:titleL];
+    
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(15, Height_NavBar+65, ScreenWidth()-30, 406)];
+    backView.backgroundColor = UIColor.whiteColor;
+    backView.layer.cornerRadius = 6;
+    backView.layer.masksToBounds = true;
+    [self.view addSubview:backView];
+    
+    UILabel *titleA = [[UILabel alloc] init];
+    titleA.frame = CGRectMake(20,24,196,18);
+    titleA.numberOfLines = 0;
+    titleA.text = @"手机号";
+    titleA.textColor = [UIColor colorWithHex:0x9199A4];
+    titleA.font = [UIFont systemFontOfSize:13 weight:UIFontWeightMedium];
+    [backView addSubview:titleA];
     // 手机号
     UITextField *phoneTF = ({
-        UITextField *textfiled = [self textFiled:@"请输入手机号" left:40 right:0];
-        textfiled.top = Height_NavBar + 153;
+        UITextField *textfiled = [self textFiled:@"请输入手机号" left:15 right:0];
+        textfiled.top = 48;
         textfiled.delegate = self;
         textfiled.keyboardType = UIKeyboardTypeNumberPad;
-        textfiled.leftView = ({
-            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
-            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_phone"]];
-            [left sizeToFit];
-            left.centerY = view.middleY;
-            left.right = view.width - 2;
-            [view addSubview:left];
-            view;
-        });
+//        textfiled.leftView = ({
+//            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
+//            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_phone"]];
+//            [left sizeToFit];
+//            left.centerY = view.middleY;
+//            left.right = view.width - 2;
+//            [view addSubview:left];
+//            view;
+//        });
         
         textfiled;
     });
-    [self.view addSubview:phoneTF];
+    [backView addSubview:phoneTF];
     self.accountTF = phoneTF;
     
+    UILabel *titleB = [[UILabel alloc] init];
+    titleB.frame = CGRectMake(20,107,196,18);
+    titleB.numberOfLines = 0;
+    titleB.text = @"验证码";
+    titleB.textColor = [UIColor colorWithHex:0x9199A4];
+    titleB.font = [UIFont systemFontOfSize:13 weight:UIFontWeightMedium];
+    [backView addSubview:titleB];
     UITextField *codeTF = ({
-        UITextField *textfiled = [self textFiled:@"请输入验证码" left:40 right:104];
-        textfiled.top = Height_NavBar + 213;
+        UITextField *textfiled = [self textFiled:@"请输入验证码" left:15 right:104];
+        textfiled.top = 131;
         textfiled.delegate = self;
         textfiled.keyboardType = UIKeyboardTypeNumberPad;
-        textfiled.leftView = ({
-            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
-            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_code"]];
-            [left sizeToFit];
-            left.centerY = view.middleY;
-            left.right = view.width - 2;
-            [view addSubview:left];
-            view;
-        });
+//        textfiled.leftView = ({
+//            UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, 40, textfiled.height)];
+//            UIImageView *left = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"login_code"]];
+//            [left sizeToFit];
+//            left.centerY = view.middleY;
+//            left.right = view.width - 2;
+//            [view addSubview:left];
+//            view;
+//        });
         [textfiled.rightView addSubview:({
             // 获取验证码按钮
             UIButton *smsButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -90,7 +118,7 @@
             [smsButton setTitle:@"获取验证码" forState:UIControlStateNormal];
             [smsButton setTitleColor:[UIColor colorWithHex:0x4C94FF] forState:UIControlStateNormal];
             [smsButton setTitleColor:[UIColor colorWithHex:0xBBBBBB] forState:UIControlStateDisabled];
-            smsButton.titleLabel.font = [UIFont systemFontOfSize:14.f];
+            smsButton.titleLabel.font = [UIFont systemFontOfSize:14.f weight:UIFontWeightBold];
             [smsButton addTarget:self action:@selector(SMSButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
             self.smsButton = smsButton;
             
@@ -99,12 +127,20 @@
         
         textfiled;
     });
-    [self.view addSubview:codeTF];
+    [backView addSubview:codeTF];
     self.codeTF = codeTF;
     
+    
+    UILabel *titleC = [[UILabel alloc] init];
+    titleC.frame = CGRectMake(20,190,196,18);
+    titleC.numberOfLines = 0;
+    titleC.text = @"密码";
+    titleC.textColor = [UIColor colorWithHex:0x9199A4];
+    titleC.font = [UIFont systemFontOfSize:13 weight:UIFontWeightMedium];
+    [backView addSubview:titleC];
     UITextField *passwordTF = ({
-        UITextField *textfiled = [self textFiled:@"请输入当前账号密码" left:40 right:56];
-        textfiled.top = Height_NavBar + 273;
+        UITextField *textfiled = [self textFiled:@"请输入当前账号密码" left:15 right:56];
+        textfiled.top = 214;
         textfiled.delegate = self;
 //        textfiled.secureTextEntry = YES;
 //        textfiled.leftView = ({
@@ -129,54 +165,54 @@
         
         textfiled;
     });
-    [self.view addSubview:passwordTF];
+    [backView addSubview:passwordTF];
     self.pwdTF = passwordTF;
     
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginButton.frame = CGRectMake(38, Height_NavBar+360, self.view.width-38*2, 48);
+    loginButton.frame = CGRectMake(20, 302, self.view.width-70, 48);
     UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x72ABFF],[UIColor colorWithHex:0x0087FC]]];
     UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x0087FC],[UIColor colorWithHex:0x0087FC]]];
     [loginButton setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:6 size:loginButton.viewSize] forState:UIControlStateNormal];
     [loginButton setBackgroundImage:[highlightBackgroundImage imageWithCornerRadius:6 size:loginButton.viewSize] forState:UIControlStateHighlighted];
     [loginButton setTitle:@"提交" forState:UIControlStateNormal];
-    [loginButton.titleLabel setFont:[UIFont systemFontOfSize:18]];
+    [loginButton.titleLabel setFont:[UIFont systemFontOfSize:18 weight:UIFontWeightBold]];
     [loginButton addTarget:self action:@selector(confirm:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:loginButton];
+    [backView addSubview:loginButton];
 }
 
-- (void)commonUI
-{
-    NSArray *icons = @[@"w_progress_3",@"w_progress_1",@"w_progress_2"];
-    NSArray *strings = @[@"验证原手机",@"绑定新手机",@"修改成功"];
-    
-    NSInteger index = 1;
-    CGFloat padding = (self.view.width - icons.count*22) / (icons.count+1);
-    
-    for (int i = 0; i < icons.count; i++) {
-        UIImageView *imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:icons[i]]];
-        imageView.frame = CGRectMake(padding + (padding+22)*i, Height_NavBar+32, 22, 22);
-        [self.view addSubview:imageView];
-        
-        UILabel *label = [UILabel.alloc init];
-        label.text = strings[i];
-        label.textColor = i == index ? [UIColor colorWithHex:0x333333] : [UIColor colorWithHex:0x888888];
-        label.font = [UIFont systemFontOfSize:14];
-        [label sizeToFit];
-        label.centerX = imageView.centerX;
-        label.top  = imageView.bottom + 10;
-        [self.view addSubview:label];
-        
-        if (i < icons.count - 1) {
-            UILabel *line = [UILabel.alloc init];
-            line.width = padding - 8;
-            line.height = 1;
-            line.left = imageView.right + 4;
-            line.centerY = imageView.centerY;
-            line.backgroundColor = [UIColor colorWithHex:0xF1F1F1];
-            [self.view addSubview:line];
-        }
-    }
-}
+//- (void)commonUI
+//{
+//    NSArray *icons = @[@"w_progress_3",@"w_progress_1",@"w_progress_2"];
+//    NSArray *strings = @[@"验证原手机",@"绑定新手机",@"修改成功"];
+//    
+//    NSInteger index = 1;
+//    CGFloat padding = (self.view.width - icons.count*22) / (icons.count+1);
+//    
+//    for (int i = 0; i < icons.count; i++) {
+//        UIImageView *imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:icons[i]]];
+//        imageView.frame = CGRectMake(padding + (padding+22)*i, Height_NavBar+32, 22, 22);
+//        [self.view addSubview:imageView];
+//        
+//        UILabel *label = [UILabel.alloc init];
+//        label.text = strings[i];
+//        label.textColor = i == index ? [UIColor colorWithHex:0x333333] : [UIColor colorWithHex:0x888888];
+//        label.font = [UIFont systemFontOfSize:14];
+//        [label sizeToFit];
+//        label.centerX = imageView.centerX;
+//        label.top  = imageView.bottom + 10;
+//        [self.view addSubview:label];
+//        
+//        if (i < icons.count - 1) {
+//            UILabel *line = [UILabel.alloc init];
+//            line.width = padding - 8;
+//            line.height = 1;
+//            line.left = imageView.right + 4;
+//            line.centerY = imageView.centerY;
+//            line.backgroundColor = [UIColor colorWithHex:0xF1F1F1];
+//            [self.view addSubview:line];
+//        }
+//    }
+//}
 
 #pragma mark - actions
 
@@ -230,7 +266,7 @@
 
 - (UITextField *)textFiled:(NSString *)placeholder left:(CGFloat)left right:(CGFloat)right
 {
-    UITextField *textfiled = [UITextField.alloc initWithFrame:CGRectMake(38, 0, self.view.width-38*2, 44)];
+    UITextField *textfiled = [UITextField.alloc initWithFrame:CGRectMake(20, 0, self.view.width-70, 48)];
     textfiled.backgroundColor = UIColor.whiteColor;
     textfiled.placeholder = placeholder;
     if (left > 0) {

@@ -29,7 +29,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"提现记录";
+        self.title = @"提现记录";
     }
     return self;
 }

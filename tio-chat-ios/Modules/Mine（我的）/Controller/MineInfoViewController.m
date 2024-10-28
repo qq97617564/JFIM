@@ -104,7 +104,7 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.sectionFooterHeight = CGFLOAT_MIN;
-    tableView.separatorInset = UIEdgeInsetsMake(0, 81, 0, 0);
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.separatorColor = [UIColor colorWithHex:0xE6E6E6];
     [self.view addSubview:tableView];
 }
@@ -180,9 +180,10 @@
     else if ([indexPath isEqual:[NSIndexPath indexPathForRow:1 inSection:0]])
     {
         // 昵称
-        TEdittingViewController *vc = [TEdittingViewController.alloc initWithTitle:@"修改昵称" text:self.user.nick inputType:TEdittingInputTypeField];
+        TEdittingViewController *vc = [TEdittingViewController.alloc initWithTitle:@"昵称" text:self.user.nick inputType:TEdittingInputTypeField];
         vc.delegate = self;
         vc.maxNumber = 16;
+        
         [self.navigationController pushViewController:vc animated:YES];
     }
     else if ([indexPath isEqual:[NSIndexPath indexPathForRow:2 inSection:0]])

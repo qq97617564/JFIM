@@ -36,7 +36,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"提现";
+        self.title = @"提现";
     }
     return self;
 }

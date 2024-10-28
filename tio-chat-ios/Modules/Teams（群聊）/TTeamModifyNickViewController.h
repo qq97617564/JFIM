@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TTeamModifyNickViewController : TCBaseViewController
 
 - (instancetype)initWithTitle:(NSString *)title member:(TIOTeamMember *)member;
+/// 1群名称 默认群昵称
+@property (assign, nonatomic)NSInteger type;
 @property (assign, nonatomic) id<TTeamModifyNickViewControllerDelegate> delegate;
 
 @end

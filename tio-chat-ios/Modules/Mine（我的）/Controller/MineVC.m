@@ -16,10 +16,12 @@
 #import "WalletKit.h"
 #import "ImportSDK.h"
 #import <UIImageView+WebCache.h>
-#import "QRCodeViewController.h"
+#import "GFQRCodeVC.h"
 #import "ServerConfig.h"
 #import "TCommonCell.h"
 #import "InvitationCodeVC.h"
+#import "GFWalletViewController.h"
+#import "GFBindingVC.h"
 
 @interface MineVC () <TIOLoginDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *infoView;
@@ -41,6 +43,7 @@
 @property (weak,    nonatomic) UITableView *tableView;
 @property (strong,  nonatomic) TCommonCell *accountCell;
 @property (strong,  nonatomic) TCommonCell *walletCell;
+@property (strong,  nonatomic) TCommonCell *bankCell;
 @property (strong,  nonatomic) TCommonCell *infoCell;
 @property (strong,  nonatomic) TCommonCell *codeCell;
 @property (strong,  nonatomic) TCommonCell *settingCell;
@@ -83,12 +86,14 @@
     
     self.accountCell = [self cellWithTitle:@"账号" icon:[UIImage imageNamed:@"Group 1321315501"]];
     self.walletCell = [self cellWithTitle:@"本地钱包" icon:[UIImage imageNamed:@"Group 1321315502"]];
+    self.bankCell = [self cellWithTitle:@"充值卡绑定" icon:[UIImage imageNamed:@"Group 1321315561"]];
+    
     self.infoCell = [self cellWithTitle:@"个人资料" icon:[UIImage imageNamed:@"Group 1321315503"]];
     self.codeCell = [self cellWithTitle:@"邀请码" icon:[UIImage imageNamed:@"Group 1321315504"]];
     self.settingCell = [self cellWithTitle:@"设置" icon:[UIImage imageNamed:@"Group 1321315505"]];
-    self.cells = @[self.accountCell, self.walletCell, self.infoCell,self.codeCell, self.settingCell];
+    self.cells = @[self.accountCell, self.walletCell,self.bankCell, self.infoCell,self.codeCell, self.settingCell];
     
-    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(-7, 7, ScreenWidth()-25, 53*5+15) style:UITableViewStylePlain];
+    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(-7, 7, ScreenWidth()-25, 53*self.cells.count) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
     tableView.scrollEnabled = false;
     tableView.delegate = self;
@@ -121,12 +126,16 @@
 
 - (void)toWallet
 {
-    /// 如果没有开户，会直接进入开户流程页；
-    /// 如果已经开户，会直接进入钱包主页。
-    CBWeakSelf
-    [WalletManager.shareInstance evokeOpenAccount:@{} callback:^(id  _Nonnull data) {
-        CBStrongSelfElseReturn
-    }];
+//    /// 如果没有开户，会直接进入开户流程页；
+//    /// 如果已经开户，会直接进入钱包主页。
+//    CBWeakSelf
+//    [WalletManager.shareInstance evokeOpenAccount:@{} callback:^(id  _Nonnull data) {
+//        CBStrongSelfElseReturn
+//    }];
+    //新钱包
+    GFWalletViewController *vc = [[GFWalletViewController alloc]init];
+    vc.type = 1;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)toSetSetting
@@ -138,11 +147,13 @@
 
 - (void)toQRCodeVC:(id)sender
 {
-    QRCodeViewController *vc = [QRCodeViewController.alloc init];
-    vc.leftBarButtonText = @"我的二维码";
+    GFQRCodeVC *vc = [GFQRCodeVC.alloc init];
+    vc.title = @"我的二维码";
     vc.isP2P = YES;
     vc.iconUrl = TIOChat.shareSDK.loginManager.userInfo.avatar;
     vc.name = TIOChat.shareSDK.loginManager.userInfo.nick;
+    vc.account = TIOChat.shareSDK.loginManager.userInfo.loginname;
+    vc.xx = TIOChat.shareSDK.loginManager.userInfo.officialflag;
     vc.qr_data = [QR_SERVER stringByAppendingFormat:@"&uid=%@",TIOChat.shareSDK.loginManager.userInfo.userId];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -172,6 +183,9 @@
     } else if (cell == _walletCell) {
         // 钱包
         [self toWallet];
+    }else if (cell == _bankCell) {
+        // 绑定充值卡
+        [self toBinding];
     } else if (cell == _infoCell) {
         // 个人资料
         [self editInfor];
@@ -182,6 +196,10 @@
         // 设置
         [self toSetSetting];
     }
+}
+-(void)toBinding{
+    GFBindingVC *vc = [GFBindingVC.alloc init];
+    [self.navigationController pushViewController:vc animated:true];
 }
 -(void)invitationCode{
     InvitationCodeVC *vc = [[InvitationCodeVC alloc]init];

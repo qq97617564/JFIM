@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 群名/昵称
 @property (nonatomic, weak, readonly) UILabel *nickLabel;
+///官方标识
+@property (nonatomic, weak, readonly) UIImageView *flag;
 
 /// 最新一条消息
 @property (nonatomic, weak, readonly) UILabel *messageLabel;

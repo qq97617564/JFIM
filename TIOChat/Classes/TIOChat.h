@@ -31,3 +31,5 @@
 #import "TIOTokenStorage.h"
 
 #import "TIOChatHeader.h"
+
+#import "GFWalletManager.h"

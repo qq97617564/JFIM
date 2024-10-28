@@ -51,7 +51,28 @@
     }
     return self;
 }
-
+-(UIButton *)cancelBtn{
+    if (!_cancelBtn) {
+        _cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _cancelBtn.frame = CGRectMake(0, 0, 78, 31);
+        [_cancelBtn setTitle:@"取消禁言" forState:UIControlStateNormal];
+        _cancelBtn.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
+        _cancelBtn.backgroundColor = [UIColor colorWithHex:0xF3F2F7];
+        [_cancelBtn setTitleColor:[UIColor colorWithHex:0x0087FC] forState:UIControlStateNormal];
+        _cancelBtn.layer.cornerRadius = 6;
+    }
+    return _cancelBtn;
+}
+-(UIImageView *)flagImg{
+    if (!_flagImg) {
+        UIImageView *flag = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+        flag.image = [UIImage imageNamed:@"Group 1321315481"];
+        [self.contentView addSubview:flag];
+        flag.hidden = true;
+        _flagImg = flag;
+    }
+    return _flagImg;
+}
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -81,16 +102,21 @@
         if (self.nameLabel.width > self.contentView.width*0.6) self.nameLabel.width = self.contentView.width*0.6;
         self.nameLabel.centerY = self.contentView.middleY;
     }
-    
+    self.flagImg.left = self.nameLabel.centerY;
+    self.flagImg.centerY = self.nameLabel.right+5;
     self.timeLabel.centerY = self.contentView.middleY;
     self.timeLabel.right = self.contentView.width - 16;
+    self.cancelBtn.right = self.contentView.width-15;
+    self.cancelBtn.centerY = self.contentView.middleY;
+
 }
 
-- (void)updateAvatar:(NSString *)avatar nick:(NSString *)nick remark:(NSString *)remark time:(NSTimeInterval)seconds forever:(BOOL)forever
+- (void)updateAvatar:(NSString *)avatar nick:(NSString *)nick remark:(NSString *)remark flag:(BOOL)flag time:(NSTimeInterval)seconds forever:(BOOL)forever
 {
     [self.avatarView tio_imageUrl:avatar placeHolderImageName:@"placeholder_head" radius:4];
     self.nick = nick;
     self.remark = remark;
+    self.flagImg.hidden = !flag;
     if (!forever) {
         self.timeLabel.text = [NSString stringWithFormat:@"%@",[NSString transferToLengthFromSeconds:seconds]];
     } else {

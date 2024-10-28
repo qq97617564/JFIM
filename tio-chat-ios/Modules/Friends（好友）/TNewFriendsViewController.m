@@ -29,7 +29,7 @@
 {
     self = [super init];
     if (self) {
-        self.leftBarButtonText = @"新的朋友";
+        self.title = @"新的朋友";
     }
     return self;
 }

@@ -20,7 +20,7 @@
     self = [super init];
     
     if (self) {
-        self.leftBarButtonText = @"钱包明细";
+        self.title = @"钱包明细";
     }
     return self;
 }

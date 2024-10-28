@@ -37,7 +37,7 @@
     self = [super init];
     
     if (self) {
-        self.leftBarButtonText = @"选择好友";
+        self.title = @"选择好友";
     }
     
     return self;
@@ -46,7 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.leftBarButtonText = self.toSelected ? @"选择" : @"选择好友";
+    self.title = self.toSelected ? @"选择" : @"选择好友";
     [self addTableView];
     [self requestData];
 }
@@ -102,7 +102,7 @@
     SCIndexViewConfiguration *configuration = [SCIndexViewConfiguration configuration];
     configuration.indexItemRightMargin = 16;
     configuration.indicatorRightMargin = 50;
-    configuration.indexItemSelectedTextColor = [UIColor colorWithHex:0x4C94E8];
+    configuration.indexItemSelectedTextColor = [UIColor colorWithHex:0x0087FC];
     configuration.indexItemTextColor = [UIColor colorWithHex:0x909090];
     configuration.indexItemSelectedBackgroundColor = UIColor.clearColor;
     configuration.indicatorTextFont = [UIFont systemFontOfSize:12];
@@ -189,7 +189,10 @@
             [cell setNick:user.nick];
         }
 //    }
-    
+    cell.flag.hidden = true;
+    if (user.officialflag == 1 || user.xx == 3) {
+        cell.flag.hidden = false;
+    }
     [cell setDetail:nil];
     
     [cell setAvatarUrl:user.avatar];

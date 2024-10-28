@@ -26,7 +26,7 @@
     
     if (self) {
 //        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor colorWithHex:0xF8F8F8];
+        self.backgroundColor = [UIColor whiteColor];
         [self setupUI];
     }
     
@@ -53,7 +53,16 @@
     [self.contentView addSubview:badgeView];
     _badgeView = badgeView;
 }
-
+-(UIImageView *)flag{
+    if (!_flag) {
+        UIImageView *flag = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+        flag.image = [UIImage imageNamed:@"Group 1321315481"];
+        [self.contentView addSubview:flag];
+        flag.hidden = true;
+        _flag = flag;
+    }
+    return _flag;
+}
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -64,6 +73,8 @@
     
     self.badgeView.centerY = self.contentView.middleY;
     self.badgeView.right = self.contentView.width - 16;
+    
+    self.flag.left = self.textLabel.right+5;
 }
 
 - (void)setNick:(NSString *)nick

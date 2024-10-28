@@ -73,19 +73,10 @@
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBtn.viewSize = CGSizeMake(44, 44);
     searchBtn.centerY = moreBtn.centerY;
-    searchBtn.left = 5;
+    searchBtn.right = ScreenWidth() - 50;
     [searchBtn setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
     [searchBtn addTarget:self action:@selector(toSearchMoudle:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationBar addSubview:searchBtn];
-    
-    UILabel *titleLabel = [UILabel.alloc initWithFrame:CGRectZero];
-    titleLabel.text = @"群聊";
-    titleLabel.font = [UIFont systemFontOfSize:18];
-    titleLabel.textColor = [UIColor colorWithHex:0x333333];
-    [titleLabel sizeToFit];
-    titleLabel.centerX = ScreenWidth()*0.5;
-    titleLabel.centerY = Height_StatusBar + 44*0.5;
-    [self.navigationBar addSubview:titleLabel];
     
 }
 
@@ -127,13 +118,14 @@
 /// TableView
 - (void)addTableView
 {
-    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar - Height_TabBar) style:UITableViewStylePlain];
-    tableView.backgroundColor = [UIColor colorWithHex:0xF8F8F8];
+    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStyleGrouped];
+    tableView.backgroundColor = [UIColor clearColor];
 //    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.rowHeight = 60;
-    tableView.separatorInset = UIEdgeInsetsMake(0, 81, 0, 0);
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.separatorColor = [UIColor colorWithHex:0xE9E9E9];
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
     [tableView registerClass:[TTeamCell class] forCellReuseIdentifier:NSStringFromClass(TTeamCell.class)];
@@ -207,34 +199,35 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 44)];
-    view.backgroundColor = [UIColor colorWithHex:0xF8F8F8];
-    UILabel *label = [UILabel.alloc initWithFrame:view.bounds];
-    label.textColor = [UIColor colorWithHex:0xBEBEBE];
-    label.font = [UIFont systemFontOfSize:12];
-    label.text = [NSString stringWithFormat:@"%zd个群聊",self.teams.count];
-    [label sizeToFit];
-    label.center = view.middlePoint;
-    [view addSubview:label];
-    
-    UIView *line1 = [UIView.alloc initWithFrame:CGRectMake(0, 0, 48, 1)];
-    line1.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-    line1.centerY = view.middleY;
-    line1.right = label.left - 8;
-    [view addSubview:line1];
-    
-    UIView *line2 = [UIView.alloc initWithFrame:CGRectMake(0, 0, 48, 1)];
-    line2.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-    line2.centerY = view.middleY;
-    line2.left = label.right + 8;
-    [view addSubview:line2];
-    
-    return view;
+//    UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 44)];
+//    view.backgroundColor = [UIColor colorWithHex:0xF8F8F8];
+//    UILabel *label = [UILabel.alloc initWithFrame:view.bounds];
+//    label.textColor = [UIColor colorWithHex:0xBEBEBE];
+//    label.font = [UIFont systemFontOfSize:12];
+//    label.text = [NSString stringWithFormat:@"%zd个群聊",self.teams.count];
+//    [label sizeToFit];
+//    label.center = view.middlePoint;
+//    [view addSubview:label];
+//    
+//    UIView *line1 = [UIView.alloc initWithFrame:CGRectMake(0, 0, 48, 1)];
+//    line1.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
+//    line1.centerY = view.middleY;
+//    line1.right = label.left - 8;
+//    [view addSubview:line1];
+//    
+//    UIView *line2 = [UIView.alloc initWithFrame:CGRectMake(0, 0, 48, 1)];
+//    line2.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
+//    line2.centerY = view.middleY;
+//    line2.left = label.right + 8;
+//    [view addSubview:line2];
+//    
+//    return view;
+    return [UIView new];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 44;
+    return 12;
 }
 
 #pragma mark 左滑手势

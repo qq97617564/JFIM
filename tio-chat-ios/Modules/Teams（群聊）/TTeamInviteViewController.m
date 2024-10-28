@@ -48,7 +48,8 @@
     self = [super init];
     
     if (self) {
-        self.leftBarButtonText = title;
+//        self.title = title;
+        self.title = title;
         self.type = type;
         self.loginUID = [TIOChat.shareSDK.loginManager userInfo].userId;
     }
@@ -130,8 +131,9 @@
 /// TableView
 - (void)addTableView
 {
-    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar - Height_TabBar) style:UITableViewStylePlain];
+    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar - Height_TabBar) style:UITableViewStyleGrouped];
     tableView.sectionIndexColor = [UIColor colorWithHex:0x909090];
+    tableView.backgroundColor = UIColor.clearColor;
     tableView.sectionIndexMinimumDisplayRowCount = 6;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.dataSource = self;
@@ -141,12 +143,12 @@
     self.tableView = tableView;
     
     tableView.tableHeaderView = ({
-        UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 60)];
-        view.backgroundColor = UIColor.whiteColor;
+        UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 44)];
+        view.backgroundColor = UIColor.clearColor;
         
-        UITextField *searchTF = [UITextField.alloc initWithFrame:CGRectMake(16, 10, view.width - 32, 36)];
+        UITextField *searchTF = [UITextField.alloc initWithFrame:CGRectMake(16, 5, view.width - 32, 36)];
         searchTF.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-        searchTF.layer.cornerRadius = 18;
+        searchTF.layer.cornerRadius = 4;
         searchTF.layer.masksToBounds = YES;
         searchTF.leftViewMode = UITextFieldViewModeAlways;
         searchTF.leftView = ({
@@ -161,8 +163,8 @@
         });
         searchTF.rightViewMode = UITextFieldViewModeWhileEditing;
         searchTF.clearButtonMode = UITextFieldViewModeWhileEditing;
-        searchTF.placeholder = @"搜索群成员";
-        searchTF.font = [UIFont systemFontOfSize:16];
+        searchTF.placeholder = @"搜索";
+        searchTF.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
         searchTF.returnKeyType = UIReturnKeySearch;
         [searchTF resignFirstResponder];
         [searchTF addTarget:self action:@selector(textFieldEditing:) forControlEvents:UIControlEventEditingChanged];
@@ -174,7 +176,7 @@
     SCIndexViewConfiguration *configuration = [SCIndexViewConfiguration configuration];
     configuration.indexItemRightMargin = 16;
     configuration.indicatorRightMargin = 50;
-    configuration.indexItemSelectedTextColor = [UIColor colorWithHex:0x4C94E8];
+    configuration.indexItemSelectedTextColor = [UIColor colorWithHex:0x0087FC];
     configuration.indexItemTextColor = [UIColor colorWithHex:0x909090];
     configuration.indexItemSelectedBackgroundColor = UIColor.clearColor;
     configuration.indicatorTextFont = [UIFont systemFontOfSize:12];
@@ -187,17 +189,18 @@
 {
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setBackgroundColor:[UIColor colorWithHex:0x4C94E8]];
+        [button setBackgroundColor:[UIColor colorWithHex:0x0087FC]];
         [button setTitle:@"确定" forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0x4C94E8]] forState:UIControlStateNormal];
-        [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0xD4D4D4]] forState:UIControlStateDisabled];
-        button.titleLabel.font = [UIFont systemFontOfSize:16];
+        [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0x0087FC]] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0x0087FC]] forState:UIControlStateDisabled];
+        button.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightBold];
         button.viewSize = CGSizeMake(70, 30);
         button.acceptEventInterval = 0.5;
-        
+
         
         [button addTarget:self action:@selector(createClickDone:) forControlEvents:UIControlEventTouchUpInside];
-        
+        button.layer.cornerRadius = 6;
+        button.layer.masksToBounds = true;
         button;
     })];
 }
@@ -217,13 +220,14 @@
         button.height = 30;
         button.width += 20;
         button.acceptEventInterval = 0.5;
-        [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0x4C94E8]] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0x0087FC]] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0xD4D4D4]] forState:UIControlStateDisabled];
         
         button.enabled = total != 0;
-        
+
         [button addTarget:self action:@selector(createClickDone:) forControlEvents:UIControlEventTouchUpInside];
-        
+        button.layer.cornerRadius = 6;
+        button.layer.masksToBounds = true;
         button;
     })];
 }
@@ -472,7 +476,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 24;
+    return 29;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

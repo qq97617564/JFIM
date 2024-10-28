@@ -54,7 +54,7 @@
     // Do any additional setup after loading the view.
     [self addNavigationBar];
     [self addTableView];
-    
+    self.title = @"我的好友";
     [self requestData];
     [TIOChat.shareSDK.friendManager addDelegate:self];
     [TIOChat.shareSDK.systemManager addDelegate:self];
@@ -99,19 +99,12 @@
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBtn.viewSize = CGSizeMake(44, 44);
     searchBtn.centerY = moreBtn.centerY;
-    searchBtn.left = 5;
+    searchBtn.right = ScreenWidth() - 50;
     [searchBtn setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
     [searchBtn addTarget:self action:@selector(toSearchMoudle:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationBar addSubview:searchBtn];
     
-    UILabel *titleLabel = [UILabel.alloc initWithFrame:CGRectZero];
-    titleLabel.text = @"好友";
-    titleLabel.font = [UIFont systemFontOfSize:18];
-    titleLabel.textColor = [UIColor colorWithHex:0x333333];
-    [titleLabel sizeToFit];
-    titleLabel.centerX = ScreenWidth()*0.5;
-    titleLabel.centerY = Height_StatusBar + 44*0.5;
-    [self.navigationBar addSubview:titleLabel];
+   
     
 }
 
@@ -153,10 +146,10 @@
 /// TableView
 - (void)addTableView
 {
-    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar - Height_TabBar) style:UITableViewStylePlain];
+    UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar ) style:UITableViewStyleGrouped];
     tableView.sectionIndexColor = [UIColor colorWithHex:0x909090];
     tableView.sectionIndexMinimumDisplayRowCount = 6;
-    tableView.backgroundColor = [UIColor colorWithHex:0xF2F2F2];
+    tableView.backgroundColor = [UIColor clearColor];
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.separatorInset = UIEdgeInsetsMake(0, 77, 0, 0);
@@ -171,7 +164,7 @@
     configuration.indexItemRightMargin = 16;
     configuration.indicatorRightMargin = 50;
     configuration.indicatorHeight = 65;
-    configuration.indexItemSelectedTextColor = [UIColor colorWithHex:0x4C94E8];
+    configuration.indexItemSelectedTextColor = [UIColor colorWithHex:0x0087FC];
     configuration.indexItemTextColor = [UIColor colorWithHex:0x909090];
     configuration.indexItemSelectedBackgroundColor = UIColor.clearColor;
     configuration.indicatorTextFont = [UIFont systemFontOfSize:12];
@@ -242,20 +235,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        TFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(TFriendCell.class)
-                                                            forIndexPath:indexPath];
-        [cell setNick:@"新的朋友"];
-        [cell setDetail:self.applyMsg];
-        cell.imageView.image = [UIImage imageNamed:@"newlyFriend"];
-        return cell;
-    }
+
     
 #ifdef  Sort1
-    TIOUser *user = self.sortedfriends[self.titleOfIndexes[indexPath.section-1]][indexPath.row];
+    TIOUser *user = self.sortedfriends[self.titleOfIndexes[indexPath.section]][indexPath.row];
 #else
     NSArray *arr = self.sortedfriends[CYPinyinGroupResultArray];
-    TIOUser *user = arr[indexPath.section-1][indexPath.row];
+    TIOUser *user = arr[indexPath.section][indexPath.row];
 #endif
     
     TFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(TFriendCell.class)
@@ -269,6 +255,10 @@
             [cell setNick:user.nick];
         }
 //    }
+    cell.flag.hidden = true;
+    if (user.officialflag == 1 || user.xx == 3) {
+        cell.flag.hidden = false;
+    }
     
     [cell setDetail:nil];
     
@@ -279,21 +269,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.titleOfIndexes.count + 1;
+    return self.titleOfIndexes.count;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 1;
-    }
+
     
     
 #ifdef Sort1
-    NSArray *array = self.sortedfriends[self.titleOfIndexes[section-1]];
+    NSArray *array = self.sortedfriends[self.titleOfIndexes[section]];
 #else
     NSArray *arr = self.sortedfriends[CYPinyinGroupResultArray];
-    NSArray *array = arr[section-1];
+    NSArray *array = arr[section];
     
 #endif
     return array.count;
@@ -303,13 +291,11 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return nil;
-    }
+
     UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 30)];
     view.backgroundColor = tableView.backgroundColor;
     UILabel *label = [UILabel.alloc init];
-    label.text = self.titleOfIndexes[section-1];
+    label.text = self.titleOfIndexes[section];
     label.textColor = [UIColor colorWithHex:0xC1C1C1];
     label.font = [UIFont systemFontOfSize:14.f];
     [label sizeToFit];
@@ -327,76 +313,45 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    if (section == 0)
-    {
-        UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 44)];
-        view.backgroundColor = [UIColor colorWithHex:0xF8F8F8];
-        UILabel *label = [UILabel.alloc initWithFrame:view.bounds];
-        label.textColor = [UIColor colorWithHex:0xBEBEBE];
-        label.font = [UIFont systemFontOfSize:12];
-        label.text = [NSString stringWithFormat:@"%zd位联系人",self.allFriends.count];
-        [label sizeToFit];
-        label.center = view.middlePoint;
-        [view addSubview:label];
-        
-        UIView *line1 = [UIView.alloc initWithFrame:CGRectMake(0, 0, 48, 1)];
-        line1.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-        line1.centerY = view.middleY;
-        line1.right = label.left - 8;
-        [view addSubview:line1];
-        
-        UIView *line2 = [UIView.alloc initWithFrame:CGRectMake(0, 0, 48, 1)];
-        line2.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-        line2.centerY = view.middleY;
-        line2.left = label.right + 8;
-        [view addSubview:line2];
-        
-        return view;
-    }
+   
     return [UIView.alloc init];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return section == 0 ? 0.01 : 30;
+    return 30;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return section == 0 ? 44 : 0.01;
+    return 0.01;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section == 0) {
-        TNewFriendsViewController *vc = [TNewFriendsViewController.alloc init];
-        [self.navigationController pushViewController:vc animated:YES];
-        self.applyCount = 0;
-        [self refreshNewApplyMsg:nil];
-        self.tabBarController.viewControllers[1].tabBarItem.badgeValue = nil;
-    } else {
+   
         
 #ifdef Sort1
-        TIOUser *user = self.sortedfriends[self.titleOfIndexes[indexPath.section-1]][indexPath.row];
+        TIOUser *user = self.sortedfriends[self.titleOfIndexes[indexPath.section]][indexPath.row];
 #else
         NSArray *arr = self.sortedfriends[CYPinyinGroupResultArray];
-        TIOUser *user = arr[indexPath.section-1][indexPath.row];
+        TIOUser *user = arr[indexPath.section][indexPath.row];
 #endif
         
         BOOL isSelf = [user.userId isEqualToString:[TIOChat.shareSDK.loginManager userInfo].userId];
         
         GFUserInfoVC *vc = [GFUserInfoVC.alloc initWithUser:user type:isSelf?TUserInfoVCTypeSelf:TUserInfoVCTypeFriend];
         [self.navigationController pushViewController:vc animated:YES];
-    }
+    
 }
 
 #pragma mark 左滑手势
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return indexPath.section != 0;
+    return true;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -415,10 +370,10 @@ API_AVAILABLE(ios(11.0)){
         
         
 #ifdef Sort1
-        TIOUser *user = self.sortedfriends[self.titleOfIndexes[indexPath.section-1]][indexPath.row];
+        TIOUser *user = self.sortedfriends[self.titleOfIndexes[indexPath.section]][indexPath.row];
 #else
         NSArray *arr = self.sortedfriends[CYPinyinGroupResultArray];
-        TIOUser *user = arr[indexPath.section-1][indexPath.row];
+        TIOUser *user = arr[indexPath.section][indexPath.row];
 #endif
         
         [self alertDeleteUser:user];
@@ -430,10 +385,10 @@ API_AVAILABLE(ios(11.0)){
     UIContextualAction *cardAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"推给别人" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
         
 #ifdef Sort1
-        TIOUser *user = self.sortedfriends[self.titleOfIndexes[indexPath.section-1]][indexPath.row];
+        TIOUser *user = self.sortedfriends[self.titleOfIndexes[indexPath.section]][indexPath.row];
 #else
         NSArray *arr = self.sortedfriends[CYPinyinGroupResultArray];
-        TIOUser *user = arr[indexPath.section-1][indexPath.row];
+        TIOUser *user = arr[indexPath.section][indexPath.row];
 #endif
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         params[@"type"] = @(1);

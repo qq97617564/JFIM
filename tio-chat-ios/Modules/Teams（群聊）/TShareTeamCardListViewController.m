@@ -35,7 +35,7 @@
     self = [super init];
     
     if (self) {
-        self.leftBarButtonText = @"选择群聊";
+        self.title = @"选择群聊";
     }
     
     return self;
