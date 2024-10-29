@@ -317,6 +317,7 @@
 
 - (void)forgetClicked:(UIButton *)button
 {
+    
     [self.navigationController pushViewController:[TFindPwdViewController.alloc init] animated:YES];
 }
 

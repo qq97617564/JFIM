@@ -14,8 +14,8 @@
             filePath = "TIOChat/Classes/TIOLoginManager.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "-login:password:completion:"
             landmarkType = "7">
             <Locations>
@@ -122,6 +122,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "215"
                   endingLineNumber = "215"
+                  offsetFromSymbolStart = "812">
+               </Location>
+               <Location
+                  uuid = "73B1EA17-B687-4C91-ACB8-77DFE43B25E3 - 66d57e88288e62b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TIOLoginManager login:password:completion:]"
+                  moduleName = "tio-chat-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/TIOChat/Classes/TIOLoginManager.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "230"
+                  endingLineNumber = "230"
                   offsetFromSymbolStart = "812">
                </Location>
             </Locations>

@@ -116,7 +116,22 @@
 }
 
 #pragma mark - 公开
+- (void)tLoginInvitecodeCompletion:(void (^)(NSDictionary * _Nullable, NSError * _Nullable))completion
+{
 
+        
+        NSString *url = [NSString stringWithFormat:@"/config/invitecode"];
+
+        NSDictionary *params = @{
+                                 };
+        
+        [TIOHTTPSManager tio_POST:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            completion(responseObject, nil);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            completion(nil, error);
+        } retryCount:1];
+    
+}
 - (void)tLogin1:(TIOThirdLoginOption *)option completion:(void (^)(NSDictionary * _Nullable, NSError * _Nullable))completion
 {
     if (option.type && option.openid) {

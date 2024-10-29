@@ -145,6 +145,10 @@ typedef void(^TIOOperateHandler)(NSInteger result, NSError * __nullable error);
 @interface TIOLoginManager : NSObject
 
 #pragma mark - 新增API：三方登录
+
+/// 邀请码配置
+/// - Parameter completion: 回调
+- (void)tLoginInvitecodeCompletion:(void (^)(NSDictionary * _Nullable, NSError * _Nullable))completion;
 /// 第一步：获取uuid
 - (void)tLogin1:(TIOThirdLoginOption *)option completion:(void(^)(NSDictionary * _Nullable responObject, NSError * _Nullable error))completion;
 
