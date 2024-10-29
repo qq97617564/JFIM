@@ -52,6 +52,9 @@
         if (error) {
             [MBProgressHUD showError:error.localizedDescription toView:self.view];
             return;
+        }else{
+            CGFloat money = [responseObject[@"data"] floatValue];
+            self.moneyL.text = [NSString stringWithFormat:@"%0.2f",money];
         }
         
         
@@ -97,7 +100,8 @@
                     [MBProgressHUD showError:error.localizedDescription toView:self.view];
                     return;
                 }else{
-                    [MBProgressHUD showMessage:@"提交成功" toView:self.view];
+                    [MBProgressHUD showSuccess:@"提交成功" toView:self.view];
+                    [self loadData];
                 }
                 
                 
@@ -112,7 +116,7 @@
                     [MBProgressHUD showError:error.localizedDescription toView:self.view];
                     return;
                 }else{
-                    [MBProgressHUD showMessage:@"提交成功" toView:self.view];
+                    [MBProgressHUD showSuccess:@"提交成功" toView:self.view ] ;
                 }
                 
                 

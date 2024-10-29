@@ -45,75 +45,67 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self resetData];
-    
+    self.title = @"红包记录";
     [self setupUI];
+    [self beginLoadingMore:nil];
 }
 
 - (void)setupUI
 {
     UIView *topBg = [UIView.alloc initWithFrame:CGRectMake(0, 0, self.view.width, Height_NavBar)];
-    topBg.backgroundColor = [UIColor colorWithHex:0xFF5E5E];
+    topBg.backgroundColor = [UIColor colorWithHex:0xF94335];
     [self.view addSubview:topBg];
  
     self.navigationBar.backgroundColor = UIColor.clearColor;
     [self.view bringSubviewToFront:self.navigationBar];
      
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:({
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.titleLabel.font = [UIFont systemFontOfSize:18];
-        [button setImage:[UIImage imageNamed:@"back2"] forState:UIControlStateNormal];
-        [button setTitle:@"红包记录" forState:UIControlStateNormal];
-        [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        [button verticalLayoutWithInsetsStyle:ButtonStyleLeft Spacing:-40];
-        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        [button addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
-        
-        button;
-    })];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:({
+//        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//        button.titleLabel.font = [UIFont systemFontOfSize:18];
+//        [button setImage:[UIImage imageNamed:@"back2"] forState:UIControlStateNormal];
+//        [button setTitle:@"红包记录" forState:UIControlStateNormal];
+//        [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+//        [button verticalLayoutWithInsetsStyle:ButtonStyleLeft Spacing:-40];
+//        button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+//        [button addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        button;
+//    })];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.years.firstObject style:UIBarButtonItemStylePlain target:self action:@selector(filterYearClicked:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage: [UIImage imageNamed:@"more"] style:UIBarButtonItemStylePlain target:self action:@selector(barItemClick:)];
+//    self.years.firstObject
     
-    UIImageView *topBg1 = [UIImageView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, FlexWidth(104))];
-    topBg1.image = [UIImage imageNamed:@"bg_red"];
-    [self.view addSubview:topBg1];
+
     
-    // tab
-    UIView *tabView = [UIView.alloc initWithFrame:CGRectMake((self.view.width - 232)*0.5, Height_NavBar, 232, 32)];
-    tabView.backgroundColor = [UIColor colorWithHex:0xFC5050];
-    tabView.layer.cornerRadius = 16;
-    tabView.layer.masksToBounds = YES;
-    [self.view addSubview:tabView];
+//    // tab
+//    UIView *tabView = [UIView.alloc initWithFrame:CGRectMake((self.view.width - 232)*0.5, Height_NavBar, 232, 32)];
+//    tabView.backgroundColor = [UIColor colorWithHex:0xFC5050];
+//    tabView.layer.cornerRadius = 16;
+//    tabView.layer.masksToBounds = YES;
+//    [self.view addSubview:tabView];
+//    
+
+//
+//    UIButton *sendButton = [UIButton buttonWithType: UIButtonTypeCustom];
+//    sendButton.frame = CGRectMake(tabView.width * 0.55, 0, tabView.width * 0.45, tabView.height-2);
+//    sendButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//    [sendButton setTitleColor:[UIColor colorWithHex:0xFFBEBE] forState:UIControlStateNormal];
+//    [sendButton setTitleColor:UIColor.whiteColor forState:UIControlStateSelected];
+//    [sendButton setTitle:@"我发出的" forState:UIControlStateNormal];
+//    [sendButton addTarget:self action:@selector(tabButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//    [tabView addSubview:sendButton];
+//    
+//    self.tabButtons = @[receiveButton, sendButton];
     
-    UIButton *receiveButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    receiveButton.frame = CGRectMake(0, 0, tabView.width * 0.45, tabView.height-2);
-    receiveButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [receiveButton setTitleColor:[UIColor colorWithHex:0xFFBEBE] forState:UIControlStateNormal];
-    [receiveButton setTitleColor:UIColor.whiteColor forState:UIControlStateSelected];
-    [receiveButton setTitle:@"我收到的" forState:UIControlStateNormal];
-    [receiveButton addTarget:self action:@selector(tabButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    receiveButton.selected = YES;
-    [tabView addSubview:receiveButton];
-    
-    UIButton *sendButton = [UIButton buttonWithType: UIButtonTypeCustom];
-    sendButton.frame = CGRectMake(tabView.width * 0.55, 0, tabView.width * 0.45, tabView.height-2);
-    sendButton.titleLabel.font = [UIFont systemFontOfSize:14];
-    [sendButton setTitleColor:[UIColor colorWithHex:0xFFBEBE] forState:UIControlStateNormal];
-    [sendButton setTitleColor:UIColor.whiteColor forState:UIControlStateSelected];
-    [sendButton setTitle:@"我发出的" forState:UIControlStateNormal];
-    [sendButton addTarget:self action:@selector(tabButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [tabView addSubview:sendButton];
-    
-    self.tabButtons = @[receiveButton, sendButton];
-    
-    self.tabIndiractor = [UIView.alloc initWithFrame:CGRectMake(0, 0, 52, 1)];
-    self.tabIndiractor.backgroundColor = UIColor.whiteColor;
-    self.tabIndiractor.bottom = tabView.height - 4;
-    self.tabIndiractor.centerX = receiveButton.centerX;
-    [tabView addSubview:self.tabIndiractor];
+//    self.tabIndiractor = [UIView.alloc initWithFrame:CGRectMake(0, 0, 52, 1)];
+//    self.tabIndiractor.backgroundColor = UIColor.whiteColor;
+//    self.tabIndiractor.bottom = tabView.height - 4;
+//    self.tabIndiractor.centerX = receiveButton.centerX;
+//    [tabView addSubview:self.tabIndiractor];
     
     
     // tableview
-    self.tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar+32, self.view.width, self.view.height - Height_NavBar -32) style:UITableViewStylePlain];
+    self.tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStylePlain];
     self.tableView.tableHeaderView = [UIView.alloc initWithFrame:CGRectZero];
     self.tableView.tableFooterView = [UIView.alloc initWithFrame:CGRectZero];
     self.tableView.backgroundColor = [[UIColor.alloc init] colorWithAlphaComponent:0];
@@ -121,6 +113,7 @@
     [self.tableView registerClass:WalletSendRedCell.class forCellReuseIdentifier:NSStringFromClass(WalletSendRedCell.class)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = UIColor.clearColor;
     self.tableView.emptyDataSetDelegate = self;
     self.tableView.emptyDataSetSource = self;
     self.tableView.rowHeight = 70;
@@ -136,70 +129,76 @@
         footer;
     });
     [self.view addSubview:self.tableView];
-    
+    UIImageView *topBg1 = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, self.view.width, 270)];
+    topBg1.backgroundColor = [UIColor colorWithHex:0xF1F2F6];
+    [self.tableView addSubview:topBg1];
     
     // 头像和昵称
     self.avatar = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 80, 80)];
     [self.avatar tio_imageUrl:TIOChat.shareSDK.loginManager.userInfo.avatar placeHolderImageName:@"avatar_placeholder" radius:1];
-    self.avatar.layer.borderColor = UIColor.whiteColor.CGColor;
-    self.avatar.layer.borderWidth = 4;
-    self.avatar.layer.cornerRadius = 8;
+//    self.avatar.layer.borderColor = UIColor.whiteColor.CGColor;
+//    self.avatar.layer.borderWidth = 4;
+    self.avatar.layer.cornerRadius = 6;
     self.avatar.layer.masksToBounds = YES;
     UIView *shadowView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
-    shadowView.top = 18;
+    shadowView.top = 35;
     shadowView.centerX = self.tableView.middleX;
     [self.tableView addSubview:shadowView];
-    shadowView.layer.shadowColor = [UIColor blackColor].CGColor;
-    shadowView.layer.shadowOffset = CGSizeMake(5, 5);
-    shadowView.layer.shadowOpacity = 0.3;
-    shadowView.layer.shadowRadius = 8.0;
-    shadowView.layer.cornerRadius = 8.0;
+//    shadowView.layer.shadowColor = [UIColor blackColor].CGColor;
+//    shadowView.layer.shadowOffset = CGSizeMake(5, 5);
+//    shadowView.layer.shadowOpacity = 0.3;
+//    shadowView.layer.shadowRadius = 8.0;
+    shadowView.layer.cornerRadius = 6.0;
     shadowView.clipsToBounds = NO;
     [shadowView addSubview:self.avatar];
     
     self.nickLable = [UILabel.alloc initWithFrame:CGRectZero];
     self.nickLable.text = [TIOChat.shareSDK.loginManager.userInfo.nick stringByAppendingString:@"共收到"];
-    self.nickLable.font = [UIFont systemFontOfSize:16];
+    self.nickLable.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
     self.nickLable.textColor = [UIColor colorWithHex:0x333333];
     [self.nickLable sizeToFit];
     self.nickLable.centerX = self.tableView.middleX;
-    self.nickLable.top = shadowView.bottom + 10;
+    self.nickLable.top = shadowView.bottom + 12;
     [self.tableView addSubview:self.nickLable];
     
-    self.moneyLabel = [UILabel.alloc initWithFrame:CGRectMake(20, 137, self.tableView.width - 40, 52)];
+    self.moneyLabel = [UILabel.alloc initWithFrame:CGRectMake(20, 149, self.tableView.width - 40, 67)];
     [self.tableView addSubview:self.moneyLabel];
     [self setMoney:@"0.00"];
     
     [self.tabButtons[0] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *receiveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    receiveButton.frame = CGRectMake(self.view.width-55, Height_NavBar+10, 40, 15);
+    receiveButton.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightBold];
+    [receiveButton setTitleColor:[UIColor colorWithHex:0xD9A64F] forState:UIControlStateNormal];
+//    [receiveButton setTitleColor:UIColor.whiteColor forState:UIControlStateSelected];
+    [receiveButton setTitle:self.years.firstObject forState:UIControlStateNormal];
+    [receiveButton addTarget:self action:@selector(tabButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    receiveButton.selected = YES;
+    [self.view addSubview:receiveButton];
+}
+-(void)barItemClick:(id)btn{
+
+    [self resetData];
+    
+    self.indexOfQuest = self.indexOfQuest == 0? 1 : 0;
+    
+    NSString *nick = TIOChat.shareSDK.loginManager.userInfo.nick;
+    
+    self.nickLable.text = self.indexOfQuest==0?[nick stringByAppendingString:@"共收到"]:[nick stringByAppendingString:@"共发出"];
+
+    
+    [self beginLoadingMore:nil];
+    
+  
 }
 
 - (void)tabButtonClicked:(UIButton *)button
 {
-    [self resetData];
-    
-    NSInteger index = [self.tabButtons indexOfObject:button];
-    self.indexOfQuest = index;
-    
-    button.selected = YES;
-    self.tabButtons[1-index].selected = NO;
-    
-    NSString *nick = TIOChat.shareSDK.loginManager.userInfo.nick;
-    
-    self.nickLable.text = index==0?[nick stringByAppendingString:@"共收到"]:[nick stringByAppendingString:@"共发出"];
-    if (index == 0) {
-        [self receiveDetailView:@"-"];
-    } else {
-        [self sendDetailView:@"-"];
-    }
-    
-    [self beginLoadingMore:nil];
-    
-    [UIView animateWithDuration:0.15 animations:^{
-        self.tabIndiractor.centerX = button.centerX;
-    }];
+    [self filterYearClicked:button];
 }
 
-- (void)filterYearClicked:(id)sender
+- (void)filterYearClicked:(UIButton *)sender
 {
     CBWeakSelf
     [WalletYearPicker showItems:[self years] currentIndex:self.lastYearIndex block:^(NSInteger currentIndex) {
@@ -207,7 +206,8 @@
         self.lastYearIndex = currentIndex;
         self.pageNumber = 1;
         [self beginLoadingMore:nil];
-        self.navigationItem.rightBarButtonItem.title = self.years[currentIndex];
+        [sender setTitle:self.years[currentIndex] forState:UIControlStateNormal];
+
     } onView:self.view];
 }
 
@@ -215,43 +215,21 @@
 {
     self.tableView.tableHeaderView = ({
         UIView *view  = [UIView.alloc initWithFrame:CGRectMake(0, 0, self.tableView.width, 270)];
-        UIView *menu = [UIView.alloc initWithFrame:CGRectMake(0, view.height - 76, view.width, 76)];
-        menu.backgroundColor = UIColor.whiteColor;
+        UIView *menu = [UIView.alloc initWithFrame:CGRectMake(0, view.height - 55, view.width, 45)];
+        menu.backgroundColor = UIColor.clearColor;
         
-        NSDictionary *attr1 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x999999], NSFontAttributeName:[UIFont systemFontOfSize:14 weight:UIFontWeightSemibold]};
-        NSDictionary *attr2 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x999999], NSFontAttributeName:[UIFont systemFontOfSize:20 weight:UIFontWeightMedium]};//DINAlternate-Bold //DINCondensed-Bold
-        
-        UILabel *label1 = [UILabel.alloc initWithFrame:CGRectMake(0, 0, menu.width*0.5, menu.height)];
-        label1.numberOfLines = 2;
-        label1.attributedText = ({
-            NSMutableAttributedString *aString = [NSMutableAttributedString.alloc init];
-            [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"收到红包数\n" attributes:attr1]];
-            [aString appendAttributedString:[NSAttributedString.alloc initWithString:packagecount attributes:attr2]];
-            NSMutableParagraphStyle *style = [NSMutableParagraphStyle.alloc init];
-            style.alignment = NSTextAlignmentCenter;
-            style.lineSpacing = 8;
-            [aString addAttributes:@{NSParagraphStyleAttributeName:style} range:NSMakeRange(0, aString.length)];
-            
-            aString;
-        });
-        [menu addSubview:label1];
-        label1.centerX = menu.middleX;
-        
-//        UILabel *label2 = [UILabel.alloc initWithFrame:CGRectMake( menu.width*0.5, 0, menu.width*0.5, menu.height)];
-//        label2.numberOfLines = 2;
-//        label2.attributedText = ({
-//            NSMutableAttributedString *aString = [NSMutableAttributedString.alloc init];
-//            [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"人品爆发\n" attributes:attr1]];
-//            [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"" attributes:attr2]];
-//            NSMutableParagraphStyle *style = [NSMutableParagraphStyle.alloc init];
-//            style.alignment = NSTextAlignmentCenter;
-//            style.lineSpacing = 8;
-//            [aString addAttributes:@{NSParagraphStyleAttributeName:style} range:NSMakeRange(0, aString.length)];
-//
-//            aString;
-//        });
-//        [menu addSubview:label2];
-        
+        UILabel *labelA = [UILabel.alloc initWithFrame:CGRectMake(0, 0, view.width, 25)];
+        labelA.text = [NSString stringWithFormat:@"%@",packagecount];
+        labelA.textColor = [UIColor colorWithHex:0xBCBCBC];
+        labelA.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
+        UILabel *labelB = [UILabel.alloc initWithFrame:CGRectMake(0, 25, view.width, 20)];
+        labelB.text = [NSString stringWithFormat:@"收到的红包数"];
+        labelB.textColor = [UIColor colorWithHex:0xBCBCBC];
+        labelB.font = [UIFont systemFontOfSize:14 weight:UIFontWeightBold];
+        labelA.textAlignment = NSTextAlignmentCenter;
+        labelB.textAlignment = NSTextAlignmentCenter;
+        [menu addSubview:labelA];
+        [menu addSubview:labelB];
         [view addSubview:menu];
         
         view;
@@ -261,27 +239,22 @@
 - (void)sendDetailView:(NSString *)count
 {
     self.tableView.tableHeaderView = ({
-        UIView *view  = [UIView.alloc initWithFrame:CGRectMake(0, 0, self.tableView.width, 224)];
-        UIView *menu = [UIView.alloc initWithFrame:CGRectMake(0, view.height - 30, view.width, 30)];
-        menu.backgroundColor = UIColor.whiteColor;
+        UIView *view  = [UIView.alloc initWithFrame:CGRectMake(0, 0, self.tableView.width, 270)];
+        UIView *menu = [UIView.alloc initWithFrame:CGRectMake(0, view.height - 55, view.width, 45)];
+        menu.backgroundColor = UIColor.clearColor;
         
-        UILabel *label = [UILabel.alloc initWithFrame:CGRectMake(0, 0, view.width, menu.height)];
-        label.text = [NSString stringWithFormat:@"发出的红包总数 %@个",count];
-        label.attributedText = ({
-            NSDictionary *attr1 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x999999], NSFontAttributeName:[UIFont systemFontOfSize:14]};
-            NSDictionary *attr2 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x4C94FF], NSFontAttributeName:[UIFont systemFontOfSize:14]};
-            
-            NSMutableAttributedString *aString = [NSMutableAttributedString.alloc init];
-            [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"发出的红包总数 " attributes:attr1]];
-            [aString appendAttributedString:[NSAttributedString.alloc initWithString:count attributes:attr2]];
-            [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"个" attributes:attr1]];
-            NSMutableParagraphStyle *style = [NSMutableParagraphStyle.alloc init];
-            style.alignment = NSTextAlignmentCenter;
-            [aString addAttributes:@{NSParagraphStyleAttributeName:style} range:NSMakeRange(0, aString.length)];
-            
-            aString;
-        });
-        [menu addSubview:label];
+        UILabel *labelA = [UILabel.alloc initWithFrame:CGRectMake(0, 0, view.width, 25)];
+        labelA.text = [NSString stringWithFormat:@"%@",count];
+        labelA.textColor = [UIColor colorWithHex:0xBCBCBC];
+        labelA.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
+        UILabel *labelB = [UILabel.alloc initWithFrame:CGRectMake(0, 25, view.width, 20)];
+        labelB.text = [NSString stringWithFormat:@"发出的红包数"];
+        labelB.textColor = [UIColor colorWithHex:0xBCBCBC];
+        labelB.font = [UIFont systemFontOfSize:14 weight:UIFontWeightBold];
+        labelA.textAlignment = NSTextAlignmentCenter;
+        labelB.textAlignment = NSTextAlignmentCenter;
+        [menu addSubview:labelA];
+        [menu addSubview:labelB];
         [view addSubview:menu];
         
         view;
@@ -291,7 +264,7 @@
 - (void)setMoney:(NSString *)money
 {
     NSDictionary *attr1 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont systemFontOfSize:16 weight:UIFontWeightSemibold]};
-    NSDictionary *attr2 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont fontWithName:@"DINAlternate-Bold" size:42]};//DINAlternate-Bold //DINCondensed-Bold
+    NSDictionary *attr2 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont fontWithName:@"DINAlternate-Bold" size:48]};//DINAlternate-Bold //DINCondensed-Bold
     self.moneyLabel.attributedText = ({
         NSMutableAttributedString *aString = [NSMutableAttributedString.alloc init];
         [aString appendAttributedString:[NSAttributedString.alloc initWithString:money attributes:attr2]];
@@ -386,7 +359,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 12;
+    return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -474,7 +447,7 @@
             } else {
                 amount = [result[@"cny"] integerValue];
             }
-            [self sendDetailView:[NSString stringWithFormat:@"%ld",(long)num]];
+            [self receiveDetailView:[NSString stringWithFormat:@"%ld",(long)num]];
             [self setMoney:[NSString stringWithFormat:@"%.2f",amount/100.f]];
         }];
     }

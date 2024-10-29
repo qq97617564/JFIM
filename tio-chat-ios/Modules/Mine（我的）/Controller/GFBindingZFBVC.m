@@ -40,6 +40,17 @@
     [self borderWithView:self.zfbView];
     self.backView.layer.cornerRadius = 6;
     self.backView.layer.masksToBounds = true;
+    [self loadData];
+}
+-(void)loadData{
+    [TIOChat.shareSDK.gfHttpManager  accountGetBnakDetailWithType:@"alipay" completion:^(NSDictionary * _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            
+        }else{
+            self.nameTF.text = responseObject[@"username"];
+            self.zfbTF.text = responseObject[@"cardno"];
+        }
+    }];
 }
 -(void)chooseImage{
     // 头像

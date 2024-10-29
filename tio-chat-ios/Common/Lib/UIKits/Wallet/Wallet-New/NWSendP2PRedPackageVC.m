@@ -96,7 +96,7 @@
         UILabel *label1 = [UILabel.alloc initWithFrame:CGRectZero];
         label1.textColor = [UIColor colorWithHex:0x333333];
         label1.font = [UIFont systemFontOfSize:16];
-        label1.text = @"单个红包";
+        label1.text = @"金额";
         [label1 sizeToFit];
         label1.left = 20;
         label1.centerY = bgView.height*0.25;

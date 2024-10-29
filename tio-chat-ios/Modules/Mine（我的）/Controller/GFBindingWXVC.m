@@ -31,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    imageUrl = @"";
     self.title = @"添加微信";
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(chooseImage)];
     self.QRCodeImgV.userInteractionEnabled = true;
@@ -39,6 +40,17 @@
     [self borderWithView:self.wxView];
     self.backView.layer.cornerRadius = 6;
     self.backView.layer.masksToBounds = true;
+    [self loadData];
+}
+-(void)loadData{
+    [TIOChat.shareSDK.gfHttpManager  accountGetBnakDetailWithType:@"wechat" completion:^(NSDictionary * _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            
+        }else{
+            self.nameTF.text = responseObject[@"username"];
+            self.wxTF.text = responseObject[@"cardno"];
+        }
+    }];
 }
 -(void)chooseImage{
     // 头像

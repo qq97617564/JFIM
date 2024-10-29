@@ -41,6 +41,25 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy,    nonatomic) NSString *balance;
 @end
 
+@interface orderModel : NSObject
+@property (copy,    nonatomic) NSString *ID;
+@property (assign,    nonatomic) NSInteger orderstatus;
+@property (copy,    nonatomic) NSString *serialnumber;
+@property (copy,    nonatomic) NSString *createtime;
+@property (copy,    nonatomic) NSString *uid;
+@property (copy,    nonatomic) NSString *amount;
+@property (copy,    nonatomic) NSString *bizstr;
+@property (assign,    nonatomic) NSInteger mode;
+@property (assign,    nonatomic) NSInteger othercny;
+@property (copy,    nonatomic) NSString *bizcreattime;
+@property (copy,    nonatomic) NSString *remark;
+@property (copy,    nonatomic) NSString *updatetime;
+@property (assign,    nonatomic) NSInteger auditStatus;
+@property (assign,    nonatomic) NSInteger coinflag;
+@property (copy,    nonatomic) NSString *bizcompletetime;
+@property (assign,    nonatomic) NSInteger status;
+@end
+
 /// <#Description#>
 @interface GFWalletManager : NSObject
 
@@ -82,7 +101,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param username 姓名
 /// @param image 收款码
 /// @param completion 回调
--(void)accountBindingWithType:(NSString *)typetype cardno:(NSString *)cardno username:(NSString *)username image:(NSString *)image completion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
+-(void)accountBindingWithType:(NSString *)type cardno:(NSString *)cardno username:(NSString *)username image:(NSString *)image completion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -48,6 +48,20 @@
     [self borderWithView:self.phoneView];
     self.backView.layer.cornerRadius = 6;
     self.backView.layer.masksToBounds = true;
+    [self loadData];
+}
+-(void)loadData{
+    [TIOChat.shareSDK.gfHttpManager  accountGetBnakDetailWithType:@"bank" completion:^(NSDictionary * _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            
+        }else{
+            self.nameTF.text = responseObject[@"username"];
+//            self.IDTF.text = responseObject[@"uid"];
+            self.bankNumTF.text = responseObject[@"cardno"];
+            self.bankTF.text = responseObject[@"bankname"];
+            self.phoneTF.text = responseObject[@"phone"];
+        }
+    }];
 }
 
 -(void)borderWithView:(UIView *)view{

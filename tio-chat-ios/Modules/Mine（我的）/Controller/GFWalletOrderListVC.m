@@ -47,7 +47,7 @@
             [MBProgressHUD showError:error.localizedDescription toView:self.view];
             return;
         }else{
-            [self.dataArr addObjectsFromArray: (NSArray *)responseObject];
+            [self.dataArr addObjectsFromArray: (NSArray *)responseObject[@"list"]];
             [self.tableView reloadData];
         }
         
@@ -56,9 +56,10 @@
 }
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     NSDictionary *data = self.dataArr[indexPath.section];
+    orderModel *model = [orderModel objectWithJSONObject: self.dataArr[indexPath.section]];
     GFWalletOrderListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GFWalletOrderListCell" forIndexPath:indexPath];
 
-    [cell setType:indexPath.section%3 money:@"888" time:@"2024/2/2/2/2" status:indexPath.section%4];
+    [cell setType:model.mode money:model.amount time:model.createtime status:model.status];
     return cell;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

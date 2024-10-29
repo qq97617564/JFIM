@@ -736,16 +736,27 @@ NSString * APPContentTypeForPathExtension(NSString *extension) {
             
             TIOLog(@"IM配置%@",responseObject);
             
-            NSString *ip = responseObject[@"data"][@"ip"];
-            NSInteger port = [responseObject[@"data"][@"port"] integerValue];
+     
+            NSString *ip = responseObject[@"data"][@"appIp"];
+            NSInteger port = [responseObject[@"data"][@"appPort"] integerValue];
 
-            NSInteger timeout = [responseObject[@"data"][@"timeout"] integerValue];
+            NSInteger timeout = [responseObject[@"data"][@"node"][@"timeout"] integerValue];
             if (timeout > 0) {
                 self.config.heartBeatInterval = timeout/1000/2;
             }
+            NSInteger ssl = [responseObject[@"data"][@"appSsl"] integerValue];
+            
+//            NSString *ip = responseObject[@"data"][@"ip"];
+//            NSInteger port = [responseObject[@"data"][@"port"] integerValue];
+//
+//            NSInteger timeout = [responseObject[@"data"][@"timeout"] integerValue];
+//            if (timeout > 0) {
+//                self.config.heartBeatInterval = timeout/1000/2;
+//            }
             
             self.config.linkAddress = ip;
             self.config.linkPort = port;
+            self.option.isOpenSSL = ssl == 1 ? true: false;
             
             if (ip) {
 
