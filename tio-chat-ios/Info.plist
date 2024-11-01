@@ -112,6 +112,8 @@
 	</array>
 	<key>UILaunchImageFile</key>
 	<string>LaunchImage</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen.storyboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

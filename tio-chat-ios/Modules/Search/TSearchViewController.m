@@ -63,8 +63,8 @@
     
     JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
     lineView.indicatorWidth = 17;
-    lineView.indicatorHeight = 1;
-    lineView.indicatorColor = [UIColor colorWithHex:0x4C94FF];
+    lineView.indicatorHeight = 2;
+    lineView.indicatorColor = [UIColor colorWithHex:0x0087FC];
     self.myCategoryView.indicators = @[lineView];
     self.myCategoryView.titleColorGradientEnabled = YES;
     self.myCategoryView.cellWidthZoomEnabled = YES;
@@ -72,9 +72,9 @@
     self.myCategoryView.titleLabelAnchorPointStyle = JXCategoryTitleLabelAnchorPointStyleBottom;
     self.myCategoryView.selectedAnimationEnabled = YES;
     self.myCategoryView.titleLabelZoomSelectedVerticalOffset = 0;
-    self.myCategoryView.titleSelectedFont = [UIFont systemFontOfSize:16];
-    self.myCategoryView.titleSelectedColor = [UIColor colorWithHex:0x4C94FF];
-    self.myCategoryView.titleFont = [UIFont systemFontOfSize:16];
+    self.myCategoryView.titleSelectedFont = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
+    self.myCategoryView.titleSelectedColor = [UIColor colorWithHex:0x0087FC];
+    self.myCategoryView.titleFont = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
     self.myCategoryView.titleColor = [UIColor colorWithHex:0x888888];
     self.myCategoryView.titles = self.titles;
     // 默认隐藏结果
@@ -100,10 +100,10 @@
     searchField.rightViewMode = UITextFieldViewModeWhileEditing;
     searchField.clearButtonMode = UITextFieldViewModeWhileEditing;
     searchField.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-    searchField.layer.cornerRadius = searchField.height * 0.5;
+    searchField.layer.cornerRadius = 4;
     searchField.layer.masksToBounds = YES;
     searchField.textColor = [UIColor blackColor];
-    searchField.font = [UIFont systemFontOfSize:16];
+    searchField.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
     searchField.returnKeyType = UIReturnKeySearch;
     [searchField addTarget:self action:@selector(toSearch:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [self.navigationBar addSubview:searchField];
@@ -111,9 +111,9 @@
     
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     cancelButton.frame = CGRectMake(searchField.right, Height_StatusBar, 60, 44);
-    cancelButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    cancelButton.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
     [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
-    [cancelButton setTitleColor:[UIColor colorWithHex:0x6AA6FF] forState:UIControlStateNormal];
+    [cancelButton setTitleColor:[UIColor colorWithHex:0x0087FC] forState:UIControlStateNormal];
     [cancelButton addTarget:self action:@selector(toCancel:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationBar addSubview:cancelButton];
 }

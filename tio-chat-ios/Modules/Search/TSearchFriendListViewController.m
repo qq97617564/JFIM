@@ -125,7 +125,10 @@
     
     TIOUser *user = self.friendsDataArray[indexPath.row];
     [cell refreshAvatar:user.avatar nick:user.nick remark:user.remarkname key:self.searchKey];
-    
+    cell.flag.hidden = true;
+    if (user.xx == 3 || user.officialflag == 1) {
+        cell.flag.hidden = false;
+    }
     return cell;
 }
 

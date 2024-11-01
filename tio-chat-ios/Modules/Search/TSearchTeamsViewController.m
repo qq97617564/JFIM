@@ -88,7 +88,8 @@
     
     TIOTeam *user = self.friendsDataArray[indexPath.row];
     [cell refreshAvatar:user.avatar nick:user.name remark:[NSString stringWithFormat:@"%zd",user.memberNumber] key:self.searchKey];
-    
+    cell.flag.hidden = true;
+   
     return cell;
 }
 

@@ -86,6 +86,17 @@
 
 - (void)layout
 {
+    if (self.user.areaviewflag == 1 && self.user.areaviewflagGlobal == 1){
+        self.addressLabel.height = 44;
+        self.addrLabel.height = 44;
+        self.addrLabel.hidden = false;
+        self.addressLabel.hidden = false;
+    }else{
+        self.addressLabel.height = 0;
+        self.addrLabel.height = 0;
+        self.addrLabel.hidden = true;
+        self.addressLabel.hidden = true;
+    }
     self.addressLabel.centerY = self.addrLabel.centerY;
     self.addressLabel.right = ScreenWidth()-32-12;
     if (self.type == TUserInfoVCTypeFriend) {
@@ -237,11 +248,18 @@
     if (signHeight < 44) {
         signHeight = 44;
     }
-    self.infoH.constant = 44 + signHeight;
-    if (self.type == TUserInfoVCTypeFriend) {
-        self.infoH.constant = 44*3 + signHeight;
+
+    if (self.user.areaviewflag == 1 && self.user.areaviewflagGlobal == 1) {
+        self.infoH.constant = 44 + signHeight;
+        if (self.type == TUserInfoVCTypeFriend) {
+            self.infoH.constant = 44*3 + signHeight;
+        }
+    }else{
+        self.infoH.constant = signHeight;
+        if (self.type == TUserInfoVCTypeFriend) {
+            self.infoH.constant = 44*2 + signHeight;
+        }
     }
-    
     // 刷新布局
     [self layout];
     
@@ -523,8 +541,10 @@
             } else {
                 self.addressLabel.text = @"中国";
             }
-
-            self.addressLabel.hidden = user.areaviewflag == 1;
+            self.addressLabel.hidden = true;
+            if (user.areaviewflag == 1 && user.areaviewflagGlobal == 1){
+                self.addressLabel.hidden = false;
+            }
 
             [self refreshSign:user.sign.length?user.sign:@"ta还没有个性签名"];
             if (self.type == TUserInfoVCTypeFriend) {

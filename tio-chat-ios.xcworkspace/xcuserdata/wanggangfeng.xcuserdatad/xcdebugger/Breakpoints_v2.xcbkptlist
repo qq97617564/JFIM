@@ -167,57 +167,10 @@
             filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/Controller/GFUserInfoVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "716"
-            endingLineNumber = "716"
+            startingLineNumber = "736"
+            endingLineNumber = "736"
             landmarkName = "-viewWithFrame:title:subTitle:hasIndiractor:selector:subLabel:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8CC21C4B-39A6-4288-A08D-E5B03C65B427 - 7135c3ba1f8976b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC viewWithFrame:title:subTitle:hasIndiractor:selector:subLabel:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "716"
-                  endingLineNumber = "716"
-                  offsetFromSymbolStart = "1481">
-               </Location>
-               <Location
-                  uuid = "8CC21C4B-39A6-4288-A08D-E5B03C65B427 - 7135c3ba1f8976b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC viewWithFrame:title:subTitle:hasIndiractor:selector:subLabel:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "716"
-                  endingLineNumber = "716"
-                  offsetFromSymbolStart = "1470">
-               </Location>
-               <Location
-                  uuid = "8CC21C4B-39A6-4288-A08D-E5B03C65B427 - 7135c3ba1f8976b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC viewWithFrame:title:subTitle:hasIndiractor:selector:subLabel:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "716"
-                  endingLineNumber = "716"
-                  offsetFromSymbolStart = "1160">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -467,57 +420,10 @@
             filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/Controller/GFUserInfoVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-layout"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F8D1EF52-D8C9-45B4-BEBF-58CB08A8193C - ebfcf9e472a859f6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC layout]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "2142">
-               </Location>
-               <Location
-                  uuid = "F8D1EF52-D8C9-45B4-BEBF-58CB08A8193C - ebfcf9e472a859f6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC layout]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "2102">
-               </Location>
-               <Location
-                  uuid = "F8D1EF52-D8C9-45B4-BEBF-58CB08A8193C - ebfcf9e472a859f6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC layout]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "1456">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -530,57 +436,10 @@
             filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/Controller/GFUserInfoVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "-layout"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3FB9B4C8-937B-496D-A168-B0437ABA83E2 - ebfcf9e472a8582b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC layout]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "1562">
-               </Location>
-               <Location
-                  uuid = "3FB9B4C8-937B-496D-A168-B0437ABA83E2 - ebfcf9e472a8582b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC layout]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "1534">
-               </Location>
-               <Location
-                  uuid = "3FB9B4C8-937B-496D-A168-B0437ABA83E2 - ebfcf9e472a8582b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC layout]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "1080">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

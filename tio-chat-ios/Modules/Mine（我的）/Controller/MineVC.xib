@@ -105,10 +105,10 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v39-T1-TDW">
-                    <rect key="frame" x="16" y="210" width="361" height="333"/>
+                    <rect key="frame" x="16" y="210" width="361" height="270"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="333" id="aR9-RR-qua"/>
+                        <constraint firstAttribute="height" constant="270" id="aR9-RR-qua"/>
                     </constraints>
                 </view>
             </subviews>

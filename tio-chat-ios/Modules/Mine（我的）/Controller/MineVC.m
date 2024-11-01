@@ -45,7 +45,7 @@
 @property (strong,  nonatomic) TCommonCell *walletCell;
 @property (strong,  nonatomic) TCommonCell *bankCell;
 @property (strong,  nonatomic) TCommonCell *infoCell;
-@property (strong,  nonatomic) TCommonCell *codeCell;
+//@property (strong,  nonatomic) TCommonCell *codeCell;
 @property (strong,  nonatomic) TCommonCell *settingCell;
 @property (strong,  nonatomic) NSArray<TCommonCell *> *cells;
 
@@ -89,9 +89,9 @@
     self.bankCell = [self cellWithTitle:@"充值卡绑定" icon:[UIImage imageNamed:@"Group 1321315561"]];
     
     self.infoCell = [self cellWithTitle:@"个人资料" icon:[UIImage imageNamed:@"Group 1321315503"]];
-    self.codeCell = [self cellWithTitle:@"邀请码" icon:[UIImage imageNamed:@"Group 1321315504"]];
+//    self.codeCell = [self cellWithTitle:@"邀请码" icon:[UIImage imageNamed:@"Group 1321315504"]];
     self.settingCell = [self cellWithTitle:@"设置" icon:[UIImage imageNamed:@"Group 1321315505"]];
-    self.cells = @[self.accountCell, self.walletCell,self.bankCell, self.infoCell,self.codeCell, self.settingCell];
+    self.cells = @[self.accountCell, self.walletCell,self.bankCell, self.infoCell,/*self.codeCell,*/ self.settingCell];
     
     UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(-7, 7, ScreenWidth()-25, 53*self.cells.count) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
@@ -189,10 +189,10 @@
     } else if (cell == _infoCell) {
         // 个人资料
         [self editInfor];
-    } else if (cell == _codeCell) {
+    } /**else if (cell == _codeCell) {
         // 邀请码
         [self invitationCode];
-    } else if (cell == _settingCell) {
+    } **/else if (cell == _settingCell) {
         // 设置
         [self toSetSetting];
     }

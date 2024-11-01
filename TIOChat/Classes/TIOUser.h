@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 是否显示地区：1：是；2：否
 @property (assign, nonatomic) NSInteger areaviewflag;
+@property (assign, nonatomic) NSInteger areaviewflagGlobal;
 //官方
 @property (assign, nonatomic) NSInteger xx;
 @property (assign, nonatomic) NSInteger officialflag;

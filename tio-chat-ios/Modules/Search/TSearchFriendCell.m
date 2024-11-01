@@ -67,8 +67,19 @@
         self.nickLabel.frame = CGRectMake(72, self.avatarView.y + 1, self.contentView.width - 36 - 72, 22);
         self.nickLabel.centerY = self.contentView.middleY;
     }
+    [self.nickLabel sizeToFit];
+    self.flag.centerY = self.nickLabel.centerY;
+    self.flag.left = self.nickLabel.right+5;
 }
-
+-(UIImageView *)flag{
+    if (!_flag) {
+        _flag = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+        _flag.image = [UIImage imageNamed:@"Group 1321315481"];
+        _flag.hidden = true;
+        [self.contentView addSubview:_flag];
+    }
+    return _flag;
+}
 - (void)refreshAvatar:(NSString *)avatar nick:(NSString *)nick remark:(NSString *)remark key:(NSString *)key
 {
     self.remark = remark;

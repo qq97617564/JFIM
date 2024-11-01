@@ -95,8 +95,12 @@
     self.addressCell = addressCell;
 //    self.emailCell = emailCell;
 //    self.phoneCell = phoneCell;
-    
-    self.cells = @[@[avatarCell,nickCell,sexCell],@[signCell,addressCell]];
+    if (self.user.areaviewflagGlobal == 1) {
+        self.cells = @[@[avatarCell,nickCell,sexCell],@[signCell,addressCell]];
+    }else{
+        self.cells = @[@[avatarCell,nickCell,sexCell],@[signCell]];
+    }
+
     
     
     UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStyleGrouped];
