@@ -570,6 +570,8 @@
 		802EC2AA2CCFDC7400D53E6B /* GFBindingZFBVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802EC2A82CCFDC7400D53E6B /* GFBindingZFBVC.xib */; };
 		802EC2AE2CCFDC8600D53E6B /* GFBindingBankVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC2AC2CCFDC8600D53E6B /* GFBindingBankVC.m */; };
 		802EC2AF2CCFDC8600D53E6B /* GFBindingBankVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802EC2AD2CCFDC8600D53E6B /* GFBindingBankVC.xib */; };
+		8038A3402CD3B977006397BC /* GFCardShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8038A33E2CD3B977006397BC /* GFCardShareVC.m */; };
+		8038A3412CD3B977006397BC /* GFCardShareVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8038A33F2CD3B977006397BC /* GFCardShareVC.xib */; };
 		804995AD2CCC0D840096F7C0 /* MineInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804995AC2CCC0D840096F7C0 /* MineInfoViewController.m */; };
 		804995B32CCC91290096F7C0 /* GFUserInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 804995B12CCC91290096F7C0 /* GFUserInfoVC.m */; };
 		804995B42CCC91290096F7C0 /* GFUserInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804995B22CCC91290096F7C0 /* GFUserInfoVC.xib */; };
@@ -1736,6 +1738,9 @@
 		802EC2AB2CCFDC8600D53E6B /* GFBindingBankVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFBindingBankVC.h; sourceTree = "<group>"; };
 		802EC2AC2CCFDC8600D53E6B /* GFBindingBankVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFBindingBankVC.m; sourceTree = "<group>"; };
 		802EC2AD2CCFDC8600D53E6B /* GFBindingBankVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFBindingBankVC.xib; sourceTree = "<group>"; };
+		8038A33D2CD3B977006397BC /* GFCardShareVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFCardShareVC.h; sourceTree = "<group>"; };
+		8038A33E2CD3B977006397BC /* GFCardShareVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFCardShareVC.m; sourceTree = "<group>"; };
+		8038A33F2CD3B977006397BC /* GFCardShareVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFCardShareVC.xib; sourceTree = "<group>"; };
 		804995AB2CCC0D840096F7C0 /* MineInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineInfoViewController.h; sourceTree = "<group>"; };
 		804995AC2CCC0D840096F7C0 /* MineInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineInfoViewController.m; sourceTree = "<group>"; };
 		804995B02CCC91290096F7C0 /* GFUserInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFUserInfoVC.h; sourceTree = "<group>"; };
@@ -4057,6 +4062,9 @@
 				804995B22CCC91290096F7C0 /* GFUserInfoVC.xib */,
 				809C84F72CCE03D000BD3AAD /* GFAddressListVC.h */,
 				809C84F82CCE03D000BD3AAD /* GFAddressListVC.m */,
+				8038A33D2CD3B977006397BC /* GFCardShareVC.h */,
+				8038A33E2CD3B977006397BC /* GFCardShareVC.m */,
+				8038A33F2CD3B977006397BC /* GFCardShareVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4240,6 +4248,7 @@
 				809C85092CCE28E200BD3AAD /* GFLogOffVC.xib in Resources */,
 				80FD2F9F2CC646CF00662C0C /* RegisterVC.xib in Resources */,
 				17D4ECE324D958BB007153ED /* ownvoice.gif in Resources */,
+				8038A3412CD3B977006397BC /* GFCardShareVC.xib in Resources */,
 				80C689332CC7C481001EA80B /* MineVC.xib in Resources */,
 				179F313E2577377400E3D6EA /* EHKWeboxBundle.bundle in Resources */,
 				179273C8258B2F050000ECBC /* README.txt in Resources */,
@@ -4678,6 +4687,7 @@
 				17ED09B82456D8FA008C9C5D /* TIOTeamMember.m in Sources */,
 				17ED09BF2456D8FA008C9C5D /* SAMKeychainQuery.m in Sources */,
 				176B2F1F23CEC0C400540CE8 /* TAddPopupView.m in Sources */,
+				8038A3402CD3B977006397BC /* GFCardShareVC.m in Sources */,
 				178EDB4E253D2B6900B57402 /* UIView+HXExtension.m in Sources */,
 				802EC2A02CCFD88D00D53E6B /* GFBindingVC.m in Sources */,
 				1772B07023FBE6F200C370A4 /* TSearchUserCell.m in Sources */,

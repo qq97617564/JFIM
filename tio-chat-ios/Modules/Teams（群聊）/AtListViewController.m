@@ -52,7 +52,7 @@
     UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStylePlain];
     tableView.sectionIndexColor = [UIColor colorWithHex:0x909090];
     tableView.sectionIndexMinimumDisplayRowCount = 6;
-//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.rowHeight = 60;

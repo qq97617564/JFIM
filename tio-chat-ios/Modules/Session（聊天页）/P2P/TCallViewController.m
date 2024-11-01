@@ -204,10 +204,10 @@
         _callerContainerView = [UIView.alloc initWithFrame:CGRectMake(0, 0, CB_SCREEN_WIDTH, CB_SCREEN_HEIGHT)];
 //        _callerContainerView.alpha = 0.18;
         
-        UIImageView *otherAvatar = [UIImageView.alloc initWithFrame:CGRectMake(20, Height_NavBar+14, 70, 70)];
+        UIImageView *otherAvatar = [UIImageView.alloc initWithFrame:CGRectMake(20, Height_StatusBar+102, 80, 80)];
         otherAvatar.backgroundColor = UIColor.whiteColor;
         otherAvatar.centerX = _callerContainerView.middleX;
-        otherAvatar.layer.cornerRadius = 4;
+        otherAvatar.layer.cornerRadius = 6;
         otherAvatar.layer.masksToBounds = YES;
         [otherAvatar sd_setImageWithURL:[NSURL URLWithString:self.callee.avatar]];
         [_callerContainerView addSubview:otherAvatar];
@@ -226,12 +226,15 @@
         self.friendNickLabel = nickLabel;
         
         UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        cancelBtn.viewSize = CGSizeMake(116, 42);
+        cancelBtn.viewSize = CGSizeMake(60, 110);
         cancelBtn.centerX = _callerContainerView.middleX;
         cancelBtn.bottom = _callerContainerView.height - 60 - safeBottomHeight;
-        cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-        [cancelBtn setBackgroundImage:[UIImage imageNamed:@"hangup"] forState:UIControlStateNormal];
+        cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
+        cancelBtn.imageEdgeInsets = UIEdgeInsetsMake(-50, 0, 0, 0);
+        cancelBtn.titleEdgeInsets = UIEdgeInsetsMake(71, -56, 0, 0);
+        [cancelBtn setImage:[UIImage imageNamed:@"hangup"] forState:UIControlStateNormal];
         [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+        
         [cancelBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         [cancelBtn addTarget:self action:@selector(cancelCall) forControlEvents:UIControlEventTouchUpInside];
         [_callerContainerView addSubview:cancelBtn];
@@ -255,10 +258,10 @@
     if (!_calleeContainerView) {
         _calleeContainerView = [UIView.alloc initWithFrame:CGRectMake(0, 0, CB_SCREEN_WIDTH, CB_SCREEN_HEIGHT)];
         
-        UIImageView *otherAvatar = [UIImageView.alloc initWithFrame:CGRectMake(20, Height_NavBar+14, 70, 70)];
+        UIImageView *otherAvatar = [UIImageView.alloc initWithFrame:CGRectMake(20, Height_StatusBar+102, 80, 80)];
         otherAvatar.backgroundColor = UIColor.whiteColor;
         otherAvatar.centerX = _calleeContainerView.middleX;
-        otherAvatar.layer.cornerRadius = 4;
+        otherAvatar.layer.cornerRadius = 6;
         otherAvatar.layer.masksToBounds = YES;
         [otherAvatar sd_setImageWithURL:[NSURL URLWithString:self.caller.avatar]];
         [_calleeContainerView addSubview:otherAvatar];
@@ -277,11 +280,13 @@
         self.friendNickLabel = nickLabel;
         
         UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        cancelBtn.viewSize = CGSizeMake(116, 42);
+        cancelBtn.viewSize = CGSizeMake(60, 110);
         cancelBtn.left = (_calleeContainerView.width - 116*2) / 3.f;
         cancelBtn.bottom = _calleeContainerView.height - 60 - safeBottomHeight;
-        cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-        [cancelBtn setBackgroundImage:[UIImage imageNamed:@"hangup"] forState:UIControlStateNormal];
+        cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
+        cancelBtn.imageEdgeInsets = UIEdgeInsetsMake(-50, 0, 0, 0);
+        cancelBtn.titleEdgeInsets = UIEdgeInsetsMake(71, -56, 0, 0);
+        [cancelBtn setImage:[UIImage imageNamed:@"hangup"] forState:UIControlStateNormal];
         [cancelBtn setTitle:@"挂断" forState:UIControlStateNormal];
         [cancelBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         [cancelBtn addTarget:self action:@selector(refuseBtn) forControlEvents:UIControlEventTouchUpInside];
@@ -289,11 +294,13 @@
         self.cancelBtn = cancelBtn;
         
         UIButton *acceptBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        acceptBtn.viewSize = CGSizeMake(116, 42);
+        acceptBtn.viewSize = CGSizeMake(60, 110);
         acceptBtn.right = _calleeContainerView.width - cancelBtn.left;
         acceptBtn.bottom = cancelBtn.bottom;
-        acceptBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-        [acceptBtn setBackgroundImage:[UIImage imageNamed:@"accept_video"] forState:UIControlStateNormal];
+        acceptBtn.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
+        acceptBtn.imageEdgeInsets = UIEdgeInsetsMake(-50, 0, 0, 0);
+        acceptBtn.titleEdgeInsets = UIEdgeInsetsMake(71, -56, 0, 0);
+        [acceptBtn setImage:[UIImage imageNamed:@"accept_video"] forState:UIControlStateNormal];
         [acceptBtn setTitle:@"接听" forState:UIControlStateNormal];
         [acceptBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         [acceptBtn addTarget:self action:@selector(acceptBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -321,11 +328,13 @@
         
         // 挂断
         UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        cancelBtn.viewSize = CGSizeMake(116, 42);
+        cancelBtn.viewSize = CGSizeMake(60, 110);
         cancelBtn.centerX = _videoView.middleX;
         cancelBtn.bottom = _videoView.height - 60 - safeBottomHeight;
-        cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-        [cancelBtn setBackgroundImage:[UIImage imageNamed:@"hangup"] forState:UIControlStateNormal];
+        cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
+        cancelBtn.imageEdgeInsets = UIEdgeInsetsMake(-50, 0, 0, 0);
+        cancelBtn.titleEdgeInsets = UIEdgeInsetsMake(71, -56, 0, 0);
+        [cancelBtn setImage:[UIImage imageNamed:@"hangup"] forState:UIControlStateNormal];
         [cancelBtn setTitle:@"挂断" forState:UIControlStateNormal];
         [cancelBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         [cancelBtn addTarget:self action:@selector(hangupBtn) forControlEvents:UIControlEventTouchUpInside];

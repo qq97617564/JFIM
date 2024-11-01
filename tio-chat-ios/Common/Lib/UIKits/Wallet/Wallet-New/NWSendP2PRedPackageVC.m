@@ -54,7 +54,7 @@
     self.view.backgroundColor = [UIColor colorWithHex:0xF8F8F8];
     
     UIView *topBg = [UIView.alloc initWithFrame:CGRectMake(0, 0, self.view.width, Height_NavBar)];
-    topBg.backgroundColor = [UIColor colorWithHex:0xFF5E5E];
+    topBg.backgroundColor = [UIColor colorWithHex:0xF94335];
     [self.view addSubview:topBg];
  
     self.navigationBar.backgroundColor = UIColor.clearColor;
@@ -62,7 +62,7 @@
      
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.titleLabel.font = [UIFont systemFontOfSize:18];
+        button.titleLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
         [button setImage:[UIImage imageNamed:@"back2"] forState:UIControlStateNormal];
         [button setTitle:@"发红包" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
@@ -73,33 +73,33 @@
         button;
     })];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"查看记录" style:UIBarButtonItemStylePlain target:self action:@selector(toRedRecordVC:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"红包记录" style:UIBarButtonItemStylePlain target:self action:@selector(toRedRecordVC:)];
     
-    UIImageView *topBg1 = [UIImageView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, FlexWidth(104))];
-    topBg1.image = [UIImage imageNamed:@"bg_red"];
-    [self.view addSubview:topBg1];
+//    UIImageView *topBg1 = [UIImageView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, FlexWidth(104))];
+//    topBg1.image = [UIImage imageNamed:@"bg_red"];
+//    [self.view addSubview:topBg1];
     
     // 发送给“XXX”
-    self.toLabel = [UILabel.alloc initWithFrame:CGRectMake(0, Height_NavBar+12, 91, 27)];
-    self.toLabel.backgroundColor = [UIColor colorWithHex:0xFF7878];
-    self.toLabel.layer.cornerRadius = 4;
-    self.toLabel.layer.masksToBounds = YES;
-    [self.view addSubview:self.toLabel];
-    [self sendToUser:self.user.nick];
+//    self.toLabel = [UILabel.alloc initWithFrame:CGRectMake(0, Height_NavBar+12, 91, 27)];
+//    self.toLabel.backgroundColor = [UIColor colorWithHex:0xFF7878];
+//    self.toLabel.layer.cornerRadius = 4;
+//    self.toLabel.layer.masksToBounds = YES;
+//    [self.view addSubview:self.toLabel];
+//    [self sendToUser:self.user.nick];
     
     UIView *cardView = ({
-        UIView *bgView = [UIView.alloc initWithFrame:CGRectMake(16, Height_NavBar+50, self.view.width - 32, 120)];
+        UIView *bgView = [UIView.alloc initWithFrame:CGRectMake(16, Height_NavBar+22, self.view.width - 32, 44)];
         bgView.backgroundColor = UIColor.whiteColor;
         bgView.layer.cornerRadius = 4;
         bgView.layer.masksToBounds = YES;
         // 金额
         UILabel *label1 = [UILabel.alloc initWithFrame:CGRectZero];
         label1.textColor = [UIColor colorWithHex:0x333333];
-        label1.font = [UIFont systemFontOfSize:16];
+        label1.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
         label1.text = @"金额";
         [label1 sizeToFit];
         label1.left = 20;
-        label1.centerY = bgView.height*0.25;
+        label1.centerY = 22;
         [bgView addSubview:label1];
         
         WalletInputField *moneyTF = [WalletInputField.alloc initWithFrame:CGRectMake(0, 0, bgView.width * 0.6, 60)];
@@ -107,14 +107,14 @@
         moneyTF.right = bgView.width - 20;
         moneyTF.textAlignment = NSTextAlignmentRight;
         moneyTF.keyboardType = UIKeyboardTypeDecimalPad;
-        moneyTF.font = [UIFont systemFontOfSize:16];
+        moneyTF.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
         moneyTF.textColor = [UIColor colorWithHex:0x333333];
         moneyTF.rightViewMode = UITextFieldViewModeAlways;
         moneyTF.rightView = ({
             UILabel *unitLabel = [UILabel.alloc initWithFrame:CGRectMake(0, 0, 30, 60)];
             unitLabel.text = @"元";
             unitLabel.textColor = [UIColor colorWithHex:0x333333];
-            unitLabel.font = [UIFont systemFontOfSize:16];
+            unitLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
             unitLabel.textAlignment = NSTextAlignmentRight;
             unitLabel;
         });
@@ -126,22 +126,23 @@
         [moneyTF becomeFirstResponder];
         self.textField = moneyTF;
         
-        // 祝福语
-        UILabel *label2 = [UILabel.alloc initWithFrame:CGRectZero];
-        label2.textColor = [UIColor colorWithHex:0x333333];
-        label2.font = [UIFont systemFontOfSize:16];
-        label2.text = @"祝福语";
-        [label2 sizeToFit];
-        label2.left = 20;
-        label2.centerY = bgView.height*0.75;
-        [bgView addSubview:label2];
         
-        UITextField *wishTF = [UITextField.alloc initWithFrame:CGRectMake(0, 0, bgView.width * 0.6, 60)];
-        wishTF.centerY = label2.centerY;
+        bgView;
+    });
+    [self.view addSubview:cardView];
+    
+    UIView *cardBView = ({
+        UIView *bgView = [UIView.alloc initWithFrame:CGRectMake(16, Height_NavBar+97, self.view.width - 32, 70)];
+        bgView.backgroundColor = UIColor.whiteColor;
+        bgView.layer.cornerRadius = 4;
+        bgView.layer.masksToBounds = YES;
+        
+        UITextField *wishTF = [UITextField.alloc initWithFrame:CGRectMake(0, 0, bgView.width-40, 70)];
+        wishTF.left = 20;
         wishTF.right = bgView.width - 20;
-        wishTF.textAlignment = NSTextAlignmentRight;
+        wishTF.textAlignment = NSTextAlignmentLeft;
         wishTF.placeholder = @"恭喜发财，吉祥如意";
-        wishTF.font = [UIFont systemFontOfSize:16];
+        wishTF.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
         wishTF.textColor = [UIColor colorWithHex:0x333333];
         [wishTF addTarget:self action:@selector(remarkTextfieldEditing:) forControlEvents:UIControlEventEditingChanged];
         [bgView addSubview:wishTF];
@@ -149,7 +150,8 @@
         
         bgView;
     });
-    [self.view addSubview:cardView];
+    [self.view addSubview:cardBView];
+    
     
     // 单个红包金额不能超过
     UILabel *tipLabel = [UILabel.alloc initWithFrame:CGRectZero];
@@ -157,8 +159,8 @@
     tipLabel.font = [UIFont systemFontOfSize:12];
 //    tipLabel.text = @"单个红包金额为0.01~200元";
     [tipLabel sizeToFit];
-    tipLabel.top = cardView.bottom + 12;
-    tipLabel.centerX = cardView.centerX;
+    tipLabel.top = cardBView.bottom + 12;
+    tipLabel.centerX = cardBView.centerX;
     [self.view addSubview:tipLabel];
     
     self.moneyLabel = [UILabel.alloc initWithFrame:CGRectMake(16, tipLabel.bottom + 18, self.view.width-32, 55)];
@@ -167,16 +169,16 @@
     
     // 发送button
     UIButton *sendButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    sendButton.viewSize = CGSizeMake(self.view.width - 176, 40);
-    sendButton.top = cardView.bottom+125;
-    sendButton.centerX = cardView.centerX;
+    sendButton.viewSize = CGSizeMake(self.view.width - 70, 48);
+    sendButton.top = cardBView.bottom+125;
+    sendButton.centerX = cardBView.centerX;
     [sendButton setBackgroundImage:[[UIImage imageWithColor:[UIColor colorWithHex:0xF55252]] imageWithCornerRadius:4 size:sendButton.viewSize]
                           forState:UIControlStateHighlighted];
     [sendButton setBackgroundImage:[[UIImage imageWithColor:[UIColor colorWithHex:0xFF5E5E]] imageWithCornerRadius:4 size:sendButton.viewSize]
                           forState:UIControlStateNormal];
     [sendButton setBackgroundImage:[[UIImage imageWithColor:[UIColor colorWithHex:0xFF908F]] imageWithCornerRadius:4 size:sendButton.viewSize]
                           forState:UIControlStateDisabled];
-    sendButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    sendButton.titleLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
     [sendButton setTitle:@"塞钱进红包" forState:UIControlStateNormal];
     [sendButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     [sendButton addTarget:self action:@selector(confirmClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -323,8 +325,8 @@
 
 - (void)setMoney:(NSString *)num
 {
-    NSDictionary *attr1 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont systemFontOfSize:28 weight:UIFontWeightSemibold]};
-    NSDictionary *attr2 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont fontWithName:@"DINAlternate-Bold" size:42]};//DINAlternate-Bold //DINCondensed-Bold
+    NSDictionary *attr1 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont systemFontOfSize:48 weight:UIFontWeightSemibold]};
+    NSDictionary *attr2 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont fontWithName:@"DINAlternate-Bold" size:48]};//DINAlternate-Bold //DINCondensed-Bold
     
     self.moneyLabel.attributedText = ({
         NSMutableAttributedString *aString = [NSMutableAttributedString.alloc init];

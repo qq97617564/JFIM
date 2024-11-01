@@ -16,6 +16,7 @@
 #import "UIButton+Enlarge.h"
 
 #import "CTMediator+ModuleActions.h"
+#import "GFCardShareVC.h"
 
 #import "ImportSDK.h"
 
@@ -54,7 +55,7 @@
     UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar, self.view.width, self.view.height - Height_NavBar) style:UITableViewStylePlain];
     tableView.sectionIndexColor = [UIColor colorWithHex:0x909090];
     tableView.sectionIndexMinimumDisplayRowCount = 6;
-//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.rowHeight = 60;
@@ -63,12 +64,12 @@
     tableView.tableFooterView = [UIView.alloc initWithFrame:CGRectZero];
     // 搜索。暂时未开启
     UIView *tableHeaderView = ({
-        UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 60)];
-        view.backgroundColor = UIColor.whiteColor;
+        UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 40)];
+        view.backgroundColor = UIColor.clearColor;
         
-        UITextField *searchTF = [UITextField.alloc initWithFrame:CGRectMake(16, 10, view.width - 32, 36)];
+        UITextField *searchTF = [UITextField.alloc initWithFrame:CGRectMake(16, 4, view.width - 32, 36)];
         searchTF.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-        searchTF.layer.cornerRadius = 18;
+        searchTF.layer.cornerRadius = 4;
         searchTF.layer.masksToBounds = YES;
         searchTF.leftViewMode = UITextFieldViewModeAlways;
         searchTF.leftView = ({
@@ -84,7 +85,7 @@
         searchTF.rightViewMode = UITextFieldViewModeWhileEditing;
         searchTF.clearButtonMode = UITextFieldViewModeWhileEditing;
         searchTF.placeholder = @"搜索群聊名称";
-        searchTF.font = [UIFont systemFontOfSize:16];
+        searchTF.font = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
         searchTF.returnKeyType = UIReturnKeySearch;
         [searchTF addTarget:self action:@selector(toSearch:) forControlEvents:UIControlEventEditingDidEndOnExit];
         [searchTF addTarget:self action:@selector(textFieldEditing:) forControlEvents:UIControlEventEditingChanged];
@@ -149,9 +150,9 @@
     [cell setAvatarUrl:team.avatar];
     // 增加这一行
     cell.role = team.grouprole;
-    
-    cell.countLabel.text = [NSString stringWithFormat:@"%zd人", team.memberNumber];
 
+    cell.countLabel.text = [NSString stringWithFormat:@"%zd人", team.memberNumber];
+    [cell.countLabel sizeToFit];
     return cell;
 }
 
@@ -182,14 +183,21 @@
 
 - (void)alertShare:(TIOTeam *)team
 {
-    TCardAlert *alert = [TCardAlert alertWithAvatar:team.avatar nick:team.name title:@"群聊邀请"];
-    [alert addAction:[TAlertAction actionWithTitle:@"取消" style:TAlertActionStyleCancel handler:^(TAlertAction * _Nonnull action) {
-        
-    }]];
-    [alert addAction:[TAlertAction actionWithTitle:@"发送名片" style:TAlertActionStyleDone handler:^(TAlertAction * _Nonnull action) {
+    GFCardShareVC *vc = [[GFCardShareVC alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    vc.sendCallback = ^{
         self.t_callback(self, team);
-    }]];
-    [self presentViewController:alert animated:YES completion:nil];
+    };
+    [self presentViewController:vc animated:false completion:nil];
+    [vc setAvatar:team.avatar nick:team.name title:@"群聊邀请" toSelected:false];
+//    TCardAlert *alert = [TCardAlert alertWithAvatar:team.avatar nick:team.name title:@"群聊邀请"];
+//    [alert addAction:[TAlertAction actionWithTitle:@"取消" style:TAlertActionStyleCancel handler:^(TAlertAction * _Nonnull action) {
+//        
+//    }]];
+//    [alert addAction:[TAlertAction actionWithTitle:@"发送名片" style:TAlertActionStyleDone handler:^(TAlertAction * _Nonnull action) {
+//        self.t_callback(self, team);
+//    }]];
+//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)textFieldEditing:(UITextField *)textField

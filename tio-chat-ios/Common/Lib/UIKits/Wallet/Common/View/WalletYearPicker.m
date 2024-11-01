@@ -22,7 +22,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.textLabel.font = [UIFont systemFontOfSize:16];
+        self.textLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
         self.textLabel.textColor = [UIColor colorWithHex:0x333333];
         
         self.radioImageView = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 24, 24)];
@@ -86,12 +86,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = UIColor.whiteColor;
-        self.layer.cornerRadius = 4;
+        self.layer.cornerRadius = 8;
         self.layer.masksToBounds = YES;
         self.items = items;
         
         self.titleLabel = [UILabel.alloc initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame) * 0.7, 48)];
-        self.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
+        self.titleLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
         self.titleLabel.textColor = [UIColor colorWithHex:0x333333];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.text = @"选择年份";

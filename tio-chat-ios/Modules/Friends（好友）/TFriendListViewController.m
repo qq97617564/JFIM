@@ -152,6 +152,7 @@
     tableView.backgroundColor = [UIColor clearColor];
     tableView.dataSource = self;
     tableView.delegate = self;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.separatorInset = UIEdgeInsetsMake(0, 77, 0, 0);
     tableView.separatorColor = [UIColor colorWithHex:0xE9E9E9];
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];

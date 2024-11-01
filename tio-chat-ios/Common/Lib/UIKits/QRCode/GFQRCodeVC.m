@@ -82,11 +82,13 @@
         
         self.codeView = codeView;
         [self.qrView addSubview:codeView];
+        self.qunCardView.hidden = true;
     }else{
         UIImageView *codeView = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 210, 210)];
         
         self.codeView = codeView;
         [self.qunQRView addSubview:codeView];
+        self.cordView.hidden = true;
     }
     self.tipL.text = self.isP2P?@"使用季风APP扫一扫，加我为好友":@"扫码加入群聊";
 

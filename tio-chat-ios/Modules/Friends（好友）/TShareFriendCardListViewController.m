@@ -12,7 +12,8 @@
 #import "UITableView+SCIndexView.h"
 #import "FrameAccessor.h"
 #import "TCardAlert.h"
-
+#import "GFCardShareVC.h"
+#import "UIImageView+Web.h"
 /// SDK
 #import "ImportSDK.h"
 
@@ -68,12 +69,12 @@
     
     // 搜索。暂时未开启
     UIView *tableHeaderView = ({
-        UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 60)];
-        view.backgroundColor = UIColor.whiteColor;
+        UIView *view = [UIView.alloc initWithFrame:CGRectMake(0, 0, tableView.width, 40)];
+        view.backgroundColor = UIColor.clearColor;
         
-        UITextField *searchTF = [UITextField.alloc initWithFrame:CGRectMake(16, 10, view.width - 32, 36)];
+        UITextField *searchTF = [UITextField.alloc initWithFrame:CGRectMake(16, 4, view.width - 32, 36)];
         searchTF.backgroundColor = [UIColor colorWithHex:0xF0F0F0];
-        searchTF.layer.cornerRadius = 18;
+        searchTF.layer.cornerRadius = 4;
         searchTF.layer.masksToBounds = YES;
         searchTF.leftViewMode = UITextFieldViewModeAlways;
         searchTF.leftView = ({
@@ -278,15 +279,23 @@
 
 - (void)alertShare:(TIOUser *)user
 {
+
     NSString *title = self.toSelected ? @"发送给:" : @"好友推荐";
-    TCardAlert *alert = [TCardAlert alertWithAvatar:user.avatar nick:user.nick title:title];
-    [alert addAction:[TAlertAction actionWithTitle:@"取消" style:TAlertActionStyleCancel handler:^(TAlertAction * _Nonnull action) {
-        
-    }]];
-    [alert addAction:[TAlertAction actionWithTitle:@"发送名片" style:TAlertActionStyleDone handler:^(TAlertAction * _Nonnull action) {
+    GFCardShareVC *vc = [[GFCardShareVC alloc]init];
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    vc.sendCallback = ^{
         self.t_callback(self, user);
-    }]];
-    [self presentViewController:alert animated:YES completion:nil];
+    };
+    [self presentViewController:vc animated:false completion:nil];
+    [vc setAvatar:user.avatar nick:user.nick title:title toSelected:self.toSelected];
+//    TCardAlert *alert = [TCardAlert alertWithAvatar:user.avatar nick:user.nick title:title];
+//    [alert addAction:[TAlertAction actionWithTitle:@"取消" style:TAlertActionStyleCancel handler:^(TAlertAction * _Nonnull action) {
+//        
+//    }]];
+//    [alert addAction:[TAlertAction actionWithTitle:@"发送名片" style:TAlertActionStyleDone handler:^(TAlertAction * _Nonnull action) {
+//        self.t_callback(self, user);
+//    }]];
+//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)textFieldEditing:(UITextField *)textField

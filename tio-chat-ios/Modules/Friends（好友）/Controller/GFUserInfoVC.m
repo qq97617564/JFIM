@@ -70,7 +70,7 @@
         self.user = user;
         self.type = type;
         self.title = @"个人信息";
-
+        self.navigationBar.titleL.textColor = [UIColor whiteColor];
 
     }
     return self;
@@ -86,14 +86,17 @@
 
 - (void)layout
 {
+    self.addressLabel.centerY = self.addrLabel.centerY;
+    self.addressLabel.right = ScreenWidth()-32-12;
     if (self.type == TUserInfoVCTypeFriend) {
         self.remarkLabel.right = ScreenWidth()-32-12;
         self.remarkLabel.centerY = self.reLabel.centerY;
         if (self.remarkLabel.width > (self.view.width - 94 - 16)) {
             self.remarkLabel.width = self.view.width - 94 - 16;
         }
+        self.nickLabel.right = ScreenWidth()-32-12;
         self.addrLabel.top = self.niLabel.bottom;
-        self.addressLabel.centerY = self.addrLabel.centerY;
+        
         self.sLabel.top = self.addrLabel.bottom;
         self.signLabel.top = self.sLabel.top + 10;
         self.signLabel.right = ScreenWidth()-32-12;
@@ -213,11 +216,13 @@
         niLabel.textAlignment = NSTextAlignmentLeft;
         [self.infoView addSubview:niLabel];
         self.niLabel = niLabel;
-        UILabel *nickLabel = [UILabel.alloc initWithFrame:CGRectMake(94, niLabel.top, self.view.width-32-90, 44)];
+        
+        UILabel *nickLabel = [UILabel.alloc initWithFrame:CGRectMake(94, niLabel.top, self.view.width-32-94-16, 44)];
         nickLabel.textColor = [UIColor colorWithHex:0x9199A4];
         nickLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
         nickLabel.textAlignment = NSTextAlignmentRight;
         nickLabel.text = self.user.nick;
+        self.nickLabel = nickLabel;
         [self.infoView addSubview:nickLabel];
     } else if (self.type == TUserInfoVCTypeAdd) {
         [self setupAddUI];

@@ -29,11 +29,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"充值卡绑定";
-    self.wxCell = [self cellWithTitle:@"绑定微信" icon:[UIImage imageNamed:@"Group 1321315564"]];
-    self.zfbCell = [self cellWithTitle:@"绑定支付宝" icon:[UIImage imageNamed:@"Group 1321315562"]];
+//    self.wxCell = [self cellWithTitle:@"绑定微信" icon:[UIImage imageNamed:@"Group 1321315564"]];
+//    self.zfbCell = [self cellWithTitle:@"绑定支付宝" icon:[UIImage imageNamed:@"Group 1321315562"]];
     self.bankCell = [self cellWithTitle:@"绑定银行卡" icon:[UIImage imageNamed:@"Group 1321315563"]];
    
-    self.cells = @[self.wxCell, self.zfbCell,self.bankCell];
+    self.cells = @[/*self.wxCell, self.zfbCell,*/self.bankCell];
     
     UITableView *tableView = [UITableView.alloc initWithFrame:CGRectMake(0, Height_NavBar+16, ScreenWidth(), 53*self.cells.count) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor whiteColor];
@@ -45,6 +45,19 @@
 
     [self.view addSubview:tableView];
     self.tableView = tableView;
+    [self loadData];
+}
+-(void)loadData{
+    [TIOChat.shareSDK.gfHttpManager  accountGetBnakDetailWithType:@"bank" completion:^(NSDictionary * _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            
+        }else{
+            if (responseObject[@"cardno"]) {
+                self.bankCell.textLabel.text = responseObject[@"cardno"];
+            }
+
+        }
+    }];
 }
 
 

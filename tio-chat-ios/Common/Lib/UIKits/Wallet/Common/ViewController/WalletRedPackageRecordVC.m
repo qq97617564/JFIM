@@ -55,7 +55,9 @@
     UIView *topBg = [UIView.alloc initWithFrame:CGRectMake(0, 0, self.view.width, Height_NavBar)];
     topBg.backgroundColor = [UIColor colorWithHex:0xF94335];
     [self.view addSubview:topBg];
- 
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back2"] style:UIBarButtonItemStylePlain target:self.navigationController action:@selector(popViewControllerAnimated:)];
+    self.navigationBar.titleLabel.textColor = UIColor.whiteColor;
+    self.navigationBar.titleL.textColor = UIColor.whiteColor;
     self.navigationBar.backgroundColor = UIColor.clearColor;
     [self.view bringSubviewToFront:self.navigationBar];
      
@@ -168,10 +170,14 @@
     [self.tabButtons[0] sendActionsForControlEvents:UIControlEventTouchUpInside];
     
     UIButton *receiveButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    receiveButton.frame = CGRectMake(self.view.width-55, Height_NavBar+10, 40, 15);
+    receiveButton.frame = CGRectMake(self.view.width-55, Height_NavBar+10, 50, 30);
+    receiveButton.titleEdgeInsets = UIEdgeInsetsMake(-6, -13, 0, 0);
+    receiveButton.imageEdgeInsets = UIEdgeInsetsMake(17, 18, 0, 0);
     receiveButton.titleLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightBold];
     [receiveButton setTitleColor:[UIColor colorWithHex:0xD9A64F] forState:UIControlStateNormal];
 //    [receiveButton setTitleColor:UIColor.whiteColor forState:UIControlStateSelected];
+    [receiveButton setImage:[UIImage imageNamed:@"chevron-down"] forState:UIControlStateNormal];
+   
     [receiveButton setTitle:self.years.firstObject forState:UIControlStateNormal];
     [receiveButton addTarget:self action:@selector(tabButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     receiveButton.selected = YES;
@@ -181,7 +187,29 @@
 
     [self resetData];
     
-    self.indexOfQuest = self.indexOfQuest == 0? 1 : 0;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage: [UIImage imageNamed:@"more"] style:UIBarButtonItemStylePlain target:self action:@selector(barItemClick:)];
+//    self.years.firstObject
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *aAction = [UIAlertAction actionWithTitle:@"收到的红包"style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action) {
+        self.indexOfQuest = 0;
+    }];
+    UIAlertAction *bAction = [UIAlertAction actionWithTitle:@"发出的红包"style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action) {
+        self.indexOfQuest = 1;
+        
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"style:UIAlertActionStyleCancel handler:^(UIAlertAction* _Nonnull action) {
+        
+    }];
+    [alertController addAction:aAction];
+    [alertController addAction:bAction];
+    [alertController addAction:cancelAction];
+
+    [self presentViewController:alertController animated:true completion:nil];
+}
+-(void)updateUI{
     
     NSString *nick = TIOChat.shareSDK.loginManager.userInfo.nick;
     
@@ -189,8 +217,6 @@
 
     
     [self beginLoadingMore:nil];
-    
-  
 }
 
 - (void)tabButtonClicked:(UIButton *)button

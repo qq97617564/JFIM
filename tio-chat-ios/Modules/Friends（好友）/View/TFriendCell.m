@@ -69,17 +69,20 @@
     
     self.imageView.frame = CGRectMake(16, (self.contentView.height - 40) * 0.5, 40, 40);
     
-    self.textLabel.frame = CGRectMake(72, (self.contentView.height - 22) * 0.5, self.contentView.width - 72 - 40, 22);
+    self.textLabel.centerY = self.contentView.middleY;
+    self.textLabel.left = 72;
     
     self.badgeView.centerY = self.contentView.middleY;
     self.badgeView.right = self.contentView.width - 16;
     
     self.flag.left = self.textLabel.right+5;
+    self.flag.centerY = self.contentView.middleY;
 }
 
 - (void)setNick:(NSString *)nick
 {
     self.textLabel.text = nick;
+    [self.textLabel sizeToFit];
 }
 
 - (void)setAvatarUrl:(NSString *)url

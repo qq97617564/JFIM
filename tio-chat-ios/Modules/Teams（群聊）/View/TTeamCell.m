@@ -69,8 +69,8 @@
     
     UILabel *countLabel = ({
         UILabel *label = [UILabel.alloc init];
-        label.textColor = [UIColor colorWithHex:0xAAAAAA];
-        label.font = [UIFont systemFontOfSize:12.f];
+        label.textColor = [UIColor colorWithHex:0x9199A4];
+        label.font = [UIFont systemFontOfSize:12.f weight:UIFontWeightBold];
         label.textAlignment = NSTextAlignmentLeft;
         
         label;
@@ -87,8 +87,6 @@
     
     self.nickLabel.frame = CGRectMake(72, self.avaterView.top + 2, self.contentView.width - 72 - 16, 22);
     
-    [self.countLabel sizeToFit];
-    [self.managerIcon sizeToFit];
     if (_role != TIOTeamUserRoleMember) {
         self.managerIcon.left = 72;
         self.managerIcon.top = self.nickLabel.bottom + 3;
@@ -96,8 +94,8 @@
         self.countLabel.left = self.managerIcon.right + 4;
         self.countLabel.bottom = self.managerIcon.bottom;
     } else {
-        self.countLabel.left = 72;
-        self.countLabel.top = self.nickLabel.bottom + 1;
+        self.countLabel.left = self.nickLabel.left;
+        self.countLabel.top = self.nickLabel.bottom+4;
     }
 }
 
@@ -107,15 +105,18 @@
     
     if (role == TIOTeamUserRoleOwner) {
         self.managerIcon.backgroundColor = [UIColor colorWithHex:0x0087FC];
-        self.managerIcon.text = @" 群主 ";
+        self.managerIcon.text = @"群主";
+        self.managerIcon.width = 32;
         self.managerIcon.hidden = NO;
     } else if (role == TIOTeamUserRoleManager) {
         self.managerIcon.backgroundColor = [UIColor colorWithHex:0x0087FC];
-        self.managerIcon.text = @" 管理员 ";
+        self.managerIcon.text = @"管理员";
+        self.managerIcon.width = 42;
         self.managerIcon.hidden = NO;
     } else {
         self.managerIcon.hidden = YES;
     }
+
 }
 
 - (void)setAvatarUrl:(NSString *)url

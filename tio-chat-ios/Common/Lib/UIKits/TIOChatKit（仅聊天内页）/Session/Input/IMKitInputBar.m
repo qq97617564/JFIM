@@ -43,7 +43,7 @@
     _voiceButton = voiceButton;
     
     _inputTextView = [[NIMGrowingTextView alloc] initWithFrame:CGRectMake(51, 8, self.width - 99 - 51, 40)];
-    _inputTextView.layer.cornerRadius = 20;
+    _inputTextView.layer.cornerRadius = 4;
     _inputTextView.layer.masksToBounds = YES;
     _inputTextView.font = [UIFont systemFontOfSize:16.0f];
     _inputTextView.textContainerInset = UIEdgeInsetsMake(8, 15, 4, 15);
@@ -78,7 +78,7 @@
     
     UIButton *recordVoiceButton = [UIButton buttonWithType:UIButtonTypeCustom];
     recordVoiceButton.frame = _inputTextView.frame;
-    recordVoiceButton.layer.cornerRadius = 20;
+    recordVoiceButton.layer.cornerRadius = 4;
     recordVoiceButton.layer.masksToBounds = YES;
     recordVoiceButton.backgroundColor = [UIColor colorWithHex:0xF9F9F9];
     [recordVoiceButton setTitle:@"按住说话"

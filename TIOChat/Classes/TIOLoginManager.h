@@ -193,7 +193,7 @@ typedef void(^TIOOperateHandler)(NSInteger result, NSError * __nullable error);
 /// @param type type 1：绑定手机号；2：注册；3：登录；4:修改密码;5:修改手机-老手机号验证;6:找回密码；7：绑定新手机;8:三方绑定手机
 - (void)checkMobile:(NSString *)mobile type:(NSInteger)type handler:(void(^)(NSInteger result, NSError * _Nullable error))handler;
 /// 更改地区显示
-/// @param handler
+/// @param handler 回调
 -(void)updateShowAreaHandler:(nonnull void (^)(NSInteger, NSError * _Nullable))handler;
 /// 获取短信验证码
 /// @param type 1：绑定手机号；2：注册；3：登录；4:修改密码;5:修改手机-老手机号验证;6:找回密码；7：绑定新手机;8:三方绑定手机

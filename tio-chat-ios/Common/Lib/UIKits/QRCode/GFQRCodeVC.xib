@@ -17,6 +17,7 @@
                 <outlet property="nameL" destination="FBb-FQ-5ps" id="zt9-fj-3yq"/>
                 <outlet property="numL" destination="LYy-Ke-WWH" id="ilo-w2-UWm"/>
                 <outlet property="qrView" destination="Dia-gc-2C0" id="KyZ-Cq-ZeO"/>
+                <outlet property="qunCardView" destination="Mrx-Kg-OVU" id="h0d-nY-aZe"/>
                 <outlet property="qunIconL" destination="IkU-lY-iYG" id="cfd-2W-BuS"/>
                 <outlet property="qunNameL" destination="7Bw-sG-0ps" id="trI-2h-ljh"/>
                 <outlet property="qunQRView" destination="uhL-mk-mvS" id="T2J-Rr-v1C"/>
@@ -30,7 +31,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZN9-89-Lj9">
-                    <rect key="frame" x="16" y="60" width="343" height="500"/>
+                    <rect key="frame" x="16" y="76" width="343" height="500"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogs-Kr-ZL3">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="325"/>
@@ -182,7 +183,7 @@
                 <constraint firstItem="Mrx-Kg-OVU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="3qr-Oj-QD3"/>
                 <constraint firstItem="Mrx-Kg-OVU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="5bY-v8-FhL"/>
                 <constraint firstAttribute="trailing" secondItem="Mrx-Kg-OVU" secondAttribute="trailing" constant="16" id="AHP-a7-2Bw"/>
-                <constraint firstItem="ZN9-89-Lj9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="Mus-Ss-DkQ"/>
+                <constraint firstItem="ZN9-89-Lj9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="Mus-Ss-DkQ"/>
                 <constraint firstItem="qyN-Ja-Dt1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Spi-di-xpo"/>
                 <constraint firstItem="ZN9-89-Lj9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="WB0-PB-AK5"/>
                 <constraint firstItem="czc-Cp-4j3" firstAttribute="top" secondItem="qyN-Ja-Dt1" secondAttribute="bottom" constant="5" id="Yky-pD-6Sa"/>

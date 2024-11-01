@@ -146,7 +146,7 @@
     tableView.delegate = self;
     tableView.rowHeight = 75;
     tableView.tableHeaderView = self.searchView;
-//    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.separatorColor = [UIColor colorWithHex:0xE9E9E9];
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
