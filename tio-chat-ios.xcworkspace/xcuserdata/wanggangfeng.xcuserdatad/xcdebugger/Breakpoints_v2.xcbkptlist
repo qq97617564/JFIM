@@ -458,53 +458,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4EAEFFB0-97D6-4C96-B6DE-9F88957DDABF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tio-chat-ios/Modules/Find&#xff08;&#x53d1;&#x73b0;&#xff09;/Controller/GFFindVC.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-loadData"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4EAEFFB0-97D6-4C96-B6DE-9F88957DDABF - c06321d1927e1a5a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__20-[GFFindVC loadData]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Find%EF%BC%88%E5%8F%91%E7%8E%B0%EF%BC%89/Controller/GFFindVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "112">
-               </Location>
-               <Location
-                  uuid = "4EAEFFB0-97D6-4C96-B6DE-9F88957DDABF - c06321d1927e1a5a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__20-[GFFindVC loadData]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Find%EF%BC%88%E5%8F%91%E7%8E%B0%EF%BC%89/Controller/GFFindVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "116">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

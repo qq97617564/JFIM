@@ -84,15 +84,19 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     GFAddressListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GFAddressListCell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell.icon sd_setImageWithURL:[NSURL URLWithString:dataArray[indexPath.row][@"image"]] placeholderImage:nil];
     cell.titleL.text = dataArray[indexPath.row][@"title"];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *url = dataArray[indexPath.row][@"url"];
-    WKWebViewController *web = [WKWebViewController.alloc init];
-    web.urlString = url;
-    [self.navigationController pushViewController:web animated:YES];
+    if ([url containsString:@"http"]) {
+        WKWebViewController *web = [WKWebViewController.alloc init];
+        web.urlString = url;
+        [self.navigationController pushViewController:web animated:YES];
+    }
+
 }
 
 
