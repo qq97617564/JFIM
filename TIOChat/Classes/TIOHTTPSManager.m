@@ -210,7 +210,17 @@ static NSInteger const kMaxRetryCount = 3; ///< 最大重连次数
         TIOLog(@"[Response(%@) error] \n data=>%@",URLString,task.response);
         if (retryConut > 0 && ![error.domain isEqualToString:NSBundle.mainBundle.bundleIdentifier]) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kRetryDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self GET:URLString parameters:parameters success:success failure:failure retryCount:retryConut-1];
+                NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
+                if ([baseUrl isEqualToString:kBaseURLString]){
+                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
+                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];
+                    baseUrl = url;
+                }else{
+                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
+                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];
+                    baseUrl = url;
+                };
+                [self GET:baseUrl parameters:parameters success:success failure:failure retryCount:retryConut-1];
             });
         } else {
             !failure ?: failure(task, error);
@@ -244,7 +254,17 @@ static NSInteger const kMaxRetryCount = 3; ///< 最大重连次数
         // 失败重连
         if (retryConut > 0 && ![error.domain isEqualToString:NSBundle.mainBundle.bundleIdentifier]) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kRetryDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self UPLOAD:URLString parameters:parameters constructingBodyWithBlock:block progress:uploadProgress success:success failure:failure retryCount:retryConut-1];
+                NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
+                if ([baseUrl isEqualToString:kBaseURLString]){
+                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
+                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];
+                    baseUrl = url;
+                }else{
+                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
+                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];
+                    baseUrl = url;
+                };
+                [self UPLOAD:baseUrl parameters:parameters constructingBodyWithBlock:block progress:uploadProgress success:success failure:failure retryCount:retryConut-1];
             });
         } else {
             !failure ?: failure(task, error);
