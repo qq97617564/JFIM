@@ -103,7 +103,7 @@
 //        cell;
 //    });\\\\\\\\\
     
-    TSettingCell *versionCell = [self cellWithTitle:@"关于谭聊"];
+    TSettingCell *versionCell = [self cellWithTitle:@"关于季风"];
     versionCell.detailText = [NSString stringWithFormat:@"v %@（公测版）",NSBundle.mainBundle.infoDictionary[@"CFBundleShortVersionString"]];
     versionCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     

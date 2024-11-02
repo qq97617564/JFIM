@@ -22,6 +22,8 @@
 #import <M80AttributedLabel.h>
 #import <UIImageView+WebCache.h>
 
+#import "ImportSDK.h"
+
 @interface GFUserInfoVC () <TEdittingViewControllerDelegate>
 @property (assign, nonatomic) TUserHomePageType type;
 @property (strong, nonatomic) TIOUser *user;
@@ -86,7 +88,7 @@
 
 - (void)layout
 {
-    if (self.user.areaviewflag == 1 && self.user.areaviewflagGlobal == 1){
+    if (self.user.areaviewflag == 1 && [TIOChat.shareSDK.loginManager userInfo].areaviewflagGlobal == 1){
         self.addressLabel.height = 44;
         self.addrLabel.height = 44;
         self.addrLabel.hidden = false;
@@ -249,7 +251,7 @@
         signHeight = 44;
     }
 
-    if (self.user.areaviewflag == 1 && self.user.areaviewflagGlobal == 1) {
+    if (self.user.areaviewflag == 1 && [TIOChat.shareSDK.loginManager userInfo].areaviewflagGlobal == 1) {
         self.infoH.constant = 44 + signHeight;
         if (self.type == TUserInfoVCTypeFriend) {
             self.infoH.constant = 44*3 + signHeight;
@@ -542,7 +544,7 @@
                 self.addressLabel.text = @"中国";
             }
             self.addressLabel.hidden = true;
-            if (user.areaviewflag == 1 && user.areaviewflagGlobal == 1){
+            if (user.areaviewflag == 1 && [TIOChat.shareSDK.loginManager userInfo].areaviewflagGlobal == 1){
                 self.addressLabel.hidden = false;
             }
 

@@ -64,9 +64,9 @@
         
         NSMutableAttributedString *aString = [NSMutableAttributedString.alloc init];
         
-        [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"谭聊钱包由" attributes:attr1]];
+        [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"钱包由" attributes:attr1]];
         [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"新生支付" attributes:attr2]];
-        [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"提供，谭聊将向新生支付提供 您的个人身份信息，用于开通新生支付账号。如您同意开通，请点击" attributes:attr1]];
+        [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"提供，季风将向新生支付提供 您的个人身份信息，用于开通新生支付账号。如您同意开通，请点击" attributes:attr1]];
         [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"【同意授权】" attributes:attr2]];
         [aString appendAttributedString:[NSAttributedString.alloc initWithString:@"按钮，如您不同意，请不要进行同意授权操作。" attributes:attr1]];
         

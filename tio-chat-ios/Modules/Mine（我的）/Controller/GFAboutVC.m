@@ -25,6 +25,7 @@
 }
 - (IBAction)versionAction:(id)sender {
     //需上线
+    [MBProgressHUD showError:@"尚未上线"];
     GFNewVersionVC *vc = [[GFNewVersionVC alloc]init];
     vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentModalViewController:vc animated:false];
