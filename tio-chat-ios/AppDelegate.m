@@ -71,12 +71,12 @@
     
     // 开始检查版本:自己处理更新类型及提示
     [CBVersionManager.shareInstance starManager];
-    
-    //关闭邀请码
-    [TIOChat.shareSDK.loginManager tLoginInvitecodeCompletion:^(NSDictionary * result, NSError * error) {
-        
-    }];
-    
+//    
+//    //关闭邀请码
+//    [TIOChat.shareSDK.loginManager tLoginInvitecodeCompletion:^(NSDictionary * result, NSError * error) {
+//        
+//    }];
+//    
     return YES;
 }
 
@@ -117,6 +117,7 @@
     #else
         [TIOChat setLogEnable:NO];
     #endif
+    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
 
     [TIOChat.shareSDK.loginManager addDelegate:self];
 

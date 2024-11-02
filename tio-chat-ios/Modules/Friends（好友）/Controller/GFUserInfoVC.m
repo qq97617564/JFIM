@@ -149,7 +149,7 @@
     self.infoView.layer.masksToBounds = YES;
 
     self.avatarView.userInteractionEnabled = YES;
-    [    self.avatarView sd_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholderImage:nil];
+    [self.avatarView sd_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholderImage:nil];
 
     
     UITapGestureRecognizer *avatarGesture = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(avatarGesture:)];

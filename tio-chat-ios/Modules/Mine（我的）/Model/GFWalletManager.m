@@ -71,6 +71,15 @@
         completion(nil, error);
     }];
 }
+-(void)getFindDataCompletion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [TIOHTTPSManager tio_POST:@"/find/list" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        TIOLog(@"发现：%@",responseObject[@"data"]);
+        completion(responseObject, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completion(nil, error);
+    }];
+}
 
 -(void)accountGetBalanceOrderWithCompletion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion{
     NSMutableDictionary *params = [NSMutableDictionary dictionary];

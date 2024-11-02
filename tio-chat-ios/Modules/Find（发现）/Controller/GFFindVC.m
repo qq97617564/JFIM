@@ -8,12 +8,12 @@
 
 #import "GFFindVC.h"
 #import "GFAddressListCell.h"
-
+#import <UIImageView+WebCache.h>
+#import "WKWebViewController.h"
 
 @interface GFFindVC ()<UITableViewDataSource,UITableViewDelegate>
 {
-    NSArray *titles;
-    NSArray *icons;
+    NSArray *dataArray;
 }
 @property(nonatomic, strong)UITableView *tableView;
 
@@ -24,9 +24,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"发现";
-    titles = @[@"IM开源地址",@"chatArea",@"uniAPP",@"百度一下",@"演示系统",@"注意防骗"];
-    icons = @[@"Group 1321315495",@"Group 1321315496",@"Group 1321315497",@"Group 1321315498",@"Group 1321315499",@"Group 1321315500"];
+//    titles = @[@"IM开源地址",@"chatArea",@"uniAPP",@"百度一下",@"演示系统",@"注意防骗"];
+//    icons = @[@"Group 1321315495",@"Group 1321315496",@"Group 1321315497",@"Group 1321315498",@"Group 1321315499",@"Group 1321315500"];
     [self.view addSubview:self.tableView];
+    [self loadData];
+}
+-(void)loadData{
+    CBWeakSelf
+    [MBProgressHUD showLoading:@"" toView:self.view];
+    [TIOChat.shareSDK.gfHttpManager getFindDataCompletion:^(NSDictionary * _Nullable responseObject, NSError * _Nullable error) {
+        CBStrongSelfElseReturn
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if (error) {
+            [MBProgressHUD showError:error.localizedDescription toView:self.view];
+            return;
+        }else{
+            NSArray *array = (NSArray *)responseObject[@"data"];
+            self->dataArray = array;
+            [self.tableView reloadData];
+        }
+        
+        
+    }];
 }
 -(UITableView *)tableView{
     if (!_tableView) {
@@ -52,7 +71,7 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return titles.count;
+    return dataArray.count;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return [UIView new];
@@ -65,12 +84,15 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     GFAddressListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GFAddressListCell" forIndexPath:indexPath];
-    cell.icon.image = [UIImage imageNamed:icons[indexPath.row]];
-    cell.titleL.text = titles[indexPath.row];
+    [cell.icon sd_setImageWithURL:[NSURL URLWithString:dataArray[indexPath.row][@"image"]] placeholderImage:nil];
+    cell.titleL.text = dataArray[indexPath.row][@"title"];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    NSString *url = dataArray[indexPath.row][@"url"];
+    WKWebViewController *web = [WKWebViewController.alloc init];
+    web.urlString = url;
+    [self.navigationController pushViewController:web animated:YES];
 }
 
 

@@ -15,6 +15,7 @@
 #import "TIOMacros.h"
 
 #import "TIOTokenStorage.h"
+#import "ServerConfig.h"
 
 static CGFloat const kRetryDelay = 0.3;  ///< 重连延时
 static NSInteger const kMaxRetryCount = 3; ///< 最大重连次数
@@ -87,24 +88,40 @@ static NSInteger const kMaxRetryCount = 3; ///< 最大重连次数
 + (void)tio_POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
 {
     NSString *path = @"/mytio";
+    if (![URLString containsString:@"http"]) {
+        NSString *baseUrl =     [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
+        path = [baseUrl stringByAppendingString:path];
+    };
     [[self sharedInstance] POST:[path stringByAppendingString:URLString] parameters:parameters success:success failure:failure retryCount:kMaxRetryCount];
 }
 
 + (void)tio_GET:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
 {
     NSString *path = @"/mytio";
+    if (![URLString containsString:@"http"]) {
+        NSString *baseUrl =     [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
+        path = [baseUrl stringByAppendingString:path];
+    };
     [[self sharedInstance] GET:[path stringByAppendingString:URLString] parameters:parameters success:success failure:failure retryCount:kMaxRetryCount];
 }
 
 + (void)tio_POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure retryCount:(NSInteger)retryCount
 {
     NSString *path = @"/mytio";
+    if (![URLString containsString:@"http"]) {
+        NSString *baseUrl =     [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
+        path = [baseUrl stringByAppendingString:path];
+    };
     [[self sharedInstance] POST:[path stringByAppendingString:URLString] parameters:parameters success:success failure:failure retryCount:retryCount];
 }
 
 + (void)tio_UPLOAD:(NSString *)URLString parameters:(id)parameters constructingBodyWithBlock:(void (^)(id<AFMultipartFormData> _Nonnull))block progress:(void (^)(NSProgress * _Nonnull))uploadProgress success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
 {
     NSString *path = @"/mytio";
+    if (![URLString containsString:@"http"]) {
+        NSString *baseUrl =     [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
+        path = [baseUrl stringByAppendingString:path];
+    };
     [self.sharedInstance UPLOAD:[path stringByAppendingString:URLString] parameters:parameters constructingBodyWithBlock:block progress:uploadProgress success:success failure:failure retryCount:kMaxRetryCount];
 }
 
@@ -141,9 +158,21 @@ static NSInteger const kMaxRetryCount = 3; ///< 最大重连次数
         TIOLog(@"[Request(POST)] => \nURL => %@ \nParams = %@ \nHeaders => %@", URLString, params, task.originalRequest);
         TIOLog(@"[Response(%@) error] \n data=>%@",URLString,task.response);
         // 失败重连
+
         if (retryConut > 0 && ![error.domain isEqualToString:TIOChatErrorDomain]) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kRetryDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self POST:URLString parameters:parameters success:success failure:failure retryCount:retryConut-1];
+                NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
+                if ([baseUrl isEqualToString:kBaseURLString]){
+                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
+                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];
+                    baseUrl = url;
+                }else{
+                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
+                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];
+                    baseUrl = url;
+                };
+
+                [self POST:baseUrl parameters:parameters success:success failure:failure retryCount:retryConut-1];
             });
         } else {
             !failure ?: failure(task, error);

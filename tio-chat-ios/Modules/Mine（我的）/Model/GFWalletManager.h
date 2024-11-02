@@ -76,7 +76,9 @@ NS_ASSUME_NONNULL_BEGIN
                nick:(NSString * __nullable)nick
                 mac:(NSString *__nullable)mac
          completion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
-
+/// 发现
+/// @param completion 回调
+-(void)getFindDataCompletion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
 /// 余额查询
 /// @param completion 回调
 -(void)accountGetBalanceWithCompletion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
