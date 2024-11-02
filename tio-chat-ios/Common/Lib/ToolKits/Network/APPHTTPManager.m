@@ -99,7 +99,7 @@
     NSString *path = @"/mytio";
     if (![URLString containsString:@"http"]) {
         NSString *baseUrl =     [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
-        path = [baseUrl stringByAppendingString:path];
+        [baseUrl stringByAppendingString:path]
     };
     [[self sharedInstance] POST:[path stringByAppendingString:URLString] parameters:parameters success:success failure:failure retryCount:retryCount];
 }
