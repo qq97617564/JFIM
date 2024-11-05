@@ -107,20 +107,47 @@
                 
             }];
         }else if (self.type == 2){
-            CBWeakSelf
-            [MBProgressHUD showLoading:@"" toView:self.view];
-            [TIOChat.shareSDK.gfHttpManager accountCashMoney:self.moneyTF.text completion:^(NSDictionary * _Nullable responseObject, NSError * _Nullable error) {
-                CBStrongSelfElseReturn
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-                if (error) {
-                    [MBProgressHUD showError:error.localizedDescription toView:self.view];
-                    return;
-                }else{
-                    [MBProgressHUD showSuccess:@"提交成功" toView:self.view ] ;
-                }
+            // Objective-C
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入支付密码" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+             
+            [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                // 配置输入框（例如设置占位符、密码等）
+                textField.placeholder = @"支付密码";
+                textField.keyboardType = UIKeyboardTypeNumberPad;
+            }];
+             
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                // 获取输入框的内容
+                UITextField *textField = alert.textFields.firstObject;
+                NSString *inputText = textField.text;
+                // 处理输入的内容
+                NSLog(@"输入的内容是：%@", inputText);
                 
+                CBWeakSelf
+                [MBProgressHUD showLoading:@"" toView:self.view];
+                [TIOChat.shareSDK.gfHttpManager accountCashMoney:self.moneyTF.text paypwd:inputText completion:^(NSDictionary * _Nullable responseObject, NSError * _Nullable error) {
+                    CBStrongSelfElseReturn
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    if (error) {
+                        [MBProgressHUD showError:error.localizedDescription toView:self.view];
+                        return;
+                    }else{
+                        [MBProgressHUD showSuccess:@"提交成功" toView:self.view ] ;
+                    }
+                    
+                    
+                }];
                 
             }];
+             
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+             
+            [alert addAction:okAction];
+            [alert addAction:cancelAction];
+             
+            // 显示弹窗
+            [self presentViewController:alert animated:YES completion:nil];
+            
         }
     }
 }

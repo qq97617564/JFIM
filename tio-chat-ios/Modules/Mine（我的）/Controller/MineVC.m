@@ -22,6 +22,7 @@
 #import "InvitationCodeVC.h"
 #import "GFWalletViewController.h"
 #import "GFBindingVC.h"
+#import "GFWallterPwdSettingVC.h"
 
 @interface MineVC () <TIOLoginDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *infoView;
@@ -85,7 +86,7 @@
     self.view.backgroundColor = [UIColor colorWithHex:0xF8F9FB];
     
     self.accountCell = [self cellWithTitle:@"账号" icon:[UIImage imageNamed:@"Group 1321315501"]];
-    self.walletCell = [self cellWithTitle:@"本地钱包" icon:[UIImage imageNamed:@"Group 1321315502"]];
+    self.walletCell = [self cellWithTitle:@"账户钱包" icon:[UIImage imageNamed:@"Group 1321315502"]];
     self.bankCell = [self cellWithTitle:@"充值卡绑定" icon:[UIImage imageNamed:@"Group 1321315561"]];
     
     self.infoCell = [self cellWithTitle:@"个人资料" icon:[UIImage imageNamed:@"Group 1321315503"]];
@@ -132,10 +133,21 @@
 //    [WalletManager.shareInstance evokeOpenAccount:@{} callback:^(id  _Nonnull data) {
 //        CBStrongSelfElseReturn
 //    }];
-    //新钱包
-    GFWalletViewController *vc = [[GFWalletViewController alloc]init];
-    vc.type = 1;
-    [self.navigationController pushViewController:vc animated:YES];
+    
+    // 钱包
+    if(TIOChat.shareSDK.loginManager.userInfo.paypwdflag == 1){
+        //新钱包
+        GFWalletViewController *vc = [[GFWalletViewController alloc]init];
+        vc.type = 1;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        GFWallterPwdSettingVC *vc = [[GFWallterPwdSettingVC alloc]init];
+        [self.navigationController pushViewController:vc animated:true];
+        vc.changeBlock = ^{
+            [self toWallet];
+        };
+    }
+    
 }
 
 - (void)toSetSetting
@@ -181,8 +193,8 @@
         // 账户
         [self.navigationController pushViewController:[TAccountViewController.alloc init] animated:YES];
     } else if (cell == _walletCell) {
-        // 钱包
         [self toWallet];
+        
     }else if (cell == _bankCell) {
         // 绑定充值卡
         [self toBinding];

@@ -71,6 +71,26 @@
         completion(nil, error);
     }];
 }
+-(void)accountGetPayPasswordCompletion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [TIOHTTPSManager tio_POST:@"/user/curr" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        TIOLog(@"查询支付密码：%@",responseObject[@"data"]);
+        completion(responseObject, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completion(nil, error);
+    }];
+}
+-(void)accountSetPayPassword:(NSString *)paypwd completion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"paypwd"] = paypwd;
+    
+    [TIOHTTPSManager tio_POST:@"/wxuser/coin/setpaypwd" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        TIOLog(@"设置支付密码：%@",responseObject[@"data"]);
+        completion(responseObject, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completion(nil, error);
+    }];
+}
 -(void)getFindDataCompletion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion{
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [TIOHTTPSManager tio_POST:@"/find/list" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -101,9 +121,11 @@
         completion(nil, error);
     }];
 }
--(void)accountCashMoney:(NSString *)money completion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion{
+-(void)accountCashMoney:(NSString *)money paypwd:(NSString *)paypwd completion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion{
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"money"] = money;
+    params[@"payType"] = @"bank";
+    params[@"paypwd"] = paypwd;
     [TIOHTTPSManager tio_POST:@"/wxuser/coin/withdraw" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         TIOLog(@"提现：%@",responseObject[@"data"]);
         completion(responseObject[@"data"], nil);

@@ -556,6 +556,7 @@
 		17FF5611247CF59C00CDECBE /* TIOVideoChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF5610247CF59C00CDECBE /* TIOVideoChatManager.m */; };
 		801B268C2CCD48F50010D74A /* GFQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 801B268A2CCD48F50010D74A /* GFQRCodeVC.m */; };
 		801B268D2CCD48F50010D74A /* GFQRCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 801B268B2CCD48F50010D74A /* GFQRCodeVC.xib */; };
+		801F25112CD7938E00F6AD07 /* GFWallterPwdSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F25102CD7938E00F6AD07 /* GFWallterPwdSettingVC.m */; };
 		802EC28E2CCF941C00D53E6B /* GFWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC28C2CCF941C00D53E6B /* GFWalletViewController.m */; };
 		802EC28F2CCF941C00D53E6B /* GFWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 802EC28D2CCF941C00D53E6B /* GFWalletViewController.xib */; };
 		802EC2922CCFADD900D53E6B /* GFWalletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 802EC2912CCFADD900D53E6B /* GFWalletManager.m */; };
@@ -1715,6 +1716,8 @@
 		801B26892CCD48F50010D74A /* GFQRCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFQRCodeVC.h; sourceTree = "<group>"; };
 		801B268A2CCD48F50010D74A /* GFQRCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFQRCodeVC.m; sourceTree = "<group>"; };
 		801B268B2CCD48F50010D74A /* GFQRCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFQRCodeVC.xib; sourceTree = "<group>"; };
+		801F250F2CD7938E00F6AD07 /* GFWallterPwdSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFWallterPwdSettingVC.h; sourceTree = "<group>"; };
+		801F25102CD7938E00F6AD07 /* GFWallterPwdSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFWallterPwdSettingVC.m; sourceTree = "<group>"; };
 		802EC28B2CCF941C00D53E6B /* GFWalletViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GFWalletViewController.h; sourceTree = "<group>"; };
 		802EC28C2CCF941C00D53E6B /* GFWalletViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GFWalletViewController.m; sourceTree = "<group>"; };
 		802EC28D2CCF941C00D53E6B /* GFWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GFWalletViewController.xib; sourceTree = "<group>"; };
@@ -4132,6 +4135,8 @@
 				802EC2AB2CCFDC8600D53E6B /* GFBindingBankVC.h */,
 				802EC2AC2CCFDC8600D53E6B /* GFBindingBankVC.m */,
 				802EC2AD2CCFDC8600D53E6B /* GFBindingBankVC.xib */,
+				801F250F2CD7938E00F6AD07 /* GFWallterPwdSettingVC.h */,
+				801F25102CD7938E00F6AD07 /* GFWallterPwdSettingVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -4644,6 +4649,7 @@
 				1733CE7B25EE1D0D00EDD4FD /* LYPaymentAlertController.m in Sources */,
 				17D4ECAE24D805DC007153ED /* IMKitMessageAudioContentView.m in Sources */,
 				17F65EF225F1C35000990EE8 /* NWPaymentAlert.m in Sources */,
+				801F25112CD7938E00F6AD07 /* GFWallterPwdSettingVC.m in Sources */,
 				171BCD6523B5E2C60064BE7B /* PPStickerPageView.m in Sources */,
 				17ED099B2456D8FA008C9C5D /* TIOTeamManager.m in Sources */,
 				171BCD6323B5E2C60064BE7B /* PPSticker.m in Sources */,

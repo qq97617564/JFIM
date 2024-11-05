@@ -81,6 +81,7 @@
     self.nickLabel.centerY = self.contentView.middleY;
     self.nickLabel.left = 72;
     self.flag.left = self.nickLabel.right + 5;
+    self.flag.centerY = self.nickLabel.centerY;
     self.addButton.centerY = self.contentView.middleY;
     self.addButton.right = self.contentView.width - 16;
 }

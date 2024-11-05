@@ -49,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy,    nonatomic) NSString *joinnum;
 ///1=官方， 2=正常
 @property (assign,  nonatomic) NSInteger officialflag;
+@property (assign,  nonatomic) NSInteger xx;
 /// 为2时:at自己
 @property (assign,  nonatomic) NSInteger atreadflag;
 /// 角色 用户在群聊会话内的角色状态： 成员｜管理员｜群主

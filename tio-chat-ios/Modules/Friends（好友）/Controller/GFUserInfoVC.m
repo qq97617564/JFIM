@@ -234,6 +234,7 @@
         nickLabel.textColor = [UIColor colorWithHex:0x9199A4];
         nickLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
         nickLabel.textAlignment = NSTextAlignmentRight;
+
         nickLabel.text = self.user.nick;
         self.nickLabel = nickLabel;
         [self.infoView addSubview:nickLabel];

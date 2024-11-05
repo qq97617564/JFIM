@@ -92,6 +92,8 @@
     }
     self.tipL.text = self.isP2P?@"使用季风APP扫一扫，加我为好友":@"扫码加入群聊";
 
+    self.cordView.layer.masksToBounds = true;
+    self.qunCardView.layer.masksToBounds = true;
     
     
 

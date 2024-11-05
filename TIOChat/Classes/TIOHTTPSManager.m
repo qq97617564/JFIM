@@ -161,17 +161,19 @@ static NSInteger const kMaxRetryCount = 3; ///< 最大重连次数
 
         if (retryConut > 0 && ![error.domain isEqualToString:TIOChatErrorDomain]) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kRetryDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                //获取当前域名
                 NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
-                if ([baseUrl isEqualToString:kBaseURLString]){
-                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
-                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];
+                if ([baseUrl isEqualToString:kBaseURLString]){//如果为主域名
+                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];//保存副域名为根域名
+                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];//请求域名替换为副域名
                     baseUrl = url;
-                }else{
-                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
-                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];
+                }else{ //如果当前域名为副域名替换为主域名
+                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];//保存主域名为根域名
+                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];//请求域名替换为主域名
                     baseUrl = url;
                 };
-
+                //执行第二次请求
                 [self POST:baseUrl parameters:parameters success:success failure:failure retryCount:retryConut-1];
             });
         } else {

@@ -22,8 +22,6 @@ def tio_chat_demo
     pod 'CocoaLumberjack'
     pod 'DZNEmptyDataSet'
     pod 'JSONModel'
-#    pod 'HXPhotoPicker', '~> 2.4.1'
-#    pod  'YKWoodpecker'   
 
 end
 

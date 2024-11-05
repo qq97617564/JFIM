@@ -85,6 +85,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 订单查询
 /// @param completion 回调
 -(void)accountGetBalanceOrderWithCompletion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
+/// 查询支付密码
+/// @param completion 回调paypwdflag:1-已设置2-未设置
+-(void)accountGetPayPasswordCompletion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
+/// 设置支付密码
+/// @param paypwd 密码
+/// @param completion 回调
+-(void)accountSetPayPassword:(NSString *)paypwd completion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
 /// 卡详情
 /// @param type 渠道
 /// @param completion 回调
@@ -96,7 +103,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 提现
 /// @param money 提现金额
 /// @param completion 回调
--(void)accountCashMoney:(NSString *)money completion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
+-(void)accountCashMoney:(NSString *)money paypwd:(NSString *)paypwd completion:(void(^)(NSDictionary * __nullable responseObject, NSError * __nullable error))completion;
 /// 绑定充值卡
 /// @param typetype 渠道
 /// @param cardno 号码

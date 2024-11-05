@@ -103,6 +103,9 @@ typedef void(^TIOOperateHandler)(NSInteger result, NSError * __nullable error);
 //邀请码
 @property (copy,  nonatomic) NSString *invitecode;
 
+/// 是都设置密码1-已设置2-未设置
+@property (assign,  nonatomic) NSInteger paypwdflag;
+
 - (NSDictionary *)jsonObject;
 
 @end

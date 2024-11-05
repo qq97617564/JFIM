@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZN9-89-Lj9">
-                    <rect key="frame" x="16" y="76" width="343" height="500"/>
+                    <rect key="frame" x="16" y="126" width="343" height="500"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogs-Kr-ZL3">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="325"/>
@@ -131,7 +132,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrx-Kg-OVU">
-                    <rect key="frame" x="15" y="76" width="344" height="450"/>
+                    <rect key="frame" x="15" y="126" width="344" height="450"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用季风APP扫描，加我为好友" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-bP-HdW">
                             <rect key="frame" x="72.666666666666686" y="389" width="199" height="17"/>
@@ -178,17 +179,18 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="sg3-l5-LgJ"/>
             <color key="backgroundColor" red="0.97254901960784312" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Mrx-Kg-OVU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="3qr-Oj-QD3"/>
                 <constraint firstItem="Mrx-Kg-OVU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="5bY-v8-FhL"/>
                 <constraint firstAttribute="trailing" secondItem="Mrx-Kg-OVU" secondAttribute="trailing" constant="16" id="AHP-a7-2Bw"/>
-                <constraint firstItem="ZN9-89-Lj9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="Mus-Ss-DkQ"/>
+                <constraint firstItem="ZN9-89-Lj9" firstAttribute="top" secondItem="sg3-l5-LgJ" secondAttribute="top" constant="76" id="AzQ-A2-hEk"/>
                 <constraint firstItem="qyN-Ja-Dt1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Spi-di-xpo"/>
                 <constraint firstItem="ZN9-89-Lj9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="WB0-PB-AK5"/>
                 <constraint firstItem="czc-Cp-4j3" firstAttribute="top" secondItem="qyN-Ja-Dt1" secondAttribute="bottom" constant="5" id="Yky-pD-6Sa"/>
                 <constraint firstAttribute="bottom" secondItem="czc-Cp-4j3" secondAttribute="bottom" constant="40" id="YzS-Fn-c7n"/>
                 <constraint firstAttribute="trailing" secondItem="ZN9-89-Lj9" secondAttribute="trailing" constant="16" id="ojA-wy-5gf"/>
+                <constraint firstItem="Mrx-Kg-OVU" firstAttribute="top" secondItem="sg3-l5-LgJ" secondAttribute="top" constant="76" id="uag-lR-THD"/>
                 <constraint firstItem="czc-Cp-4j3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z6G-XX-09s"/>
             </constraints>
             <point key="canvasLocation" x="93.599999999999994" y="-11.822660098522167"/>

@@ -107,7 +107,7 @@
     });
     
     self.accountCell = [self cellWithTitle:@"账号" icon:[UIImage imageNamed:@"mine_acc"]];
-    self.walletCell = [self cellWithTitle:@"本地钱包" icon:[UIImage imageNamed:@"mine_wallet"]];
+    self.walletCell = [self cellWithTitle:@"账户钱包" icon:[UIImage imageNamed:@"mine_wallet"]];
     self.infoCell = [self cellWithTitle:@"个人资料" icon:[UIImage imageNamed:@"mine_info"]];
     self.codeCell = [self cellWithTitle:@"邀请码" icon:[UIImage imageNamed:@"mine_info"]];
     self.settingCell = [self cellWithTitle:@"设置" icon:[UIImage imageNamed:@"mine_setting"]];

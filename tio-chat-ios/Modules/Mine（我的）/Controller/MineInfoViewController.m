@@ -84,7 +84,7 @@
     
     TInfoCell *sexCell = [self cellWithTitle:@"性别" subTitle:sex hasIndiractor:YES isSwitch:false];
     TInfoCell *signCell = [self cellWithTitle:@"个性签名" subTitle:self.user.sign hasIndiractor:YES isSwitch:false];
-    TInfoCell *addressCell = [self cellWithTitle:@"地区" subTitle:[NSString stringWithFormat:@"%@ %@",self.user.province?self.user.province:@"",self.user.city?self.user.city:@""] hasIndiractor:false isSwitch:true];
+    TInfoCell *addressCell = [self cellWithTitle:@"地区" subTitle:[NSString stringWithFormat:@"%@ %@",self.user.province?self.user.province:@"",self.user.city?self.user.city:@""] hasIndiractor:false isSwitch:false];
 //    TInfoCell *emailCell = [self cellWithTitle:@"邮箱" subTitle:self.user.email hasIndiractor:NO];
 //    TInfoCell *phoneCell = [self cellWithTitle:@"手机号" subTitle:self.user.phone?:@"还没有绑定手机" hasIndiractor:YES];
     

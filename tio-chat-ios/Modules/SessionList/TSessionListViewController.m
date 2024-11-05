@@ -205,13 +205,15 @@
 
         NSString *avatar = session.session.avatar;
         [cell setAvatarUrl:avatar];
-        
+         
         cell.timeLabel.text = session.lastMessage.msgTime.timeOfsessionList;
         
         cell.isTop = session.isTop;
-        
-        
-        cell.flag.hidden = session.officialflag == 1;
+        cell.flag.hidden = true;
+        if (session.officialflag == 1 || session.xx == 3) {
+            cell.flag.hidden = false;
+        }
+
         NSInteger unreadStatus = 0; // 自己的消息有么有被度，默认是0，表示对方发的消息
         
         if (session.session.sessionType == TIOSessionTypeP2P) {

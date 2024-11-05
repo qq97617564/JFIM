@@ -34,7 +34,7 @@
         _sharedManager = [[self alloc] init];
         
         /// 切换易支付和新生支付
-        _sharedManager.vendor = WalletVendorNewPay;
+        _sharedManager.vendor = WalletVendorYiPay;
     });
 
     return _sharedManager;

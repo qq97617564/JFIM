@@ -30,6 +30,6 @@
 
 #endif
 
-#define QR_SERVER                 @"https://a.app.qq.com/o/simple.jsp?pkgname=com.skychat.chat"
+#define QR_SERVER                 @"https://a.app.qq.com/o/simple.jsp?pkgname=app.suyun8905.test2"
 
 #endif /* ServerConfig_h */
