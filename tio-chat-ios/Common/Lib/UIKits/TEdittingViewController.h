@@ -34,6 +34,8 @@ typedef void(^TEdittingHandler)(BOOL flag, NSString * __nullable msg);
 
 - (instancetype)initWithTitle:(NSString *)title text:(NSString *)text inputType:(TEdittingInputType)inputType;
 
+/// 修改类型
+@property (assign,  nonatomic) NSInteger type;
 /// TEdittingInputTypeField默认60
 /// TEdittingInputTypeView默认200
 @property (assign,  nonatomic) CGFloat inpuHeight;

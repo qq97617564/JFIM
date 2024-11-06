@@ -34,6 +34,7 @@ void *IMKitKVOContext;
 }
 -(void)setTitle:(NSString *)title{
     self.navigationBar.titleL.text = title;
+    self.navigationController.title = title;
 }
 - (void)viewWillAppear:(BOOL)animated
 {

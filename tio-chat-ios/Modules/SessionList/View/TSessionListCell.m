@@ -58,8 +58,11 @@
     [self.contentView addSubview:nickLabel];
     _nickLabel = nickLabel;
     
-    UIImageView *flag = [[UIImageView alloc]init];
-    flag.image = [UIImage imageNamed:@"Group 1321315481"];
+    UIImageView *flag = ({
+        UIImageView *flag = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+        flag.image = [UIImage imageNamed:@"Group 1321315481"];
+        flag;
+    });
     [self.contentView addSubview:flag];
     _flag = flag;
     
@@ -146,7 +149,13 @@
     self.timeLabel.centerY = self.nickLabel.centerY;
     
     self.topIcon.right = self.contentView.width;
+
     self.topIcon.top = 0;
+    
+    [self.nickLabel sizeToFit];
+
+    _flag.left = self.nickLabel.right+5;
+    _flag.centerY = self.nickLabel.centerY;
     
     if (!self.DNDIcon.hidden) {
         self.DNDIcon.right = self.contentView.width - 17;
@@ -174,6 +183,10 @@
     _topIcon.hidden = !isTop;
     
     self.backgroundColor = isTop ? [UIColor colorWithHex:0xF2F2F2] : [UIColor colorWithHex:0xF9F9F9];
+}
+-(void)setIsGF:(BOOL)isGF{
+    _isGF = isGF;
+    _flag.hidden = !self.isGF;
 }
 
 - (void)setShowRedDot:(BOOL)showRedDot

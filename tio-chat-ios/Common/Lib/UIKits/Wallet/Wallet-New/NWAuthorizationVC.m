@@ -179,8 +179,8 @@
     protocolLabel.font = [UIFont systemFontOfSize:11 weight:UIFontWeightMedium];
     protocolLabel.textColor = [UIColor colorWithHex:0x999999];
     protocolLabel.delegate = self;
-    [protocolLabel addCustomLink:@(2) forRange:NSMakeRange(7, 10) linkColor:[UIColor colorWithHex:0x54A7F8]];
-    [protocolLabel addCustomLink:@(3) forRange:NSMakeRange(18, 8) linkColor:[UIColor colorWithHex:0x54A7F8]];
+    [protocolLabel addCustomLink:@(2) forRange:NSMakeRange(7, 10) linkColor:[UIColor colorWithHex:0x0087FC]];
+    [protocolLabel addCustomLink:@(3) forRange:NSMakeRange(18, 8) linkColor:[UIColor colorWithHex:0x0087FC]];
     [protocolLabel sizeToFit];
     protocolLabel.viewOrigin = CGPointMake(16, self.authorButton.bottom + 13);
     [backView addSubview:protocolLabel];

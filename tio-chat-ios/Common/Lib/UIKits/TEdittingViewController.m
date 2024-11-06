@@ -35,6 +35,11 @@
     if (self) {
         self.text = text;
         self.inputType = inputType;
+        if ([title isEqualToString: @"昵称"]) {
+            self.type = 1;
+        }else if ([title isEqualToString:@"修改个性签名"]){
+            self.type = 2;
+        }
         self.title = title;
         if (inputType == TEdittingInputTypeField) {
             self.inpuHeight = 48;
@@ -122,7 +127,7 @@
 {
     if ([self.delegate respondsToSelector:@selector(t_edittingViewController:didFinishedText:handler:)]) {
         
-        [self.delegate t_edittingViewController:self didFinishedText:self.text handler:^(BOOL flag, NSString * _Nullable msg) {
+        [self.delegate t_edittingViewController:self didFinishedText:self.text handler:^(BOOL flag,NSString * _Nullable msg) {
             if (flag)
             {
                 if (msg) {

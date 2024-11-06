@@ -78,6 +78,8 @@
     
     UITextField *codeTF = ({
         UITextField *textfiled = [self textFiled:@"请输入验证码" left:15 right:104];
+        textfiled.left = 17;
+        textfiled.width = ScreenWidth()-30-34;
         textfiled.top = 82;
         textfiled.delegate = self;
         
@@ -107,11 +109,11 @@
         
         textfiled;
     });
-    [self.view addSubview:codeTF];
+    [backView addSubview:codeTF];
     self.codeTF = codeTF;
     
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginButton.frame = CGRectMake(38, codeTF.bottom+50, self.view.width-38*2, 48);
+    loginButton.frame = CGRectMake(17, codeTF.bottom+50, ScreenWidth()-30-34, 48);
     UIImage *normalBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x0087FC],[UIColor colorWithHex:0x0087FC]]];
     UIImage *highlightBackgroundImage = [UIImage colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:loginButton.bounds andColors:@[[UIColor colorWithHex:0x0087FC],[UIColor colorWithHex:0x0087FC]]];
     [loginButton setBackgroundImage:[normalBackgroundImage imageWithCornerRadius:6 size:loginButton.viewSize] forState:UIControlStateNormal];
@@ -120,7 +122,7 @@
     [loginButton setTitle:@"提交" forState:UIControlStateNormal];
     [loginButton.titleLabel setFont:[UIFont systemFontOfSize:18 weight:UIFontWeightBold]];
     [loginButton addTarget:self action:@selector(confirm:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:loginButton];
+    [backView addSubview:loginButton];
 }
 
 //- (void)commonUI
@@ -159,7 +161,7 @@
 
 - (UITextField *)textFiled:(NSString *)placeholder left:(CGFloat)left right:(CGFloat)right
 {
-    UITextField *textfiled = [UITextField.alloc initWithFrame:CGRectMake(38, 0, self.view.width-38*2, 48)];
+    UITextField *textfiled = [UITextField.alloc initWithFrame:CGRectMake(17, 0, self.view.width-32*2, 48)];
     textfiled.backgroundColor = UIColor.whiteColor;
     textfiled.placeholder = placeholder;
     if (left > 0) {

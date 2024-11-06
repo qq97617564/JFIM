@@ -43,7 +43,7 @@
     
     UILabel *titleLabel = [UILabel.alloc initWithFrame:CGRectZero];
     titleLabel.text = @"季风钱包账户开通说明";
-    titleLabel.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
+    titleLabel.font = [UIFont systemFontOfSize:22 weight:UIFontWeightBold];
     titleLabel.textColor = [UIColor colorWithHex:0x333333];
     [titleLabel sizeToFit];
     titleLabel.viewOrigin = CGPointMake(16, Height_NavBar + 10);
@@ -54,8 +54,8 @@
     conLabel.numberOfLines = 0;
     conLabel.attributedText = ({
         
-        NSDictionary *attr1 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont systemFontOfSize:16]};
-        NSDictionary *attr2 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont systemFontOfSize:16 weight:UIFontWeightMedium]};
+        NSDictionary *attr1 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont systemFontOfSize:16  weight:UIFontWeightMedium]};
+        NSDictionary *attr2 = @{NSForegroundColorAttributeName:[UIColor colorWithHex:0x333333], NSFontAttributeName:[UIFont systemFontOfSize:16 weight:UIFontWeightBold]};
         
         NSMutableAttributedString *aString = [NSMutableAttributedString.alloc init];
         
@@ -77,7 +77,7 @@
     UILabel *nameLabel = [UILabel.alloc initWithFrame:CGRectZero];
     nameLabel.text = @"姓名";
     nameLabel.textColor = [UIColor colorWithHex:0x666666];
-    nameLabel.font = [UIFont systemFontOfSize:14.f];
+    nameLabel.font = [UIFont systemFontOfSize:15.f weight:UIFontWeightMedium];
     [nameLabel sizeToFit];
     nameLabel.right = 88;
     nameLabel.top = conLabel.bottom + 28;
@@ -89,7 +89,7 @@
     nameTF.layer.borderColor = [UIColor colorWithHex:0xE8E8E8].CGColor;
     nameTF.layer.cornerRadius = 4;
     nameTF.layer.masksToBounds = YES;
-    nameTF.font = [UIFont systemFontOfSize:14.f];
+    nameTF.font = [UIFont systemFontOfSize:15.f weight:UIFontWeightMedium];
     nameTF.placeholder = @"请输入本人真实姓名";
     nameTF.leftViewMode = UITextFieldViewModeAlways;
     nameTF.leftView = [UIView.alloc initWithFrame:CGRectMake(0, 0, 7, 36)];
@@ -100,7 +100,7 @@
     UILabel *idcardLabel = [UILabel.alloc initWithFrame:CGRectZero];
     idcardLabel.text = @"身份证号";
     idcardLabel.textColor = [UIColor colorWithHex:0x666666];
-    idcardLabel.font = [UIFont systemFontOfSize:14.f];
+    idcardLabel.font = [UIFont systemFontOfSize:15.f weight:UIFontWeightMedium];
     [idcardLabel sizeToFit];
     idcardLabel.right = 88;
     idcardLabel.top = nameLabel.bottom + 26;
@@ -113,7 +113,7 @@
     idcardTF.layer.cornerRadius = 4;
     idcardTF.layer.masksToBounds = YES;
     idcardTF.placeholder = @"请输入本人身份证号";
-    idcardTF.font = [UIFont systemFontOfSize:14.f];
+    idcardTF.font = [UIFont systemFontOfSize:15.f weight:UIFontWeightMedium];
     idcardTF.leftViewMode = UITextFieldViewModeAlways;
     idcardTF.leftView = [UIView.alloc initWithFrame:CGRectMake(0, 0, 7, 36)];
     [self.view addSubview:idcardTF];
@@ -123,7 +123,7 @@
     UILabel *phoneLabel = [UILabel.alloc initWithFrame:CGRectZero];
     phoneLabel.text = @"本人手机号";
     phoneLabel.textColor = [UIColor colorWithHex:0x666666];
-    phoneLabel.font = [UIFont systemFontOfSize:14.f];
+    phoneLabel.font = [UIFont systemFontOfSize:15.f  weight:UIFontWeightMedium];
     [phoneLabel sizeToFit];
     phoneLabel.right = 88;
     phoneLabel.top = idcardLabel.bottom + 26;
@@ -139,7 +139,7 @@
     phoneTF.text = TIOChat.shareSDK.loginManager.userInfo.phone;
     phoneTF.enabled  = NO;
     phoneTF.keyboardType = UIKeyboardTypePhonePad;
-    phoneTF.font = [UIFont systemFontOfSize:14.f];
+    phoneTF.font = [UIFont systemFontOfSize:15.f weight:UIFontWeightMedium];
     phoneTF.leftViewMode = UITextFieldViewModeAlways;
     phoneTF.leftView = [UIView.alloc initWithFrame:CGRectMake(0, 0, 7, 36)];
     [self.view addSubview:phoneTF];
@@ -157,23 +157,23 @@
         button;
     })];
     [protocolLabel appendText:@" 已阅读同意《支付用户服务协议》和《支付隐私政策》"];
-    protocolLabel.font = [UIFont systemFontOfSize:12];
+    protocolLabel.font = [UIFont systemFontOfSize:13];
     protocolLabel.textColor = [UIColor colorWithHex:0x999999];
     protocolLabel.delegate = self;
-    [protocolLabel addCustomLink:@(2) forRange:NSMakeRange(7, 10) linkColor:[UIColor colorWithHex:0x54A7F8]];
-    [protocolLabel addCustomLink:@(3) forRange:NSMakeRange(18, 8) linkColor:[UIColor colorWithHex:0x54A7F8]];
+    [protocolLabel addCustomLink:@(2) forRange:NSMakeRange(7, 10) linkColor:[UIColor colorWithHex:0x0087FC]];
+    [protocolLabel addCustomLink:@(3) forRange:NSMakeRange(18, 8) linkColor:[UIColor colorWithHex:0x0087FC]];
     [protocolLabel sizeToFit];
     protocolLabel.viewOrigin = CGPointMake(16, phoneTF.bottom + 36);
     [self.view addSubview:protocolLabel];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 200, 40);
+    button.frame = CGRectMake(0, 0, ScreenWidth()-30, 48);
     button.centerX = self.view.middleX;
     button.top = protocolLabel.bottom + 50;
-    button.layer.cornerRadius = 4;
+    button.layer.cornerRadius = 6;
     button.layer.masksToBounds = YES;
     button.enabled = NO;
-    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    button.titleLabel.font = [UIFont systemFontOfSize:18  weight:UIFontWeightBold];
     [button setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHex:0x4C94FF]] forState:UIControlStateNormal];
     [button setTitle:@"同意授权" forState:UIControlStateNormal];
     [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];

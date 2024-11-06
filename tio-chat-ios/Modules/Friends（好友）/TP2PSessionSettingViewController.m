@@ -126,6 +126,7 @@
             
             imageView;
         })];
+        UILabel *nickL;
         [self.avatarCell.contentView addSubview:({
             UILabel *label = [UILabel.alloc init];
             label.text = users.remarkname.length?users.remarkname:users.nick;
@@ -135,8 +136,20 @@
             label.left = 87;
             label.centerY = self.avatarCell.contentView.middleY;
             if (label.width > 125) label.width = 125;
+            nickL = label;
             label;
         })];
+        if (users.xx == 3 || users.officialflag == 1) {
+            [self.avatarCell.contentView addSubview:({
+                UIImageView *imageView = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 20, 20)];
+                imageView.left = nickL.right+5;
+                imageView.centerY = self.avatarCell.contentView.middleY;
+                imageView.image = [UIImage imageNamed:@"Group 1321315481"];
+                
+                imageView;
+            })];
+        }
+
         [self.avatarCell.contentView addSubview:({
             UIImageView *imageView = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 60, 60)];
             imageView.left = 16;

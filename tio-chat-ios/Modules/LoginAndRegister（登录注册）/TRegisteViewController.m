@@ -239,8 +239,8 @@
     protocolLabel.font = [UIFont systemFontOfSize:14];
     protocolLabel.textColor = [UIColor colorWithHex:0x999999];
     protocolLabel.delegate = self;
-    [protocolLabel addCustomLink:@(2) forRange:NSMakeRange(5, 8) linkColor:[UIColor colorWithHex:0x4C94FF]];
-    [protocolLabel addCustomLink:@(3) forRange:NSMakeRange(14, 6) linkColor:[UIColor colorWithHex:0x4C94FF]];
+    [protocolLabel addCustomLink:@(2) forRange:NSMakeRange(5, 8) linkColor:[UIColor colorWithHex:0x0087FC]];
+    [protocolLabel addCustomLink:@(3) forRange:NSMakeRange(14, 6) linkColor:[UIColor colorWithHex:0x0087FC]];
     protocolLabel.underLineForLink = NO;
     protocolLabel.textAlignment = kCTTextAlignmentCenter;
     [protocolLabel sizeToFit];

@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 是否置顶
 @property (nonatomic, assign) BOOL isTop;
+/// 是否官方
+@property (nonatomic, assign) BOOL isGF;
 
 - (void)setAvatarUrl:(NSString *)url;
 - (void)setShowDoNotDisturbIcon:(BOOL)showDoNotDisturbIcon unreadCount:(NSInteger)unreadCount;

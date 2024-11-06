@@ -361,14 +361,14 @@
     };
     
     
-    if ([edittingViewController.leftBarButtonText isEqualToString:@"修改昵称"]) {
+    if (edittingViewController.type == 1) {
         
         [TIOChat.shareSDK.loginManager updateNick:text completion:^(NSError * _Nullable error) {
             // 通知编辑页处理结果
             edittingHandler(error, @"新的昵称已修改完成");
         }];
         
-    } else if ([edittingViewController.leftBarButtonText isEqualToString:@"修改个性签名"]) {
+    } else if (edittingViewController.type == 2) {
         [TIOChat.shareSDK.loginManager updateSign:text completion:^(NSError * _Nullable error) {
             // 通知编辑页处理结果
             edittingHandler(error, @"新的个性签名已修改完成");

@@ -209,9 +209,11 @@
         cell.timeLabel.text = session.lastMessage.msgTime.timeOfsessionList;
         
         cell.isTop = session.isTop;
-        cell.flag.hidden = true;
+
         if (session.officialflag == 1 || session.xx == 3) {
-            cell.flag.hidden = false;
+            cell.isGF = true;
+        }else{
+            cell.isGF = false;
         }
 
         NSInteger unreadStatus = 0; // 自己的消息有么有被度，默认是0，表示对方发的消息

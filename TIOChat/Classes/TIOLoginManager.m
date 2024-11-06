@@ -286,7 +286,7 @@
         NSString *plainStr  = [NSString stringWithFormat:@"${%@}%@",account,password];
         NSString *pd5       = plainStr.MD5Digest;
         params = @{
-            @"pd5" : password,
+            @"pd5" : pd5,
             @"accountType" : @"3",
             @"loginname" : account
         };
@@ -414,7 +414,7 @@
     
     NSDictionary *pa = @{
         @"account" : loginname?:@"",
-        @"pwd" : password,
+        @"pwd" : pd5,
         @"nick" : nick?:@"",
         @"invitecode" : code?:@"",
         @"agreement" : @"on"

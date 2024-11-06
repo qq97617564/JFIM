@@ -65,13 +65,13 @@
     IMKitInputMoreItem *redItem = [IMKitInputMoreItem itemWithTitle:@"红包" normalImage:[UIImage imageNamed:@"card_hb"] selectedImage:[UIImage imageNamed:@"card_hb"] selector:@"onTapRed"];
     
     
-    if (_session.sessionType == TIOSessionTypeP2P) {
-        array = @[ablumItem, cameraItem, videoItem, audioItem, cardItem, groupCardItem, fileItem, redItem];
-    }
-    else
-    {
+//    if (_session.sessionType == TIOSessionTypeP2P) {
+//        array = @[ablumItem, cameraItem, videoItem, audioItem, cardItem, groupCardItem, fileItem, redItem];
+//    }
+//    else
+//    {
         array = @[ablumItem, cameraItem, cardItem, groupCardItem, fileItem, redItem];
-    }
+//    }
     
     
     return array;
