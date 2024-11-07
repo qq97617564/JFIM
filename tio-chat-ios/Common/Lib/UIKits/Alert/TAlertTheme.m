@@ -23,8 +23,8 @@ NSString* const TAlertActionHlightBackgroundColorKey = @"TAlertActionHlightBackg
 {
     self = [super init];
     if (self) {
-        self.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18], NSForegroundColorAttributeName: UIColor.blackColor};
-        self.messageTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: UIColor.blackColor};
+        self.titleTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18 weight:UIFontWeightBold], NSForegroundColorAttributeName: UIColor.blackColor};
+        self.messageTextAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18 weight:UIFontWeightBold], NSForegroundColorAttributeName: UIColor.blackColor};
         self.titleBackgroundColor = CBColorRGB(255, 214, 0);
         
         self.actionTitleAttributesDictionary = [NSMutableDictionary dictionary];

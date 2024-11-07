@@ -493,54 +493,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3FB9B4C8-937B-496D-A168-B0437ABA83E2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/Controller/GFUserInfoVC.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-layout"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3FB9B4C8-937B-496D-A168-B0437ABA83E2 - ebfcf9e472a856df"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC layout]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "1756">
-               </Location>
-               <Location
-                  uuid = "3FB9B4C8-937B-496D-A168-B0437ABA83E2 - ebfcf9e472a856fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[GFUserInfoVC layout]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/tlim/tio-chat-ios/Modules/Friends%EF%BC%88%E5%A5%BD%E5%8F%8B%EF%BC%89/Controller/GFUserInfoVC.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "1832">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "22543F67-2318-49BF-AA1A-FE16070B7F29"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -774,6 +726,22 @@
             startingLineNumber = "90"
             endingLineNumber = "90"
             landmarkName = "-openAccount:name:phone:idcard:nick:mac:completion:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FAE756F-BB52-4659-A89B-905537FB6B6C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TIOChat/Classes/TIOTeamManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
+            landmarkName = "-deleteTeam:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
