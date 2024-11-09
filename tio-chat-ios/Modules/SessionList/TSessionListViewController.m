@@ -54,7 +54,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"聊天";
+    self.navigationController.title = @"聊天";
     self.queue = dispatch_queue_create("Dan-serial", DISPATCH_QUEUE_SERIAL);
     
     [self addNavigationBar];
@@ -98,8 +99,8 @@
 //    [searchBtn addTarget:self action:@selector(toSearchMoudle:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationBar addSubview:searchBtn];
     
-//    self.title = @"聊天";
-//    self.title = @"聊天";
+    self.navigationController.title = @"聊天";
+//self.navigationBar.titleL
 }
 
 - (void)addButtonItemClicked:(UIButton *)sender
@@ -485,7 +486,9 @@
         teamid = session.toUId;
     }
     [TIOChat.shareSDK.conversationManager answerMessageNotificationForUid:uid orTeamid:teamid flag:flag completion:^(NSError * _Nullable error, id  _Nonnull data) {
-        
+        [MBProgressHUD showInfo:@"设置成功" toView:self.view];
+        self.allRecentSessions[indexPath.row].msgfreeflag = flag;
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }];
 }
 

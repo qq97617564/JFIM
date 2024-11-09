@@ -33,8 +33,9 @@ void *IMKitKVOContext;
     #pragma clang diagnostic push
 }
 -(void)setTitle:(NSString *)title{
+    [super setTitle:@""];
     self.navigationBar.titleL.text = title;
-    self.navigationController.title = title;
+//    self.navigationController.title = title;
 }
 - (void)viewWillAppear:(BOOL)animated
 {

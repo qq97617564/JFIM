@@ -35,7 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"账户开通";
+//    self.title = @"账户开通";
+    self.navigationBar.titleL.text = @"账户开通";
     [self setupUI];
 }
 

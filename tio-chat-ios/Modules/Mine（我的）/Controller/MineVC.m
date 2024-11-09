@@ -127,13 +127,13 @@
 
 - (void)toWallet
 {
-//    /// 如果没有开户，会直接进入开户流程页；
-//    /// 如果已经开户，会直接进入钱包主页。
+    /// 如果没有开户，会直接进入开户流程页；
+    /// 如果已经开户，会直接进入钱包主页。
 //    CBWeakSelf
 //    [WalletManager.shareInstance evokeOpenAccount:@{} callback:^(id  _Nonnull data) {
 //        CBStrongSelfElseReturn
 //    }];
-    
+//    
     // 钱包
     if(TIOChat.shareSDK.loginManager.userInfo.paypwdflag == 1){
         //新钱包

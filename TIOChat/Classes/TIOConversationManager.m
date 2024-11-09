@@ -782,9 +782,6 @@
     if (!uid.length && !teamid.length) {
         return;
     }
-    
-    
-    
     NSDictionary *params = nil;
     
     if (uid) {

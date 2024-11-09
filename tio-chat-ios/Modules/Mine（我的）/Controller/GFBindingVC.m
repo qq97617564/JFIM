@@ -10,7 +10,7 @@
 #import "TCommonCell.h"
 #import "GFBindingWXVC.h"
 #import "GFBindingZFBVC.h"
-#import "GFBindingBankVC.h""
+#import "GFBindingBankVC.h"
 
 @interface GFBindingVC ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak,    nonatomic) UITableView *tableView;
@@ -28,7 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"充值卡绑定";
+//    self.title = @"充值卡绑定";
+    self.navigationBar.titleL.text = @"充值卡绑定";
 //    self.wxCell = [self cellWithTitle:@"绑定微信" icon:[UIImage imageNamed:@"Group 1321315564"]];
 //    self.zfbCell = [self cellWithTitle:@"绑定支付宝" icon:[UIImage imageNamed:@"Group 1321315562"]];
     self.bankCell = [self cellWithTitle:@"绑定银行卡" icon:[UIImage imageNamed:@"Group 1321315563"]];

@@ -71,10 +71,30 @@
         return;
     }
 
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"uid"] = uid;
+//    params[@"name"] = name;
+//    params[@"mobile"] = phone;
+//    params[@"cardno"] = idcard;
+//    if (nick) {
+//        params[@"nickName"] = nick;
+//    }
+//    if (mac) {
+//        params[@"mac"] = mac;
+//    }
+//   
+    
+//    [TIOHTTPSManager tio_POST:@"/pay/open" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        TIOLog(@"开户结果：%@",responseObject[@"data"]);
+//        completion(responseObject[@"data"], nil);
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        completion(nil, error);
+//    }];
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"uid"] = uid;
     params[@"name"] = name;
-    params[@"mobile"] = phone;
+    params[@"phone"] = phone;
     params[@"cardno"] = idcard;
     if (nick) {
         params[@"nickName"] = nick;
@@ -82,8 +102,9 @@
     if (mac) {
         params[@"mac"] = mac;
     }
+   
     
-    [TIOHTTPSManager tio_POST:@"/pay/open" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [TIOHTTPSManager tio_POST:@"/wxuser/coin/certification" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         TIOLog(@"开户结果：%@",responseObject[@"data"]);
         completion(responseObject[@"data"], nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
