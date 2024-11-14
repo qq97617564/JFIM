@@ -177,7 +177,9 @@ typedef void(^TIOOperateHandler)(NSInteger result, NSError * __nullable error);
 /// 退出 - 退出操作务必要执行该操作，方法内会进行缓存的清理
 /// @param completion 方法的执行回调，非网络的回调
 - (void)logout:(nullable TIOLoginHandler)completion;
-
+/// 注销
+/// @param completion 回调
+- (void)logoff:(TIOLoginHandler)completion;
 /// 注册
 /// @param loginname 邮箱
 /// @param password 密码

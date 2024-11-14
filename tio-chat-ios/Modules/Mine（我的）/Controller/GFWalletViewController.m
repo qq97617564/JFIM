@@ -67,14 +67,14 @@
         [self.bottomBtn setTitle:@"立即充值" forState:UIControlStateNormal];
         self.tipMoney.text = @"充值金额";
         self.tipTitle.text = @"充值说明";
-        self.tipDetail.text = @"说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明";
+        self.tipDetail.text = @"请联系官方客服进行充值，或者充值完成后再进行提交！";
     }else if (self.type == 2){
         self.title = @"提现";
         [self.cashBtn setTitle:@"去充值" forState:UIControlStateNormal];
         [self.bottomBtn setTitle:@"立即提现" forState:UIControlStateNormal];
         self.tipMoney.text = @"提现金额";
         self.tipTitle.text = @"提现说明";
-        self.tipDetail.text = @"说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明";
+        self.tipDetail.text = @"请联系官方客服进行充值，或者充值完成后再进行提交！";
     }
 }
 -(void)orderClick:(UIButton *)btn{

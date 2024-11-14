@@ -147,16 +147,32 @@
         // 失败重连
         if (retryConut > 0 && ![error.domain isEqualToString:NSBundle.mainBundle.bundleIdentifier]) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
                 NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
-                if ([baseUrl isEqualToString:kBaseURLString]){
-                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
-                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];
-                    baseUrl = url;
+                NSInteger index = [NSUserDefaults.standardUserDefaults integerForKey:@"baseURLIndex"];
+                if (index < kBaseURLArr.count) {
+                    index ++ ;
                 }else{
-                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
-                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];
-                    baseUrl = url;
-                };
+                    index = 0;
+                }
+                NSString *changeUrl = kBaseURLArr[index];
+                [NSUserDefaults.standardUserDefaults setObject:changeUrl forKey:@"baseURL"];
+                
+                
+                
+                NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:changeUrl];//请求域名替换为副域名
+                baseUrl = url;
+                
+//                NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
+//                if ([baseUrl isEqualToString:kBaseURLString]){
+//                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
+//                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];
+//                    baseUrl = url;
+//                }else{
+//                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
+//                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];
+//                    baseUrl = url;
+//                };
 
                 [self POST:baseUrl parameters:parameters success:success failure:failure retryCount:retryConut-1];
             });
@@ -197,16 +213,29 @@
         // 失败重连
         if (retryConut > 0 && ![error.domain isEqualToString:NSBundle.mainBundle.bundleIdentifier]) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
                 NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
-                if ([baseUrl isEqualToString:kBaseURLString]){
-                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
-                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];
-                    baseUrl = url;
+                NSInteger index = [NSUserDefaults.standardUserDefaults integerForKey:@"baseURLIndex"];
+                if (index < kBaseURLArr.count) {
+                    index ++ ;
                 }else{
-                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
-                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];
-                    baseUrl = url;
-                };
+                    index = 0;
+                }
+                NSString *changeUrl = kBaseURLArr[index];
+                [NSUserDefaults.standardUserDefaults setObject:changeUrl forKey:@"baseURL"];
+                NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:changeUrl];//请求域名替换为副域名
+                baseUrl = url;
+                
+//                NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
+//                if ([baseUrl isEqualToString:kBaseURLString]){
+//                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
+//                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];
+//                    baseUrl = url;
+//                }else{
+//                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
+//                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];
+//                    baseUrl = url;
+//                };
 
                 [self POST:baseUrl parameters:parameters success:success failure:failure retryCount:retryConut-1];
             });

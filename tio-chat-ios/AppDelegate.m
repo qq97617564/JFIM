@@ -33,8 +33,6 @@
 @end
 
 @implementation AppDelegate
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
@@ -71,12 +69,12 @@
     
     // 开始检查版本:自己处理更新类型及提示
     [CBVersionManager.shareInstance starManager];
-//    
+//
 //    //关闭邀请码
 //    [TIOChat.shareSDK.loginManager tLoginInvitecodeCompletion:^(NSDictionary * result, NSError * error) {
-//        
+//
 //    }];
-//    
+//
     return YES;
 }
 
@@ -351,5 +349,6 @@
     [ThirdLogin.shareInstance setConfig:configQQ forPaltform:ThirdPlatformQQ];
     [ThirdLogin.shareInstance setConfig:configWX forPaltform:ThirdPlatformWX];
 }
+
 
 @end

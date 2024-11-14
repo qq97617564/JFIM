@@ -96,6 +96,10 @@ AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImageP
     
     [self.view bringSubviewToFront:self.navigationBar];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.session startRunning];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -142,16 +146,20 @@ AVCaptureMetadataOutputObjectsDelegate, UINavigationControllerDelegate, UIImageP
  */
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
-//    [self.session stopRunning];   //停止扫描
+
     //我们捕获的对象可能不是AVMetadataMachineReadableCodeObject类，所以要先判断，不然会崩溃
     if (![[metadataObjects lastObject] isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
-//        [self.session startRunning];
+        [self.session startRunning];
         return;
+    }else{
+        [self.session stopRunning];   //停止扫描
     }
     // id 类型不能点语法,所以要先去取出数组中对象
     AVMetadataMachineReadableCodeObject *object = [metadataObjects lastObject];
     if ( object.stringValue == nil ){
-//        [self.session startRunning];
+        [self.session startRunning];
+    }else{
+        [self.session stopRunning];   //停止扫描
     }
     
     // wxp://f2f0Qz9qxst1qazKE_53XToPLIzMELvT8Ccd

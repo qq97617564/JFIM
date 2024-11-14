@@ -199,13 +199,17 @@
 
 - (void)confirmClicked
 {
-    // 校验手机格式
-//    NSError *error = nil;
-//    [CBMobileValidator validateText:self.accountTF.text error:&error];
-//    if (error) {
-//        [MBProgressHUD showError:error.localizedDescription toView:self.view];
-//        return;
-//    }
+    // 校验是否包含字母
+    if (![self isStringContainNumberWith:self.accountTF.text]){
+        // 校验手机格式
+        NSError *error = nil;
+        [CBMobileValidator validateText:self.accountTF.text error:&error];
+        if (error) {
+            [MBProgressHUD showError:error.localizedDescription toView:self.view];
+            return;
+        }
+    }
+
     if (self.accountTF.text.length <= 0) {
         [MBProgressHUD showError:@"用户名不能为空" toView:self.view];
         return;
@@ -262,6 +266,24 @@
         }];
     }
 }
+- (BOOL)isStringContainNumberWith:(NSString *)str {
+
+    NSRegularExpression *numberRegular = [NSRegularExpression regularExpressionWithPattern:@"[A-Za-z]" options:NSRegularExpressionCaseInsensitive error:nil];
+
+    NSInteger count = [numberRegular numberOfMatchesInString:str options:NSMatchingReportProgress range:NSMakeRange(0, str.length)];
+
+    //count是str中包含[A-Za-z]数字的个数，只要count>0，说明str中包含数字
+
+    if (count > 0) {
+
+        return YES;
+
+    }
+
+    return NO;
+
+}
+
 -(void)loginClick{
     [MBProgressHUD showLoading:@"正在登录" toView:self.view];
     [TIOChat.shareSDK.loginManager login:self.accountTF.text
@@ -289,6 +311,12 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    if (textField.text.length > 10) {
+        if (![string isEqualToString:@""]) {
+            return NO;
+        }
+
+    }
     // 禁止输入空格
     NSString *tem = [[string componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]componentsJoinedByString:@""];
 

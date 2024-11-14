@@ -56,6 +56,16 @@
     
     return self;
 }
+-(UIImageView *)flag{
+    if (!_flag) {
+        UIImageView *flag = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+        flag.image = [UIImage imageNamed:@"Group 1321315481"];
+        [self.contentView addSubview:flag];
+        flag.hidden = true;
+        _flag = flag;
+    }
+    return _flag;
+}
 
 - (void)layoutSubviews
 {
@@ -81,7 +91,8 @@
     } else {
         self.textLabel.centerY = self.contentView.middleY;
     }
-    
+    self.flag.left = self.textLabel.right + 5;
+    self.flag.centerY = self.textLabel.centerY;
     self.selectButton.centerY = self.contentView.middleY;
     self.selectButton.right = self.contentView.width - 16;
     
@@ -104,7 +115,8 @@
     
     if (teamUser.remarkname.length) {
         self.textLabel.text = teamUser.nick;
-        self.remarkLabel.text = [NSString stringWithFormat:@"昵称：%@",teamUser.srcnick];
+        self.remarkLabel.text = nil;
+//        self.remarkLabel.text = [NSString stringWithFormat:@"昵称：%@",teamUser.srcnick];
     } else {
         self.textLabel.text = teamUser.srcnick;
         self.remarkLabel.text = nil;

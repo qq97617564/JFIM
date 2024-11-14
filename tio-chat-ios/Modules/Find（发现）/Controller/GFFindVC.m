@@ -23,7 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"发现";
+//    self.title = @"发现";
+    self.navigationBar.titleL.text = @"发现";
+    self.navigationBar.titleLabel.text = @"发现";
 //    titles = @[@"IM开源地址",@"chatArea",@"uniAPP",@"百度一下",@"演示系统",@"注意防骗"];
 //    icons = @[@"Group 1321315495",@"Group 1321315496",@"Group 1321315497",@"Group 1321315498",@"Group 1321315499",@"Group 1321315500"];
     [self.view addSubview:self.tableView];

@@ -230,6 +230,7 @@
         }
         _session = [TIOSession session:sessionId toUId:self.toUId type:type];
         _session.name = _name;
+        _session.officialflag = _officialflag;
         _session.avatar = _avatar.tio_resourceURLString;
         _session.linkStatus = _linkStatus;
     }
@@ -251,6 +252,7 @@
     _bizid = session.toUId.integerValue;
     _name = session.name;
     _avatar = session.avatar;
+    _officialflag = session.officialflag;
     self.sessionId = session.sessionId;
     
     self.linkStatus = session.linkStatus;
@@ -929,6 +931,7 @@
                     TIOLog(@"【已经激活的会话】本地没有会话");
                     
                     TIORecentSession *recentSession = [TIORecentSession.alloc init];
+
                     recentSession.lastMessage = message;
                     recentSession.session = message.session;
                     recentSession.sessionId = message.session.sessionId;

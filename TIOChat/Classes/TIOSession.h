@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 会话头像 会话列表中显示的是好友的头像 或者 群头像
 @property (copy, nonatomic) NSString *avatar;
 
+@property (assign, nonatomic) NSInteger officialflag;
+@property (assign, nonatomic) NSInteger xx;
+
 /// 当前的群ID 或对方的ID
 @property (copy, nonatomic) NSString *toUId;
 

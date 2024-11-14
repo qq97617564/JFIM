@@ -270,6 +270,10 @@
     {
         status = deleteModel.status;
     }
+    cell.flag.hidden = true;
+    if (member.officialflag == 1) {
+        cell.flag.hidden = false;
+    }
     
     [cell refreshData:member
                isSelf:[member.uid isEqualToString:self.teamUser.uid] status:status];

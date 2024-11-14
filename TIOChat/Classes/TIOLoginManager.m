@@ -331,7 +331,38 @@
         
     } retryCount:1];
 }
-
+- (void)logoff:(TIOLoginHandler)completion
+{
+    if (!TIONetworkNotificationCenter.shareManager.isConnected) {
+        NSError *error = [NSError errorWithDomain:TIOChatErrorDomain code:1001 userInfo:@{NSLocalizedDescriptionKey: @"当前无网络"}];
+        completion(error);
+        
+        return;
+    }
+    
+    [TIOHTTPSManager tio_POST:@"/user/logout" parameters:@{@"uid":TIOChat.shareSDK.loginManager.userInfo.userId} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        // 关闭长链接
+        [TIOChat.shareSDK finish];
+        [self clearLoginDB:^(BOOL isSuccess) {
+            
+        }];
+        TIOTokenStorage.shareStorage.loginStatus = 2;
+        [self clearUserInforCache];
+        [self clearCookisToken];
+        
+        // 通知上层开发者账号退出
+        [self.multiDelegate onLogout];
+        
+        completion(nil);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        TIOLog(@"%@",error);
+        
+        completion(error);
+    }];
+}
 - (void)logout:(TIOLoginHandler)completion
 {
     if (!TIONetworkNotificationCenter.shareManager.isConnected) {

@@ -125,6 +125,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong,  nonatomic) NSDictionary *superlinkItem;
 
+@property (assign, nonatomic) NSInteger officialflag;
+@property (assign, nonatomic) NSInteger xx;
+
 @end
 
 NS_ASSUME_NONNULL_END

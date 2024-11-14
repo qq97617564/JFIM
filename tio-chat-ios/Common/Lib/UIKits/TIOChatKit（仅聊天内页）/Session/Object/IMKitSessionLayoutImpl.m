@@ -120,6 +120,7 @@
     
     [self.tableView beginUpdates];
     [self.tableView insertRowsAtIndexPaths:addIndexPathes withRowAnimation:UITableViewRowAnimationNone];
+//    [self.tableView reloadData];
     [self.tableView endUpdates];
     
     if (self.sessionConfig.canTipBottomNewMessages) {

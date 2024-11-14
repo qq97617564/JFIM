@@ -61,6 +61,7 @@
     UIImageView *flag = ({
         UIImageView *flag = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
         flag.image = [UIImage imageNamed:@"Group 1321315481"];
+        flag.hidden = true;
         flag;
     });
     [self.contentView addSubview:flag];

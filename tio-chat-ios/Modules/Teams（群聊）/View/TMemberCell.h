@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)refreshData:(TIOTeamMember *)teamUser isSelf:(BOOL)isSelf status:(TCellSelectedStatus)status;
 
 @property (copy, nonatomic) void(^selectedCallback)(BOOL selected);
-
+@property(nonatomic, strong)UIImageView *flag;
 @end
 
 NS_ASSUME_NONNULL_END

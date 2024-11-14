@@ -7,6 +7,10 @@
 //
 
 #import "TSessionListViewController.h"
+
+#import "BGFMDB.h"
+#import "BGDB.h"
+
 #import "TSessionListCell.h"
 // common
 #import "NSString+T_HTTP.h"
@@ -54,8 +58,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"聊天";
-    self.navigationController.title = @"聊天";
+//    self.title = @"聊天";
+//    self.navigationController.title = @"聊天";
     self.queue = dispatch_queue_create("Dan-serial", DISPATCH_QUEUE_SERIAL);
     
     [self addNavigationBar];
@@ -181,6 +185,7 @@
 
 - (void)requestData
 {
+    
     // 从数据库读取最新的数据
     [TIOChat.shareSDK.conversationManager fetchAllRecentSessions:^(NSArray<TIORecentSession *> * _Nullable recentSessions, NSError * _Nullable error) {
         self.allRecentSessions = [NSMutableArray arrayWithArray:recentSessions];
@@ -200,6 +205,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     TSessionListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(TSessionListCell.class) forIndexPath:indexPath];
+    cell.isGF = false;
     if (self.allRecentSessions.count) {
         TIORecentSession *session = self.allRecentSessions[indexPath.row];
         cell.nickLabel.text = session.session.name;
@@ -210,13 +216,6 @@
         cell.timeLabel.text = session.lastMessage.msgTime.timeOfsessionList;
         
         cell.isTop = session.isTop;
-
-        if (session.officialflag == 1 || session.xx == 3) {
-            cell.isGF = true;
-        }else{
-            cell.isGF = false;
-        }
-
         NSInteger unreadStatus = 0; // 自己的消息有么有被度，默认是0，表示对方发的消息
         
         if (session.session.sessionType == TIOSessionTypeP2P) {
@@ -225,6 +224,11 @@
             // 只有自己发的消息，toReadFlag才有效
             if ([session.lastMessage.fromUId isEqualToString:TIOChat.shareSDK.loginManager.userInfo.userId]) {
                 unreadStatus = session.toReadFlag; // 别人有没有读你的消息
+            }
+            if (session.officialflag == 1 || session.xx == 3) {
+                cell.isGF = true;
+            }else{
+                cell.isGF = false;
             }
         }
         
@@ -583,28 +587,68 @@
 /// 新增会话
 - (void)didAddSession:(TIORecentSession *)recentSession
 {
-    /*
-     此处代码采用刷新列表数据的d方法，对网络开销比较大，不建议使用，以上方代码的处理为准
-     */
-    /// 全局静音标志
-    BOOL global_mutx = TIOChat.shareSDK.loginManager.userInfo.msgremindflag == 1;
-    
-    if (![TIOSessionActiveCenter.shareInstance isActive:recentSession.sessionId]) {
-        if (recentSession.lastMessage.session.sessionType == TIOSessionTypeP2P) {
+    if (recentSession.lastMessage.session.sessionType == TIOSessionTypeP2P) {
+        
+        
+        [TIOChat.shareSDK.friendManager fetchUserInfo:recentSession.session.toUId completion:^(TIOUser * _Nullable user, NSError * _Nullable error) {
             
-            if (global_mutx) {
-                [TChatSound.shareInstance playPrivateMessageSound];
+            /*
+             此处代码采用刷新列表数据的d方法，对网络开销比较大，不建议使用，以上方代码的处理为准
+             */
+            /// 全局静音标志
+            BOOL global_mutx = TIOChat.shareSDK.loginManager.userInfo.msgremindflag == 1;
+            
+            if (![TIOSessionActiveCenter.shareInstance isActive:recentSession.sessionId]) {
+                if (recentSession.lastMessage.session.sessionType == TIOSessionTypeP2P) {
+                    
+                    if (global_mutx) {
+                        [TChatSound.shareInstance playPrivateMessageSound];
+                    }
+                } else {
+                    if (global_mutx) {
+                        [TChatSound.shareInstance playTeamMessageSound];
+                    }
+                }
             }
-        } else {
-            if (global_mutx) {
-                [TChatSound.shareInstance playTeamMessageSound];
+            
+            recentSession.session.avatar = user.avatar;
+            recentSession.session.name = user.remarkname;
+            recentSession.session.officialflag = user.officialflag;
+            recentSession.officialflag = user.officialflag;
+            recentSession.bg_tableName = @"TIORecentSession";
+            BOOL su = [recentSession bg_saveOrUpdate];
+            [self.allRecentSessions addObject:recentSession];
+            [self sortAllRecentSessions];
+            [self refreshTable];
+            
+    
+            
+        }];
+    }else{
+        
+        /*
+         此处代码采用刷新列表数据的d方法，对网络开销比较大，不建议使用，以上方代码的处理为准
+         */
+        /// 全局静音标志
+        BOOL global_mutx = TIOChat.shareSDK.loginManager.userInfo.msgremindflag == 1;
+        
+        if (![TIOSessionActiveCenter.shareInstance isActive:recentSession.sessionId]) {
+            if (recentSession.lastMessage.session.sessionType == TIOSessionTypeP2P) {
+                
+                if (global_mutx) {
+                    [TChatSound.shareInstance playPrivateMessageSound];
+                }
+            } else {
+                if (global_mutx) {
+                    [TChatSound.shareInstance playTeamMessageSound];
+                }
             }
         }
+        
+        [self.allRecentSessions addObject:recentSession];
+        [self sortAllRecentSessions];
+        [self refreshTable];
     }
-    
-    [self.allRecentSessions addObject:recentSession];
-    [self sortAllRecentSessions];
-    [self refreshTable];
 }
 
 /// 更新会话

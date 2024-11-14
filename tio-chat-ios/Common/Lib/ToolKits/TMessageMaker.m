@@ -18,7 +18,8 @@
     message.messageType = TIOMessageTypeText;
     message.session = session;
     message.text = text;
-    
+    message.officialflag = session.officialflag;
+    message.xx = session.xx;
     return message;
 }
 

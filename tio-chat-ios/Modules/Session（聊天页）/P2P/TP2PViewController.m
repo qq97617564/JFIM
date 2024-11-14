@@ -87,6 +87,7 @@
     
     // 配置聊天 需要在此之前将自己的用户ID放进session里，统一在这里处理，没有放到外面的入口处
     self.session.ownerId = [TIOChat.shareSDK.loginManager.userInfo userId];
+
     [self setupConfigurator];
     [self.view bringSubviewToFront:self.navigationBar];
     

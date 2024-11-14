@@ -7,6 +7,11 @@
 //
 
 #import "GFLogOffVC.h"
+#import "MBProgressHUD+NJ.h"
+#import "TAlertController.h"
+
+/// SDK
+#import "ImportSDK.h"
 
 @interface GFLogOffVC ()
 @property (weak, nonatomic) IBOutlet UIButton *logoffBtn;
@@ -21,7 +26,21 @@
     self.logoffBtn.layer.cornerRadius = 6;
 }
 - (IBAction)logOffAction:(UIButton *)sender {
-    
+    TAlertController *alert = [TAlertController alertControllerWithTitle:@"" message:@"确定注销当前帐号？" preferredStyle:TAlertControllerStyleAlert];
+    [alert addAction:[TAlertAction actionWithTitle:@"取消" style:TAlertActionStyleCancel handler:^(TAlertAction * _Nonnull action) {
+        
+    }]];
+    [alert addAction:[TAlertAction actionWithTitle:@"退出" style:TAlertActionStyleDone handler:^(TAlertAction * _Nonnull action) {
+        [MBProgressHUD showLoading:@"正在注销" toView:self.view];
+        [TIOChat.shareSDK.loginManager logoff:^(NSError * _Nullable error) {
+            
+            [MBProgressHUD hideHUDForView:self.view];
+            if (error) {
+                [MBProgressHUD showError:error.localizedDescription];
+            }
+        }];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 /*
