@@ -249,13 +249,24 @@
 
 - (void)uiInsertMessages:(NSArray *)messages callback:(void (^ _Nullable)(id _Nonnull))callback
 {
-    // 向上加载历史消息，过滤替换音视频显示文案
-    for (TIOMessage *message in messages) {
+    NSMutableArray *msgArr = @[].mutableCopy;
+    
+    for (int i = (int)messages.count - 1; i >= 0; i--) {
+        TIOMessage *message = messages[i];
         if (message.messageType == TIOMessageTypeVideoChat || message.messageType == TIOMessageTypeAudioChat) {
             message.text = [TMessageMaker videoChatMessageFor:message];
         }
+        [msgArr addObject:message];
     }
-    [self.interactor insertMessages:messages callback:callback];
+//    [self.interactor addMessages:msgArr];
+    
+//    // 向上加载历史消息，过滤替换音视频显示文案
+//    for (TIOMessage *message in messages) {
+//        if (message.messageType == TIOMessageTypeVideoChat || message.messageType == TIOMessageTypeAudioChat) {
+//            message.text = [TMessageMaker videoChatMessageFor:message];
+//        }
+//    }
+    [self.interactor insertMessages:msgArr callback:callback];
 }
 
 - (IMKitMessageModel *)uiDeleteMessage:(TIOMessage *)message

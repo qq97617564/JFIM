@@ -829,54 +829,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EE36B2B4-F955-4019-BCD9-A9F86CC15CD6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOLoginManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
-            landmarkName = "-logoff:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EE36B2B4-F955-4019-BCD9-A9F86CC15CD6 - 8e5ee8fce04c8753"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__26-[TIOLoginManager logoff:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOLoginManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "346"
-                  endingLineNumber = "346"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "EE36B2B4-F955-4019-BCD9-A9F86CC15CD6 - 8e5ee8fce04c8753"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__26-[TIOLoginManager logoff:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOLoginManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "346"
-                  endingLineNumber = "346"
-                  offsetFromSymbolStart = "66">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A87CAEF9-EB46-4EAD-8849-CDABDD84EAD6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1114,84 +1066,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "140D8CA8-D531-4E58-BF3C-7996046DD125"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOConversationManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1205"
-            endingLineNumber = "1205"
-            landmarkName = "-handler:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "140D8CA8-D531-4E58-BF3C-7996046DD125 - 726f2dd57b55aa09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TIOConversationManager handler:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1206"
-                  endingLineNumber = "1206"
-                  offsetFromSymbolStart = "8096">
-               </Location>
-               <Location
-                  uuid = "140D8CA8-D531-4E58-BF3C-7996046DD125 - 9bb48fa4b6943abb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke_24"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1207"
-                  endingLineNumber = "1207"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "140D8CA8-D531-4E58-BF3C-7996046DD125 - 726f2dd57b55aa28"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TIOConversationManager handler:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1205"
-                  endingLineNumber = "1205"
-                  offsetFromSymbolStart = "8096">
-               </Location>
-               <Location
-                  uuid = "140D8CA8-D531-4E58-BF3C-7996046DD125 - 9bb48fa4b6943958"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke_24"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1206"
-                  endingLineNumber = "1206"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A18F243F-A3A8-43BE-96A0-0C8DCB321C1F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1248,195 +1122,6 @@
                   startingLineNumber = "521"
                   endingLineNumber = "521"
                   offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9CEBF5EC-AEC8-4C6E-9A85-8E79CDEBE4B6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOConversationManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1458"
-            endingLineNumber = "1458"
-            landmarkName = "-writeToDB:all:completion:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9CEBF5EC-AEC8-4C6E-9A85-8E79CDEBE4B6 - 2a098bff9f96897c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TIOConversationManager writeToDB:all:completion:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1459"
-                  endingLineNumber = "1459"
-                  offsetFromSymbolStart = "92">
-               </Location>
-               <Location
-                  uuid = "9CEBF5EC-AEC8-4C6E-9A85-8E79CDEBE4B6 - 54dcac43a9709d45"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__51-[TIOConversationManager writeToDB:all:completion:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/include/dispatch/queue.h"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "623"
-                  endingLineNumber = "623"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "9CEBF5EC-AEC8-4C6E-9A85-8E79CDEBE4B6 - 2a098bff9f96899f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TIOConversationManager writeToDB:all:completion:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1458"
-                  endingLineNumber = "1458"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C44288D-9269-4E83-9B0C-52400DB4FE9E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOConversationManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "916"
-            endingLineNumber = "916"
-            landmarkName = "-handler:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6C44288D-9269-4E83-9B0C-52400DB4FE9E - 4424081a5d9fbb15"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke.415"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "917"
-                  endingLineNumber = "917"
-                  offsetFromSymbolStart = "1256">
-               </Location>
-               <Location
-                  uuid = "6C44288D-9269-4E83-9B0C-52400DB4FE9E - 4424081a5d9fbb2a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke.415"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "916"
-                  endingLineNumber = "916"
-                  offsetFromSymbolStart = "1256">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "11DEF614-6009-402C-8432-0ED111C159C5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOConversationManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "952"
-            endingLineNumber = "952"
-            landmarkName = "-handler:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "11DEF614-6009-402C-8432-0ED111C159C5 - 4424081a5d9fb6f1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke.415"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "953"
-                  endingLineNumber = "953"
-                  offsetFromSymbolStart = "2392">
-               </Location>
-               <Location
-                  uuid = "11DEF614-6009-402C-8432-0ED111C159C5 - 436fe3d922a98823"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke_2.424"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "954"
-                  endingLineNumber = "954"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "11DEF614-6009-402C-8432-0ED111C159C5 - 4424081a5d9fb696"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke.415"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "952"
-                  endingLineNumber = "952"
-                  offsetFromSymbolStart = "2392">
-               </Location>
-               <Location
-                  uuid = "11DEF614-6009-402C-8432-0ED111C159C5 - 436fe3d922a98802"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke_2.424"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "953"
-                  endingLineNumber = "953"
-                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1540,372 +1225,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A044C9C3-50B7-4FA9-9323-BBE235FF0E2C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOConversationManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1466"
-            endingLineNumber = "1466"
-            landmarkName = "-writeToDB:all:completion:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A044C9C3-50B7-4FA9-9323-BBE235FF0E2C - 5b8e1800d05a4a87"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__51-[TIOConversationManager writeToDB:all:completion:]_block_invoke_2"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1467"
-                  endingLineNumber = "1467"
-                  offsetFromSymbolStart = "172">
-               </Location>
-               <Location
-                  uuid = "A044C9C3-50B7-4FA9-9323-BBE235FF0E2C - 5b8e1800d05a4a64"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__51-[TIOConversationManager writeToDB:all:completion:]_block_invoke_2"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1466"
-                  endingLineNumber = "1466"
-                  offsetFromSymbolStart = "172">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5D57BBE4-81DB-4261-A690-8263F362B79D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOConversationManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "918"
-            endingLineNumber = "918"
-            landmarkName = "-handler:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5D57BBE4-81DB-4261-A690-8263F362B79D - 4424081a5d9fbb57"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke.415"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "919"
-                  endingLineNumber = "919"
-                  offsetFromSymbolStart = "1296">
-               </Location>
-               <Location
-                  uuid = "5D57BBE4-81DB-4261-A690-8263F362B79D - 105f63eb364b8b71"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke_2"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "920"
-                  endingLineNumber = "920"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "5D57BBE4-81DB-4261-A690-8263F362B79D - 4424081a5d9fbb74"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke.415"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "918"
-                  endingLineNumber = "918"
-                  offsetFromSymbolStart = "1296">
-               </Location>
-               <Location
-                  uuid = "5D57BBE4-81DB-4261-A690-8263F362B79D - 105f63eb364b8a90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__34-[TIOConversationManager handler:]_block_invoke_2"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "919"
-                  endingLineNumber = "919"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "904B9C6A-A054-4E92-AD26-497D35ED7525"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TIOChat/Classes/TIOConversationManager.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "829"
-            endingLineNumber = "829"
-            landmarkName = "-handler:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "904B9C6A-A054-4E92-AD26-497D35ED7525 - 726f2dd57b555a81"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TIOConversationManager handler:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "830"
-                  endingLineNumber = "830"
-                  offsetFromSymbolStart = "544">
-               </Location>
-               <Location
-                  uuid = "904B9C6A-A054-4E92-AD26-497D35ED7525 - 726f2dd57b555aa0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TIOConversationManager handler:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/TIOChat/Classes/TIOConversationManager.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "829"
-                  endingLineNumber = "829"
-                  offsetFromSymbolStart = "544">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E707BC8E-9E7F-4CEA-9CAF-8F547D6A087E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "590"
-            endingLineNumber = "590"
-            landmarkName = "-didAddSession:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E707BC8E-9E7F-4CEA-9CAF-8F547D6A087E - 5785fe874d183d7f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TSessionListViewController didAddSession:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "631"
-                  endingLineNumber = "631"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "E707BC8E-9E7F-4CEA-9CAF-8F547D6A087E - 5785fe874d183634"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TSessionListViewController didAddSession:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "590"
-                  endingLineNumber = "590"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CE29EF35-BD50-4F1E-9390-26AC54907A1D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "648"
-            endingLineNumber = "648"
-            landmarkName = "-didAddSession:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CE29EF35-BD50-4F1E-9390-26AC54907A1D - 5785fe874d183eae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TSessionListViewController didAddSession:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "648"
-                  endingLineNumber = "648"
-                  offsetFromSymbolStart = "880">
-               </Location>
-               <Location
-                  uuid = "CE29EF35-BD50-4F1E-9390-26AC54907A1D - 5785fe874d183eae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TSessionListViewController didAddSession:]"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "648"
-                  endingLineNumber = "648"
-                  offsetFromSymbolStart = "888">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7937630C-4D17-45CB-9500-E5BBD52E9D90"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "669"
-            endingLineNumber = "669"
-            landmarkName = "-didUpdateSession:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7937630C-4D17-45CB-9500-E5BBD52E9D90 - a733c40fdd69988"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__47-[TSessionListViewController didUpdateSession:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "670"
-                  endingLineNumber = "670"
-                  offsetFromSymbolStart = "240">
-               </Location>
-               <Location
-                  uuid = "7937630C-4D17-45CB-9500-E5BBD52E9D90 - a733c40fdd69a69"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__47-[TSessionListViewController didUpdateSession:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "669"
-                  endingLineNumber = "669"
-                  offsetFromSymbolStart = "272">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "925F636B-640F-4BD2-9742-244818FE915F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "777"
-            endingLineNumber = "777"
-            landmarkName = "-didChangeUnreadCount:inSession:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "925F636B-640F-4BD2-9742-244818FE915F - 3ef3a0d3e848d002"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__61-[TSessionListViewController didChangeUnreadCount:inSession:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "778"
-                  endingLineNumber = "778"
-                  offsetFromSymbolStart = "240">
-               </Location>
-               <Location
-                  uuid = "925F636B-640F-4BD2-9742-244818FE915F - 3ef3a0d3e848d023"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__61-[TSessionListViewController didChangeUnreadCount:inSession:]_block_invoke"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "777"
-                  endingLineNumber = "777"
-                  offsetFromSymbolStart = "272">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "C64EEDA7-213C-444A-B50D-5F4E0226FF8C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1913,13 +1232,13 @@
             filePath = "tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "798"
-            endingLineNumber = "798"
+            startingLineNumber = "820"
+            endingLineNumber = "820"
             landmarkName = "-didClearAllMessagesInSession:"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C64EEDA7-213C-444A-B50D-5F4E0226FF8C - 16593140b54bd22e"
+                  uuid = "C64EEDA7-213C-444A-B50D-5F4E0226FF8C - 16593140b54bad91"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1929,12 +1248,12 @@
                   urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "798"
-                  endingLineNumber = "798"
-                  offsetFromSymbolStart = "272">
+                  startingLineNumber = "819"
+                  endingLineNumber = "819"
+                  offsetFromSymbolStart = "352">
                </Location>
                <Location
-                  uuid = "C64EEDA7-213C-444A-B50D-5F4E0226FF8C - 16593140b54bd22e"
+                  uuid = "C64EEDA7-213C-444A-B50D-5F4E0226FF8C - 16593140b54badf0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1944,8 +1263,23 @@
                   urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "798"
-                  endingLineNumber = "798"
+                  startingLineNumber = "820"
+                  endingLineNumber = "820"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  uuid = "C64EEDA7-213C-444A-B50D-5F4E0226FF8C - 16593140b54badf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__59-[TSessionListViewController didClearAllMessagesInSession:]_block_invoke_2"
+                  moduleName = "tio-chat-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "820"
+                  endingLineNumber = "820"
                   offsetFromSymbolStart = "340">
                </Location>
             </Locations>
@@ -1954,35 +1288,20 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6BE07FED-D983-4A20-81F7-A33DF91C36B2"
+            uuid = "8A71E2A4-2E7D-423A-A738-E9843E2712DD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "620"
-            endingLineNumber = "620"
+            startingLineNumber = "617"
+            endingLineNumber = "617"
             landmarkName = "-didAddSession:"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6BE07FED-D983-4A20-81F7-A33DF91C36B2 - 6642fff521c65412"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[TSessionListViewController didAddSession:]_block_invoke_2"
-                  moduleName = "tio-chat-ios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "621"
-                  endingLineNumber = "621"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  uuid = "6BE07FED-D983-4A20-81F7-A33DF91C36B2 - d145b14f1505a6a6"
+                  uuid = "8A71E2A4-2E7D-423A-A738-E9843E2712DD - d145b14f1505a605"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1992,9 +1311,54 @@
                   urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "620"
-                  endingLineNumber = "620"
-                  offsetFromSymbolStart = "856">
+                  startingLineNumber = "617"
+                  endingLineNumber = "617"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "8A71E2A4-2E7D-423A-A738-E9843E2712DD - 5785fe874d183bc6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TSessionListViewController didAddSession:]"
+                  moduleName = "tio-chat-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "672"
+                  endingLineNumber = "672"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "8A71E2A4-2E7D-423A-A738-E9843E2712DD - 5785fe874d183e55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TSessionListViewController didAddSession:]"
+                  moduleName = "tio-chat-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "653"
+                  endingLineNumber = "653"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "8A71E2A4-2E7D-423A-A738-E9843E2712DD - 5785fe874d183be9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TSessionListViewController didAddSession:]"
+                  moduleName = "tio-chat-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "673"
+                  endingLineNumber = "673"
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>

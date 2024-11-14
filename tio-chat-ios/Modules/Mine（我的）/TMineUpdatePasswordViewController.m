@@ -54,7 +54,7 @@
     self.originTF.leftViewMode = UITextFieldViewModeAlways;
     self.originTF.leftView = [self labelWithText:@"原密码"];
     self.originTF.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
-    [self.view addSubview:self.originTF];
+    [self.backView addSubview:self.originTF];
     
     self.pwdTF = [UITextField.alloc initWithFrame:CGRectMake(0, self.originTF.bottom, self.view.width-15, 60)];
     self.pwdTF.backgroundColor = [UIColor whiteColor];
@@ -63,7 +63,7 @@
     self.pwdTF.leftViewMode = UITextFieldViewModeAlways;
     self.pwdTF.leftView = [self labelWithText:@"新密码"];
     self.pwdTF.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
-    [self.view addSubview:self.pwdTF];
+    [self.backView addSubview:self.pwdTF];
     
     self.confirmPwdTF = [UITextField.alloc initWithFrame:CGRectMake(0, self.pwdTF.bottom, self.view.width-15, 60)];
     self.confirmPwdTF.backgroundColor = [UIColor whiteColor];
@@ -72,19 +72,19 @@
     self.confirmPwdTF.leftViewMode = UITextFieldViewModeAlways;
     self.confirmPwdTF.leftView = [self labelWithText:@"确认新密码"];
     self.confirmPwdTF.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
-    [self.view addSubview:self.confirmPwdTF];
+    [self.backView addSubview:self.confirmPwdTF];
     
     self.errorLabel = [UILabel.alloc initWithFrame:CGRectMake(80, self.backView.bottom, self.view.width - 160, 60)];
     self.errorLabel.textColor = [UIColor colorWithHex:0xFF754C];
     self.errorLabel.font = [UIFont systemFontOfSize:14];
     self.errorLabel.numberOfLines = 0;
     self.errorLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:self.errorLabel];
+    [self.backView addSubview:self.errorLabel];
     
     
     // 保存按钮
     UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    doneButton.frame = CGRectMake(0, 38, self.view.width-76, 50);
+    doneButton.frame = CGRectMake(0, self.backView.bottom+38, self.view.width-76, 50);
     doneButton.centerX = self.view.middleX;
     
     doneButton.backgroundColor = [UIColor colorWithHex:0x0087FC];
