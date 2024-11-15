@@ -171,7 +171,7 @@ static NSInteger const kMaxRetryCount = 3; ///< 最大重连次数
                 }
                 NSString *changeUrl = kBaseURLArr[index];
                 [NSUserDefaults.standardUserDefaults setObject:changeUrl forKey:@"baseURL"];
-                NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:changeUrl];//请求域名替换为副域名
+                NSString *url = [URLString stringByReplacingOccurrencesOfString:baseUrl withString:changeUrl];//请求域名替换为副域名
                 baseUrl = url;
                 
 //                //获取当前域名
@@ -234,7 +234,7 @@ static NSInteger const kMaxRetryCount = 3; ///< 最大重连次数
                 }
                 NSString *changeUrl = kBaseURLArr[index];
                 [NSUserDefaults.standardUserDefaults setObject:changeUrl forKey:@"baseURL"];
-                NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:changeUrl];//请求域名替换为副域名
+                NSString *url = [URLString stringByReplacingOccurrencesOfString:baseUrl withString:changeUrl];//请求域名替换为副域名
                 baseUrl = url;
                 
 //                NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
@@ -291,7 +291,7 @@ static NSInteger const kMaxRetryCount = 3; ///< 最大重连次数
                 }
                 NSString *changeUrl = kBaseURLArr[index];
                 [NSUserDefaults.standardUserDefaults setObject:changeUrl forKey:@"baseURL"];
-                NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:changeUrl];//请求域名替换为副域名
+                NSString *url = [URLString stringByReplacingOccurrencesOfString:baseUrl withString:changeUrl];//请求域名替换为副域名
                 baseUrl = url;
                 
 //                NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
