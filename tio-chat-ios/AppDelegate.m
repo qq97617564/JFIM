@@ -115,7 +115,10 @@
     #else
         [TIOChat setLogEnable:NO];
     #endif
-    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
+    if (![NSUserDefaults.standardUserDefaults valueForKey:@"baseURL"]) {
+        [NSUserDefaults.standardUserDefaults setObject:kBaseURLArr[0] forKey:@"baseURL"];
+    }
+
 
     [TIOChat.shareSDK.loginManager addDelegate:self];
 

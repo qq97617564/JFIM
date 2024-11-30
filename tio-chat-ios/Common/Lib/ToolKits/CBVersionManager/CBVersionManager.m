@@ -61,38 +61,38 @@
 
 - (void)observerUpdateAlert:(NSNotification *)notification
 {
-    // 向服务端获取更新状态,标题,文案...
-    CBWeakSelf
-    [APPHTTPManager t_POST:@"/sys/version" parameters:@{} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        CBStrongSelfElseReturn
-        // 1:要更新 2:不要更新
-        NSInteger updateflag = [responseObject[@"data"][@"updateflag"] integerValue];
-        // 1:强制更新 2:不强制更新
-        NSInteger forceflag = [responseObject[@"data"][@"forceflag"] integerValue];
-        
-        NSString *content = responseObject[@"data"][@"content"];
-        
-        CBUpdateType type = CBUpdateTypeNone;
-        if (updateflag == 1) {
-            if (forceflag == 1) {
-                type = CBUpdateTypeForced;
-            } else if (forceflag == 2) {
-                type = CBUpdateTypeOptional;
-            } else {
-                type = CBUpdateTypeOptional;
-            }
-        } else if (updateflag == 2) {
-            type = CBUpdateTypeNone;
-        } else {
-            type = CBUpdateTypeNone;
-        }
-        // 显示
-        [self showMessageWithTitle:@"" content:content type:type];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        CBStrongSelfElseReturn
-        self.allowAlert = YES;
-    } retryCount:1];
+//    // 向服务端获取更新状态,标题,文案...
+//    CBWeakSelf
+//    [APPHTTPManager t_POST:@"/sys/version" parameters:@{} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        CBStrongSelfElseReturn
+//        // 1:要更新 2:不要更新
+//        NSInteger updateflag = [responseObject[@"data"][@"updateflag"] integerValue];
+//        // 1:强制更新 2:不强制更新
+//        NSInteger forceflag = [responseObject[@"data"][@"forceflag"] integerValue];
+//        
+//        NSString *content = responseObject[@"data"][@"content"];
+//        
+//        CBUpdateType type = CBUpdateTypeNone;
+//        if (updateflag == 1) {
+//            if (forceflag == 1) {
+//                type = CBUpdateTypeForced;
+//            } else if (forceflag == 2) {
+//                type = CBUpdateTypeOptional;
+//            } else {
+//                type = CBUpdateTypeOptional;
+//            }
+//        } else if (updateflag == 2) {
+//            type = CBUpdateTypeNone;
+//        } else {
+//            type = CBUpdateTypeNone;
+//        }
+//        // 显示
+//        [self showMessageWithTitle:@"" content:content type:type];
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        CBStrongSelfElseReturn
+//        self.allowAlert = YES;
+//    } retryCount:2];
 }
 
 - (void)showMessageWithTitle:(NSString *)title content:(NSString *)content type:(CBUpdateType)type

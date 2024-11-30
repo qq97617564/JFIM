@@ -150,30 +150,17 @@
                 
                 NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
                 NSInteger index = [NSUserDefaults.standardUserDefaults integerForKey:@"baseURLIndex"];
-                if (index < kBaseURLArr.count) {
+                if (index < kBaseURLArr.count-1) {
                     index ++ ;
                 }else{
                     index = 0;
                 }
                 NSString *changeUrl = kBaseURLArr[index];
                 [NSUserDefaults.standardUserDefaults setObject:changeUrl forKey:@"baseURL"];
-                
-                
-                
-                NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:changeUrl];//请求域名替换为副域名
+                [NSUserDefaults.standardUserDefaults setInteger:index forKey:@"baseURLIndex"];
+                NSString *url = [URLString stringByReplacingOccurrencesOfString:baseUrl withString:changeUrl];//请求域名替换为副域名
                 baseUrl = url;
-                
-//                NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
-//                if ([baseUrl isEqualToString:kBaseURLString]){
-//                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
-//                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:kBaseURLStringX];
-//                    baseUrl = url;
-//                }else{
-//                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLString forKey:@"baseURL"];
-//                    NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLStringX withString:kBaseURLString];
-//                    baseUrl = url;
-//                };
-
+                [TIOChat.shareSDK requestBaseConfig];
                 [self POST:baseUrl parameters:parameters success:success failure:failure retryCount:retryConut-1];
             });
         } else {
@@ -216,16 +203,17 @@
                 
                 NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
                 NSInteger index = [NSUserDefaults.standardUserDefaults integerForKey:@"baseURLIndex"];
-                if (index < kBaseURLArr.count) {
+                if (index < kBaseURLArr.count-1) {
                     index ++ ;
                 }else{
                     index = 0;
                 }
                 NSString *changeUrl = kBaseURLArr[index];
                 [NSUserDefaults.standardUserDefaults setObject:changeUrl forKey:@"baseURL"];
-                NSString *url = [URLString stringByReplacingOccurrencesOfString:kBaseURLString withString:changeUrl];//请求域名替换为副域名
+                [NSUserDefaults.standardUserDefaults setInteger:index forKey:@"baseURLIndex"];
+                NSString *url = [URLString stringByReplacingOccurrencesOfString:baseUrl withString:changeUrl];//请求域名替换为副域名
                 baseUrl = url;
-                
+                [TIOChat.shareSDK requestBaseConfig];
 //                NSString *baseUrl = [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
 //                if ([baseUrl isEqualToString:kBaseURLString]){
 //                    [NSUserDefaults.standardUserDefaults setObject:kBaseURLStringX forKey:@"baseURL"];
@@ -252,7 +240,7 @@
         NSString *baseUrl =     [NSUserDefaults.standardUserDefaults objectForKey:@"baseURL"];
         path = [baseUrl stringByAppendingString:path];
     };
-    [self.sharedInstance UPLOAD:[path stringByAppendingString:URLString] parameters:parameters constructingBodyWithBlock:block progress:uploadProgress success:success failure:failure retryCount:1];
+    [self.sharedInstance UPLOAD:[path stringByAppendingString:URLString] parameters:parameters constructingBodyWithBlock:block progress:uploadProgress success:success failure:failure retryCount:9999];
 }
 
 - (void)UPLOAD:(NSString *)URLString parameters:(id)parameters constructingBodyWithBlock:(void (^)(id<AFMultipartFormData> _Nonnull))block progress:(void (^)(NSProgress * _Nonnull))uploadProgress success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure retryCount:(NSInteger)retryConut

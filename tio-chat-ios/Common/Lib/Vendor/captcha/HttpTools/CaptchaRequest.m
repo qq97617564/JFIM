@@ -37,7 +37,7 @@
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         finishedBlock(NO, nil);
-    } retryCount:1];
+    } retryCount:5];
 }
 
  //校验验证码
@@ -68,6 +68,6 @@
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         finishedBlock(NO, nil);
-    } retryCount:1];
+    } retryCount:5];
 }
 @end

@@ -150,7 +150,8 @@
     protocolLabel.underLineForLink = NO;
     protocolLabel.textAlignment = kCTTextAlignmentCenter;
     [protocolLabel sizeToFit];
-    protocolLabel.top = 447 + 44 + 15 + Height_StatusBar;
+//    protocolLabel.top = 447 + 44 + 15 + Height_StatusBar;
+    protocolLabel.top = self.regButton.bottom;
     [self.view addSubview:protocolLabel];
     
     protocolButton.left = 38;

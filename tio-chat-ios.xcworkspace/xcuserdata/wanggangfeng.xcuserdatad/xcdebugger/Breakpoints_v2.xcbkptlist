@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "73B1EA17-B687-4C91-ACB8-77DFE43B25E3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TIOChat/Classes/TIOLoginManager.m"
@@ -191,7 +191,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8CC21C4B-39A6-4288-A08D-E5B03C65B427"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/Controller/GFUserInfoVC.m"
@@ -269,7 +269,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "424B0D1E-40AB-4199-905C-F18FD909595E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/Mine&#xff08;&#x6211;&#x7684;&#xff09;/Model/GFWalletManager.m"
@@ -392,7 +392,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "ABB59A04-9C17-450E-A420-E9EA276A559C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Common/Lib/UIKits/Wallet/Common/ViewController/WalletRedPackageDetailsVC.m"
@@ -470,7 +470,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C9F5769E-E327-4C05-B96F-2596CFDF96E4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Common/Lib/UIKits/Wallet/Wallet-Old/ViewController/WalletSendSingleRedPackageVC.m"
@@ -548,7 +548,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F8D1EF52-D8C9-45B4-BEBF-58CB08A8193C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/Controller/GFUserInfoVC.m"
@@ -626,7 +626,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "22543F67-2318-49BF-AA1A-FE16070B7F29"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/Teams&#xff08;&#x7fa4;&#x804a;&#xff09;/TReviewInvitationViewController.m"
@@ -674,7 +674,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C1786E8A-62C1-4875-B4C1-7077E56E8095"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/TUserHomePageViewController.m"
@@ -722,7 +722,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CA361727-F27A-46AA-8B61-D725B6638D15"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/TUserHomePageViewController.m"
@@ -770,7 +770,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3FAE756F-BB52-4659-A89B-905537FB6B6C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TIOChat/Classes/TIOTeamManager.m"
@@ -818,7 +818,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             uuid = "EA19FC31-7657-42D0-805D-E08DE98E725A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             breakpointStackSelectionBehavior = "1"
@@ -830,7 +830,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A87CAEF9-EB46-4EAD-8849-CDABDD84EAD6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Common/Lib/UIKits/TIOChatKit&#xff08;&#x4ec5;&#x804a;&#x5929;&#x5185;&#x9875;&#xff09;/Session/Object/IMKitSessionMsgDataSource.m"
@@ -878,7 +878,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9A59C540-BEF7-428B-B769-55A826ED23E5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TIOChat/Classes/TIOConversationManager.m"
@@ -956,7 +956,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "58FEEC4A-1457-4DF9-89D6-7762E726C35A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TIOChat/Classes/TIOConversationManager.m"
@@ -1019,7 +1019,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8D394099-FE20-49F9-B5BC-410F705ACBB5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/Friends&#xff08;&#x597d;&#x53cb;&#xff09;/Controller/GFUserInfoVC.m"
@@ -1067,7 +1067,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A18F243F-A3A8-43BE-96A0-0C8DCB321C1F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TIOChat/Classes/TIOConversationManager.m"
@@ -1130,7 +1130,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5BF30221-1221-46E0-B4D4-8AF36C6281C0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TIOChat/Classes/TIOConversationManager.m"
@@ -1178,7 +1178,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C9B0680A-A0FF-4FE7-BF71-F1413FF8C1C1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TIOChat/Classes/TIOConversationManager.m"
@@ -1226,7 +1226,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C64EEDA7-213C-444A-B50D-5F4E0226FF8C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
@@ -1289,7 +1289,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8A71E2A4-2E7D-423A-A738-E9843E2712DD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tio-chat-ios/Modules/SessionList/TSessionListViewController.m"
@@ -1361,6 +1361,164 @@
                   offsetFromSymbolStart = "56">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31AC250B-F022-4ACC-BFA5-BC0A8E8F59D7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TIOChat/Classes/TIOHTTPSManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "-GET:parameters:success:failure:retryCount:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "570D7C33-851E-4E57-9365-2EE4CF8C6B24"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TIOChat/Classes/TIOHTTPSManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "-UPLOAD:parameters:constructingBodyWithBlock:progress:success:failure:retryCount:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA85393B-EF05-4A93-BEC2-781FF534ED82"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tio-chat-ios/Common/Lib/ToolKits/Network/APPHTTPManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "-GET:parameters:success:failure:retryCount:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FA85393B-EF05-4A93-BEC2-781FF534ED82 - a5bf43ba4927f88e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__60-[APPHTTPManager GET:parameters:success:failure:retryCount:]_block_invoke_2"
+                  moduleName = "tio-chat-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Common/Lib/ToolKits/Network/APPHTTPManager.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "572">
+               </Location>
+               <Location
+                  uuid = "FA85393B-EF05-4A93-BEC2-781FF534ED82 - a5bf43ba492778c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__60-[APPHTTPManager GET:parameters:success:failure:retryCount:]_block_invoke_3"
+                  moduleName = "tio-chat-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Common/Lib/ToolKits/Network/APPHTTPManager.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "FA85393B-EF05-4A93-BEC2-781FF534ED82 - a5bf43ba4927f88e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__60-[APPHTTPManager GET:parameters:success:failure:retryCount:]_block_invoke_2"
+                  moduleName = "tio-chat-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Common/Lib/ToolKits/Network/APPHTTPManager.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "FA85393B-EF05-4A93-BEC2-781FF534ED82 - a5bf43ba4927f88e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__60-[APPHTTPManager GET:parameters:success:failure:retryCount:]_block_invoke_2"
+                  moduleName = "tio-chat-ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggangfeng/Desktop/WORK/JFIM/tio-chat-ios/Common/Lib/ToolKits/Network/APPHTTPManager.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
+                  offsetFromSymbolStart = "273">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EDB170A-4044-4E60-9D3D-E25C9D098CD4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tio-chat-ios/Common/Lib/ToolKits/Network/APPHTTPManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-POST:parameters:success:failure:retryCount:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06871441-B04B-47BB-8710-07AB8DAA8EA9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TIOChat/Classes/TIOConversationManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "471"
+            endingLineNumber = "471"
+            landmarkName = "-fetchServerSessions:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DD309EB-097E-45D2-8ED7-98C8C8A28BF7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tio-chat-ios/Common/Lib/ToolKits/NSString/NSString+T_HTTP.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "-resourceURLString"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

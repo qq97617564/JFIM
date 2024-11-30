@@ -720,6 +720,18 @@ NSString * APPContentTypeForPathExtension(NSString *extension) {
         TIOStrongSelfElseReturn
         TIOLog(@"获取基础配置失败");
     }];
+    
+    //配置资源服务器
+    [TIOHTTPSManager tio_POST:@"/app/conf" parameters:@{} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        TIOStrongSelfElseReturn
+        TIOLog(@"config: \n%@",responseObject);
+        NSString *res_server = responseObject[@"data"][@"res_server"] ;
+        self.config.resourceAddress = res_server;
+        [self connectToServer];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        TIOStrongSelfElseReturn
+        TIOLog(@"失败");
+    }];
 }
 
 - (void)connectToServer
@@ -773,6 +785,7 @@ NSString * APPContentTypeForPathExtension(NSString *extension) {
     } else {
         [self connectToHost:self.config.linkAddress port:self.config.linkPort];
     }
+    
 }
 
 - (void)connectToHost:(NSString *)ip port:(NSInteger)port

@@ -129,7 +129,7 @@
             completion(responseObject, nil);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             completion(nil, error);
-        } retryCount:1];
+        } retryCount:5];
     
 }
 - (void)tLogin1:(TIOThirdLoginOption *)option completion:(void (^)(NSDictionary * _Nullable, NSError * _Nullable))completion
@@ -153,7 +153,7 @@
             completion(responseObject, nil);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             completion(nil, error);
-        } retryCount:1];
+        } retryCount:5];
     }
 }
 
@@ -199,7 +199,7 @@
         }];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         completion(nil, error);
-    } retryCount:1];
+    } retryCount:5];
 }
 
 - (void)login:(NSString *)account password:(NSString *)password completion:(nonnull TIOLoginHandler2)completion
@@ -259,7 +259,7 @@
         
         [self->_multiDelegate onLogin:error];
         
-    } retryCount:1];
+    } retryCount:3];
 }
 
 /// 新登录
@@ -329,7 +329,7 @@
         
         [self->_multiDelegate onLogin:error];
         
-    } retryCount:1];
+    } retryCount:5];
 }
 - (void)logoff:(TIOLoginHandler)completion
 {
@@ -990,7 +990,7 @@
         completion(-1, nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         completion(-1, error);
-    } retryCount:1];
+    } retryCount:5];
 }
 
 

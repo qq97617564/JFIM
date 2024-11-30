@@ -33,3 +33,6 @@
 #import "TIOChatHeader.h"
 
 #import "GFWalletManager.h"
+@interface TIOChat ()
+- (void)requestBaseConfig;
+@end

@@ -8,7 +8,8 @@
 
 #import "NSString+T_HTTP.h"
 #import "ServerConfig.h"
-
+#import "TIOConfig.h"
+#import "TIOChat.h"
 @implementation NSString (T_HTTP)
 
 
@@ -16,7 +17,7 @@
 {
     if (self) {
         if (![self hasPrefix:@"http"] && self.length!= 0) {
-            NSString *url = [kResourceURLString stringByAppendingString:self?:@""];
+            NSString *url = [TIOChat.shareSDK.config.resourceAddress stringByAppendingString:self?:@""];
             // 处理URL中的中文编码
             url = [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
             return url;
